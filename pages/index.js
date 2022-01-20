@@ -1,13 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Logo from '../public/logo2.svg'
+import Head from "next/head";
+import Image from "next/image";
+import Logo from "../public/logo.png";
+import Timeline from "./timeline";
 
 export default function Home() {
   return (
-<>
-<div className=" w-36  p-4 fill-red-300 color">
-<Image src={Logo} className='fill-red-500' />
-</div>
-</>
-  )
+    <>
+      <div className=" bg-neutral-800 h-screen">
+        <div className="bg-neutral-900">
+          <div className=" w-36  p-4">
+            <Image src={Logo} />
+          </div>
+        </div>
+        <div className="">
+          <Timeline />
+        </div>
+      </div>
+    </>
+  );
 }
