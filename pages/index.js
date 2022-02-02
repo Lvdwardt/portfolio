@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Logo from "../public/logo.png";
-import Timeline from "./timeline";
+import Timeline from "./components/timeline";
 
 export default function Home() {
   return (
