@@ -59,7 +59,19 @@ module.exports = {
         '49/50': '98%',
         '45/50': '100%',
       },
+      animation: {
+        fadeIn: "fadeIn 2s ease-in forwards"
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('./tailwindfiles/perspective'),
+    require('./tailwindfiles/backfacevisibility')
+  ]
 }
