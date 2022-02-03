@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import Timeline from "../components/timeline";
+import Projects from "../components/projects";
 import Logo from "../public/logo.png";
 
 
-export default function Home() {
+export default function Project() {
   return (
     <>
       <div className=" bg-neutral-800 h-screen">
@@ -14,7 +14,7 @@ export default function Home() {
           </div>
         </div>
         <div className="">
-          <Timeline />
+          <Projects />
         </div>
       </div>
     </>
