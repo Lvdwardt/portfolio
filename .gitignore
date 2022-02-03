@@ -7,7 +7,7 @@
 DS_Store
 # testing
 /coverage
-
+.env
 # next.js
 /.next/
 /out/
