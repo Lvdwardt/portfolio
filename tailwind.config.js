@@ -3,8 +3,14 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors:{
+        bluelight: "#98d0ff",
+        pinklight: "#FFC6D7",
+        greenlight: "#6DD2B7",
+      },
       width: {
         '1/100': '1%',
         '1/50': '2%',
@@ -60,13 +66,25 @@ module.exports = {
         '45/50': '100%',
       },
       animation: {
-        fadeIn: "fadeIn 2s ease-in forwards"
+        fadeIn: "fadeIn 2s ease-in forwards",
+        fadeInRight:"fadeInRight 0s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 }
-        }
+        },
+        fadeInRight: {
+          "0%": {
+             opacity: 0,
+             transform : "translate-x-5",
+          },
+          "100%" :{
+             opacity: 1,
+             transform: "translate-x-0",
+          }
+       } 
+
       },
     },
   },

@@ -4,8 +4,10 @@ import Logo from "../public/logo.png";
 export default function Navbar() {
   return (
     <>
-      <div className=" w-36  p-4 m-4 absolute">
-        <Image src={Logo} alt="" />
+          <div className="sm:absolute top-0 flex justify-center">
+        <div className=" w-36 p-4 sm:m-4 ">
+          <Image src={Logo} alt="" />
+        </div>
       </div>
       <div className="flex justify-center relative">
         <div className=" bg-gray-200 rounded-full flex justify-center w-min font-medium m-12">
@@ -39,6 +41,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
     </>
   );
 }
