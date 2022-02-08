@@ -1,43 +1,49 @@
-import { AiOutlinePlus } from "react-icons/ai";
-import { GrMysql } from "react-icons/gr";
-import {
-  SiCss3,
-  SiFlutter,
-  SiHtml5,
-  SiJavascript,
-  SiMysql,
-  SiPhp,
-  SiReact,
-  SiVisualstudiocode,
-} from "react-icons/si";
-import { BsCircle, BsPlusLg } from "react-icons/bs";
-import { FaHome, FaMinus, FaPlus } from "react-icons/fa";
-
 export default function Skills() {
   return (
     <>
-      <div className="bg-bluelight relative overflow-hidden rounded-3xl transition-all duration-300 ease-in dark:bg-[#CE81C7] xl:col-span-2">
-        <div className="bg-pinklight absolute h-[400px] w-[400px] translate-x-24 translate-y-24 rounded-full dark:bg-[#8D5BE9] "></div>
-        <div className="absolute bottom-[1rem] left-14 text-4xl">
-          <SiVisualstudiocode />
+      <div className=" bg-pinklight relative overflow-hidden rounded-3xl p-6 dark:bg-[#2F3763] dark:text-white sm:row-span-2 ">
+        <h1 className="text-center text-2xl font-bold">Skills</h1>
+        <div className="mb-2 mt-5 flex justify-between">
+          <h2>Tailwind CSS</h2>
+          <h2>99%</h2>
         </div>
-        <div className="absolute bottom-[5.1rem] left-24 text-4xl">
-          <SiReact />
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-49/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
         </div>
-        <div className="absolute bottom-[11rem] left-[8.5rem] text-4xl">
-          <SiHtml5 />
+        <div className="mb-2 mt-5 flex justify-between">
+          <h2>HTML &amp; CSS</h2>
+          <h2>90%</h2>
         </div>
-        <div className="absolute bottom-[11rem] left-[11rem] text-4xl">
-          <SiCss3 />
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-46/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
         </div>
-        <div className="absolute bottom-[11rem] left-[13.5rem] text-4xl">
-          <SiJavascript />
+        <div className="mt-5 mb-2 flex justify-between">
+          <h2>Github</h2>
+          <h2>75%</h2>
         </div>
-        <div className="absolute bottom-[11rem] left-[16rem] text-4xl">
-          <SiPhp />
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-38/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
         </div>
-        <div className="absolute bottom-[11rem] left-[18.5rem] text-4xl">
-          <GrMysql />
+        <div className="mt-5 mb-2 flex justify-between">
+          <h2>React</h2>
+          <h2>60%</h2>
+        </div>
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-30/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
+        </div>
+        <div className="mt-5 mb-2 flex justify-between">
+          <h2>Docker</h2>
+          <h2>30%</h2>
+        </div>
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-15/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
+        </div>
+        <div className="mt-5 mb-2 flex justify-between">
+          <h2>Flutter</h2>
+          <h2>10%</h2>
+        </div>
+        <div className="flex w-full rounded-full dark:bg-[#1F295B]">
+          <div className=" w-5/50 h-6 rounded-full bg-blue-50 dark:bg-[#8D5BE9]"></div>
         </div>
       </div>
     </>

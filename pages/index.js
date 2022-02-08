@@ -8,8 +8,9 @@ import Skills from "../components/skills";
 import Timeline from "../components/timeline";
 import Timeline2 from "../components/timeline2";
 import Toggle from "../components/toggle";
-import Whatsapp from "../components/whatsapp";
+import Whatsapp, { Discord, Github } from "../components/socials";
 import Logo from "../public/logo.png";
+import Mapbox2 from "../components/mapbox2";
 
 export default function Home() {
   return (
@@ -21,10 +22,12 @@ export default function Home() {
           <Mapbox />
           <Toggle />
           <Skills />
+          <Github />
           <Timeline />
           <Whatsapp />
           <Janskapsalon />
           <Timeline2 />
+          <Discord />
         </div>
       </div>
     </>

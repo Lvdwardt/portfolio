@@ -2,6 +2,9 @@ import Image from "next/image";
 
 import Jk from "../img/jk.png";
 import { ImArrowUpRight2 } from "react-icons/im";
+import { SiDocker, SiTailwindcss } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
 export default function Janskapsalon() {
   return (
     <>
@@ -20,6 +23,20 @@ export default function Janskapsalon() {
           >
             Janskapsalon.nl
           </a>
+        </div>
+        <div className="text-white opacity-0 transition-all duration-700 hover:opacity-100 group-hover:opacity-100 dark:text-[#1F295B]">
+          <div className="absolute top-4 right-[11.5rem] text-4xl">
+            <FaReact />
+          </div>
+          <div className="absolute top-4 right-32 text-4xl">
+            <SiTailwindcss />
+          </div>
+          <div className="absolute top-4 right-[4.5rem] text-4xl">
+            <GrMysql />
+          </div>
+          <div className="absolute top-4 right-4 text-4xl">
+            <SiDocker />
+          </div>
         </div>
       </div>
     </>
