@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.9.1",
+    "lodash": "^4.17.21",
     "lodash.map": "^4.6.0",
     "mapbox-gl": "^2.7.0",
     "mysql": "^2.18.1",

@@ -1,47 +1,67 @@
 import GridLayout from "react-grid-layout";
 import react from "react";
 import React from "react";
-import About from "../components/about";
-import Mapbox from "react-map-gl/dist/esm/mapbox/mapbox";
-import Toggle from "../components/toggle";
-import Skills from "../components/skills";
-import Whatsapp, { Discord, Github } from "../components/socials";
 import Timeline from "../components/timeline";
-import Janskapsalon from "../components/janskapsalon";
+import About from "../components/about";
 import Timeline2 from "../components/timeline2";
 
-class MyFirstGrid extends React.Component {
+// class MyFirstGrid extends React.Component {
+//   render() {
+//     // layout is an array of objects, see the demo for more complete usage
+//     const layout = [
+//       { i: "a", x: 0, y: 0, w: 2, h: 1 },
+//       { i: "b", x: 2, y: 0, w: 2, h: 1 },
+//       { i: "c", x: 4, y: 0, w: 1, h: 1 },
+//     ];
+//     return (
+//       <div className="flex justify-center">
+//         <div className="bg-black ">
+//           <GridLayout
+//             className=" w-full"
+//             layout={layout}
+//             cols={4}
+//             rowHeight={280}
+//             width={1200}
+//             rowWidth={265}
+//           >
+//             <div key="a" className="">
+//               <Timeline2 />
+//             </div>
+//             <div key="b" className="">
+//               <About />
+//             </div>
+//             <div key="c" className=" bg-green-400">
+//               c
+//             </div>
+//           </GridLayout>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
+
+class MyResponsiveGrid extends React.Component {
   render() {
-    // layout is an array of objects, see the demo for more complete usage
-    // const layout = [
-    //   { i: "a", x: 0, y: 0, w: 1, h: 2 },
-    //   { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    //   { i: "c", x: 4, y: 0, w: 1, h: 2 },
-    // ];
+    // {lg: layout1, md: layout2, ...}
+    const layouts =
+      ({ i: "a", x: 0, y: 0, w: 2, h: 1 },
+      { i: "b", x: 2, y: 0, w: 2, h: 1 },
+      { i: "c", x: 4, y: 0, w: 1, h: 1 });
     return (
-      <GridLayout
+      <ResponsiveGridLayout
         className="layout"
-        layout={layout}
-        cols={12}
-        rowHeight={30}
+        layouts={layouts}
         width={1200}
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+        cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
       >
-        <div className="">
-          <About />
-        </div>
-        <div className="">
-          <Mapbox />
-        </div>
-        {/* <Toggle />
-        <Skills />
-        <Github />
-        <Timeline />
-        <Whatsapp />
-        <Janskapsalon />
-        <Timeline2 />
-        <Discord /> */}
-      </GridLayout>
+        <div key="a">1</div>
+        <div key="b">2</div>
+        <div key="c">3</div>
+      </ResponsiveGridLayout>
     );
   }
 }
-export default MyFirstGrid;
+export default MyResponsiveGrid;

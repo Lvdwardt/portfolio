@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import useDarkMode from "../hooks/useDarkMode";
+import mapStyle from "../hooks/mapStyle";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGVvbnZkdyIsImEiOiJja3o4aGZob20xajl4MndyeGI4Nm9oMHFrIn0.qh6ihyou9U5wnDZyZjQdew";
@@ -13,19 +14,7 @@ export default function Mapbox2() {
   const [zoom, setZoom] = useState(12);
   const [minzoom, setMinZoom] = useState(0);
   const [maxzoom, setMaxZoom] = useState(12);
-  const [style, setStyle] = useState(
-    "mapbox://styles/leonvdw/ckza3leh5002g14qhbxatpdjt"
-  );
-  const [colorTheme, setTheme] = useDarkMode();
-
-  // function Check() {
-  //   if (colorTheme === "light") {
-  //     setStyle("mapbox://styles/leonvdw/ckza3leh5002g14qhbxatpdjt");
-  //     console.log(style, "hallo");
-  //   } else {
-  //     console.log("test");
-  //   }
-  // }
+  const [style, setStyle] = mapStyle();
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -48,6 +37,20 @@ export default function Mapbox2() {
       setLat(map.current.getCenter().lat.toFixed(4));
     });
   });
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+    });
+  });
+
+  // useEffect(() => {
+  //   if (!colorTheme == "dark") return;
+  //   {
+  //     console.log("donker");
+  //   }
+  // });
 
   function Min() {
     if (!map.current) return; // wait for map to initialize
@@ -59,6 +62,12 @@ export default function Mapbox2() {
 
     setZoom(map.current.setZoom(zoom + 4));
     setZoom(zoom + 4);
+  }
+  function Color() {
+    if (!map.current) return; // wait for map to initialize
+
+    setStyle(map.current.setStyle("mapbox://styles/mapbox/streets-v11"));
+    setStyle("mapbox://styles/mapbox/streets-v11");
   }
 
   return (

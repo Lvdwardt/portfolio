@@ -13,32 +13,32 @@ export default function Navbar() {
       <div className="relative flex justify-center">
         <div className=" m-12 flex w-min justify-center rounded-full bg-gray-200 font-medium">
           <div className=" m-2 w-min rounded-full">
-            <div className="w-20 rounded-full bg-white p-1 text-center">
+            {/* <div className="w-20 rounded-full bg-white p-1 text-center">
               <Link href="/">
                 <a className=" w-20">Home</a>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className=" m-2 w-min rounded-full">
-            <div className=" w-20 rounded-full p-1 text-center">
+            {/* <div className=" w-20 rounded-full p-1 text-center">
               <Link href="/navbar">
                 <a className=" w-20">About</a>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className=" m-2 w-min rounded-full">
-            <div className=" w-20 rounded-full p-1 text-center">
+            {/* <div className=" w-20 rounded-full p-1 text-center">
               <Link href="/navbar">
                 <a className=" w-20">Projects</a>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className=" m-2 w-min rounded-full">
-            <div className=" w-20 rounded-full p-1 text-center">
+            {/* <div className=" w-20 rounded-full p-1 text-center">
               <Link href="/navbar">
                 <a className=" w-20">Contact</a>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

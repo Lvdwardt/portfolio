@@ -70,7 +70,13 @@ module.exports = {
       },
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards",
-        fadeInRight: "delay-[250ms] fadeInRight 0.6s  ease-in forwards",
+        fadeInRight: "fadeInRight 0.6s  ease-in forwards",
+        fadeIn48: "fadeIn48 2s ease-in forwards",
+        fadeIn46: "fadeIn46 2s ease-in forwards",
+        fadeIn38: "fadeIn38 2s ease-in forwards",
+        fadeIn30: "fadeIn30 2s ease-in forwards",
+        fadeIn15: "fadeIn15 2s ease-in forwards",
+        fadeIn5: "fadeIn5 2s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
@@ -86,6 +92,36 @@ module.exports = {
             opacity: 1,
             transform: "translate-x-0",
           },
+        },
+        fadeIn48: {
+          "0%": { width: "0%" },
+          "20%": { width: "0%" },
+          "100%": { width: "98%" },
+        },
+        fadeIn46: {
+          "0%": { width: "0%" },
+          "35%": { width: "0%" },
+          "100%": { width: "94%" },
+        },
+        fadeIn38: {
+          "0%": { width: "0%" },
+          "50%": { width: "0%" },
+          "100%": { width: "75%" },
+        },
+        fadeIn30: {
+          "0%": { width: "0%" },
+          "65%": { width: "0%" },
+          "100%": { width: "60%" },
+        },
+        fadeIn15: {
+          "0%": { width: "0%" },
+          "70%": { width: "0%" },
+          "100%": { width: "30%" },
+        },
+        fadeIn5: {
+          "0%": { width: "0%" },
+          "85%": { width: "0%" },
+          "100%": { width: "10%" },
         },
       },
     },

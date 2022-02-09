@@ -1,15 +1,20 @@
 import React from "react";
+import mapStyle from "../hooks/mapStyle";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Toggle() {
   const [colorTheme, setTheme] = useDarkMode();
+  const [style, setStyle] = mapStyle();
+
   return (
     <>
       <div className=" bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9]">
         <div className="bg-pinklight  absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full dark:bg-[#CE81C7]"></div>
 
         <span
-          onClick={() => setTheme(colorTheme)}
+          onClick={() => {
+            setTheme(colorTheme) + setStyle(style);
+          }}
           className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 shadow-lg transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white"
         >
           {colorTheme === "light" ? (
