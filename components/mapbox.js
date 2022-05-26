@@ -71,7 +71,7 @@ export default function Mapbox2() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative sm:order-6 xl:order-2">
       <div
         ref={mapContainer}
         className="h-full overflow-hidden rounded-3xl transition-all duration-500"

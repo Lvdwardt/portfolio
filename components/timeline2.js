@@ -1,6 +1,6 @@
 export default function Timeline2() {
   return (
-    <div className="peer col-span-2 h-full rounded-3xl bg-white p-8 transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white xl:block">
+    <div className="peer col-span-2 hidden h-full rounded-3xl bg-white p-8 transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white sm:order-10 sm:block xl:order-7 xl:block">
       <h1 className=" absolute mt-[-0.5rem] text-2xl font-bold">Timeline</h1>
       <div className="flex ">
         <div className="w-41/50 h-6 px-2 text-right ">
@@ -24,7 +24,7 @@ export default function Timeline2() {
         <div className="w-39/50 h-6 px-2 text-right ">
           <h2 className="peer mt-5 font-bold">Stichting Open Nederland</h2>
           <h2 className="mt-[-8px] hidden hover:block peer-hover:block">
-            Voor SON heb ik gewerkt op de hulplijn van testen voor je reis
+            Voor SON heb ik gewerkt op de hulplijn
           </h2>
         </div>
         <div className=" w-2/50 mt-5 h-6 rounded-full bg-slate-300 dark:bg-slate-500"></div>

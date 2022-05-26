@@ -9,7 +9,7 @@ import Skills from "../components/skills";
 import Timeline from "../components/timeline";
 import Timeline2 from "../components/timeline2";
 import Toggle from "../components/toggle";
-import Whatsapp, { Discord, Github } from "../components/socials";
+import Whatsapp, { Discord, Github, Mail } from "../components/socials";
 import Logo from "../public/logo.png";
 import Mapbox2 from "../components/mapbox2";
 
@@ -29,6 +29,7 @@ export default function Home() {
           <Whatsapp />
           <Janskapsalon />
           <Janskapsalonflat />
+          <Mail />
         </div>
       </div>
     </>
