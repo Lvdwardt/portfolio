@@ -26,7 +26,7 @@ export default function Mapbox2() {
       minZoom: minzoom,
       maxZoom: maxzoom,
       renderWorldCopies: false,
-      interactive: false,
+      dragPan: false,
     });
   });
 
@@ -54,7 +54,10 @@ export default function Mapbox2() {
 
   function Min() {
     if (!map.current) return; // wait for map to initialize
-    setZoom(map.current.setZoom(zoom - 4));
+    map.flyTo({
+      center: [lng, lat],
+      zoom: zoom - 4,
+    });
     setZoom(zoom - 4);
   }
   function Max() {

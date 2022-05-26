@@ -1,12 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* #98d0ff"
-        pinklight: "#FFC6D7",
-        greenlight: "#6DD2B7 */
+
 :root {
   --background: #1f295b;
   --track: #8d5be9;
+  --color: #ce81c7;
   --thumb: var(--background);
 }
 [data-theme="light"] {
@@ -35,4 +34,7 @@ html {
 
 ::-webkit-scrollbar-corner {
   background-color: #ddd;
+}
+.mapboxgl-ctrl-logo {
+  display: none !important;
 }
