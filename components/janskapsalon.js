@@ -23,7 +23,7 @@ export default function Janskapsalon() {
           Janskapsalon.nl
         </a>
       </div>
-      <div className="text-white opacity-0 transition-all duration-700 group-hover:opacity-100 dark:text-[#1F295B] sm:opacity-100 sm:hover:opacity-100">
+      <div className="text-white opacity-0 transition-all duration-700 dark:text-[#1F295B] sm:opacity-100 sm:hover:opacity-100 sm:group-hover:opacity-100">
         <div className="absolute top-4 right-[11.5rem] text-4xl">
           <FaReact />
         </div>

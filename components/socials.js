@@ -4,7 +4,7 @@ import { FaDiscord, FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa";
 export default function Whatsapp() {
   return (
     <a
-      className="  bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#CE81C7] sm:order-9"
+      className="  bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9] sm:order-9 sm:dark:bg-[#CE81C7]"
       href="https://api.whatsapp.com/send?phone=31630702130"
       target={"_blank"}
       rel="noreferrer"
@@ -40,7 +40,7 @@ export function Discord() {
 export function Mail() {
   return (
     <a
-      className=" bg-bluelight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9] sm:order-12"
+      className="bg-greenlight sm:bg-bluelight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#CE81C7] sm:order-12 sm:dark:bg-[#8D5BE9]"
       href="mailto:contact@leonvandewardt.nl"
       target={"_blank"}
       rel="noreferrer"

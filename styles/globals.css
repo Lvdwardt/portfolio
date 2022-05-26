@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* #98d0ff"
+        pinklight: "#FFC6D7",
+        greenlight: "#6DD2B7 */
+:root {
+  --background: #1f295b;
+  --track: #8d5be9;
+  --thumb: var(--background);
+}
+[data-theme="light"] {
+  --background: rgb(229 231 235);
+  --track: white;
+  --thumb: #ffc6d7;
+}
+
+html {
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+::-webkit-scrollbar-track {
+  background: var(--track);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 40px;
+  background-color: var(--thumb);
+  border: 3px solid var(--track);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #ddd;
+}

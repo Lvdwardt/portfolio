@@ -126,8 +126,12 @@ module.exports = {
       },
     },
   },
+  variants: {
+    scrollbar: ["dark"],
+  },
   plugins: [
     require("./tailwindfiles/perspective"),
     require("./tailwindfiles/backfacevisibility"),
+    require("tailwind-scrollbar"),
   ],
 };

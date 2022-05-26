@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Jkflat from "../img/jkflat2.png";
 import { ImArrowUpRight2 } from "react-icons/im";
@@ -16,11 +17,9 @@ export default function Janskapsalonflat() {
         <ImArrowUpRight2 className="" />
         <a
           className=" group-hover:animate-fadeInRight absolute left-2 opacity-0 transition-all duration-200 hover:opacity-100 hover:delay-[250ms] group-hover:opacity-100 group-hover:delay-[250ms]"
-          href="https://janskapsalon.nl"
-          target={"_blank"}
-          rel="noreferrer"
+          href="/janskapsalon"
         >
-          Janskapsalon.nl
+          Janskapsalon
         </a>
       </div>
     </div>

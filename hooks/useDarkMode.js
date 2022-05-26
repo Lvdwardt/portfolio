@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export default function useDarkMode() {
-  const [theme, setTheme] = useState("dark");
+  const [mode, setmode] = useState("dark");
+  const { theme, setTheme } = useTheme();
 
-  const colorTheme = theme === "light" ? "dark" : "light";
+  const colormode = mode === "light" ? "dark" : "light";
   useEffect(
     () => {
       const root = window.document.documentElement;
-      root.classList.remove(colorTheme);
-      root.classList.add(theme);
+      root.classList.remove(colormode);
+      root.classList.add(mode);
     },
-    [theme],
-    colorTheme
+    [mode],
+
+    setTheme(mode)
   );
-  return [colorTheme, setTheme];
+  return [colormode, setmode];
 }
