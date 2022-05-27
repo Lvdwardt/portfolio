@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 
 export default function useDarkMode() {
   const [mode, setmode] = useState("dark");
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   const colormode = mode === "light" ? "dark" : "light";
   useEffect(

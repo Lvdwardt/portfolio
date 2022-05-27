@@ -29,7 +29,7 @@ export function Discord() {
   return (
     <a
       className=" bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#CE81C7] sm:order-5 xl:order-8"
-      href="https://github.com/Lvdwardt"
+      href="https://discord.com/users/396931979020337153"
       target={"_blank"}
       rel="noreferrer"
     >
