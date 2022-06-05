@@ -9,7 +9,7 @@ export default function Timeline2() {
             Voor UCS help ik mensen met computerproblemen
           </h2>
         </div>
-        <div className="w-3/50 bg-bluelight h-6 rounded-full dark:bg-[#CE81C7]"></div>
+        <div className="w-6/50 bg-bluelight h-6 rounded-full dark:bg-[#CE81C7]"></div>
       </div>
       <div className="flex ">
         <div className="w-39/50 h-6  px-2 text-right ">
@@ -18,7 +18,7 @@ export default function Timeline2() {
             Voor SAH help ik mensen met computerproblemen
           </h2>
         </div>
-        <div className="w-5/50 bg-bluelight mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
+        <div className="w-8/50 bg-bluelight mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
       </div>
       <div className="flex ">
         <div className="w-39/50 h-6 px-2 text-right ">
@@ -36,7 +36,7 @@ export default function Timeline2() {
             Magazijnmedewerker
           </h2>
         </div>
-        <div className=" bg-bluelight w-33/50 mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
+        <div className=" bg-bluelight w-36/50 mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
       </div>
       <div className="mt-5 flex ">
         <h2 className="w-8/50  border-x-3 border-black text-center dark:border-white dark:bg-inherit">
