@@ -7,16 +7,15 @@
   --track: #8d5be9;
   --color: #ce81c7;
   --thumb: var(--background);
+  --logo: #ce81c7;
 }
 [data-theme="light"] {
   --background: rgb(229 231 235);
   --track: white;
   --thumb: #ffc6d7;
   --color: #6dd2b7;
+  --logo: black;
 }
-/* bluelight: "#98d0ff",
-pinklight: "#FFC6D7",
-greenlight: "", */
 html {
   background-color: var(--background);
 }
