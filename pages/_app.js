@@ -6,7 +6,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <script>document.documentElement.classList.add(&quot;dark&quot;)</script>
+        <title>Leon v d W</title>
+        <script>
+          document.documentElement.classList.add(&quot;dark&quot;)
+        </script>
       </Head>
       <ThemeProvider defaultTheme="dark">
         <Component {...pageProps} />
