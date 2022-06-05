@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <script>document.documentElement.classList.add("dark")</script>
+        <script>document.documentElement.classList.add(&quot;dark&quot;)</script>
       </Head>
       <ThemeProvider defaultTheme="dark">
         <Component {...pageProps} />
