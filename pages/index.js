@@ -1,21 +1,27 @@
-import Head from "next/head";
-import Image from "next/image";
 import About from "../components/about";
-import Janskapsalon from "../components/janskapsalon";
-import Janskapsalonflat from "../components/janskapsalonflat";
+import ProjectBanner from "../components/projectBanner";
+import ProjectBannerFlat from "../components/projectBannerFlat";
 import Navbar from "../components/navbar";
 import Skills from "../components/skills";
-import Timeline from "../components/timeline";
 import Timeline2 from "../components/timeline2";
 import Toggle from "../components/toggle";
 import Whatsapp, { Discord, Github, Mail } from "../components/socials";
-import Logo from "../public/logo.png";
 import Mapbox from "../components/mapbox";
 import useDarkMode from "../hooks/useDarkMode";
 import Flyn from "../components/flyn";
+import { fetcher } from "../lib/api";
+import useSWR from "swr";
+import ProjectsList from "../components/projectslist";
 
-export default function Home() {
+export default function Home({ projects }) {
   const [colorTheme, setTheme] = useDarkMode();
+  const { data } = useSWR(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/projects`,
+    fetcher,
+    {
+      fallbackData: projects,
+    }
+  );
 
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] ">
@@ -29,10 +35,21 @@ export default function Home() {
         <Timeline2 />
         <Discord />
         <Whatsapp />
-        <Janskapsalon />
-        <Janskapsalonflat />
+        <ProjectBanner projects={projects} />
+        <ProjectBannerFlat />
         <Mail />
+        <ProjectsList projects={projects} />
       </div>
     </div>
   );
+}
+export async function getStaticProps() {
+  const projectsRes = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/projects`
+  );
+  return {
+    props: {
+      projects: projectsRes,
+    },
+  };
 }

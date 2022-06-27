@@ -1,49 +1,51 @@
-export default function Skills() {
+import { fetcher } from "../lib/api";
+import useSWR from "swr";
+
+export default function Skills({ skillsApi }) {
+  const { data } = useSWR(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/skills`,
+    fetcher,
+    {
+      fallbackData: skillsApi,
+    }
+  );
+  const skills = data;
   return (
     <div className="relative row-span-2 overflow-hidden rounded-3xl bg-white p-6 font-bold dark:bg-[#2F3763] dark:text-white sm:order-2 xl:order-6 ">
       <h1 className="text-center text-2xl">Skills</h1>
-      <div className="mb-2 mt-5 flex justify-between">
-        <h2>Tailwind CSS</h2>
-        <h2>99%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50  dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn48 w-49/50  bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
-      <div className="mb-2 mt-5 flex justify-between">
-        <h2>HTML &amp; CSS</h2>
-        <h2>90%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn46 bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
-      <div className="mt-5 mb-2 flex justify-between">
-        <h2>Github</h2>
-        <h2>75%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn38 bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
-      <div className="mt-5 mb-2 flex justify-between">
-        <h2>React</h2>
-        <h2>60%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn30 bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
-      <div className="mt-5 mb-2 flex justify-between">
-        <h2>Docker</h2>
-        <h2>30%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn15 bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
-      <div className="mt-5 mb-2 flex justify-between">
-        <h2>Flutter</h2>
-        <h2>10%</h2>
-      </div>
-      <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
-        <div className=" animate-fadeIn5 bg-pinklight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"></div>
-      </div>
+      {skills &&
+        skills.data
+          .sort((a, b) => {
+            return b.attributes.level - a.attributes.level;
+          })
+          .map((skill) => {
+            const level = skill.attributes.level;
+            console.log(level);
+            return (
+              <div className="" key={skill.id}>
+                <div className="mb-2 mt-5 flex justify-between">
+                  <h2>{skill.attributes.skill}</h2>
+                  <h2>{skill.attributes.level}%</h2>
+                </div>
+                <div className="flex w-full rounded-full bg-pink-50 dark:bg-[#1F295B]">
+                  <div
+                    className=" bg-pinklight animate-fadeInRight h-6 rounded-full transition-all duration-300 ease-in dark:bg-[#8D5BE9]"
+                    style={{ width: `${level}%` }}
+                  ></div>
+                </div>
+              </div>
+            );
+          })}
     </div>
   );
+}
+export async function getStaticProps() {
+  const skillsRes = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/skills`
+  );
+  return {
+    props: {
+      skillsApi: skillsRes,
+    },
+  };
 }
