@@ -12,25 +12,37 @@ export default function janskapsalon() {
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h1 className="text-center text-3xl font-bold">Jans Kapsalon</h1>
           </div>
-          <div className=" m-4 my-8  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
-            <h2>Dit is de website voor jans kapsalon. </h2>
-            <h2 className="font-bold">
-              Bij dit project heb ik het design gemaakt en gerealiseerd
+          <div className=" m-4 my-[38px]  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+            <h2>
+              Jans kapsalon is een website gemaakt voor een fictieve kapper. Het
+              doel van de website is om informatie te vinden over de
+              kapperszaak, en een afspraak te kunnen boeken. Ook moet de kapper
+              zelf een managmentsysteem hebben om afspraken in te zien en
+              gegevens aan te passen.
             </h2>
-            <h2>Ik heb van dit project de volgende dingen geleerd:</h2>
+          </div>
+          <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+            <h2 className="font-bold">
+              Ik heb van dit project de volgende dingen gedaan:
+            </h2>
+            <hr></hr>
+            <h2>- Design voor website gemaakt</h2>
+            <h2>- Design voor website gerealiseerd</h2>
+            <h2>- Website en bedrijf online gezet</h2>
+          </div>
+          <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+            <h2 className="font-bold">
+              Ik heb van dit project de volgende dingen geleerd:
+            </h2>
             <hr></hr>
             <h2>- website maken met React</h2>
             <h2>- website stylen met Tailwind CSS</h2>
-            <h2>- website online zetten met Docker</h2>
-
+            <h2>
+              - website online zetten met Docker, Portainer, en Nginx Proxy
+              Manager
+            </h2>
             <h2>- reviews van de google places api halen</h2>
             <h2>- bedrijfsgegevens ophalen van google</h2>
-
-            <h2>De website is gemaakt met React</h2>
-          </div>
-
-          <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
-            <h2>test</h2>
           </div>
         </div>
         <div className="m-4 lg:h-auto lg:w-1/4">

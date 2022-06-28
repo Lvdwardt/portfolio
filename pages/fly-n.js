@@ -9,10 +9,13 @@ export default function janskapsalon() {
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h1 className="text-center text-3xl font-bold">Fly-n</h1>
           </div>
-          <div className=" m-4 my-8  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className=" m-4 my-[38px]  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2>
               Fly-n is een internationale reisapp die het mogelijk maakt om van
-              deur tot deur reizen te vinden en te boeken.
+              deur tot deur reizen te vinden en te boeken. Het doel van fly-n is
+              om verschillende reisaanbieders te combineren, om zo tot een
+              compleet reisplan te komen. Je wordt doorverwezen om tickets te
+              boeken.
             </h2>
           </div>
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
@@ -24,6 +27,7 @@ export default function janskapsalon() {
             <h2>- Design voor app gerealiseerd</h2>
             <h2>- App online gezet</h2>
             <h2>- Terms of Service opstellen</h2>
+            <h2>- Business meetings met grote bedrijven</h2>
           </div>
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2 className="font-bold">

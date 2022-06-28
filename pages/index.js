@@ -26,7 +26,7 @@ export default function Home() {
         <Timeline2 />
         <Discord />
         <Whatsapp />
-        <Flyn colorTheme={colorTheme} />
+        <Flyn />
         <Janskapsalonflat />
         <Mail />
       </div>
