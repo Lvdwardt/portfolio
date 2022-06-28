@@ -1,18 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
 import About from "../components/about";
-import Janskapsalon from "../components/janskapsalon";
 import Janskapsalonflat from "../components/janskapsalonflat";
 import Navbar from "../components/navbar";
 import Skills from "../components/skills";
-import Timeline from "../components/timeline";
 import Timeline2 from "../components/timeline2";
 import Toggle from "../components/toggle";
 import Whatsapp, { Discord, Github, Mail } from "../components/socials";
-import Logo from "../public/logo.png";
 import Mapbox from "../components/mapbox";
 import useDarkMode from "../hooks/useDarkMode";
-import Flyn from "../components/flyn";
+import Flyn from "../components/flynImg";
+import Janskapsalonsmall from "../components/janskapsalonsmall";
 
 export default function Home() {
   const [colorTheme, setTheme] = useDarkMode();
@@ -24,12 +20,13 @@ export default function Home() {
         <About />
         <Mapbox colorTheme={colorTheme} />
         <Toggle colorTheme={colorTheme} setTheme={setTheme} />
+        <Janskapsalonsmall />
         <Github />
         <Skills />
         <Timeline2 />
         <Discord />
         <Whatsapp />
-        <Janskapsalon />
+        <Flyn colorTheme={colorTheme} />
         <Janskapsalonflat />
         <Mail />
       </div>
