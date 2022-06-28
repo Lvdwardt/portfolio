@@ -12,7 +12,7 @@ export default function janskapsalon() {
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h1 className="text-center text-3xl font-bold">Jans Kapsalon</h1>
           </div>
-          <div className=" m-4 my-[38px]  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className=" m-4 my-8 rounded-3xl  bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2>
               Jans kapsalon is een website gemaakt voor een fictieve kapper. Het
               doel van de website is om informatie te vinden over de
@@ -21,7 +21,7 @@ export default function janskapsalon() {
               gegevens aan te passen.
             </h2>
           </div>
-          <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className=" m-4 my-8 rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen gedaan:
             </h2>
