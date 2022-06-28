@@ -2,7 +2,7 @@ import Janskapsalon from "../components/janskapsalon";
 import Navbar from "../components/navbar";
 import useDarkMode from "../hooks/useDarkMode";
 export default function janskapsalon() {
-  const [colorTheme, setTheme] = useDarkMode();
+  //   const [colorTheme, setTheme] = useDarkMode();
 
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] ">

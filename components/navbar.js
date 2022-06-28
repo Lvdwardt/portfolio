@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <>
       <div className="top-0 flex justify-center  xl:justify-start">
-        <Link href="/">
+        <Link href="/" passHref={true}>
           <a className=" w-36 p-4 sm:m-4">
             <Logo className=" fill-[var(--logo)]" />
           </a>
