@@ -20,7 +20,6 @@ export default function FlynImgStore() {
           className=" absolute left-2 opacity-0 transition-all duration-200 hover:opacity-100 hover:delay-[250ms] group-hover:animate-fadeInRight group-hover:opacity-100 group-hover:delay-[250ms]"
           href="https://play.google.com/store/apps/details?id=com.leonvdw.flyn"
           target={"_blank"}
-          noReferrer={true}
         >
           Fly-n
         </a>
