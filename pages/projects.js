@@ -11,7 +11,7 @@ export default function Project() {
       <div className=" h-screen bg-neutral-800">
         <div className="bg-neutral-900">
           <div className=" w-36  p-4">
-            <Image src={Logo} />
+            <Image src={Logo} alt="logo" />
           </div>
         </div>
         <div className="">{/* <Projects /> */}</div>

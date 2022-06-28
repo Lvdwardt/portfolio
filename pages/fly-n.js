@@ -1,8 +1,6 @@
-import FlynImgLink from "../components/flynImgLink";
+import FlynImgStore from "../components/flynImgStore";
 import Navbar from "../components/navbar";
-import useDarkMode from "../hooks/useDarkMode";
 export default function janskapsalon() {
-  // const [colorTheme, setTheme] = useDarkMode();
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] ">
       <Navbar />
@@ -39,7 +37,7 @@ export default function janskapsalon() {
           </div>
         </div>
         <div className="m-4 lg:h-auto lg:w-1/4">
-          <FlynImgLink />
+          <FlynImgStore />
         </div>
       </div>
     </div>
