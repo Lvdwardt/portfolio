@@ -76,7 +76,7 @@ module.exports = {
         fadeIn38: "fadeIn38 2s ease-in forwards",
         fadeIn30: "fadeIn30 2s ease-in forwards",
         fadeIn15: "fadeIn15 2s ease-in forwards",
-        fadeIn5: "fadeIn5 2s ease-in forwards",
+        fadeIn50: "fadeIn50 2s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
@@ -115,13 +115,13 @@ module.exports = {
         },
         fadeIn15: {
           "0%": { width: "0%" },
-          "70%": { width: "0%" },
+          "80%": { width: "0%" },
           "100%": { width: "30%" },
         },
-        fadeIn5: {
+        fadeIn50: {
           "0%": { width: "0%" },
-          "85%": { width: "0%" },
-          "100%": { width: "10%" },
+          "70%": { width: "0%" },
+          "100%": { width: "50%" },
         },
       },
     },

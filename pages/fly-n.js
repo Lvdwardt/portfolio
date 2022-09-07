@@ -26,18 +26,20 @@ export default function janskapsalon() {
             <h2>- Design voor app gemaakt</h2>
             <h2>- Design voor app gerealiseerd</h2>
             <h2>- App online gezet</h2>
-            <h2>- Terms of Service opstellen</h2>
-            <h2>- Business meetings met grote bedrijven</h2>
+            <h2>- Terms of Service opgesteld</h2>
+            <h2>
+              - Idee pitchen aan grote bedrijven voor eventuele samenwerkingen
+            </h2>
           </div>
           <div className=" m-4 my-8 rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen geleerd:
             </h2>
             <hr></hr>
-            <h2>- App maken met react native</h2>
-            <h2>- App stylen met react native paper</h2>
-            <h2>- Wat er nodig is om een app in de play store te zetten</h2>
-            <h2>- Geleerd over de Terms of Service</h2>
+            <h2>- Het maken van een app met react native</h2>
+            <h2>- Het stylen van een app met react native paper</h2>
+            <h2>- De benodigdheden om een app in de play store te zetten</h2>
+            <h2>- Het opstellen van een Terms of Service</h2>
           </div>
         </div>
         <div className="m-4 lg:h-auto lg:w-1/4">
