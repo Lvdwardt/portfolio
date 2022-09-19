@@ -3,7 +3,7 @@ import React from "react";
 export default function Toggle({ colorTheme, setTheme }) {
   return (
     <div className=" bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
-      <div className="bg-pinklight  absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full dark:bg-[#CE81C7]"></div>
+      <div className="bg-pinklight  absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full dark:bg-[#CE81C7]" />
       <span
         onClick={() => {
           setTheme(colorTheme);

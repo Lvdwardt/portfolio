@@ -10,7 +10,7 @@ export default function Timeline() {
             computerproblemen
           </h2>
         </div>
-        <div className="w-2/50 bg-bluelight h-6 rounded-full dark:bg-[#CE81C7]"></div>
+        <div className="w-2/50 bg-bluelight h-6 rounded-full dark:bg-[#CE81C7]" />
       </div>
       <div className="flex ">
         <div className="w-37/50 h-6  px-2 text-right ">
@@ -20,7 +20,7 @@ export default function Timeline() {
             computerproblemen
           </h2>
         </div>
-        <div className="w-4/50 bg-bluelight mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
+        <div className="w-4/50 bg-bluelight mt-5 h-6 rounded-full  dark:bg-[#CE81C7]" />
       </div>
       <div className="flex ">
         <div className="w-37/50 h-6 px-2 text-right ">
@@ -29,7 +29,7 @@ export default function Timeline() {
             Voor SON heb ik gewerkt op de hulplijn van testen voor je reis
           </h2>
         </div>
-        <div className=" w-1/50 mt-5 h-6 rounded-full bg-slate-300 dark:bg-slate-500"></div>
+        <div className=" w-1/50 mt-5 h-6 rounded-full bg-slate-300 dark:bg-slate-500" />
       </div>
       <div className="flex">
         <div className="w-14/50 h-6 px-2 text-right ">
@@ -38,10 +38,10 @@ export default function Timeline() {
             Magazijnmedewerker
           </h2>
         </div>
-        <div className=" bg-bluelight w-27/50 mt-5 h-6 rounded-full  dark:bg-[#CE81C7]"></div>
+        <div className=" bg-bluelight w-27/50 mt-5 h-6 rounded-full  dark:bg-[#CE81C7]" />
       </div>
       <div className="mt-5 flex ">
-        <div className="w-4/50"></div>
+        <div className="w-4/50" />
         <h2 className="w-6/50  border-x-2 border-black text-center dark:border-white dark:bg-inherit">
           2016
         </h2>

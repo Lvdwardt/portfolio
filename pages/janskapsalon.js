@@ -25,7 +25,7 @@ export default function janskapsalon() {
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen gedaan:
             </h2>
-            <hr></hr>
+            <hr />
             <h2>- Design voor website gemaakt</h2>
             <h2>- Design voor website gerealiseerd</h2>
             <h2>- Website en bedrijf online gezet</h2>
@@ -34,7 +34,7 @@ export default function janskapsalon() {
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen geleerd:
             </h2>
-            <hr></hr>
+            <hr />
             <h2>- website maken met React</h2>
             <h2>- website stylen met Tailwind CSS</h2>
             <h2>
