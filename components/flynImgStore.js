@@ -11,7 +11,7 @@ export default function FlynImgStore() {
         <Image src={FlynSource} alt="fly-n application photo" />
       </div>
       <div className=" absolute bottom-4 left-4 flex h-8 w-8 items-center justify-end gap-2 rounded-full bg-white p-2 transition-all duration-300 ease-in group-hover:w-20 dark:bg-[#1F295B] dark:text-white">
-        <Link href="/fly-n" passHref={true}>
+        <Link href="/fly-n" passHref>
           <a>
             <ImArrowUpRight2 className="" />
           </a>
