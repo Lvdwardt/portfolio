@@ -6,7 +6,7 @@ import { ImArrowUpRight2 } from "react-icons/im";
 export default function FlynImgStore() {
   return (
     <div className=" group relative overflow-hidden rounded-3xl bg-pinklight dark:bg-[#2F3763] sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
-      <div className=" absolute h-[500px] w-[500px] overflow-hidden rounded-full bg-greenlight translate-x-12 translate-y-8 dark:bg-[#8D5BE9] sm:translate-y-[-12.5rem] sm:rounded-t-none"></div>
+      <div className=" absolute h-[500px] w-[500px] overflow-hidden rounded-full bg-greenlight translate-x-12 translate-y-8 dark:bg-[#8D5BE9] sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className="block translate-y-[10px] select-none sm:translate-y-0">
         <Image src={FlynSource} alt="fly-n application photo" />
       </div>
@@ -25,7 +25,7 @@ export default function FlynImgStore() {
           Fly-n
         </a>
       </div>
-      <div className="text-white opacity-0 transition-all duration-700 dark:text-[#1F295B] sm:opacity-100 sm:hover:opacity-100 sm:group-hover:opacity-100"></div>
+      <div className="text-white opacity-0 transition-all duration-700 dark:text-[#1F295B] sm:opacity-100 sm:hover:opacity-100 sm:group-hover:opacity-100" />
     </div>
   );
 }

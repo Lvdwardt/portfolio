@@ -22,7 +22,7 @@ export default function janskapsalon() {
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen gedaan:
             </h2>
-            <hr></hr>
+            <hr />
             <h2>- Design voor app gemaakt</h2>
             <h2>- Design voor app gerealiseerd</h2>
             <h2>- App online gezet</h2>
@@ -35,7 +35,7 @@ export default function janskapsalon() {
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen geleerd:
             </h2>
-            <hr></hr>
+            <hr />
             <h2>- Het maken van een app met react native</h2>
             <h2>- Het stylen van een app met react native paper</h2>
             <h2>- De benodigdheden om een app in de play store te zetten</h2>
