@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Jkflat from "../img/jk.png";
 import { ImArrowUpRight2 } from "react-icons/im";
 export default function Janskapsalonsmall() {
   return (
@@ -8,7 +7,7 @@ export default function Janskapsalonsmall() {
       <div className=" absolute h-[500px] w-[500px] overflow-hidden rounded-full bg-greenlight translate-x-12 translate-y-8 dark:bg-[#8D5BE9] sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className="block w-[250] translate-y-[-80px] translate-x-[98px] select-none ">
         <Image
-          src={Jkflat}
+          src="/img/jk.png"
           alt="photo from the janskapsalon.nl website"
           width={200}
           height={329}

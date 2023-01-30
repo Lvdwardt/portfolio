@@ -71,7 +71,7 @@ export default function Mapbox() {
         <Marker
           longitude={5.570198498008655}
           latitude={51.93230413376818}
-          color={"var(--color)"}
+          color={"var(--primary)"}
         />
 
         <button
