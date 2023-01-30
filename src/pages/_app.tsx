@@ -1,9 +1,12 @@
-/* eslint-disable react/prop-types */
-import { type AppType } from "next/dist/shared/lib/utils";
+import { ThemeProvider } from "next-themes";
+import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
-const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
-
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
 export default MyApp;

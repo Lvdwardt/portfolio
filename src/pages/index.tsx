@@ -11,19 +11,13 @@ import Timeline2 from "../components/timeline2";
 import Flyn from "../components/flynImg";
 
 export default function Home() {
-  const [mode, setMode] = useState("dark");
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.add(mode);
-  }, []);
-
   return (
-    <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] ">
+    <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B]">
       <Navbar />
       <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-4 px-4 pt-3 pb-6 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
         <About />
-        <Mapbox colorTheme={mode} />
-        <Toggle mode={mode} setMode={setMode} />
+        <Mapbox />
+        <Toggle />
         <Janskapsalonsmall />
         <Github />
         <Skills />

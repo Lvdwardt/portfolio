@@ -1,13 +1,18 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import mapboxgl from "mapbox-gl";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import Map, { Marker } from "react-map-gl";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { useTheme } from "next-themes";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGVvbnZkdyIsImEiOiJja3o4aGZob20xajl4MndyeGI4Nm9oMHFrIn0.qh6ihyou9U5wnDZyZjQdew";
 //eslint-disable-next-line
-export default function Mapbox({ colorTheme }: any) {
+export default function Mapbox() {
+  //get html attribute for theme
+  const { resolvedTheme } = useTheme();
+  const colorTheme = resolvedTheme;
+
   const mapRef = useRef(null);
   const [lng, setLng] = useState(5.570198498008655);
   const [lat, setLat] = useState(51.93230413376818);
