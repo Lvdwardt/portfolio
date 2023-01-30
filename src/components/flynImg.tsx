@@ -13,7 +13,7 @@ export default function FlynImg() {
           alt="fly-n application photo"
           width={2000}
           height={3300}
-          loading="lazy"
+          priority
         />
       </div>
       <div className=" absolute bottom-4 left-4 flex h-8 w-8 items-center justify-end gap-2 rounded-full bg-white p-2 transition-all duration-300 ease-in group-hover:w-20 dark:bg-[#1F295B] dark:text-white">

@@ -19,24 +19,27 @@
   font-display: swap;
 }
 :root {
+  --primary: #ce81c7;
+  --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
-  --primary: #ce81c7;
   --thumb: var(--background);
   --logo: #ce81c7;
 }
 [data-theme="dark"] {
+  --primary: #ce81c7;
+  --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
-  --primary: #ce81c7;
   --thumb: var(--background);
   --logo: #ce81c7;
 }
 [data-theme="light"] {
+  --primary: #6dd2b7;
+  --card: white;
   --background: rgb(229 231 235);
   --track: white;
   --thumb: #ffc6d7;
-  --primary: #6dd2b7;
   --logo: black;
 }
 html {

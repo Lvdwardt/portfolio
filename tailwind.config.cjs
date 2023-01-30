@@ -15,6 +15,7 @@ module.exports = {
         greenlight: "#6DD2B7",
         //varable colors
         primary: "var(--primary)",
+        card: "var(--card)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",
@@ -84,6 +85,12 @@ module.exports = {
         fadeIn50: "fadeIn50 2s ease-in forwards",
       },
       keyframes: {
+        fade: {
+          "0%": { opacity: 1 },
+          "25%": { opacity: 1 },
+          "75%": { opacity: 0 },
+          "100%": { opacity: 0 },
+        },
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },

@@ -5,14 +5,18 @@ import { useTheme } from "next-themes";
 export default function Toggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    const root = document.documentElement;
+    setTheme("dark");
+    root.setAttribute("data-theme", "dark");
     setMounted(true);
   }, []);
   if (!mounted) return <></>;
 
   function onToggle() {
-    setTheme(resolvedTheme === "light" ? "dark" : "light");
     const root = document.documentElement;
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
     // add data-theme attribute to html
     switch (resolvedTheme) {
       case "light":
