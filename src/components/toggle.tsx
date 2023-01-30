@@ -1,16 +1,28 @@
-import React from "react";
+"use client";
+import type React from "react";
 
-export default function Toggle({ colorTheme, setTheme }: any) {
+type Props = {
+  mode: string;
+  setMode: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function Toggle({ mode, setMode }: Props) {
+  const onClick = () => {
+    const root = window.document.documentElement;
+    root.classList.remove(mode);
+    root.classList.add(mode === "light" ? "dark" : "light");
+    root.dataset.theme = mode === "light" ? "dark" : "light";
+    setMode(mode === "light" ? "dark" : "light");
+  };
+
   return (
     <div className=" bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
       <div className="bg-pinklight  absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full dark:bg-[#CE81C7]" />
       <span
-        onClick={() => {
-          setTheme(colorTheme);
-        }}
+        onClick={onClick}
         className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 shadow-lg transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white"
       >
-        {colorTheme === "light" ? (
+        {mode === "light" ? (
           <svg
             className="h-10 w-10"
             xmlns="http://www.w3.org/2000/svg"

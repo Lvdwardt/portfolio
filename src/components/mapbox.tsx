@@ -29,7 +29,7 @@ export default function Mapbox({ colorTheme }: any) {
   }, []);
 
   useEffect(() => {
-    colorTheme == "dark"
+    colorTheme == "light"
       ? setStyle("mapbox://styles/mapbox/light-v10")
       : setStyle("mapbox://styles/leonvdw/ckza19352000615rsk08y22f3");
   }, [colorTheme]);
