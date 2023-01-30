@@ -4,11 +4,17 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    //change font family
+    fontFamily: {
+      sans: ["Gotham", "sans-serif"],
+    },
     extend: {
       colors: {
         bluelight: "#98d0ff",
         pinklight: "#FFC6D7",
         greenlight: "#6DD2B7",
+        //varable colors
+        primary: "var(--primary)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",

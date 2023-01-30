@@ -2,17 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Medium.woff2") format("woff2"),
+    url("/fonts/Gotham-Medium.woff") format("woff"),
+    url("/fonts/GothamMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/GothamBook.woff2") format("woff2"),
+    url("/fonts/GothamBook.woff") format("woff"),
+    url("/fonts/GothamBook.ttf") format("ttf");
+  font-weight: 100;
+  font-display: swap;
+}
 :root {
   --background: #1f295b;
   --track: #8d5be9;
-  --color: #ce81c7;
+  --primary: #ce81c7;
   --thumb: var(--background);
   --logo: #ce81c7;
 }
 [data-theme="dark"] {
   --background: #1f295b;
   --track: #8d5be9;
-  --color: #ce81c7;
+  --primary: #ce81c7;
   --thumb: var(--background);
   --logo: #ce81c7;
 }
@@ -20,7 +36,7 @@
   --background: rgb(229 231 235);
   --track: white;
   --thumb: #ffc6d7;
-  --color: #6dd2b7;
+  --primary: #6dd2b7;
   --logo: black;
 }
 html {
