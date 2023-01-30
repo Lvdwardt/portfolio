@@ -32,8 +32,8 @@ export default function Toggle() {
   }
 
   return (
-    <div className=" bg-greenlight relative flex items-center justify-center overflow-hidden rounded-3xl dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
-      <div className="bg-pinklight  absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full dark:bg-[#CE81C7]" />
+    <div className=" relative flex items-center justify-center overflow-hidden rounded-3xl bg-greenlight dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
+      <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-pinklight dark:bg-[#CE81C7]" />
       <span
         onClick={onToggle}
         className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 shadow-lg transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white"
