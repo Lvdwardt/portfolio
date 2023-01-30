@@ -14,9 +14,9 @@ export default function Mapbox() {
   const colorTheme = resolvedTheme;
 
   const mapRef = useRef(null);
-  const [lng, setLng] = useState(5.570198498008655);
-  const [lat, setLat] = useState(51.93230413376818);
-  const [zoom, setZoom] = useState(13);
+  const [lng, setLng] = useState(5.572);
+  const [lat, setLat] = useState(51.9341);
+  const [zoom, setZoom] = useState(11);
   const [style, setStyle] = useState(
     "mapbox://styles/leonvdw/ckza19352000615rsk08y22f3"
   );
@@ -68,11 +68,7 @@ export default function Mapbox() {
         interactive={false}
         onMove={onMapLoad}
       >
-        <Marker
-          longitude={5.570198498008655}
-          latitude={51.93230413376818}
-          color={"var(--primary)"}
-        />
+        <Marker longitude={5.572} latitude={51.9341} color={"var(--primary)"} />
 
         <button
           className={
@@ -87,7 +83,7 @@ export default function Mapbox() {
 
         <button
           className={
-            zoom >= 13
+            zoom >= 11
               ? "hidden"
               : "absolute bottom-12 right-8 flex h-8 w-8 items-center justify-center rounded-full bg-[#ffc6d7] dark:bg-[#8D5BE9] dark:text-white"
           }
