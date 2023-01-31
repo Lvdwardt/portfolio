@@ -1,10 +1,19 @@
+import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const currentRoute = useRouter().pathname;
+  const routes = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Projects", href: "/projects" },
+    { name: "Contact", href: "/contact" },
+  ];
   return (
-    <>
-      <div className="top-0 flex justify-center  xl:justify-start">
-        <Link href="/" className=" w-36 p-4 sm:m-4" title="back to home">
+    <div className="top-0 grid xl:grid-cols-3 ">
+      <div className="flex w-full justify-center xl:block xl:pl-8">
+        <Link href="/" className="w-36 p-4 sm:m-4" title="back to home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={112}
@@ -15,6 +24,22 @@ export default function Navbar() {
           </svg>
         </Link>
       </div>
-    </>
+      <div className="flex w-full items-center justify-center text-sm text-black">
+        <div className="flex gap-4 rounded-full bg-gray-200 px-1 py-1">
+          {routes.map((route) => (
+            <Link
+              key={route.name}
+              className={clsx(
+                "rounded-full px-2 py-1",
+                currentRoute === route.href && "bg-white"
+              )}
+              href={route.href}
+            >
+              {route.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

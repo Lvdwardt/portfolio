@@ -1,9 +1,7 @@
-import FlynImgStore from "../components/flynImgStore";
-import Navbar from "../components/navbar";
+import FlynImgStore from "../../components/flynImgStore";
 export default function flyn() {
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] ">
-      <Navbar />
       <div className=" mx-4 flex flex-col lg:flex-row ">
         <div className="rounded-3xl lg:w-3/4">
           <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">

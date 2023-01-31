@@ -14,14 +14,16 @@ export default function FlynImg() {
           width={2002}
           height={3292}
           priority
+          placeholder="blur"
+          blurDataURL="url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg==)"
         />
       </div>
       <div className=" absolute bottom-4 left-4 flex h-8 w-8 items-center justify-end gap-2 rounded-full bg-white p-2 transition-all duration-300 ease-in group-hover:w-20 dark:bg-[#1F295B] dark:text-white">
-        <Link href="/fly-n" title="go to the fly-n project page">
+        <Link href="/projects/fly-n" title="go to the fly-n project page">
           <ImArrowUpRight2 className="" />
         </Link>
         <Link
-          href="/fly-n"
+          href="/projects/fly-n"
           className=" absolute left-2 opacity-0 transition-all duration-200 group-hover:animate-fadeInRight group-hover:opacity-100 group-hover:delay-[250ms] hover:opacity-100 hover:delay-[250ms]"
         >
           Fly-n

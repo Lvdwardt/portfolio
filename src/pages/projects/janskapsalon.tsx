@@ -1,9 +1,7 @@
-import Janskapsalon from "../components/janskapsalon";
-import Navbar from "../components/navbar";
+import Janskapsalon from "../../components/janskapsalon";
 export default function janskapsalon() {
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white ">
-      <Navbar />
       <div className=" mx-4 flex flex-col lg:flex-row ">
         <div className="rounded-3xl lg:w-3/4">
           <div className=" m-4 rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">

@@ -14,11 +14,11 @@ export default function Janskapsalonsmall() {
         />
       </div>
       <div className=" absolute bottom-4 left-4 flex h-8 w-8 items-center justify-end gap-2 rounded-full bg-white p-2 transition-all duration-300 ease-in group-hover:w-40 dark:bg-[#1F295B] dark:text-white">
-        <Link href="/janskapsalon" passHref>
+        <Link href="/projects/janskapsalon" passHref>
           <ImArrowUpRight2 className="" />
         </Link>
         <Link
-          href="/janskapsalon"
+          href="/projects/janskapsalon"
           className=" absolute left-2 opacity-0 transition-all duration-200 group-hover:animate-fadeInRight group-hover:opacity-100 group-hover:delay-[250ms] hover:opacity-100 hover:delay-[250ms]"
         >
           Janskapsalon
