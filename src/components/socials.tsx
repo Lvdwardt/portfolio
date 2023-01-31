@@ -9,6 +9,7 @@ export function Whatsapp() {
       href="https://api.whatsapp.com/send?phone=31630702130"
       target={"_blank"}
       rel="noreferrer"
+      title="Whatsapp"
     >
       <FaWhatsapp className="text-[100px] text-white" />
     </Link>
@@ -21,6 +22,7 @@ export function Github() {
       href="https://github.com/Lvdwardt"
       target={"_blank"}
       rel="noreferrer"
+      title="Github"
     >
       <FaGithub className="text-[100px] text-white" />
     </Link>
@@ -33,6 +35,7 @@ export function Discord() {
       href="https://discord.com/users/396931979020337153"
       target={"_blank"}
       rel="noreferrer"
+      title="Discord"
     >
       <FaDiscord className="text-[100px] text-white" />
     </Link>
@@ -45,6 +48,7 @@ export function Mail() {
       href="mailto:contact@leonvandewardt.nl"
       target={"_blank"}
       rel="noreferrer"
+      title="Mail"
     >
       <FaEnvelope className="text-[100px] text-white" />
     </Link>

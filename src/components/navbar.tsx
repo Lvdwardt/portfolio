@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <>
       <div className="top-0 flex justify-center  xl:justify-start">
-        <Link href="/" className=" w-36 p-4 sm:m-4">
+        <Link href="/" className=" w-36 p-4 sm:m-4" title="back to home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={112}

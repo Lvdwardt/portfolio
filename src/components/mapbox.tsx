@@ -76,6 +76,7 @@ export default function Mapbox() {
               ? "hidden"
               : "absolute bottom-12 left-8 flex h-8 w-8 items-center justify-center rounded-full bg-[#ffc6d7]  dark:bg-[#8D5BE9] dark:text-white"
           }
+          title="Zoom out"
           onClick={minus}
         >
           <FaMinus />
@@ -87,6 +88,7 @@ export default function Mapbox() {
               ? "hidden"
               : "absolute bottom-12 right-8 flex h-8 w-8 items-center justify-center rounded-full bg-[#ffc6d7] dark:bg-[#8D5BE9] dark:text-white"
           }
+          title="Zoom in"
           onClick={plus}
         >
           <FaPlus />
