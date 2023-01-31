@@ -8,8 +8,11 @@ export default function Toggle() {
 
   useEffect(() => {
     const root = document.documentElement;
-    setTheme("dark");
-    root.setAttribute("data-theme", "dark");
+    //if getAttribute is null, set to dark
+    if (root.getAttribute("data-theme") === null) {
+      setTheme("dark");
+      root.setAttribute("data-theme", "dark");
+    }
     setMounted(true);
   }, []);
   if (!mounted) return <></>;

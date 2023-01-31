@@ -5,15 +5,31 @@ import { useRouter } from "next/router";
 export default function Navbar() {
   const currentRoute = useRouter().pathname;
   const routes = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/", place: 1 },
+    { name: "About", href: "/about", place: 2 },
+    { name: "Projects", href: "/projects", place: 3 },
+    { name: "Contact", href: "/contact", place: 4 },
   ];
+  const currentPlace = routes.find(
+    (route) => route.href === currentRoute
+  )?.place;
+  const currentName = routes.find(
+    (route) => route.place === currentPlace
+  )?.name;
+  // let place = currentPlace;
+
+  // let animation = 0;
+
+  // function onClick(newPlace: number) {
+  //   place = newPlace;
+  //   animation = Math.abs(
+  //     (currentPlace ? currentPlace : 0) - (place ? place : 0)
+  //   );
+  // }
   return (
-    <div className="top-0 grid xl:grid-cols-3 ">
+    <div className="grid p-4 xl:grid-cols-3 ">
       <div className="flex w-full justify-center xl:block xl:pl-8">
-        <Link href="/" className="w-36 p-4 sm:m-4" title="back to home">
+        <Link href="/" className="w-36 p-4" title="back to home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={112}
@@ -24,20 +40,28 @@ export default function Navbar() {
           </svg>
         </Link>
       </div>
-      <div className="flex w-full items-center justify-center text-sm text-black">
-        <div className="flex gap-4 rounded-full bg-gray-200 px-1 py-1">
+      <div className=" flex w-full items-center justify-center text-sm text-text">
+        <div className="relative flex w-min gap-4 rounded-full bg-card px-1 py-1.5">
           {routes.map((route) => (
             <Link
               key={route.name}
-              className={clsx(
-                "rounded-full px-2 py-1",
-                currentRoute === route.href && "bg-white"
-              )}
+              className="z-50 rounded-full px-2 py-1.5"
               href={route.href}
             >
               {route.name}
             </Link>
           ))}
+          <div
+            className={clsx(
+              "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 text-transparent transition-all duration-1000",
+              currentPlace === 1 && "left-0 ml-1.5",
+              currentPlace === 2 && "left-1/4",
+              currentPlace === 3 && "left-1/2 ml-[-4px]",
+              currentPlace === 4 && "left-3/4  ml-1.5"
+            )}
+          >
+            {currentName}
+          </div>
         </div>
       </div>
     </div>

@@ -20,27 +20,33 @@
 }
 :root {
   --primary: #ce81c7;
+  --secondary: #8d5be9;
   --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
   --thumb: var(--background);
   --logo: #ce81c7;
+  --text: #fff;
 }
 [data-theme="dark"] {
   --primary: #ce81c7;
+  --secondary: #8d5be9;
   --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
   --thumb: var(--background);
   --logo: #ce81c7;
+  --text: #fff;
 }
 [data-theme="light"] {
   --primary: #6dd2b7;
+  --secondary: #ffc6d7;
   --card: white;
   --background: rgb(229 231 235);
   --track: white;
   --thumb: #ffc6d7;
   --logo: black;
+  --text: black;
 }
 html {
   background-color: var(--background);

@@ -15,7 +15,10 @@ module.exports = {
         greenlight: "#6DD2B7",
         //varable colors
         primary: "var(--primary)",
+        secondary: "var(--secondary)",
         card: "var(--card)",
+        background: "var(--background)",
+        text: "var(--text)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",
