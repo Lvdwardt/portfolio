@@ -27,6 +27,7 @@
   --thumb: var(--background);
   --logo: #ce81c7;
   --text: #fff;
+  --trans: hsla(305, 44%, 66%, 0.3);
 }
 [data-theme="dark"] {
   --primary: #ce81c7;
@@ -37,6 +38,7 @@
   --thumb: var(--background);
   --logo: #ce81c7;
   --text: #fff;
+  --trans: hsla(305, 44%, 66%, 0.3);
 }
 [data-theme="light"] {
   --primary: #6dd2b7;
@@ -47,6 +49,7 @@
   --thumb: #ffc6d7;
   --logo: black;
   --text: black;
+  --trans: hsla(164, 53%, 63%, 0.3);
 }
 html {
   background-color: var(--background);

@@ -1,9 +1,11 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import mapboxgl from "mapbox-gl";
-import Map, { Marker } from "react-map-gl";
+import Map from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import "mapbox-gl/dist/mapbox-gl.css";
+import Image from "next/image";
+import clsx from "clsx";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGVvbnZkdyIsImEiOiJja3o4aGZob20xajl4MndyeGI4Nm9oMHFrIn0.qh6ihyou9U5wnDZyZjQdew";
@@ -14,8 +16,8 @@ export default function Mapbox() {
   const colorTheme = resolvedTheme;
 
   const mapRef = useRef(null);
-  const [lng, setLng] = useState(5.572);
-  const [lat, setLat] = useState(51.9341);
+  const [lng, setLng] = useState(5.5735);
+  const [lat, setLat] = useState(51.92735);
   const [zoom, setZoom] = useState(11);
   const [style, setStyle] = useState(
     "mapbox://styles/leonvdw/ckza19352000615rsk08y22f3"
@@ -52,9 +54,10 @@ export default function Mapbox() {
     //@ts-ignore
     mapRef.current?.flyTo({ zoom: zoom - 2, duration: 1000 });
   };
+  const [awake, setAwake] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-3xl border-4 border-white dark:border-[#2F3763] sm:order-6 xl:order-2">
+    <div className="overflow-hidden rounded-[2rem] border-4 border-white dark:border-[#2F3763] sm:order-6 xl:order-2">
       <Map
         ref={mapRef}
         attributionControl={false}
@@ -68,7 +71,29 @@ export default function Mapbox() {
         interactive={false}
         onMove={onMapLoad}
       >
-        <Marker longitude={5.572} latitude={51.9341} color={"var(--primary)"} />
+        <div className=" absolute inset-0 bottom-8 m-auto h-24 w-24 rounded-full border-4 border-primary bg-trans opacity-80">
+          <Image
+            src="/images/memoji/sleep.webp"
+            alt="memoji sleeping"
+            width={45}
+            height={45}
+            onClick={() => setAwake(true)}
+            className={clsx(
+              "absolute inset-0 m-auto transform rounded-full transition duration-500 ease-in-out hover:animate-scale",
+              awake ? "opacity-0" : "opacity-100"
+            )}
+          />
+          <Image
+            src="/images/memoji/knocked.webp"
+            alt="memoji knocked out"
+            width={62}
+            height={62}
+            className={clsx(
+              "pointer-events-none absolute inset-0 top-2 m-auto transform rounded-full transition duration-500 ease-in-out ",
+              awake ? "opacity-100" : "opacity-0"
+            )}
+          />
+        </div>
 
         <button
           className={
