@@ -27,7 +27,7 @@ export default function Navbar() {
   //   );
   // }
   return (
-    <div className="grid p-4 xl:grid-cols-3 ">
+    <div className="grid py-4 xl:grid-cols-3 ">
       <div className="flex w-full justify-center xl:block xl:pl-8">
         <Link href="/" className="w-36 p-4" title="back to home">
           <svg

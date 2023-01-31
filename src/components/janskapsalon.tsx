@@ -3,11 +3,11 @@ import { ImArrowUpRight2 } from "react-icons/im";
 import Link from "next/link";
 export default function Janskapsalon() {
   return (
-    <div className=" group relative overflow-hidden rounded-3xl bg-pinklight dark:bg-[#2F3763] sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
+    <div className=" group relative overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
       <div className=" absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-greenlight dark:bg-[#8D5BE9] sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className="block translate-y-[10px] select-none sm:translate-y-[-96px]">
         <Image
-          src="/img/jk.png"
+          src="/images/jk.webp"
           alt="photo from the janskapsalon.nl website"
           width={2002}
           height={3292}

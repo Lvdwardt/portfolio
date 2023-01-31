@@ -13,18 +13,18 @@ export default function About() {
 
   if (!mounted)
     return (
-      <div className="col-span-1 h-full w-full rounded-3xl bg-card sm:order-1 xl:col-span-2" />
+      <div className="col-span-1 h-full w-full rounded-[2rem] bg-card sm:order-1 xl:col-span-2" />
     );
 
   return (
-    <div className=" col-span-1 h-full w-full rounded-3xl bg-card p-6 dark:text-white sm:order-1 xl:col-span-2">
+    <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 dark:text-white sm:order-1 xl:col-span-2">
       <div className="flex w-full items-center gap-2 sm:items-start xl:flex-col">
         <div className="realtive min-h-[100px] min-w-[100px]">
           <Image
-            src="/img/bitmoji.png"
+            src="/images/memoji/normal.webp"
             width={100}
             height={100}
-            alt="bitmoji"
+            alt="memoji"
             className={clsx(
               resolvedTheme === "dark" || undefined
                 ? "opacity-100"
@@ -33,10 +33,10 @@ export default function About() {
             )}
           />
           <Image
-            src="/img/bitmoji-light.png"
+            src="/images/memoji/mad.webp"
             width={100}
             height={100}
-            alt="bitmoji mad because of the light mode"
+            alt="memoji mad because of the light mode"
             className={clsx(
               resolvedTheme === "light" ? "opacity-100" : "opacity-0",
               "absolute transition-all duration-150 ease-in"

@@ -4,11 +4,11 @@ import { ImArrowUpRight2 } from "react-icons/im";
 
 export default function Janskapsalonflat() {
   return (
-    <div className="group relative hidden overflow-hidden rounded-3xl bg-pinklight dark:bg-[#2F3763] sm:order-4 sm:col-span-2 sm:block xl:order-10">
+    <div className="group relative hidden overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-4 sm:col-span-2 sm:block xl:order-10">
       <div className=" absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-greenlight dark:bg-[#8D5BE9] sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className="block translate-y-[-170px] select-none sm:translate-y-0">
         <Image
-          src="/img/jkflat2.png"
+          src="/images/jkflat2.webp"
           alt="photo from the janskapsalon.nl website"
           width={3292}
           height={2002}

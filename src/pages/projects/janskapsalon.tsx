@@ -3,11 +3,11 @@ export default function janskapsalon() {
   return (
     <div className="min-h-screen overflow-visible bg-gray-200 transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white ">
       <div className=" mx-4 flex flex-col lg:flex-row ">
-        <div className="rounded-3xl lg:w-3/4">
-          <div className=" m-4 rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+        <div className="rounded-[2rem] lg:w-3/4">
+          <div className=" m-4 rounded-[2rem] bg-pinklight p-4 dark:bg-[#2F3763]">
             <h1 className="text-center text-3xl font-bold">Jans Kapsalon</h1>
           </div>
-          <div className="m-4 my-8 rounded-3xl  bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className="m-4 my-8 rounded-[2rem]  bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2>
               Jans kapsalon is een website gemaakt voor een fictieve kapper. Het
               doel van de website is om informatie te vinden over de
@@ -16,7 +16,7 @@ export default function janskapsalon() {
               gegevens aan te passen.
             </h2>
           </div>
-          <div className="m-4 my-8 rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className="m-4 my-8 rounded-[2rem] bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen gedaan:
             </h2>
@@ -25,7 +25,7 @@ export default function janskapsalon() {
             <h2>- Design voor website gerealiseerd</h2>
             <h2>- Website en bedrijf online gezet</h2>
           </div>
-          <div className=" m-4  rounded-3xl bg-pinklight p-4 dark:bg-[#2F3763]">
+          <div className=" m-4  rounded-[2rem] bg-pinklight p-4 dark:bg-[#2F3763]">
             <h2 className="font-bold">
               Ik heb van dit project de volgende dingen geleerd:
             </h2>

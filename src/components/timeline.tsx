@@ -1,6 +1,6 @@
 export default function Timeline() {
   return (
-    <div className="peer col-span-2 rounded-3xl bg-white p-8 transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white xl:block">
+    <div className="peer col-span-2 rounded-[2rem] bg-white p-8 transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white xl:block">
       <h1 className=" absolute mt-[-0.5rem] text-2xl font-bold">Timeline</h1>
       <div className="flex ">
         <div className="h-6 w-39/50 px-2 text-right ">

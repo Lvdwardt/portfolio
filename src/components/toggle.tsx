@@ -35,7 +35,7 @@ export default function Toggle() {
   }
 
   return (
-    <div className=" relative flex items-center justify-center overflow-hidden rounded-3xl bg-greenlight dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
+    <div className=" relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-greenlight dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
       <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-pinklight dark:bg-[#CE81C7]" />
       <span
         onClick={onToggle}

@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <div className="relative row-span-2 overflow-hidden rounded-3xl bg-white p-6 font-bold dark:bg-[#2F3763] dark:text-white sm:order-2 xl:order-6 ">
+    <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-white p-6 font-bold dark:bg-[#2F3763] dark:text-white sm:order-2 xl:order-6 ">
       <h1 className="text-center text-2xl">Skills</h1>
       <div className="mb-2 mt-5 flex justify-between">
         <h2>Tailwind CSS</h2>
