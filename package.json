@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "clsx": "^1.2.1",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.12.0",

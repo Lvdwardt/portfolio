@@ -19,6 +19,7 @@ module.exports = {
         card: "var(--card)",
         background: "var(--background)",
         text: "var(--text)",
+        trans: "var(--trans)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",
@@ -78,6 +79,7 @@ module.exports = {
         "50/50": "100%",
       },
       animation: {
+        scale: "scale 1s ease-in infinite",
         fadeIn: "fadeIn 2s ease-in forwards",
         fadeInRight: "fadeInRight 0.6s  ease-in forwards",
         fadeIn48: "fadeIn48 2s ease-in forwards",
@@ -88,6 +90,14 @@ module.exports = {
         fadeIn50: "fadeIn50 2s ease-in forwards",
       },
       keyframes: {
+        scale: {
+          //transform and rotate animation
+          "0%": { transform: "scale(1) rotate(0deg)" },
+          "25%": { transform: "scale(1.1) rotate(10deg)" },
+          "50%": { transform: "scale(1) rotate(0deg)" },
+          "75%": { transform: "scale(1.1) rotate(-10deg)" },
+          "100%": { transform: "scale(1) rotate(0deg)" },
+        },
         fade: {
           "0%": { opacity: 1 },
           "25%": { opacity: 1 },
@@ -144,5 +154,5 @@ module.exports = {
   variants: {
     scrollbar: ["dark"],
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/line-clamp")],
 };

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@tailwindcss/line-clamp': ^0.4.2
   '@types/lodash': ^4.14.191
   '@types/mapbox-gl': ^2.7.10
   '@types/node': ^18.11.18
@@ -33,6 +34,7 @@ specifiers:
   zod: ^3.20.2
 
 dependencies:
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   clsx: 1.2.1
   lodash: 4.17.21
   mapbox-gl: 2.12.0
@@ -317,6 +319,14 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4_postcss@8.4.21
     dev: false
 
   /@types/geojson/7946.0.10:
