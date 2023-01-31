@@ -5,8 +5,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-if (!process.env.MAPBOX_TOKEN) throw new Error("No Mapbox token found");
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN ? process.env.MAPBOX_TOKEN : "";
 //eslint-disable-next-line
 export default function Mapbox() {
   //get html attribute for theme
