@@ -10,8 +10,8 @@ export default function Janskapsalonflat() {
         <Image
           src="/img/jkflat2.png"
           alt="photo from the janskapsalon.nl website"
-          width={3300}
-          height={2000}
+          width={3292}
+          height={2002}
           loading="lazy"
         />
       </div>

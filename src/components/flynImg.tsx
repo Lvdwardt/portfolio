@@ -11,8 +11,8 @@ export default function FlynImg() {
         <Image
           src="/img/fly-n-pf.png"
           alt="fly-n application photo"
-          width={2000}
-          height={3300}
+          width={2002}
+          height={3292}
           priority
         />
       </div>
