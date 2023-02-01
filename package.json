@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next/font": "^13.1.6",
     "@tailwindcss/line-clamp": "^0.4.2",
     "clsx": "^1.2.1",
     "lodash": "^4.17.21",

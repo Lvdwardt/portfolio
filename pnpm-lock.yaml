@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@next/font': ^13.1.6
   '@tailwindcss/line-clamp': ^0.4.2
   '@types/lodash': ^4.14.191
   '@types/mapbox-gl': ^2.7.10
@@ -34,6 +35,7 @@ specifiers:
   zod: ^3.20.2
 
 dependencies:
+  '@next/font': 13.1.6
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   clsx: 1.2.1
   lodash: 4.17.21
@@ -163,6 +165,10 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
+
+  /@next/font/13.1.6:
+    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
+    dev: false
 
   /@next/swc-android-arm-eabi/13.1.6:
     resolution: {integrity: sha512-F3/6Z8LH/pGlPzR1AcjPFxx35mPqjE5xZcf+IL+KgbW9tMkp7CYi1y7qKrEWU7W4AumxX/8OINnDQWLiwLasLQ==}

@@ -40,15 +40,16 @@ export default function About() {
         <title>About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col gap-6 px-24 pb-8">
+      <div className="flex flex-col gap-6 px-24 pt-4 pb-8">
         <div className="flex w-full flex-1 flex-col rounded-[2rem] bg-card p-4 px-10">
-          <Image
-            src="/images/memoji/mac.webp"
-            alt="Leon"
-            width={80}
-            height={80}
-            className="pb-4"
-          />
+          <div className="pb-4">
+            <Image
+              src="/images/memoji/mac.webp"
+              alt="Leon"
+              width={80}
+              height={120}
+            />
+          </div>
           <h2>hi, I&apos;m Leon</h2>
           <h2>ABOUT ME</h2>
         </div>

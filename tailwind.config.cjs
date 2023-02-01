@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     //change font family
     fontFamily: {
-      sans: ["Gotham", "sans-serif"],
+      sans: ["var(--font-gotham)"],
     },
     extend: {
       colors: {
