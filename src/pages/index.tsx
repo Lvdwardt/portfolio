@@ -6,7 +6,7 @@ import Janskapsalonsmall from "../components/janskapsalonsmall";
 import Janskapsalonflat from "../components/janskapsalonflat";
 import { Github, Discord, Whatsapp, Mail } from "../components/socials";
 import Skills from "../components/skills";
-import Timeline2 from "../components/timeline2";
+import Timeline2 from "../components/timeline";
 import Flyn from "../components/flynImg";
 
 export default function Home() {
