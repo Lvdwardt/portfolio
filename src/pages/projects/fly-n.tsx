@@ -5,7 +5,7 @@ export default function flyn() {
       <div className=" mx-4 flex flex-col lg:flex-row ">
         <div className="rounded-[2rem] lg:w-3/4">
           <div className=" m-4  rounded-[2rem] bg-pinklight p-4 dark:bg-[#2F3763]">
-            <h1 className="text-center text-3xl font-bold">Fly-n</h1>
+            <h1 className="text-center text-3xl font-black">Fly-n</h1>
           </div>
           <div className=" m-4 my-8 rounded-[2rem] bg-pinklight p-4 pb-[14px] dark:bg-[#2F3763]">
             <h2>
@@ -17,7 +17,7 @@ export default function flyn() {
             </h2>
           </div>
           <div className=" m-4  rounded-[2rem] bg-pinklight p-4 pb-[14px] dark:bg-[#2F3763]">
-            <h2 className="font-bold">
+            <h2 className="font-medium">
               Ik heb van dit project de volgende dingen gedaan:
             </h2>
             <hr />
@@ -30,7 +30,7 @@ export default function flyn() {
             </h2>
           </div>
           <div className=" m-4 my-8 rounded-[2rem] bg-pinklight p-4 dark:bg-[#2F3763]">
-            <h2 className="font-bold">
+            <h2 className="font-medium">
               Ik heb van dit project de volgende dingen geleerd:
             </h2>
             <hr />

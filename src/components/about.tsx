@@ -18,7 +18,7 @@ export default function About() {
 
   return (
     <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 dark:text-white sm:order-1 xl:col-span-2">
-      <div className="flex w-full items-center gap-2 sm:items-start xl:flex-col">
+      <div className="w-full flex-col items-center gap-2 sm:items-start">
         <div className="realtive min-h-[100px] min-w-[100px]">
           <Image
             src="/images/memoji/normal.webp"
@@ -43,8 +43,8 @@ export default function About() {
             )}
           />
         </div>
-        <div className="flex w-full flex-col pb-2 pt-2 xl:hidden">
-          <div className="flex items-baseline gap-2">
+        <div className="flex w-full flex-col pb-2 pt-6 xl:hidden">
+          <div className="mb-[-3px] flex items-baseline gap-2">
             <p className="text-lg">I&apos;m</p>
             <div className="flex items-baseline">
               <p className="text-3xl font-bold text-primary">Leon</p>
@@ -53,8 +53,8 @@ export default function About() {
           </div>
           a software developer from the Netherlands.
         </div>
-        <div className="hidden w-full flex-col pl-4 xl:flex">
-          <div className="flex items-baseline gap-1">
+        <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
+          <div className="mb-[-2px] flex items-baseline gap-1">
             <p className="text-lg">I&apos;m</p>
             <div className="flex items-baseline">
               <p className="text-3xl font-bold text-primary">Leon</p>
@@ -66,13 +66,6 @@ export default function About() {
             Utrecht.
           </p>
         </div>
-      </div>
-      <div className="xl:hidden">
-        <p className="">
-          I&apos;m currently studying IT at the University of Applied Sciences
-          in Utrecht.
-        </p>
-        <p className="w-[475px] text-left"></p>
       </div>
     </div>
   );

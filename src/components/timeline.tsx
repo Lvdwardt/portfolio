@@ -1,10 +1,10 @@
 export default function Timeline2() {
   return (
     <div className="peer col-span-2 hidden h-full rounded-[2rem] bg-white p-8 transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white sm:order-10 sm:block xl:order-7 xl:block">
-      <h1 className=" absolute mt-[-0.5rem] text-2xl font-bold">Timeline</h1>
+      <h1 className=" absolute mt-[-0.5rem] text-2xl font-medium">Timeline</h1>
       <div className="flex ">
         <div className="h-6 w-41/50 px-2 text-right ">
-          <h2 className="peer font-bold">Uw Computerstudent</h2>
+          <h2 className="peer font-medium">Uw Computerstudent</h2>
           <h2 className="mt-[-8px] hidden peer-hover:block hover:block">
             Voor UCS help ik mensen met computerproblemen
           </h2>
@@ -13,7 +13,7 @@ export default function Timeline2() {
       </div>
       <div className="flex ">
         <div className="h-6 w-39/50  px-2 text-right ">
-          <h2 className="peer mt-5 font-bold">Student aan huis</h2>
+          <h2 className="peer mt-5 font-medium">Student aan huis</h2>
           <h2 className="mt-[-8px] hidden peer-hover:block hover:block">
             Voor SAH help ik mensen met computerproblemen
           </h2>
@@ -22,7 +22,7 @@ export default function Timeline2() {
       </div>
       <div className="flex ">
         <div className="h-6 w-39/50 px-2 text-right ">
-          <h2 className="peer mt-5 font-bold">Stichting Open Nederland</h2>
+          <h2 className="peer mt-5 font-medium">Stichting Open Nederland</h2>
           <h2 className="mt-[-8px] hidden peer-hover:block hover:block">
             Voor SON heb ik gewerkt op de hulplijn
           </h2>
@@ -31,7 +31,7 @@ export default function Timeline2() {
       </div>
       <div className="flex">
         <div className="h-6 w-11/50 px-2 text-right ">
-          <h2 className="peer mt-5 font-bold">Babypark</h2>
+          <h2 className="peer mt-5 font-medium">Babypark</h2>
           <h2 className="mt-[-8px] hidden peer-hover:block hover:block">
             Magazijnmedewerker
           </h2>
@@ -63,7 +63,7 @@ export default function Timeline2() {
       </div>
       {/* <div className="flex ">
         <div className="w-8/50  text-right px-2 ">
-          <h2 className="font-bold peer">Ichthus College</h2>
+          <h2 className="font-medium peer">Ichthus College</h2>
           <h2 className="mt-[-8px] invisible peer-hover:visible hover:visible">
             Natuur &amp; Techniek
           </h2>
@@ -72,7 +72,7 @@ export default function Timeline2() {
       </div>
       <div className="flex ">
         <div className="w-38/50  text-right px-2 ">
-          <h2 className="font-bold peer">Hogeschool Utrecht</h2>
+          <h2 className="font-medium peer">Hogeschool Utrecht</h2>
           <h2 className="mt-[-8px] invisible peer-hover:visible hover:visible">
             Open ICT
           </h2>

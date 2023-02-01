@@ -7,6 +7,7 @@ module.exports = {
     //change font family
     fontFamily: {
       sans: ["var(--font-gotham)"],
+      silka: ["var(--font-silka)"],
     },
     extend: {
       colors: {
