@@ -12,16 +12,16 @@ export default function About() {
       link: "https://play.streambabble.net",
       dates: "sep 2022 - present",
     },
-    {
-      name: "Flyn",
-      role: "Software Developer",
-      hours: "full-time",
-      description:
-        "Fly-n is a travel application that allows users to find the best route to their destination. I worked on the frontend of the app, using react native.",
-      image: "/images/companies/fly-n.webp",
-      link: "https://play.streambabble.net",
-      dates: "oct 2021 - jun 2022",
-    },
+    // {
+    //   name: "Flyn",
+    //   role: "Software Developer",
+    //   hours: "full-time",
+    //   description:
+    //     "Fly-n is a travel application that allows users to find the best route to their destination. I worked on the frontend of the app, using react native.",
+    //   image: "/images/companies/fly-n.webp",
+    //   link: "https://play.streambabble.net",
+    //   dates: "oct 2021 - jun 2022",
+    // },
     {
       name: "Uw Computerstudent",
       small: "UCS",
@@ -42,7 +42,7 @@ export default function About() {
       </Head>
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
-          <div className="flex w-full flex-1 flex-col rounded-[2rem] bg-card p-4 px-10">
+          <div className="flex w-full flex-1 flex-col rounded-[2rem] bg-card px-10 pt-3 pb-4">
             <div className="pb-4">
               <Image
                 src="/images/memoji/mac.webp"
@@ -51,11 +51,11 @@ export default function About() {
                 height={120}
               />
             </div>
-            <h2>hi, I&apos;m Leon</h2>
-            <h2>ABOUT ME</h2>
           </div>
           <div className="flex w-full flex-1 flex-col gap-4 rounded-[2rem] bg-card py-4 px-10">
-            <h2 className="text-2xl font-bold text-text">Experiences</h2>
+            <h2 className="font-moranga text-2xl font-bold text-text">
+              Experiences
+            </h2>
             {experiences.map((experience) => (
               <div
                 className="flex items-start gap-4 pb-4"
@@ -71,7 +71,7 @@ export default function About() {
                   />
                 </a>
                 <div className="flex w-full flex-col">
-                  <h3 className="mt-[-4px] align-text-top text-lg font-bold text-text">
+                  <h3 className="mt-[-4px] align-text-top text-lg text-text">
                     {experience.role}
                   </h3>
                   <div className="flex justify-between text-sm text-gray-400">

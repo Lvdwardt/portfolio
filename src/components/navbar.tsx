@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Navbar() {
-  const currentRoute = useRouter().pathname;
+  const currentRoute = `/${useRouter().pathname.split("/")[1]}`;
   const routes = [
     { name: "Home", href: "/", place: 1 },
     { name: "About", href: "/about", place: 2 },
@@ -16,18 +16,8 @@ export default function Navbar() {
   const currentName = routes.find(
     (route) => route.place === currentPlace
   )?.name;
-  // let place = currentPlace;
-
-  // let animation = 0;
-
-  // function onClick(newPlace: number) {
-  //   place = newPlace;
-  //   animation = Math.abs(
-  //     (currentPlace ? currentPlace : 0) - (place ? place : 0)
-  //   );
-  // }
   return (
-    <div className="grid py-4 xl:grid-cols-3 ">
+    <div className="grid py-4 font-medium xl:grid-cols-3 ">
       <div className="flex w-full justify-center xl:block xl:pl-8">
         <Link href="/" className="w-36 p-4" title="back to home">
           <svg
@@ -45,7 +35,7 @@ export default function Navbar() {
           {routes.map((route) => (
             <Link
               key={route.name}
-              className="z-50 rounded-full px-2 py-1.5"
+              className="z-50 rounded-full px-3 py-1.5"
               href={route.href}
             >
               {route.name}
@@ -53,11 +43,11 @@ export default function Navbar() {
           ))}
           <div
             className={clsx(
-              "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 text-transparent transition-all duration-1000",
-              currentPlace === 1 && "left-0 ml-1.5",
+              "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 px-2.5 text-transparent transition-all duration-1000",
+              currentPlace === 1 && "left-0 ml-1.5 ",
               currentPlace === 2 && "left-1/4",
               currentPlace === 3 && "left-1/2 ml-[-4px]",
-              currentPlace === 4 && "left-3/4  ml-1.5"
+              currentPlace === 4 && "left-3/4 ml-1.5"
             )}
           >
             {currentName}
