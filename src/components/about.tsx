@@ -33,7 +33,7 @@ export default function About() {
             )}
           />
           <Image
-            src="/images/memoji/mad.webp"
+            src="/images/memoji/mad-sunglasses.webp"
             width={100}
             height={100}
             alt="memoji mad because of the light mode"
@@ -43,7 +43,7 @@ export default function About() {
             )}
           />
         </div>
-        <div className="flex w-full flex-col pb-6 pt-2 xl:hidden">
+        <div className="flex w-full flex-col pb-2 pt-2 xl:hidden">
           <div className="flex items-baseline gap-2">
             <p className="text-lg">I&apos;m</p>
             <div className="flex items-baseline">
