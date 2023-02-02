@@ -2,10 +2,11 @@ import { useTheme } from "next-themes";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ToggleTheme from "../hooks/toggleTheme";
 
 export default function About() {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -25,6 +26,9 @@ export default function About() {
             width={100}
             height={100}
             alt="memoji"
+            onClick={() => {
+              ToggleTheme({ resolvedTheme, setTheme });
+            }}
             className={clsx(
               resolvedTheme === "dark" || undefined
                 ? "opacity-100"
@@ -37,6 +41,9 @@ export default function About() {
             width={100}
             height={100}
             alt="memoji mad because of the light mode"
+            onClick={() => {
+              ToggleTheme({ resolvedTheme, setTheme });
+            }}
             className={clsx(
               resolvedTheme === "light" ? "opacity-100" : "opacity-0",
               "absolute transition-all duration-150 ease-in"

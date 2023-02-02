@@ -1,10 +1,11 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import ToggleTheme from "../hooks/toggleTheme";
 
 export default function Toggle() {
-  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -17,28 +18,11 @@ export default function Toggle() {
   }, []);
   if (!mounted) return <></>;
 
-  function onToggle() {
-    const root = document.documentElement;
-    setTheme(resolvedTheme === "light" ? "dark" : "light");
-    // add data-theme attribute to html
-    switch (resolvedTheme) {
-      case "light":
-        root.setAttribute("data-theme", "dark");
-        break;
-      case "dark":
-        root.setAttribute("data-theme", "light");
-        break;
-      default:
-        root.setAttribute("data-theme", "light");
-        break;
-    }
-  }
-
   return (
     <div className=" relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-greenlight dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
       <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-pinklight dark:bg-[#CE81C7]" />
       <span
-        onClick={onToggle}
+        onClick={() => ToggleTheme({ setTheme, resolvedTheme })}
         className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 shadow-lg transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white"
       >
         {resolvedTheme === "light" ? (
