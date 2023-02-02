@@ -1,6 +1,27 @@
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 import Head from "next/head";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import ToggleTheme from "../hooks/toggleTheme";
+
 export default function About() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    const root = document.documentElement;
+    //if getAttribute is null, set to dark
+    if (root.getAttribute("data-theme") === null) {
+      setTheme("dark");
+      root.setAttribute("data-theme", "dark");
+    }
+
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <div />;
+
   const experiences = [
     {
       name: "Babble",
@@ -42,31 +63,53 @@ export default function About() {
       </Head>
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
-          <div className="flex w-full flex-1 flex-col rounded-[2rem] bg-card px-10 pt-3 pb-4">
-            <div className="pb-4">
+          <div className="flex w-full flex-1 flex-col rounded-[2rem] bg-card px-10 pt-3 pb-8">
+            <div className="relative h-[120px] w-[80px]">
               <Image
                 src="/images/memoji/mac.webp"
-                alt="Leon"
                 width={80}
                 height={120}
+                onClick={() => {
+                  ToggleTheme({ resolvedTheme, setTheme });
+                }}
+                alt="memoji on mac"
+                className={clsx(
+                  "absolute transition-all duration-150 ease-in",
+                  resolvedTheme === "dark" || undefined
+                    ? "opacity-100"
+                    : "opacity-0"
+                )}
+              />
+              <Image
+                src="/images/memoji/mac-sunglasses.webp"
+                width={80}
+                height={120}
+                alt="memoji on mac with sunglasses because of the light mode"
+                onClick={() => {
+                  ToggleTheme({ resolvedTheme, setTheme });
+                }}
+                className={clsx(
+                  "absolute transition-all duration-150 ease-in",
+                  resolvedTheme === "light" ? "opacity-100" : "opacity-0"
+                )}
               />
             </div>
           </div>
-          <div className="flex w-full flex-1 flex-col gap-4 rounded-[2rem] bg-card py-4 px-10">
+          <div className="flex w-full flex-1 flex-col gap-4 rounded-[2rem] bg-card py-8 px-12">
             <h2 className="font-moranga text-2xl font-bold text-text">
               Experiences
             </h2>
             {experiences.map((experience) => (
               <div
-                className="flex items-start gap-4 pb-4"
+                className="flex items-start gap-4 pb-2"
                 key={experience.name}
               >
                 <a href={experience.link}>
                   <Image
                     src={experience.image}
                     alt={experience.name}
-                    width={60}
-                    height={60}
+                    width={50}
+                    height={50}
                     className="rounded-xl bg-black"
                   />
                 </a>
