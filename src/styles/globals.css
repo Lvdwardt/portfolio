@@ -31,7 +31,7 @@
   --background: rgb(229 231 235);
   --track: white;
   --thumb: #ffc6d7;
-  --logo: black;
+  --logo: hsl(342, 100%, 75%);
   --text: black;
   --trans: hsla(164, 53%, 63%, 0.3);
 }
