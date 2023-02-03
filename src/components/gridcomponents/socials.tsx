@@ -18,7 +18,7 @@ export function Whatsapp() {
 export function Github() {
   return (
     <Link
-      className=" relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-bluelight dark:bg-[#CE81C7] sm:order-8 xl:order-5"
+      className="relative flex h-full items-center justify-center"
       href="https://github.com/Lvdwardt"
       target={"_blank"}
       rel="noreferrer"
@@ -44,7 +44,7 @@ export function Discord() {
 export function Mail() {
   return (
     <Link
-      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-greenlight dark:bg-[#CE81C7] sm:order-12 sm:bg-bluelight sm:dark:bg-[#8D5BE9]"
+      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-bluelight dark:bg-[#CE81C7] sm:order-12  sm:dark:bg-[#8D5BE9]"
       href="mailto:contact@leonvandewardt.nl"
       target={"_blank"}
       rel="noreferrer"

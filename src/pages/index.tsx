@@ -1,13 +1,18 @@
 import Head from "next/head";
-import About from "../components/about";
-import Mapbox from "../components/mapbox";
-import Toggle from "../components/toggle";
-import Janskapsalonsmall from "../components/janskapsalonsmall";
-import Janskapsalonflat from "../components/janskapsalonflat";
-import { Github, Discord, Whatsapp, Mail } from "../components/socials";
-import Skills from "../components/skills";
-import Timeline2 from "../components/timeline";
-import Flyn from "../components/flynImg";
+import About from "../components/gridcomponents/about";
+import Mapbox from "../components/gridcomponents/mapbox";
+import Toggle from "../components/gridcomponents/toggle";
+import Janskapsalonsmall from "../components/gridcomponents/janskapsalonsmall";
+import Janskapsalonflat from "../components/gridcomponents/janskapsalonflat";
+import {
+  Github,
+  Discord,
+  Whatsapp,
+  Mail,
+} from "../components/gridcomponents/socials";
+import Skills from "../components/gridcomponents/skills";
+import Timeline2 from "../components/gridcomponents/timeline";
+import Flyn from "../components/gridcomponents/flynImg";
 
 export default function Home() {
   return (
@@ -24,11 +29,21 @@ export default function Home() {
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 dark:text-white sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <Mapbox />
-          <Toggle />
-          <Janskapsalonsmall />
-          <Github />
-          <Skills />
+          <div className="overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
+            <Mapbox />
+          </div>
+          <div className="rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:hidden xl:order-3">
+            <Janskapsalonsmall />
+          </div>
+          <div className="overflow-hidden rounded-[2rem] bg-greenlight dark:bg-[#8D5BE9] sm:order-3  xl:order-4">
+            <Toggle />
+          </div>
+          <div className="overflow-hidden rounded-[2rem] bg-bluelight dark:bg-[#CE81C7] sm:order-8 xl:order-5">
+            <Github />
+          </div>
+          <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium dark:text-white sm:order-2 xl:order-6 ">
+            <Skills />
+          </div>
           {/* <Timeline /> */}
           <Timeline2 />
           <Discord />

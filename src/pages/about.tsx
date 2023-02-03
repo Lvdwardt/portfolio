@@ -62,7 +62,7 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex w-full justify-center">
-        <div className="mx-6 flex max-w-[1200px] flex-col gap-5 pt-4 pb-8">
+        <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
           <div className="flex min-h-[265px] w-full flex-1 flex-col rounded-[2rem] bg-card px-10 pt-3 pb-8">
             <div className="relative h-[120px] w-[80px]">
               <Image

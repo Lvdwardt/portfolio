@@ -1,5 +1,5 @@
 import Head from "next/head";
-import About from "../components/about";
+import About from "../components/gridcomponents/about";
 
 export default function Contact() {
   return (

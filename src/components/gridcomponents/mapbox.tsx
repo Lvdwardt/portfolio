@@ -57,7 +57,7 @@ export default function Mapbox() {
   const [awake, setAwake] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border-4 border-white dark:border-[#2F3763] sm:order-6 xl:order-2">
+    <div>
       <Map
         ref={mapRef}
         attributionControl={false}

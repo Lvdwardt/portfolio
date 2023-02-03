@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import ToggleTheme from "../hooks/toggleTheme";
+import ToggleTheme from "../../hooks/toggleTheme";
 
 export default function Toggle() {
   const [mounted, setMounted] = useState(false);
@@ -19,7 +19,7 @@ export default function Toggle() {
   if (!mounted) return <></>;
 
   return (
-    <div className=" relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-greenlight dark:bg-[#8D5BE9] sm:order-3 xl:order-4">
+    <div className="relative flex h-full w-full items-center justify-center">
       <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-pinklight dark:bg-[#CE81C7]" />
       <span
         onClick={() => ToggleTheme({ setTheme, resolvedTheme })}

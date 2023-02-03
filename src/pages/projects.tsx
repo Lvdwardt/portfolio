@@ -1,7 +1,7 @@
 import Head from "next/head";
-import FlynImg from "../components/flynImg";
-import Janskapsalonflat from "../components/janskapsalonflat";
-import About from "../components/about";
+import FlynImg from "../components/gridcomponents/flynImg";
+import Janskapsalonflat from "../components/gridcomponents/janskapsalonflat";
+import About from "../components/gridcomponents/about";
 
 export default function Projects() {
   return (
