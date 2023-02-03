@@ -20,8 +20,10 @@ export default function Home() {
         />
       </Head>
       <div className="min-h-screen overflow-visible transition-all duration-300 ease-in ">
-        <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-4 px-4 pt-4 pb-6 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
-          <About />
+        <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pt-4 pb-6 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
+          <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 dark:text-white sm:order-1 xl:col-span-2">
+            <About />
+          </div>
           <Mapbox />
           <Toggle />
           <Janskapsalonsmall />
@@ -32,7 +34,9 @@ export default function Home() {
           <Discord />
           <Whatsapp />
           <Flyn />
-          <Janskapsalonflat />
+          <div className="group relative hidden overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-4 sm:col-span-2 sm:block xl:order-10">
+            <Janskapsalonflat />
+          </div>
           <Mail />
         </div>
         <div className="flex justify-center pb-8 pt-16 font-thin">
