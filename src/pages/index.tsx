@@ -13,6 +13,7 @@ import {
 import Skills from "../components/gridcomponents/skills";
 import Timeline2 from "../components/gridcomponents/timeline";
 import Flyn from "../components/gridcomponents/flynImg";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
@@ -46,36 +47,18 @@ export default function Home() {
           </div>
           {/* <Timeline /> */}
           <Timeline2 />
+          {/* <GithubStats /> */}
           <Discord />
           <Whatsapp />
-          <Flyn />
-          <div className="group relative hidden overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-4 sm:col-span-2 sm:block xl:order-10">
+          <div className="overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
+            <Flyn />
+          </div>
+          <div className="hidden overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-4 sm:col-span-2 sm:block xl:order-10">
             <Janskapsalonflat />
           </div>
           <Mail />
         </div>
-        <div className="flex justify-center pb-8 pt-16 font-thin">
-          <h3>© {new Date().getFullYear()} Leon van de Wardt - Inspired by</h3>
-          <a
-            href="
-          https://nevflynn.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 text-primary"
-          >
-            Nev Flynn
-          </a>
-          <h3>&nbsp;and</h3>
-          <a
-            href="
-          https://robertozaccardi.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 text-primary"
-          >
-            Roberto Zaccardi
-          </a>
-        </div>
+        <Footer />
       </div>
     </>
   );
