@@ -33,17 +33,31 @@ export default function About() {
       height: 100,
       width: 100,
       className: "relative, min-h-[100px] min-w-[100px]",
+      text: (
+        <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
+          <div className="mb-[-2px] flex items-baseline gap-1">
+            <p className="text-lg">I&apos;m</p>
+            <div className="flex items-baseline">
+              <p className="text-3xl font-bold text-primary">Leon</p>
+              <p>, a software developer from the Netherlands.</p>
+            </div>
+          </div>
+          <p className="w-[475px] text-left">
+            I am currently studying IT at the University of Applied Sciences in
+            Utrecht.
+          </p>
+        </div>
+      ),
     },
     {
-      name: "contact",
-      src: "wink",
-      alt: "memoji wink",
-      dark: "wink-sunglasses",
-      alt_dark: "memoji wink with sunglasses because of the light mode",
-      height: 100,
-      width: 100,
-      className:
-        "relative, min-h-[100px] min-w-[100px] pt-[10px] mb-[11px] mt-[-5px] ml-[-2px]",
+      name: "about",
+      src: "mac",
+      alt: "memoji on a mac",
+      dark: "mac-sunglasses",
+      alt_dark: "memoji on a mac with sunglasses because of the light mode",
+      width: 80,
+      height: 120,
+      className: "relative, min-h-[120px] min-w-[80px] ml-3 mt-[-13px]",
     },
     {
       name: "projects",
@@ -55,6 +69,17 @@ export default function About() {
       width: 85,
       className:
         "relative, min-h-[120px] min-w-[80px] pl-2 pt-[1px] mb-[-14px]",
+    },
+    {
+      name: "contact",
+      src: "wink",
+      alt: "memoji wink",
+      dark: "wink-sunglasses",
+      alt_dark: "memoji wink with sunglasses because of the light mode",
+      height: 100,
+      width: 100,
+      className:
+        "relative, min-h-[100px] min-w-[100px] pt-[10px] mb-[11px] mt-[-5px] ml-[-2px]",
     },
     {
       name: "else",
@@ -72,6 +97,7 @@ export default function About() {
     else return possibility.name === "else";
   });
   if (!current) return <div>error</div>;
+
   return (
     <div className="w-full flex-col items-center gap-2 sm:items-start">
       <div className={current.className} key={current.name}>
@@ -102,6 +128,7 @@ export default function About() {
           )}
         />
       </div>
+      {/* mobile */}
       <div className="flex w-full flex-col pb-2 pt-6 xl:hidden">
         <div className="mb-[-3px] flex items-baseline gap-2">
           <p className="text-lg">I&apos;m</p>
@@ -112,19 +139,8 @@ export default function About() {
         </div>
         a software developer from the Netherlands.
       </div>
-      <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
-        <div className="mb-[-2px] flex items-baseline gap-1">
-          <p className="text-lg">I&apos;m</p>
-          <div className="flex items-baseline">
-            <p className="text-3xl font-bold text-primary">Leon</p>
-            <p>, a software developer from the Netherlands.</p>
-          </div>
-        </div>
-        <p className="w-[475px] text-left">
-          I am currently studying IT at the University of Applied Sciences in
-          Utrecht.
-        </p>
-      </div>
+      {/* large screens */}
+      {current.text}
     </div>
   );
 }
