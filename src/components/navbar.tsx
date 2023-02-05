@@ -18,8 +18,8 @@ export default function Navbar() {
     (route) => route.place === currentPlace
   )?.name;
   return (
-    <div className="grid py-4 font-medium xl:grid-cols-3 ">
-      <div className="flex w-full justify-center xl:block xl:pl-8">
+    <div className="grid py-4 font-medium xl:grid-cols-3">
+      <div className="flex w-full  justify-center xl:block xl:pl-8">
         <Link href="/" className="w-36 p-4" title="back to home">
           <Gradient />
           <svg
@@ -32,27 +32,29 @@ export default function Navbar() {
           </svg>
         </Link>
       </div>
-      <div className=" flex w-full items-center justify-center text-sm text-text">
-        <div className="relative flex w-min gap-4 rounded-full bg-card px-1 py-1.5">
-          {routes.map((route) => (
-            <Link
-              key={route.name}
-              className="z-50 rounded-full px-3 py-1.5"
-              href={route.href}
+      <div className=" flex w-full justify-center">
+        <div className=" flex w-full max-w-[300px] items-center justify-center text-sm text-text sm:max-w-full">
+          <div className="relative flex w-min scale-[90%] gap-4 rounded-full bg-card px-1 py-1.5 sm:scale-100">
+            {routes.map((route) => (
+              <Link
+                key={route.name}
+                className="z-50 rounded-full px-3 py-1.5"
+                href={route.href}
+              >
+                {route.name}
+              </Link>
+            ))}
+            <div
+              className={clsx(
+                "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 px-2.5 text-transparent transition-all duration-1000",
+                currentPlace === 1 && "left-0 ml-1.5 ",
+                currentPlace === 2 && "left-1/4",
+                currentPlace === 3 && "left-1/2 ml-[-4px]",
+                currentPlace === 4 && "left-3/4 ml-1.5"
+              )}
             >
-              {route.name}
-            </Link>
-          ))}
-          <div
-            className={clsx(
-              "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 px-2.5 text-transparent transition-all duration-1000",
-              currentPlace === 1 && "left-0 ml-1.5 ",
-              currentPlace === 2 && "left-1/4",
-              currentPlace === 3 && "left-1/2 ml-[-4px]",
-              currentPlace === 4 && "left-3/4 ml-1.5"
-            )}
-          >
-            {currentName}
+              {currentName}
+            </div>
           </div>
         </div>
       </div>
