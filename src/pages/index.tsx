@@ -11,11 +11,24 @@ import {
   Mail,
 } from "../components/gridcomponents/socials";
 import Skills from "../components/gridcomponents/skills";
-import Timeline2 from "../components/gridcomponents/timeline";
 import Flyn from "../components/gridcomponents/flynImg";
 import Footer from "../components/footer";
+import GithubStats from "../components/gridcomponents/githubStats";
 
-export default function Home() {
+export type Data = {
+  data: {
+    commits: number;
+    streak: {
+      number: number;
+      date: string;
+    };
+    longestStreak: {
+      number: number;
+      date: string;
+    };
+  };
+};
+export default function Home({ data }: Data) {
   return (
     <>
       <Head>
@@ -45,9 +58,9 @@ export default function Home() {
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium dark:text-white sm:order-2 xl:order-6 ">
             <Skills />
           </div>
-          {/* <Timeline /> */}
-          <Timeline2 />
-          {/* <GithubStats /> */}
+          <div className="peer col-span-2 hidden h-full rounded-[2rem] bg-white transition-all duration-300 ease-in dark:bg-[#2F3763] dark:text-white sm:order-10 sm:block xl:order-7 xl:block">
+            <GithubStats data={data} />
+          </div>
           <Discord />
           <Whatsapp />
           <div className="overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
@@ -62,4 +75,70 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://cors-proxy.lvdw.workers.dev/?https://streak-stats.demolab.com/?user=Lvdwardt"
+  ).then(function (response) {
+    return response.text();
+  });
+  function getCommits(text: string) {
+    text = text.slice(text.indexOf("<!-- Total Contributions Big Number -->"));
+    text = text.slice(text.indexOf("<text"));
+    text = text.slice(0, text.indexOf("</text>") - 19);
+    text = text.slice(text.length - 5, text.length);
+    text = text.replace(/\D/g, "");
+    return text;
+  }
+  function getStreak(text: string) {
+    let s = text;
+    let d = text;
+    //current streak number
+    s = s.slice(s.indexOf("<!-- Current Streak Big Number -->"));
+    s = s.slice(s.indexOf("<text"));
+    s = s.slice(0, s.indexOf("</text>") - 19);
+    s = s.slice(s.length - 5, s.length);
+    s = s.replace(/\D/g, "");
+    //current streak date range
+    d = d.slice(d.indexOf("<!-- Current Streak Range -->"));
+    d = d.slice(d.indexOf("<text"));
+    d = d.slice(0, d.indexOf("</text>") - 19);
+    d = d.slice(d.length - 17, d.length);
+    d = d.replace(/(\r \n|\n|\r)/gm, "");
+
+    return { number: s, date: d };
+  }
+  function getLongestStreak(text: string) {
+    //longest streak number
+    let l = text;
+    let d = text;
+    l = l.slice(l.indexOf("<!-- Longest Streak Big Number -->"));
+    l = l.slice(l.indexOf("<text"));
+    l = l.slice(0, l.indexOf("</text>") - 19);
+    l = l.slice(l.length - 5, l.length);
+    l = l.replace(/\D/g, "");
+    //longest streak date range
+    d = d.slice(d.indexOf("<!-- Longest Streak Range -->"));
+    d = d.slice(d.indexOf("<text"));
+    d = d.slice(0, d.indexOf("</text>") - 19);
+    d = d.slice(d.length - 28, d.length);
+    // remove  \n{space} from string
+    d = d.replace(/(\r \n|\n|\r)/gm, "");
+
+    return { number: l, date: d };
+  }
+  const commits = getCommits(res);
+  const streak = getStreak(res);
+  const longestStreak = getLongestStreak(res);
+  return {
+    props: {
+      data: {
+        commits,
+        streak,
+        longestStreak,
+      },
+    },
+    revalidate: 86400,
+  };
 }
