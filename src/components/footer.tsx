@@ -1,41 +1,28 @@
 export default function Footer() {
   return (
     <div className="flex flex-col items-baseline justify-center pb-8 pt-16 text-center font-thin sm:flex-row ">
-      <h3>© {new Date().getFullYear()} Leon van de Wardt - Inspired by</h3>
+      <h3 className="w-full text-center sm:w-auto sm:text-left">
+        © {new Date().getFullYear()} Leon van de Wardt - Inspired by
+      </h3>
       <div className="flex w-full items-baseline justify-center sm:w-auto">
         <a
           href="https://nevflynn.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-1 text-xl font-bold text-primary"
+          className="flex items-baseline"
         >
-          Nev
+          <h2 className="ml-1 text-xl font-bold text-primary">Nev</h2>
+          <h2 className="ml-1 text-sm font-normal text-primary">Flynn</h2>
         </a>
-        <a
-          href="https://nevflynn.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ml-1 text-sm font-normal text-primary"
-        >
-          Flynn
-        </a>
-
         <h3>&nbsp;and</h3>
         <a
           href="https://robertozaccardi.dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-1 text-xl font-bold text-primary"
+          className="flex items-baseline"
         >
-          Rob
-        </a>
-        <a
-          href="https://robertozaccardi.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-normal text-primary"
-        >
-          erto Zaccardi
+          <h2 className="ml-1 text-xl font-bold text-primary">Rob</h2>
+          <h2 className="font-normal text-primary">erto Zaccardi</h2>
         </a>
       </div>
     </div>
