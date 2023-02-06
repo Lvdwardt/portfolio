@@ -21,6 +21,7 @@ module.exports = {
         background: "var(--background)",
         text: "var(--text)",
         trans: "var(--trans)",
+        logo: "var(--logo)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",

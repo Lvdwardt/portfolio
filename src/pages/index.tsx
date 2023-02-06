@@ -14,6 +14,7 @@ import Skills from "../components/gridcomponents/skills";
 import Flyn from "../components/gridcomponents/flynImg";
 import Footer from "../components/footer";
 import GithubStats from "../components/gridcomponents/githubStats";
+import AnimatedLayout from "../layouts/animatedLayout";
 
 export type Data = {
   data: {
@@ -30,7 +31,7 @@ export type Data = {
 };
 export default function Home({ data }: Data) {
   return (
-    <>
+    <AnimatedLayout>
       <Head>
         <title>Leon van de Wardt</title>
         <meta
@@ -73,7 +74,7 @@ export default function Home({ data }: Data) {
         </div>
         <Footer />
       </div>
-    </>
+    </AnimatedLayout>
   );
 }
 

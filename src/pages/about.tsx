@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import About from "../components/gridcomponents/about";
+import AnimatedLayout from "../layouts/animatedLayout";
 
 export default function AboutPage() {
   const experiences = [
@@ -37,7 +38,7 @@ export default function AboutPage() {
     },
   ];
   return (
-    <>
+    <AnimatedLayout>
       <Head>
         <title>About</title>
         <link rel="icon" href="/favicon.ico" />
@@ -96,6 +97,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    </>
+    </AnimatedLayout>
   );
 }

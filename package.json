@@ -13,6 +13,7 @@
     "@next/font": "^13.1.6",
     "@tailwindcss/line-clamp": "^0.4.2",
     "clsx": "^1.2.1",
+    "framer-motion": "^9.0.1",
     "graphql": "^16.6.0",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.12.0",

@@ -1,8 +1,11 @@
+import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import localfont from "@next/font/local";
+
 import type { AppProps } from "next/app";
 import Navbar from "../components/navbar";
 import "../styles/globals.css";
+import { useRouter } from "next/router";
 
 const gotham = localfont({
   src: [
@@ -48,11 +51,14 @@ const silka = localfont({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <main className={`${gotham.variable} ${silka.variable} font-sans `}>
       <ThemeProvider attribute="class">
         <Navbar />
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait" initial={false}>
+          <Component {...pageProps} key={router.asPath} />
+        </AnimatePresence>
       </ThemeProvider>
     </main>
   );

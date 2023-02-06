@@ -3,7 +3,6 @@ import { AiFillFire } from "react-icons/ai";
 import Gradient from "../../assets/lineargradient";
 
 export default function GithubStats({ data }: Data) {
-  console.log(data);
   return (
     <div className="flex flex-col items-center justify-center px-4 pt-8">
       <Gradient />
@@ -11,7 +10,7 @@ export default function GithubStats({ data }: Data) {
       <div className="grid grid-flow-col grid-cols-3 pt-2 text-center">
         <div className="">
           <h2>total commits</h2>
-          <h2 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-5xl font-bold text-transparent">
+          <h2 className="bg-gradient-to-br from-secondary to-logo bg-clip-text text-5xl font-bold text-transparent">
             {data.commits}
           </h2>
           <h3 className="pt-2 text-xs font-thin">Jul 13, 2021 - Present</h3>
@@ -28,7 +27,7 @@ export default function GithubStats({ data }: Data) {
         </div>
         <div className="">
           <h2>longest streak</h2>
-          <h2 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-5xl font-bold text-transparent">
+          <h2 className="bg-gradient-to-br from-secondary to-logo bg-clip-text text-5xl font-bold text-transparent">
             {data.longestStreak.number}
           </h2>
           <h3 className="pt-2 text-xs font-thin">{data.longestStreak.date}</h3>
@@ -37,4 +36,4 @@ export default function GithubStats({ data }: Data) {
     </div>
   );
 }
-// className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+// className="bg-gradient-to-r from-secondary to-logo bg-clip-text text-transparent"

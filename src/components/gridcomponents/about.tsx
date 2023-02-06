@@ -10,11 +10,12 @@ export default function About() {
   let currentPath = router.pathname;
   currentPath = currentPath.replace("/", "");
   if (currentPath === "") currentPath = "home";
-
+  const [path, setPath] = useState(currentPath);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
+    setPath(currentPath);
     setMounted(true);
   }, []);
 
@@ -93,7 +94,7 @@ export default function About() {
     },
   ];
   const current = possibilites.find((possibility) => {
-    if (possibility.name === currentPath) return possibility;
+    if (possibility.name === path) return possibility;
     else return possibility.name === "else";
   });
   if (!current) return <div>error</div>;
