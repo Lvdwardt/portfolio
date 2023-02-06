@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
-import { ThemeProvider } from "next-themes";
 import localfont from "@next/font/local";
+import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 
 import type { AppProps } from "next/app";
 import Navbar from "../components/navbar";
@@ -58,6 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Navbar />
         <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} key={router.asPath} />
+          <Analytics />
         </AnimatePresence>
       </ThemeProvider>
     </main>
