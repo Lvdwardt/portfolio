@@ -18,7 +18,7 @@ export default function GithubStats({ data }: Data) {
         <div className="mt-4 flex flex-col items-center text-xl">
           <div className="relative">
             <AiFillFire className=" text-[5rem]" fill="url(#logo)" />
-            <div className="absolute inset-y-9 inset-x-8">
+            <div className="absolute inset-0 bottom-1/2 mx-auto mb-1 translate-y-full">
               <h2 className="text-3xl font-bold">{data.streak.number}</h2>
             </div>
           </div>
