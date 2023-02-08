@@ -1,29 +1,29 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import ToggleTheme from "../../hooks/toggleTheme";
 
 export default function Toggle() {
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const root = document.documentElement;
-    //if getAttribute is null, set to dark
-    if (root.getAttribute("data-theme") === null) {
-      setTheme("dark");
-      root.setAttribute("data-theme", "dark");
-    }
-    setMounted(true);
-  }, []);
-  if (!mounted) return <></>;
+  // useEffect(() => {
+  //   const root = document.documentElement;
+  //   //if getAttribute is null, set to dark
+  //   if (root.getAttribute("data-theme") === null) {
+  //     setTheme("dark");
+  //     root.setAttribute("data-theme", "dark");
+  //   }
+  //   setMounted(true);
+  // }, []);
+  // if (!mounted) return <></>;
 
   return (
     <div className="relative flex h-full w-full items-center justify-center">
-      <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-pinklight dark:bg-[#CE81C7]" />
+      <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-rr" />
       <span
         onClick={() => ToggleTheme({ setTheme, resolvedTheme })}
-        className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 shadow-lg transition-all duration-300 ease-in dark:bg-[#1F295B] dark:text-white"
+        className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-dw text-text shadow-lg transition-all duration-300 ease-in"
       >
         {resolvedTheme === "light" ? (
           <svg

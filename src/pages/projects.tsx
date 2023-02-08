@@ -17,10 +17,10 @@ export default function Projects() {
             <div className="order-1 col-span-1 rounded-[2rem] bg-card p-4 pl-6 pt-[18px] sm:col-span-2 xl:col-span-1">
               <About />
             </div>
-            <div className="group relative order-2 overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:row-span-2">
+            <div className="group relative order-2 overflow-hidden rounded-[2rem] bg-br sm:row-span-2">
               <FlynImg />
             </div>
-            <div className="group relative hidden overflow-hidden rounded-[2rem] bg-pinklight dark:bg-[#2F3763] sm:order-8 sm:col-span-2 sm:block">
+            <div className="group relative hidden overflow-hidden rounded-[2rem] bg-br sm:order-8 sm:col-span-2 sm:block">
               <Janskapsalonflat />
             </div>
           </div>

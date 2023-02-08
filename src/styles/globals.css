@@ -5,31 +5,49 @@
 :root {
   --primary: #ce81c7;
   --secondary: #8d5be9;
+  --pg: #8d5be9;
+  --pr: #8d5be9;
+  --rb: #ce81c7;
+  --rr: #ce81c7;
+  --br: #2f3763;
+  --dw: #1f295b;
   --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
-  --thumb: var(--background);
+  --thumb: #1f295b;
   --logo: #ce81c7;
-  --text: #fff;
+  --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
 }
 [data-theme="dark"] {
   --primary: #ce81c7;
   --secondary: #8d5be9;
+  --pg: #8d5be9;
+  --pr: #8d5be9;
+  --rb: #ce81c7;
+  --rr: #ce81c7;
+  --br: #2f3763;
+  --dw: #1f295b;
   --card: #2f3763;
   --background: #1f295b;
   --track: #8d5be9;
-  --thumb: var(--background);
+  --thumb: #1f295b;
   --logo: #ce81c7;
-  --text: #fff;
+  --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
 }
 [data-theme="light"] {
   --primary: #6dd2b7;
   --secondary: #ffc6d7;
-  --card: white;
+  --pg: #6dd2b7;
+  --pr: #ffc6d7;
+  --rb: #98d0ff;
+  --rr: #ffc6d7;
+  --br: #fcc6d7;
+  --dw: #ffffff;
+  --card: #ffffff;
   --background: rgb(229 231 235);
-  --track: white;
+  --track: #ffffff;
   --thumb: #ffc6d7;
   --logo: hsl(342, 100%, 75%);
   --text: black;

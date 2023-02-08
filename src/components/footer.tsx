@@ -11,8 +11,8 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex items-baseline"
         >
-          <h2 className="ml-1 text-xl font-bold text-primary">Nev</h2>
-          <h2 className="ml-1 text-sm font-normal text-primary">Flynn</h2>
+          <h2 className="ml-1 text-xl font-bold text-logo">Nev</h2>
+          <h2 className="ml-1 text-sm font-normal text-logo">Flynn</h2>
         </a>
         <h3>&nbsp;and</h3>
         <a
@@ -21,8 +21,8 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex items-baseline"
         >
-          <h2 className="ml-1 text-xl font-bold text-primary">Rob</h2>
-          <h2 className="font-normal text-primary">erto Zaccardi</h2>
+          <h2 className="ml-1 text-xl font-bold text-logo">Rob</h2>
+          <h2 className="font-normal text-logo">erto Zaccardi</h2>
         </a>
       </div>
     </div>

@@ -46,7 +46,7 @@ export default function AboutPage() {
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
           <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:px-0 ">
-            <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 dark:text-white xl:col-span-4">
+            <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text xl:col-span-4">
               <About />
             </div>
           </div>

@@ -17,9 +17,11 @@ export default function GithubStats({ data }: Data) {
         </div>
         <div className="mt-4 flex flex-col items-center text-xl">
           <div className="relative">
-            <AiFillFire className=" text-[5rem]" fill="url(#logo)" />
+            <AiFillFire className="text-[5rem]" fill="url(#logo)" />
             <div className="absolute inset-0 bottom-1/2 mx-auto mb-1 translate-y-full">
-              <h2 className="text-3xl font-bold">{data.streak.number}</h2>
+              <h2 className="text-3xl font-bold text-white">
+                {data.streak.number}
+              </h2>
             </div>
           </div>
           <h2 className="text-base">current commit streak</h2>

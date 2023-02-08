@@ -11,12 +11,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        bluelight: "#98d0ff",
-        pinklight: "#FFC6D7",
-        greenlight: "#6DD2B7",
         //varable colors
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        pg: "var(--pg)", //purple green
+        pr: "var(--pr)", //purple pink
+        rb: "var(--rb)", //pink blue
+        rr: "var(--rr)", //pink pink
+        br: "var(--br)", //blue pink
+        bp: "var(--bp)", //blue purple
+        dw: "var(--dw)", //darkblue white
         card: "var(--card)",
         background: "var(--background)",
         text: "var(--text)",

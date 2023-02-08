@@ -99,7 +99,7 @@ export default function Mapbox() {
           className={
             zoom === 1
               ? "hidden"
-              : "absolute bottom-12 left-8 flex h-8 w-8 items-center justify-center rounded-full bg-[#ffc6d7]  dark:bg-[#8D5BE9] dark:text-white"
+              : "absolute bottom-12 left-8 flex h-8 w-8 items-center justify-center rounded-full bg-secondary  text-text"
           }
           title="Zoom out"
           onClick={minus}
@@ -111,7 +111,7 @@ export default function Mapbox() {
           className={
             zoom >= 11
               ? "hidden"
-              : "absolute bottom-12 right-8 flex h-8 w-8 items-center justify-center rounded-full bg-[#ffc6d7] dark:bg-[#8D5BE9] dark:text-white"
+              : "absolute bottom-12 right-8 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-text"
           }
           title="Zoom in"
           onClick={plus}
