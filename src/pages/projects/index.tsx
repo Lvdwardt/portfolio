@@ -1,8 +1,8 @@
 import Head from "next/head";
-import FlynImg from "../components/gridcomponents/flynImg";
-import Janskapsalonflat from "../components/gridcomponents/janskapsalonflat";
-import About from "../components/gridcomponents/about";
-import AnimatedLayout from "../layouts/animatedLayout";
+import FlynImg from "../../components/gridcomponents/flynImg";
+import Janskapsalonflat from "../../components/gridcomponents/janskapsalonflat";
+import About from "../../components/gridcomponents/about";
+import AnimatedLayout from "../../layouts/animatedLayout";
 
 export default function Projects() {
   return (
@@ -23,6 +23,17 @@ export default function Projects() {
             <div className="group relative hidden overflow-hidden rounded-[2rem] bg-br sm:order-8 sm:col-span-2 sm:block">
               <Janskapsalonflat />
             </div>
+            {/* {projectList.map((project) => (
+              <div
+                key={project.id}
+                className={clsx(
+                  "group relative overflow-hidden rounded-[2rem] bg-br",
+                  project.grid
+                )}
+              >
+                {ProjectCover({ project })}
+              </div>
+            ))} */}
           </div>
         </div>
       </div>

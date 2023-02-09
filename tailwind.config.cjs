@@ -160,5 +160,8 @@ module.exports = {
   variants: {
     scrollbar: ["dark"],
   },
+  safelist: [
+    "w-[90px] hover:w-[90px] group-hover:[w-[90px] translate-y-[10px] sm:translate-y-0 w-[162px] hover:w-[162px] group-hover:w-[162px] translate-y-[10px] sm:translate-y-[-96px]",
+  ],
   plugins: [require("tailwind-scrollbar"), require("@tailwindcss/line-clamp")],
 };
