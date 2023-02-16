@@ -87,7 +87,7 @@ export async function getStaticProps() {
   function getCommits(text: string) {
     text = text.slice(text.indexOf("<!-- Total Contributions Big Number -->"));
     text = text.slice(text.indexOf("<text"));
-    text = text.slice(0, text.indexOf("</text>") - 19);
+    text = text.slice(0, text.indexOf("</text>") - 21);
     text = text.slice(text.length - 5, text.length);
     text = text.replace(/\D/g, "");
     return text;
