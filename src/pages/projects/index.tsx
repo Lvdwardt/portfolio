@@ -3,6 +3,7 @@ import FlynImg from "../../components/gridcomponents/flynImg";
 import Janskapsalonflat from "../../components/gridcomponents/janskapsalonflat";
 import About from "../../components/gridcomponents/about";
 import AnimatedLayout from "../../layouts/animatedLayout";
+import Portfolio from "../../components/projects/portfolio";
 
 export default function Projects() {
   return (
@@ -17,23 +18,15 @@ export default function Projects() {
             <div className="order-1 col-span-1 rounded-[2rem] bg-card p-4 pl-6 pt-[18px] sm:col-span-2 xl:col-span-1">
               <About />
             </div>
-            <div className="group relative order-2 overflow-hidden rounded-[2rem] bg-br sm:row-span-2">
+            <div className="group relative order-2 overflow-hidden rounded-[2rem] bg-br sm:order-3 sm:row-span-2">
               <FlynImg />
             </div>
-            <div className="group relative hidden overflow-hidden rounded-[2rem] bg-br sm:order-8 sm:col-span-2 sm:block">
+            <div className="group relative hidden overflow-hidden rounded-[2rem] bg-br sm:order-2 sm:col-span-2 sm:block">
               <Janskapsalonflat />
             </div>
-            {/* {projectList.map((project) => (
-              <div
-                key={project.id}
-                className={clsx(
-                  "group relative overflow-hidden rounded-[2rem] bg-br",
-                  project.grid
-                )}
-              >
-                {ProjectCover({ project })}
-              </div>
-            ))} */}
+            <div className="group relative hidden overflow-hidden rounded-[2rem] bg-br sm:order-10 sm:col-span-2 sm:block">
+              <Portfolio />
+            </div>
           </div>
         </div>
       </div>

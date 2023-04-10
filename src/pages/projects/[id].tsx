@@ -18,29 +18,40 @@ export default function Project() {
   return (
     <AnimatedLayout>
       <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <div className=" mx-4 flex flex-col lg:flex-row">
-          <div className="my-4 flex flex-col gap-4 rounded-[2rem] bg-card p-8 lg:w-3/4">
-            <h1 className="text-center text-3xl font-black">
-              {project?.title}
-              <hr />
-            </h1>
-            <h2>{project.description}</h2>
-            <div className="">
+        <div className="mx-4 flex flex-col lg:flex-row">
+          <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pt-4 pb-6 lg:w-3/4">
+            <h1 className="pb-2 text-3xl font-black">{project?.title}</h1>
+            <hr />
+            <span className="font-light">{project.description}</span>
+            <div className=" pt-6">
               <h2 className="font-medium">
-                Ik heb van dit project de volgende dingen gedaan:
+                For this project I have done the following:
               </h2>
               <hr />
-              {project.workedOn.map((work, index) => (
-                <h2 key={index}>- {work.work}</h2>
-              ))}
+              <ul>
+                {project.workedOn.map((work, index) => (
+                  <li className="ml-4 list-disc pl-2 font-light" key={index}>
+                    {work.work}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="">
+            <div className="pt-6">
               <h2 className="font-medium">
-                Ik heb van dit project de volgende dingen geleerd:
+                I have learned the following from this project:
               </h2>
               <hr />
-              {project.newSkills.map((skill, index) => (
-                <h2 key={index}>- {skill.skill}</h2>
+              <ul>
+                {project.newSkills.map((skill, index) => (
+                  <li className="ml-4 list-disc pl-2 font-light" key={index}>
+                    {skill.skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-auto flex gap-4 pt-6 text-4xl">
+              {project.icons.map((icon, index) => (
+                <div key={index}>{icon.icon}</div>
               ))}
             </div>
           </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ToggleTheme from "../../hooks/toggleTheme";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function About() {
   const router = useRouter();
@@ -59,6 +60,51 @@ export default function About() {
       width: 80,
       height: 120,
       className: "relative, min-h-[120px] min-w-[80px] ml-3 mt-[-13px]",
+      text: (
+        <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
+          <div className="mb-[-2px] flex items-baseline gap-1">
+            <span>
+              <span className="text-lg">I&apos;m </span>
+              <span className="text-3xl font-bold text-primary">Leon</span>
+              <span>
+                , a software developer from the Netherlands. I am currently
+                studying IT at the University of Applied Sciences in Utrecht.
+                There, I am doing an internship at{" "}
+              </span>
+              <a
+                href="https://play.streambabble.net"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl font-bold text-primary"
+              >
+                Babble
+              </a>
+              <span>
+                , where I&apos;m working on a product that aims to enhance the
+                interaction between streamers and their audience by providing
+                engaging chat games. When I&apos;m not working on Babble,
+                I&apos;m developing my own projects such as this website, or{" "}
+              </span>
+              <Link
+                href={"/projects/fly-n"}
+                className="whitespace-nowrap text-xl font-bold text-primary"
+              >
+                Fly-n
+              </Link>
+              <span>
+                .
+                <br />
+                <br />
+                On the rare occasions where I&apos;m not coding, I&apos;m most
+                likely out there exploring the world. My biggest passion is
+                traveling, and I really enjoy finding the cheapest flights to
+                the most interesting places. I&apos;ve been to 19 countries so
+                far, spread across 3 continents.
+              </span>
+            </span>
+          </div>
+        </div>
+      ),
     },
     {
       name: "projects",
@@ -72,7 +118,7 @@ export default function About() {
         "relative, min-h-[120px] min-w-[80px] pl-2 pt-[1px] mb-[-14px]",
     },
     {
-      name: "contact",
+      name: "travels",
       src: "wink",
       alt: "memoji wink",
       dark: "wink-sunglasses",

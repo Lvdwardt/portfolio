@@ -9,11 +9,12 @@ export default function Navbar() {
     { name: "Home", href: "/", place: 1 },
     { name: "About", href: "/about", place: 2 },
     { name: "Projects", href: "/projects", place: 3 },
-    { name: "Contact", href: "/contact", place: 4 },
+    { name: "Travels", href: "/travels", place: 4 },
   ];
   const currentPlace = routes.find(
     (route) => route.href === currentRoute
   )?.place;
+
   const currentName = routes.find(
     (route) => route.place === currentPlace
   )?.name;
@@ -48,9 +49,10 @@ export default function Navbar() {
               className={clsx(
                 "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 px-2.5 text-transparent transition-all duration-1000",
                 currentPlace === 1 && "left-0 ml-1.5 ",
-                currentPlace === 2 && "left-1/4",
-                currentPlace === 3 && "left-1/2 ml-[-4px]",
-                currentPlace === 4 && "left-3/4 ml-1.5"
+                currentPlace === 2 && "left-1/4 ml-0.5",
+                currentPlace === 3 && "left-1/2 ml-[-1px]",
+                currentPlace === 4 && "left-3/4 ml-2.5",
+                currentPlace === undefined && "hidden"
               )}
             >
               {currentName}

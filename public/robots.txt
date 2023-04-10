@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://wijwetenhetwel.nl/sitemap.xml

@@ -59,7 +59,7 @@ export default function Home({ data }: Data) {
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-2 xl:order-6 ">
             <Skills />
           </div>
-          <div className="peer col-span-2 hidden h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 sm:block xl:order-7 xl:block">
+          <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 sm:col-span-2 xl:order-7">
             <GithubStats data={data} />
           </div>
           <Discord />

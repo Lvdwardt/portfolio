@@ -53,6 +53,14 @@
   --text: black;
   --trans: hsla(164, 53%, 63%, 0.3);
 }
+
+hr {
+  /* make al hr tags thicker */
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  margin: 6px 0 10px 0;
+}
+
 html {
   background-color: var(--background);
   scrollbar-gutter: stable;

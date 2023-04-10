@@ -15,4 +15,7 @@ export type ProjectList = {
   newSkills: {
     skill: string;
   }[];
+  icons: {
+    icon: JSX.Element;
+  }[];
 };

@@ -10,7 +10,7 @@ export default function AboutPage() {
       role: "Software Developer",
       hours: "full-time",
       description:
-        "Babble is a platform where streamers can interact with their viewers. I worked on the frontend of the app, using React.",
+        "Babble is a platform where streamers can interact with their viewers. I'm working on the frontend of the app, using React.",
       image: "/images/companies/babble.webp",
       link: "https://play.streambabble.net",
       dates: "sep 2022 - present",
@@ -31,7 +31,7 @@ export default function AboutPage() {
       role: "Technical Support",
       hours: "part-time",
       description:
-        "Uw Computerstudent is a company that provides IT support for elderly people. I worked at the helpdesk, helping people with their computer problems.",
+        "Uw Computerstudent is a company that provides IT support for elderly people. I'm working at the helpdesk, helping people with their computer problems.",
       image: "/images/companies/ucs.webp",
       link: "https://uwcomputerstudent.nl",
       dates: "jul 2021 - present",
@@ -46,7 +46,7 @@ export default function AboutPage() {
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
           <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:px-0 ">
-            <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text xl:col-span-4">
+            <div className="col-span-full row-span-2  h-full w-full rounded-[2rem] bg-card p-6 text-text">
               <About />
             </div>
           </div>
