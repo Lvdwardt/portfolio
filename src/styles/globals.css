@@ -86,3 +86,7 @@ html {
 .mapboxgl-ctrl-logo {
   display: none !important;
 }
+
+.react-transform-wrapper {
+  overflow: visible !important;
+}

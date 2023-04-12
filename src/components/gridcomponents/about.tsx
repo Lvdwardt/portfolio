@@ -116,6 +116,25 @@ export default function About() {
       width: 85,
       className:
         "relative, min-h-[120px] min-w-[80px] pl-2 pt-[1px] mb-[-14px]",
+      text: (
+        <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
+          <div className="mb-[-2px] flex items-baseline gap-1">
+            <p className="text-lg">
+              These are some of the projects I&apos;ve been working on:
+            </p>
+          </div>
+          {/* <p className="text-lg">I&apos;m</p>
+            <div className="flex items-baseline">
+              <p className="text-3xl font-bold text-primary">Leon</p>
+              <p>, a software developer from the Netherlands.</p>
+            </div>
+          </div>
+          <p className="w-[475px] text-left">
+            I am currently studying IT at the University of Applied Sciences in
+            Utrecht.
+          </p> */}
+        </div>
+      ),
     },
     {
       name: "travels",
