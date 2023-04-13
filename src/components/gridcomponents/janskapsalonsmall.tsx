@@ -1,7 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ImArrowUpRight2 } from "react-icons/im";
 export default function Janskapsalonsmall() {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setWindowWidth(window.innerWidth);
+      });
+    };
+  }, []);
+
   return (
     <div className="group relative h-full w-full overflow-hidden rounded-[2rem]">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
@@ -11,6 +28,7 @@ export default function Janskapsalonsmall() {
           alt="photo from the janskapsalon.nl website"
           width={2002}
           height={3292}
+          priority={windowWidth < 768 ? true : false}
         />
       </div>
       <div className="absolute bottom-2 left-4 m-2 box-border flex h-12 w-8 items-center justify-center transition-all duration-700 group-hover:w-[162px] ">

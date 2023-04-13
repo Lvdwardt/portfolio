@@ -63,7 +63,7 @@ hr {
 
 html {
   background-color: var(--background);
-  scrollbar-gutter: stable;
+  scrollbar-gutter: stable both-edges;
 }
 
 ::-webkit-scrollbar {

@@ -24,7 +24,7 @@ export default function FlynImg() {
             <Link
               href="/projects/fly-n"
               passHref
-              title="go to the jans kapsalon project page"
+              title="go to the fly-n project page"
               className="flex items-center gap-2"
             >
               <h1 className="translate-x-[-10px] whitespace-nowrap opacity-0 transition-all delay-200 duration-300 group-hover:translate-x-0 group-hover:opacity-100">

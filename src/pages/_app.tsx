@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 import Navbar from "../components/navbar";
 import "../styles/globals.css";
+import "../styles/mapbox-gl.css";
+
 import { useRouter } from "next/router";
 
 const gotham = localfont({

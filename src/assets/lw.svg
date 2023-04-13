@@ -57,8 +57,15 @@
   </g>
 </svg> -->
 
-<svg xmlns="http://www.w3.org/2000/svg" width="73.786" height="73.031" viewBox="0 0 73.786 73.031" fill="inherit">
-  <g  transform="translate(-2092.643 1708.232)">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.786 73.031" fill="url(#logo)" >
+      <linearGradient id="logo2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop stopColor="var(--secondary)" offset="0%" />
+        <stop stopColor="var(--secondary)" offset="10%" />
+        <stop stopColor="var(--logo)" offset="100%" />
+      </linearGradient>
+    <svg fill="url(#logo2)">
+  <g transform="translate(-2092.643 1708.232)">
     <g transform="translate(-2 -2)">
       <path d="M16.043,4H0A4,4,0,0,1-4,0,4,4,0,0,1,0-4H16.043a4,4,0,0,1,4,4A4,4,0,0,1,16.043,4Z" transform="translate(2114.284 -1637.201)"/>
       <g >
@@ -70,4 +77,5 @@
       </g>
     </g>
   </g>
+  </svg>
 </svg>

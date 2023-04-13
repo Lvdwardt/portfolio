@@ -61,7 +61,7 @@ export default function Travels() {
       });
     }
   }, [windowWidth]);
-  console.log(settings);
+
   return (
     <AnimatedLayout>
       <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">

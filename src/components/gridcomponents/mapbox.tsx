@@ -1,14 +1,12 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import mapboxgl from "mapbox-gl";
 import Map from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useTheme } from "next-themes";
-import "mapbox-gl/dist/mapbox-gl.css";
+
 import Image from "next/image";
 import clsx from "clsx";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibGVvbnZkdyIsImEiOiJja3o4aGZob20xajl4MndyeGI4Nm9oMHFrIn0.qh6ihyou9U5wnDZyZjQdew";
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 //eslint-disable-next-line
 export default function Mapbox() {
   //get html attribute for theme
@@ -70,6 +68,7 @@ export default function Mapbox() {
         mapStyle={style}
         interactive={false}
         onMove={onMapLoad}
+        mapboxAccessToken={MAPBOX_TOKEN}
       >
         <div className=" absolute inset-0 bottom-8 m-auto h-24 w-24 rounded-full border-4 border-primary bg-trans opacity-80">
           <Image
