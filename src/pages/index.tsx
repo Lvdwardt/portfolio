@@ -15,6 +15,7 @@ import Flyn from "../components/gridcomponents/flynImg";
 import Footer from "../components/footer";
 import GithubStats from "../components/gridcomponents/githubStats";
 import AnimatedLayout from "../layouts/animatedLayout";
+import { type ElementCompact, xml2js } from "xml-js";
 
 export type Data = {
   data: {
@@ -84,60 +85,27 @@ export async function getStaticProps() {
   ).then(function (response) {
     return response.text();
   });
-  function getCommits(text: string) {
-    text = text.slice(text.indexOf("<!-- Total Contributions Big Number -->"));
-    text = text.slice(text.indexOf("<text"));
-    text = text.slice(0, text.indexOf("</text>") - 21);
-    text = text.slice(text.length - 5, text.length);
-    text = text.replace(/\D/g, "");
-    return text;
-  }
-  function getStreak(text: string) {
-    let s = text;
-    let d = text;
-    //current streak number
-    s = s.slice(s.indexOf("<!-- Current Streak Big Number -->"));
-    s = s.slice(s.indexOf("<text"));
-    s = s.slice(0, s.indexOf("</text>") - 19);
-    s = s.slice(s.length - 5, s.length);
-    s = s.replace(/\D/g, "");
-    //current streak date range
-    d = d.slice(d.indexOf("<!-- Current Streak Range -->"));
-    d = d.slice(d.indexOf("<text"));
-    d = d.slice(0, d.indexOf("</text>") - 19);
-    d = d.slice(d.length - 17, d.length);
-    d = d.replace(/(\r \n|\n|\r)/gm, "");
 
-    return { number: s, date: d };
-  }
-  function getLongestStreak(text: string) {
-    //longest streak number
-    let l = text;
-    let d = text;
-    l = l.slice(l.indexOf("<!-- Longest Streak Big Number -->"));
-    l = l.slice(l.indexOf("<text"));
-    l = l.slice(0, l.indexOf("</text>") - 19);
-    l = l.slice(l.length - 5, l.length);
-    l = l.replace(/\D/g, "");
-    //longest streak date range
-    d = d.slice(d.indexOf("<!-- Longest Streak Range -->"));
-    d = d.slice(d.indexOf("<text"));
-    d = d.slice(0, d.indexOf("</text>") - 19);
-    d = d.slice(d.length - 28, d.length);
-    // remove  \n{space} from string
-    d = d.replace(/(\r \n|\n|\r)/gm, "");
+  const svgObject = xml2js(res, { compact: true }) as ElementCompact;
 
-    return { number: l, date: d };
-  }
-  const commits = getCommits(res);
-  const streak = getStreak(res);
-  const longestStreak = getLongestStreak(res);
+  const commits = svgObject.svg.g.g[2].g[0].text._text;
+  const streak = svgObject.svg.g.g[3].g[0].text._text;
+  const streakDate = svgObject.svg.g.g[3].g[2].text._text;
+  const longestStreak = svgObject.svg.g.g[4].g[0].text._text;
+  const longestStreakDate = svgObject.svg.g.g[4].g[2].text._text;
+
   return {
     props: {
       data: {
-        commits,
-        streak,
-        longestStreak,
+        commits: commits,
+        streak: {
+          number: streak,
+          date: streakDate,
+        },
+        longestStreak: {
+          number: longestStreak,
+          date: longestStreakDate,
+        },
       },
     },
     revalidate: 86400,

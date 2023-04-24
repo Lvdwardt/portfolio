@@ -28,6 +28,7 @@
     "tailwind-scrollbar": "^2.1.0",
     "use-local-storage-state": "^18.3.2",
     "vercel": "^28.18.4",
+    "xml-js": "^1.6.11",
     "zod": "^3.20.2"
   },
   "devDependencies": {
