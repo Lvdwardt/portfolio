@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import Map from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";

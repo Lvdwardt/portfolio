@@ -1,7 +1,20 @@
-import { Data } from "../../pages";
 import { AiFillFire } from "react-icons/ai";
 import Gradient from "../../assets/lineargradient";
 import clsx from "clsx";
+
+type Data = {
+  data: {
+    commits: number;
+    streak: {
+      number: number;
+      date: string;
+    };
+    longestStreak: {
+      number: number;
+      date: string;
+    };
+  };
+};
 
 export default function GithubStats({ data }: Data) {
   return (
