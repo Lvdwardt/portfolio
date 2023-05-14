@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import localfont from "@next/font/local";
+import localfont from "next/font/local";
 import { ThemeProvider, useTheme } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 

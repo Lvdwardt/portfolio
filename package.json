@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
-    "@next/font": "^13.4.2",
     "@svgr/webpack": "^8.0.1",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.10",
