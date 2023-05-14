@@ -6,13 +6,14 @@ import AnimatedLayout from "../layouts/animatedLayout";
 export default function AboutPage() {
   const experiences = [
     {
-      name: "Babble",
+      name: "Hiperr",
+      small: "Hiperr",
       role: "Software Developer",
-      hours: "full-time",
+      hours: "internship",
       description:
-        "Babble is a platform where streamers can interact with their viewers. I'm working on the frontend of the app, using React.",
+        "Hiperr is company that aims to improve the interaction between streamers and their viewers. I'm working on the frontend of a web application that provides minigames for streamers to play with their chat. The application is being build with react and typescript.",
       image: "/images/companies/babble.webp",
-      link: "https://play.streambabble.net",
+      link: "https://hiperr.net",
       dates: "sep 2022 - present",
     },
     // {
@@ -22,7 +23,7 @@ export default function AboutPage() {
     //   description:
     //     "Fly-n is a travel application that allows users to find the best route to their destination. I worked on the frontend of the app, using react native.",
     //   image: "/images/companies/fly-n.webp",
-    //   link: "https://play.streambabble.net",
+    //   link: "https://hiperr.net",
     //   dates: "oct 2021 - jun 2022",
     // },
     {
@@ -50,13 +51,13 @@ export default function AboutPage() {
               <About />
             </div>
           </div>
-          <div className="flex w-full flex-1 flex-col gap-4 rounded-[2rem] bg-card px-4 py-8 sm:px-12">
+          <div className="flex w-full max-w-[320px] flex-1 flex-col gap-4 rounded-[2rem] bg-card px-4 py-8 sm:max-w-[640px] sm:px-12 xl:max-w-[1200px]">
             <h2 className="text-center text-2xl font-bold text-text sm:text-left">
               Experiences
             </h2>
             {experiences.map((experience) => (
               <div
-                className="flex items-start gap-4 pb-2"
+                className="flex items-start gap-4 pb-2 [@media(hover:none)and(pointer:coarse)]:select-none"
                 key={experience.name}
               >
                 <a href={experience.link}>
@@ -68,7 +69,7 @@ export default function AboutPage() {
                     className="rounded-xl bg-black"
                   />
                 </a>
-                <div className="flex w-full flex-col">
+                <div className="flex w-full flex-col [@media(hover:none)_and_(pointer:coarse)]:select-none">
                   <h3 className="mt-[-4px] align-text-top text-lg text-text">
                     {experience.role}
                   </h3>
@@ -88,8 +89,9 @@ export default function AboutPage() {
                     <h4 className="text-end">{experience.dates}</h4>
                   </div>
                   <div className="font-thin">
-                    <p className="line-clamp-2">{experience.description}</p>
-                    {/* <p className="text-right">read more</p> */}
+                    <p className="line-clamp-2 focus:line-clamp-none hover:line-clamp-none active:line-clamp-none">
+                      {experience.description}
+                    </p>
                   </div>
                 </div>
               </div>

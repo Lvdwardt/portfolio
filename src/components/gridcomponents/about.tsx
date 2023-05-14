@@ -50,6 +50,18 @@ export default function About() {
           </p>
         </div>
       ),
+      mobileText: (
+        <div className="flex w-full flex-col pb-2 pt-6 xl:hidden">
+          <div className="mb-[-3px] flex items-baseline gap-2">
+            <p className="text-lg">I&apos;m</p>
+            <div className="flex items-baseline">
+              <p className="text-3xl font-bold text-primary">Leon</p>
+              <p>,</p>
+            </div>
+          </div>
+          a software developer from the Netherlands.
+        </div>
+      ),
     },
     {
       name: "about",
@@ -72,17 +84,17 @@ export default function About() {
                 There, I am doing an internship at{" "}
               </span>
               <a
-                href="https://play.streambabble.net"
+                href="https://hiperr.net"
                 target="_blank"
                 rel="noreferrer"
                 className="text-xl font-bold text-primary"
               >
-                Babble
+                Hiperr
               </a>
               <span>
                 , where I&apos;m working on a product that aims to enhance the
                 interaction between streamers and their audience by providing
-                engaging chat games. When I&apos;m not working on Babble,
+                engaging chat games. When I&apos;m not working on Hiperr,
                 I&apos;m developing my own projects such as this website, or{" "}
               </span>
               <Link
@@ -105,6 +117,42 @@ export default function About() {
           </div>
         </div>
       ),
+      mobileText: (
+        <div className="flex w-full flex-col pb-2 pt-6 xl:hidden">
+          <div className="mb-[-2px] flex items-baseline gap-1">
+            <span>
+              <span className="text-lg">I&apos;m </span>
+              <span className="text-3xl font-bold text-primary">Leon</span>
+              <span>
+                , a software developer from the Netherlands. I am currently
+                studying IT at the University of Applied Sciences in Utrecht.
+                There, I am doing an internship at{" "}
+              </span>
+              <a
+                href="https://hiperr.net"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl font-bold text-primary"
+              >
+                Hiperr
+              </a>
+              <span>
+                , where I&apos;m working on a product that aims to enhance the
+                interaction between streamers and their audience by providing
+                engaging chat games. When I&apos;m not working on Hiperr,
+                I&apos;m developing my own projects such as this website, or{" "}
+              </span>
+              <Link
+                href={"/projects/fly-n"}
+                className="whitespace-nowrap text-xl font-bold text-primary"
+              >
+                Fly-n
+              </Link>
+              <span>.</span>
+            </span>
+          </div>
+        </div>
+      ),
     },
     {
       name: "projects",
@@ -123,16 +171,15 @@ export default function About() {
               These are some of the projects I&apos;ve been working on:
             </p>
           </div>
-          {/* <p className="text-lg">I&apos;m</p>
-            <div className="flex items-baseline">
-              <p className="text-3xl font-bold text-primary">Leon</p>
-              <p>, a software developer from the Netherlands.</p>
-            </div>
+        </div>
+      ),
+      mobileText: (
+        <div className="flex w-full flex-col px-4 pb-2 pt-6 xl:hidden">
+          <div className="mb-[-2px] flex items-baseline gap-2">
+            <p className="text-lg">
+              These are some of the projects I&apos;ve been working on:
+            </p>
           </div>
-          <p className="w-[475px] text-left">
-            I am currently studying IT at the University of Applied Sciences in
-            Utrecht.
-          </p> */}
         </div>
       ),
     },
@@ -195,16 +242,7 @@ export default function About() {
         />
       </div>
       {/* mobile */}
-      <div className="flex w-full flex-col pb-2 pt-6 xl:hidden">
-        <div className="mb-[-3px] flex items-baseline gap-2">
-          <p className="text-lg">I&apos;m</p>
-          <div className="flex items-baseline">
-            <p className="text-3xl font-bold text-primary">Leon</p>
-            <p>,</p>
-          </div>
-        </div>
-        a software developer from the Netherlands.
-      </div>
+      {current.mobileText}
       {/* large screens */}
       {current.text}
     </div>
