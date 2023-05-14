@@ -8,7 +8,7 @@ export default function PortfolioSmall() {
   return (
     <div className="group relative h-full w-full overflow-hidden rounded-[2rem]">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
-      <div className="block w-[250] translate-y-[-80px] translate-x-[98px] select-none ">
+      <div className="block w-[250] translate-x-[98px] translate-y-[-80px] select-none ">
         <Image
           src={
             resolvedTheme === "light"

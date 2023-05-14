@@ -45,8 +45,8 @@ export default function AboutPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex w-full justify-center">
-        <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pt-4 pb-8">
-          <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 [grid-auto-rows:265px] [grid-auto-columns:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:px-0 ">
+        <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pb-8 pt-4">
+          <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:px-0 ">
             <div className="col-span-full row-span-2  h-full w-full rounded-[2rem] bg-card p-6 text-text">
               <About />
             </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
                     <h4 className="text-end">{experience.dates}</h4>
                   </div>
                   <div className="font-thin">
-                    <p className="line-clamp-2 focus:line-clamp-none hover:line-clamp-none active:line-clamp-none">
+                    <p className="line-clamp-2 hover:line-clamp-none focus:line-clamp-none active:line-clamp-none">
                       {experience.description}
                     </p>
                   </div>

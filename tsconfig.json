@@ -22,7 +22,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/components/mapbox.js"
-, "tailwind.config.js"  ],
+    "src/components/mapbox.js",
+    "tailwind.config.js"
+  ],
   "exclude": ["node_modules"]
 }
