@@ -2,7 +2,7 @@
 import type React from "react";
 import { useRouter } from "next/navigation";
 
-import { toggleScheme } from "../../utils/colorScheme";
+import { toggleScheme } from "@/utils/colorScheme";
 
 export default function Toggle() {
   const router = useRouter();

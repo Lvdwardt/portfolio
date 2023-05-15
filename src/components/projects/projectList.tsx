@@ -9,7 +9,7 @@ import {
   SiGithub,
   SiFramer,
 } from "react-icons/si";
-import { ProjectList } from "../../types";
+import { ProjectList } from "@/types";
 
 const projectList: ProjectList[] = [
   {

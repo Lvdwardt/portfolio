@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
-import About from "../../components/about";
-import AnimatedLayout from "../../layouts/animatedLayout";
+import About from "@/components/about";
+import AnimatedLayout from "@/layouts/animatedLayout";
 import Image from "next/image";
 import {
   TransformWrapper,

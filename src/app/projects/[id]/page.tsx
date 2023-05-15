@@ -1,9 +1,9 @@
 "use client";
 import { useParams } from "next/navigation";
-import projectList from "../../../components/projects/projectList";
-import NotFound from "../../../components/projects/notFound";
-import AnimatedLayout from "../../../layouts/animatedLayout";
-import ProjectImage from "../../../components/projects/projectImage";
+import projectList from "@/components/projects/projectList";
+import NotFound from "@/components/projects/notFound";
+import AnimatedLayout from "@/layouts/animatedLayout";
+import ProjectImage from "@/components/projects/projectImage";
 
 export default function Project() {
   const { id } = useParams();

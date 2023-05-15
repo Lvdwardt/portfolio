@@ -7,7 +7,7 @@
 // import { setContext } from "@apollo/client/link/context";
 
 import clsx from "clsx";
-import Gradient from "../../assets/lineargradient";
+import Gradient from "@/assets/lineargradient";
 import skills from "./skillList";
 
 export default function Skills() {

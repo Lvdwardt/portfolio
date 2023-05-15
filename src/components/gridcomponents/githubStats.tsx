@@ -1,5 +1,5 @@
 import { AiFillFire } from "react-icons/ai";
-import Gradient from "../../assets/lineargradient";
+import Gradient from "@/assets/lineargradient";
 import clsx from "clsx";
 
 type Data = {

@@ -1,11 +1,11 @@
 import Head from "next/head";
-import FlynImg from "../../components/gridcomponents/flynImg";
-import Janskapsalonflat from "../../components/gridcomponents/janskapsalonflat";
-import About from "../../components/about";
-import AnimatedLayout from "../../layouts/animatedLayout";
-import Portfolio from "../../components/projects/portfolio";
-import Janskapsalonsmall from "../../components/gridcomponents/janskapsalonsmall";
-import PortfolioSmall from "../../components/projects/portfolioSmall";
+import FlynImg from "@/components/gridcomponents/flynImg";
+import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";
+import About from "@/components/about";
+import AnimatedLayout from "@/layouts/animatedLayout";
+import Portfolio from "@/components/projects/portfolio";
+import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
+import PortfolioSmall from "@/components/projects/portfolioSmall";
 
 export default function Projects() {
   return (

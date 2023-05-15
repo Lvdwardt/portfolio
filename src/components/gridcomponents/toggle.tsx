@@ -2,7 +2,7 @@
 import type React from "react";
 // import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import ToggleTheme from "../../hooks/toggleTheme";
+import ToggleTheme from "@/hooks/toggleTheme";
 
 export default function Toggle() {
   // const [mounted, setMounted] = useState(false);

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { ImArrowUpRight2 } from "react-icons/im";
-import type { ProjectList } from "../../types";
+import type { ProjectList } from "@/types";
 
 export default function ProjectImage({ project }: { project: ProjectList }) {
   return (
