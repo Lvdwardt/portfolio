@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import projectList from "@/components/projects/projectList";
-import NotFound from "@/components/projects/notFound";
+import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
 
@@ -13,7 +13,7 @@ export default function Project() {
   //find the project with the same title as the url
   const project = projectList.find((project) => project.id === id);
   if (!project) {
-    return <NotFound />;
+    return <NotFoundComponent />;
   }
   return (
     <AnimatedLayout>

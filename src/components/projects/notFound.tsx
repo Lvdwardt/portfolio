@@ -2,7 +2,7 @@
 import About from "../about";
 import { usePathname } from "next/navigation";
 
-export default function NotFound() {
+export default function NotFoundComponent() {
   let type = "page";
 
   const pathname = usePathname();
