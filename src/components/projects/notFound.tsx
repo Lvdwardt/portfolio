@@ -1,16 +1,17 @@
-import About from "../gridcomponents/about";
-import { useRouter } from "next/router";
+"use client";
+import About from "../about";
+import { usePathname } from "next/navigation";
 
 export default function NotFound() {
   let type = "page";
 
-  const router = useRouter();
+  const pathname = usePathname();
   //check if route includes /projects
-  if (router.pathname.includes("/projects")) {
+  if (pathname.includes("/projects")) {
     type = "project";
   }
   //if route includes /travels
-  if (router.pathname.includes("/travels")) {
+  if (pathname.includes("/travels")) {
     type = "trip";
   }
 

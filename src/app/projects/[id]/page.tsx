@@ -1,12 +1,12 @@
-import { useRouter } from "next/router";
-import projectList from "../../components/projects/projectList";
-import NotFound from "../../components/projects/notFound";
-import AnimatedLayout from "../../layouts/animatedLayout";
-import ProjectImage from "../../components/projects/projectImage";
+"use client";
+import { useParams } from "next/navigation";
+import projectList from "../../../components/projects/projectList";
+import NotFound from "../../../components/projects/notFound";
+import AnimatedLayout from "../../../layouts/animatedLayout";
+import ProjectImage from "../../../components/projects/projectImage";
 
 export default function Project() {
-  const router = useRouter();
-  const { id } = router.query;
+  const { id } = useParams();
   if (typeof id !== "string") {
     return null;
   }

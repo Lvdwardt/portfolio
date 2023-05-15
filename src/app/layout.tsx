@@ -1,13 +1,11 @@
 import { Metadata } from "next";
-import { AnimatePresence } from "framer-motion";
 import localfont from "next/font/local";
-import { ThemeProvider, useTheme } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import { getCurrentScheme } from "../utils/colorScheme";
 
 import "../styles/globals.css";
 import "../styles/mapbox-gl.css";
-import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -67,11 +65,14 @@ export default async function RootLayout({
     <html
       lang="en"
       data-theme={scheme === "dark" ? "dark" : "light"}
-      className={`${gotham.variable} ${silka.variable} font-sans ${
+      className={`${gotham.variable} ${silka.variable} font-sans text-text ${
         scheme === "dark" ? "dark" : ""
       }`}
     >
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
       <Analytics />
     </html>
   );

@@ -1,30 +1,20 @@
 "use client";
-import { useTheme } from "next-themes";
-import clsx from "clsx";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import ToggleTheme from "../../hooks/toggleTheme";
-import { useRouter } from "next/router";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import { toggleScheme } from "../utils/colorScheme";
 
 export default function About() {
   const router = useRouter();
-  let currentPath = router.pathname;
+
+  const toggle = async () => {
+    await toggleScheme();
+    router.refresh();
+  };
+
+  let currentPath = usePathname();
   currentPath = currentPath.replace("/", "");
   if (currentPath === "") currentPath = "home";
-  const [path, setPath] = useState(currentPath);
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setPath(currentPath);
-    setMounted(true);
-  }, []);
-
-  if (!mounted)
-    return (
-      <div className="col-span-1 h-full w-full rounded-[2rem] bg-card sm:order-1 xl:col-span-2" />
-    );
 
   const possibilites = [
     {
@@ -207,7 +197,7 @@ export default function About() {
     },
   ];
   const current = possibilites.find((possibility) => {
-    if (possibility.name === path) return possibility;
+    if (possibility.name === currentPath) return possibility;
     else return possibility.name === "else";
   });
   if (!current) return <div>error</div>;
@@ -221,12 +211,9 @@ export default function About() {
           height={current.height}
           alt={current.alt}
           onClick={() => {
-            ToggleTheme({ resolvedTheme, setTheme });
+            toggle();
           }}
-          className={clsx(
-            resolvedTheme === "dark" || undefined ? "opacity-100" : "opacity-0",
-            "absolute transition-all duration-150 ease-in"
-          )}
+          className="absolute opacity-0 transition-all duration-150 ease-in dark:opacity-100"
         />
         <Image
           src={`/images/memoji/${current.dark}.webp`}
@@ -234,12 +221,9 @@ export default function About() {
           height={current.height}
           alt={current.alt_dark}
           onClick={() => {
-            ToggleTheme({ resolvedTheme, setTheme });
+            toggle();
           }}
-          className={clsx(
-            resolvedTheme === "light" ? "opacity-100" : "opacity-0",
-            "absolute transition-all duration-150 ease-in"
-          )}
+          className="absolute opacity-100 transition-all duration-150 ease-in dark:opacity-0"
         />
       </div>
       {/* mobile */}

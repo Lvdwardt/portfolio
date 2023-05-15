@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import About from "../components/gridcomponents/about";
-import AnimatedLayout from "../layouts/animatedLayout";
+import About from "../../components/about";
+import AnimatedLayout from "../../layouts/animatedLayout";
 
 export default function AboutPage() {
   const experiences = [

@@ -2,17 +2,15 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import Map from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { useTheme } from "next-themes";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import clsx from "clsx";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 //eslint-disable-next-line
 export default function Mapbox() {
+  const router = useRouter();
   //get html attribute for theme
-  const { resolvedTheme } = useTheme();
-  const colorTheme = resolvedTheme;
 
   const mapRef = useRef(null);
   const [lng, setLng] = useState(5.5735);
@@ -35,10 +33,37 @@ export default function Mapbox() {
   }, []);
 
   useEffect(() => {
-    colorTheme == "light"
-      ? setStyle("mapbox://styles/mapbox/light-v10")
-      : setStyle("mapbox://styles/leonvdw/ckza19352000615rsk08y22f3");
-  }, [colorTheme]);
+    const htmlElement = document.querySelector<HTMLElement>("html");
+    let timeout: NodeJS.Timeout;
+
+    const observer = new MutationObserver((mutations) => {
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === "data-theme") {
+            htmlElement?.getAttribute("data-theme") === "light"
+              ? setStyle("mapbox://styles/mapbox/light-v10")
+              : setStyle("mapbox://styles/leonvdw/ckza19352000615rsk08y22f3");
+            router.refresh();
+          }
+        });
+      }, 100);
+    });
+
+    if (!htmlElement) {
+      return;
+    }
+
+    observer.observe(htmlElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const plus = () => {
     setZoom(zoom + 2);

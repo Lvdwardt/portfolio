@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="flex flex-col items-baseline justify-center pb-8 pt-16 text-center font-thin sm:flex-row ">
+    <div className="flex flex-col items-baseline justify-center pb-8 pt-16 text-center font-thin text-text sm:flex-row ">
       <h3 className="w-full text-center sm:w-auto sm:text-left">
         © {new Date().getFullYear()} Leon van de Wardt - Inspired by
       </h3>

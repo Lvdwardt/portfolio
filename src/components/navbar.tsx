@@ -1,15 +1,21 @@
+"use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import Gradient from "../assets/lineargradient";
 
 export default function Navbar() {
-  const currentRoute = `/${useRouter().pathname.split("/")[1]}`;
+  const path = usePathname();
+  //path == /about or /projects/janskapsalon
+  //trim the path to /about or /projects
+  const currentRoute = path.split("/")[1];
+  console.log(currentRoute);
+
   const routes = [
-    { name: "Home", href: "/", place: 1 },
-    { name: "About", href: "/about", place: 2 },
-    { name: "Projects", href: "/projects", place: 3 },
-    { name: "Travels", href: "/travels", place: 4 },
+    { name: "Home", href: "", place: 1 },
+    { name: "About", href: "about", place: 2 },
+    { name: "Projects", href: "projects", place: 3 },
+    { name: "Travels", href: "travels", place: 4 },
   ];
   const currentPlace = routes.find(
     (route) => route.href === currentRoute
