@@ -14,8 +14,8 @@ export default function Portfolio() {
         <Image
           src={
             resolvedTheme === "light"
-              ? "/images/portfolioFlat_light.webp"
-              : "/images/portfolioFlat.webp"
+              ? "/images/pfFlat_light.webp"
+              : "/images/pfFlat.webp"
           }
           alt="photo of my portfolio website"
           width={3292}
