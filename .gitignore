@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 .eslintcache
+zzz
 
 # debug
 npm-debug.log*
