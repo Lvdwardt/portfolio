@@ -17,7 +17,7 @@ export const getCurrentScheme = async () => {
 export const toggleScheme = async () => {
   const scheme = await getCurrentScheme();
 
-  const newScheme = scheme === "light" ? "light" : "dark";
+  const newScheme = scheme === "light" ? "dark" : "light";
 
   setCookie("scheme", newScheme, {
     path: "/",
