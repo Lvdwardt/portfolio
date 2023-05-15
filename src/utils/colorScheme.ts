@@ -7,7 +7,7 @@ export const getCurrentScheme = async () => {
   // from the `next/headers` package to access the cookies from the request headers.
   if (typeof window === "undefined") {
     return import("next/headers").then(({ cookies }) => {
-      return cookies().has("scheme") ? cookies().get("scheme")?.value : "light";
+      return cookies().has("scheme") ? cookies().get("scheme")?.value : "dark";
     });
   }
 
@@ -17,7 +17,7 @@ export const getCurrentScheme = async () => {
 export const toggleScheme = async () => {
   const scheme = await getCurrentScheme();
 
-  const newScheme = scheme === "dark" ? "light" : "dark";
+  const newScheme = scheme === "light" ? "light" : "dark";
 
   setCookie("scheme", newScheme, {
     path: "/",

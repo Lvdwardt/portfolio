@@ -64,9 +64,9 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      data-theme={scheme === "dark" ? "dark" : "light"}
+      data-theme={scheme === "light" ? "light" : "dark"}
       className={`${gotham.variable} ${silka.variable} font-sans text-text ${
-        scheme === "dark" ? "dark" : ""
+        scheme === "light" ? "" : "dark"
       }`}
     >
       <body>
@@ -77,28 +77,3 @@ export default async function RootLayout({
     </html>
   );
 }
-
-// import type { AppProps } from "next/app";
-// import Navbar from "../components/navbar";
-
-// import { useRouter } from "next/router";
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   const { resolvedTheme } = useTheme();
-//   const router = useRouter();
-//   return (
-//     <main
-//       data-theme={resolvedTheme ? "dark" : null}
-//       className={`${gotham.variable} ${silka.variable} font-sans`}
-//     >
-//       <ThemeProvider attribute="class">
-//         <Navbar />
-//         <AnimatePresence mode="wait" initial={false}>
-//           <Component {...pageProps} key={router.asPath} />
-//           <Analytics />
-//         </AnimatePresence>
-//       </ThemeProvider>
-//     </main>
-//   );
-// }
-// export default MyApp;
