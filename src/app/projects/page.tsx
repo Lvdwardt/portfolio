@@ -6,6 +6,7 @@ import Portfolio from "@/components/projects/portfolio";
 import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
 import PortfolioSmall from "@/components/projects/portfolioSmall";
 import { type Metadata } from "next";
+import Hiperr from "@/components/projects/hiperr";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -35,6 +36,9 @@ export default function Projects() {
             </div>
             <div className="group relative order-2 overflow-hidden rounded-[2rem] bg-br sm:hidden">
               <PortfolioSmall />
+            </div>
+            <div className="group relative order-5 overflow-hidden rounded-[2rem] bg-br">
+              <Hiperr />
             </div>
           </div>
         </div>

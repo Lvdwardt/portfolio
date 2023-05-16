@@ -20,7 +20,9 @@ export default function GithubStats({ data }: Data) {
   return (
     <div className="flex flex-col items-center justify-center px-4 pt-8">
       <Gradient />
-      <h1 className="bg-clip-text pb-2 text-center text-2xl ">GitHub Stats</h1>
+      <h1 className="bg-clip-text pb-2 text-center text-2xl font-semibold">
+        GitHub Stats
+      </h1>
       <div
         className={clsx(
           "grid w-full grid-flow-col pt-2 text-center",

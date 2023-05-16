@@ -1,22 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Head from "next/head";
-import About from "../components/about";
-import Mapbox from "../components/gridcomponents/mapbox";
-import Toggle from "../components/gridcomponents/toggle";
-import Janskapsalonsmall from "../components/gridcomponents/janskapsalonsmall";
-import Janskapsalonflat from "../components/gridcomponents/janskapsalonflat";
-import {
-  Github,
-  Discord,
-  Whatsapp,
-  Mail,
-} from "../components/gridcomponents/socials";
-import Skills from "../components/gridcomponents/skills";
-import Flyn from "../components/gridcomponents/flynImg";
-import Footer from "../components/footer";
-import GithubStats from "../components/gridcomponents/githubStats";
-import AnimatedLayout from "../layouts/animatedLayout";
+import About from "@/components/about";
+import Mapbox from "@/components/gridcomponents/mapbox";
+import Toggle from "@/components/gridcomponents/toggle";
+import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
+import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";
+import { Github, Whatsapp, Mail } from "@/components/gridcomponents/socials";
+import Skills from "@/components/gridcomponents/skills";
+import Flyn from "@/components/gridcomponents/flynImg";
+import Footer from "@/components/footer";
+import GithubStats from "@/components/gridcomponents/githubStats";
+import AnimatedLayout from "@/layouts/animatedLayout";
 import { type ElementCompact, xml2js } from "xml-js";
 import { type Metadata } from "next";
+import { Maps } from "@/components/gridcomponents/maps/maps";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -88,7 +85,9 @@ export default async function Home() {
           <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 sm:col-span-2 xl:order-7">
             <GithubStats data={data} />
           </div>
-          <Discord />
+
+          {/* @ts-expect-error */}
+          <Maps />
           <Whatsapp />
           <div className="overflow-hidden rounded-[2rem] bg-br sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
             <Flyn />

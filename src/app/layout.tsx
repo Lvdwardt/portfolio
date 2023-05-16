@@ -41,6 +41,16 @@ const gotham = localfont({
 const silka = localfont({
   src: [
     {
+      path: "../assets/fonts/Moranga-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Moranga-Medium.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
       path: "../assets/fonts/Silka-Medium.woff",
       weight: "500",
       style: "normal",
@@ -65,7 +75,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-theme={scheme === "light" ? "light" : "dark"}
-      className={`${gotham.variable} ${silka.variable} font-sans text-text ${
+      className={`${gotham.variable} ${silka.variable} font-silka text-text ${
         scheme === "light" ? "" : "dark"
       }`}
     >

@@ -15,9 +15,11 @@
     "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
     "cookies-next": "^2.1.1",
+    "countries-and-timezones": "^3.4.1",
     "framer-motion": "^10.12.11",
     "graphql": "^16.6.0",
     "hast-to-hyperscript": "^10.0.3",
+    "i18n-iso-countries": "^7.6.0",
     "lodash": "^4.17.21",
     "next": "13.4.2",
     "next-themes": "^0.2.1",
@@ -60,4 +62,3 @@
     "initVersion": "7.4.0"
   }
 }
-

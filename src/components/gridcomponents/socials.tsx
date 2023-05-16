@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaDiscord, FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa";
 
 export function Whatsapp() {
   return (
@@ -25,19 +25,6 @@ export function Github() {
       title="Github"
     >
       <FaGithub className="text-[100px] text-white" />
-    </Link>
-  );
-}
-export function Discord() {
-  return (
-    <Link
-      className=" relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-pg sm:order-5 xl:order-8"
-      href="https://discord.com/users/396931979020337153"
-      target={"_blank"}
-      rel="noreferrer"
-      title="Discord"
-    >
-      <FaDiscord className="text-[100px] text-white" />
     </Link>
   );
 }
