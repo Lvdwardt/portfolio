@@ -2,24 +2,22 @@ import clsx from "clsx";
 import Image from "next/image";
 import { ImArrowUpRight2 } from "react-icons/im";
 import type { ProjectList } from "@/types";
-import { getCurrentScheme } from "@/utils/colorScheme";
 
-export default async function ProjectImage({
-  project,
-}: {
-  project: ProjectList;
-}) {
-  const resolvedTheme = await getCurrentScheme();
+export default function ProjectImage({ project }: { project: ProjectList }) {
   return (
     <div className="group relative overflow-hidden rounded-[2rem] bg-br">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
-      <div className={clsx("block select-none", project.translate)}>
+      <div className={clsx("block select-none dark:hidden", project.translate)}>
         <Image
-          src={
-            resolvedTheme === "light"
-              ? project.projectImageLight
-              : project.projectImage
-          }
+          src={project.projectImageLight}
+          alt={`product photo of ${project.title}`}
+          width={2002}
+          height={3292}
+        />
+      </div>
+      <div className={clsx("hidden select-none dark:block", project.translate)}>
+        <Image
+          src={project.projectImage}
           alt={`product photo of ${project.title}`}
           width={2002}
           height={3292}

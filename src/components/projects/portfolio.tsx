@@ -1,22 +1,23 @@
-"use client";
-import { getCurrentScheme } from "@/utils/colorScheme";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 
-export default async function Portfolio() {
-  const resolvedTheme = await getCurrentScheme();
-
+export default function Portfolio() {
   return (
     <div className="group relative h-full w-full">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-rg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
-      <div className="block translate-y-[-170px] select-none sm:translate-y-0">
+      <div className="block translate-y-[-170px] select-none dark:hidden sm:translate-y-0">
         <Image
-          src={
-            resolvedTheme === "light"
-              ? "/images/pfFlat_light.webp"
-              : "/images/pfFlat.webp"
-          }
+          src={"/images/pfFlat_light.webp"}
+          alt="photo of my portfolio website"
+          width={3292}
+          height={2002}
+          loading="lazy"
+        />
+      </div>
+      <div className="hidden translate-y-[-170px] select-none dark:block sm:translate-y-0">
+        <Image
+          src={"/images/pfFlat.webp"}
           alt="photo of my portfolio website"
           width={3292}
           height={2002}

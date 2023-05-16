@@ -16,6 +16,12 @@ import Footer from "../components/footer";
 import GithubStats from "../components/gridcomponents/githubStats";
 import AnimatedLayout from "../layouts/animatedLayout";
 import { type ElementCompact, xml2js } from "xml-js";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Leonvdw.nl!",
+};
 
 export default async function Home() {
   const res = await fetch(

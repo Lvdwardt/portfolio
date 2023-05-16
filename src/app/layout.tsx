@@ -8,8 +8,8 @@ import "../styles/mapbox-gl.css";
 import Navbar from "../components/navbar";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Next.js",
+  title: "Leonvdw.nl",
+  description: "Leon's personal portfolio site",
 };
 
 const gotham = localfont({

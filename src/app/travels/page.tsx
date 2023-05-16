@@ -1,104 +1,16 @@
-"use client";
 import Head from "next/head";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
-import Image from "next/image";
-import {
-  TransformWrapper,
-  TransformComponent,
-  type ReactZoomPanPinchRef,
-} from "react-zoom-pan-pinch";
-import { useEffect, useRef, useState } from "react";
-import useLocalStorageState from "use-local-storage-state";
-import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
+import { type Metadata } from "next";
+import TravelMap from "@/components/travels/map";
 
-// function useWindowSize() {
-//   // Initialize state with undefined width/height so server and client renders match
-//   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-//   const [windowSize, setWindowSize] = useState({
-//     width: undefined,
-//     height: undefined,
-//   });
+export const metadata: Metadata = {
+  title: "Travels",
+  description:
+    "On this page you can find out about one of my biggest passions: traveling.",
+};
 
-//   useEffect(() => {
-//     // only execute all the code below in client side
-//     if (typeof window !== "undefined") {
-//       // Handler to call on window resize
-//       function handleResize() {
-//         // Set window width/height to state
-//         setWindowSize({
-//           width: window.innerWidth,
-//           height: window.innerHeight,
-//         });
-//       }
-
-//       // Add event listener
-//       window.addEventListener("resize", handleResize);
-
-//       // Call handler right away so state gets updated with initial window size
-//       setWindowSize({
-//         width: window.innerWidth,
-//         height: window.innerHeight,
-//       });
-
-//       // Remove event listener on cleanup
-//       return () => window.removeEventListener("resize", handleResize);
-//     }
-//   }, []); // Empty array ensures that effect is only run on mount
-//   return windowSize;
-// }
 export default function Travels() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const ref = useRef<ReactZoomPanPinchRef | null>(null);
-
-  const [settings, setSettings] = useLocalStorageState("settings", {
-    defaultValue: {
-      x: -902,
-      y: -148,
-      zoom: 3,
-    },
-  });
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
-
-    return () => {
-      window.removeEventListener("resize", () => {
-        setWindowWidth(window.innerWidth);
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    if (ref.current === null) return;
-    if (windowWidth < 640) {
-      ref.current.setTransform(-625, -110, 5);
-      setSettings({
-        x: -625,
-        y: -110,
-        zoom: 5,
-      });
-    } else if (windowWidth < 1280) {
-      ref.current.setTransform(-1000, -175, 4);
-      setSettings({
-        x: -1000,
-        y: -175,
-        zoom: 4,
-      });
-    } else {
-      ref.current.setTransform(-902, -48, 2.5);
-      setSettings({
-        x: -902,
-        y: -48,
-        zoom: 2.5,
-      });
-    }
-  }, [windowWidth]);
-
   return (
     <AnimatedLayout>
       <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
@@ -112,24 +24,7 @@ export default function Travels() {
               <About />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:col-span-2 sm:row-span-2 xl:col-span-4">
-              <TransformWrapper
-                //on init set transform to the value from useLocalStorageState
-                onInit={(e) => {
-                  e.setTransform(settings.x, settings.y, settings.zoom);
-                }}
-                ref={ref}
-              >
-                <TransformComponent>
-                  <Image
-                    src="/images/travels/map.svg"
-                    alt="map"
-                    priority
-                    height={1200}
-                    width={2400}
-                  />
-                  {/* </div> */}
-                </TransformComponent>
-              </TransformWrapper>
+              <TravelMap />
             </div>
           </div>
         </div>

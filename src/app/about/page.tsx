@@ -2,6 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Here you can find all about me!",
+};
 
 export default function AboutPage() {
   const experiences = [

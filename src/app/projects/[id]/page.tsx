@@ -4,6 +4,7 @@ import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
+import Head from "next/head";
 
 export default function Project() {
   const { id } = useParams();
@@ -18,6 +19,10 @@ export default function Project() {
   return (
     <AnimatedLayout>
       <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
+        <Head>
+          <title>{project?.title}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <div className="mx-4 flex flex-col lg:flex-row">
           <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4 lg:w-3/4">
             <h1 className="pb-2 text-3xl font-black">{project?.title}</h1>

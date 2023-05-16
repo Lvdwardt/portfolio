@@ -1,21 +1,21 @@
-"use client";
-import { getCurrentScheme } from "@/utils/colorScheme";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
-export default async function PortfolioSmall() {
-  const resolvedTheme = await getCurrentScheme();
-
+export default function PortfolioSmall() {
   return (
     <div className="group relative h-full w-full overflow-hidden rounded-[2rem]">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
-      <div className="block w-[250] translate-x-[98px] translate-y-[-80px] select-none ">
+      <div className="block w-[250] translate-x-[98px] translate-y-[-80px] select-none dark:hidden">
         <Image
-          src={
-            resolvedTheme === "light"
-              ? "/images/portfolio_light.webp"
-              : "/images/portfolio.webp"
-          }
+          src={"/images/portfolio_light.webp"}
+          alt="photo from my portfolio website"
+          width={2002}
+          height={3292}
+        />
+      </div>
+      <div className="hidden w-[250] translate-x-[98px] translate-y-[-80px] select-none dark:block ">
+        <Image
+          src={"/images/portfolio.webp"}
           alt="photo from my portfolio website"
           width={2002}
           height={3292}

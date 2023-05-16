@@ -44,7 +44,7 @@ export default function Navbar() {
             {routes.map((route) => (
               <Link
                 key={route.name}
-                className="z-50 rounded-full px-3 py-1.5"
+                className="z-50 rounded-full px-3 py-1.5 transition-all hover:scale-105 "
                 href={route.href}
               >
                 {route.name}
@@ -53,22 +53,18 @@ export default function Navbar() {
 
             <motion.div
               initial={{
-                width: `${routes[currentPlace - 1]?.width}%`,
-                left: `${routes[currentPlace - 1]?.left}%`,
+                width: `${routes[currentPlace - 1]?.width || 96}%`,
+                left: `${routes[currentPlace - 1]?.left || 2}%`,
               }}
               animate={{
-                width: `${routes[currentPlace - 1]?.width}%`,
-                left: `${routes[currentPlace - 1]?.left}%`,
+                width: `${routes[currentPlace - 1]?.width || 96}%`,
+                left: `${routes[currentPlace - 1]?.left || 2}%`,
                 transition: {
                   duration: 1,
                   ease: "backInOut",
                 },
               }}
               className="absolute h-[75%] w-full rounded-full bg-secondary"
-              // style={{
-              //   width: `${routes[currentPlace - 1]?.width}%`,
-              //   left: `${routes[currentPlace - 1]?.left}%`,
-              // }}
             ></motion.div>
           </div>
         </div>
