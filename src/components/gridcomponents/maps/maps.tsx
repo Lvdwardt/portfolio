@@ -29,8 +29,8 @@ export async function Maps() {
   const timeZoneOffset = timeZones ? timeZones[0].utcOffset : 0;
 
   const isSleeping =
-    date.getHours() + timeZoneOffset / 60 > 0 &&
-    date.getHours() + timeZoneOffset / 60 < 9 &&
+    date.getHours() + timeZoneOffset / 60 + 2 > 0 &&
+    date.getHours() + timeZoneOffset / 60 + 2 < 9 &&
     data[0].charging;
 
   console.log(date.getHours(), "hours");
