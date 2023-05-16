@@ -33,6 +33,8 @@ export async function Maps() {
     date.getHours() + timeZoneOffset / 60 < 9 &&
     data[0].charging;
 
+  console.log(date.getHours(), "hours");
+
   return (
     <div className="flex flex-col overflow-hidden rounded-[2rem] bg-card p-8 sm:order-5 xl:order-8">
       <SiGooglemaps className="text-6xl text-primary" />
