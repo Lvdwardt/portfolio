@@ -2,6 +2,7 @@ export type ProjectList = {
   id: string;
   title: string;
   projectImage: string;
+  projectImageLight: string;
   coverImage: string;
   translate: string;
   width: string;

@@ -1,15 +1,15 @@
 "use client";
-import { useTheme } from "next-themes";
+import { getCurrentScheme } from "@/utils/colorScheme";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 
-export default function Portfolio() {
-  const { resolvedTheme } = useTheme();
+export default async function Portfolio() {
+  const resolvedTheme = await getCurrentScheme();
 
   return (
     <div className="group relative h-full w-full">
-      <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
+      <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-rg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className="block translate-y-[-170px] select-none sm:translate-y-0">
         <Image
           src={

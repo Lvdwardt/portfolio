@@ -1,8 +1,8 @@
 "use client";
-import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Gradient from "../assets/lineargradient";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const path = usePathname();
@@ -12,18 +12,17 @@ export default function Navbar() {
   console.log(currentRoute);
 
   const routes = [
-    { name: "Home", href: "", place: 1 },
-    { name: "About", href: "about", place: 2 },
-    { name: "Projects", href: "projects", place: 3 },
-    { name: "Travels", href: "travels", place: 4 },
+    { name: "Home", href: "", place: 1, width: 17.5, left: 2 },
+    { name: "About", href: "about", place: 2, width: 18.5, left: 25.5 },
+    { name: "Projects", href: "projects", place: 3, width: 22, left: 50 },
+    { name: "Travels", href: "travels", place: 4, width: 20, left: 78 },
   ];
-  const currentPlace = routes.find(
-    (route) => route.href === currentRoute
-  )?.place;
+  const currentPlace = routes.find((route) => route.href === currentRoute)
+    ?.place as number;
 
-  const currentName = routes.find(
-    (route) => route.place === currentPlace
-  )?.name;
+  //calculate difference between current place and the place of the clicked route
+  //remove negative sign
+
   return (
     <div className="grid py-4 font-medium xl:grid-cols-3">
       <div className="flex w-full  justify-center xl:block xl:pl-8">
@@ -51,18 +50,26 @@ export default function Navbar() {
                 {route.name}
               </Link>
             ))}
-            <div
-              className={clsx(
-                "pointer-events-none absolute w-min rounded-full bg-secondary p-1.5 px-2.5 text-transparent transition-all duration-1000",
-                currentPlace === 1 && "left-0 ml-1.5 ",
-                currentPlace === 2 && "left-1/4 ml-0.5",
-                currentPlace === 3 && "left-1/2 ml-[-1px]",
-                currentPlace === 4 && "left-3/4 ml-2.5",
-                currentPlace === undefined && "hidden"
-              )}
-            >
-              {currentName}
-            </div>
+
+            <motion.div
+              initial={{
+                width: `${routes[currentPlace - 1]?.width}%`,
+                left: `${routes[currentPlace - 1]?.left}%`,
+              }}
+              animate={{
+                width: `${routes[currentPlace - 1]?.width}%`,
+                left: `${routes[currentPlace - 1]?.left}%`,
+                transition: {
+                  duration: 1,
+                  ease: "backInOut",
+                },
+              }}
+              className="absolute h-[75%] w-full rounded-full bg-secondary"
+              // style={{
+              //   width: `${routes[currentPlace - 1]?.width}%`,
+              //   left: `${routes[currentPlace - 1]?.left}%`,
+              // }}
+            ></motion.div>
           </div>
         </div>
       </div>

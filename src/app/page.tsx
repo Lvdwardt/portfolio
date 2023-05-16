@@ -1,7 +1,7 @@
 import Head from "next/head";
 import About from "../components/about";
 import Mapbox from "../components/gridcomponents/mapbox";
-import Toggle from "../components/gridcomponents/serverToggle";
+import Toggle from "../components/gridcomponents/toggle";
 import Janskapsalonsmall from "../components/gridcomponents/janskapsalonsmall";
 import Janskapsalonflat from "../components/gridcomponents/janskapsalonflat";
 import {

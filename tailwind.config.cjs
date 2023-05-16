@@ -17,6 +17,7 @@ module.exports = {
         pg: "var(--pg)", //purple green
         pr: "var(--pr)", //purple pink
         rb: "var(--rb)", //pink blue
+        rg: "var(--rg)", //pink green
         rr: "var(--rr)", //pink pink
         br: "var(--br)", //blue pink
         bp: "var(--bp)", //blue purple

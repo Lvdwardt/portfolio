@@ -1,10 +1,10 @@
 "use client";
-import { useTheme } from "next-themes";
+import { getCurrentScheme } from "@/utils/colorScheme";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
-export default function PortfolioSmall() {
-  const { resolvedTheme } = useTheme();
+export default async function PortfolioSmall() {
+  const resolvedTheme = await getCurrentScheme();
 
   return (
     <div className="group relative h-full w-full overflow-hidden rounded-[2rem]">

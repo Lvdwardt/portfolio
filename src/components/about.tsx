@@ -99,10 +99,9 @@ export default function About() {
                 <br />
                 <br />
                 On the rare occasions where I&apos;m not coding, I&apos;m most
-                likely out there exploring the world. My biggest passion is
-                traveling, and I really enjoy finding the cheapest flights to
-                the most interesting places. I&apos;ve been to 19 countries so
-                far, spread across 3 continents.
+                likely out there exploring the world. I really enjoy finding the
+                cheapest flights to the most interesting places. I&apos;ve been
+                to 19 countries so far, spread across 3 continents.
               </span>
             </span>
           </div>
@@ -159,7 +158,7 @@ export default function About() {
         <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
           <div className="mb-[-2px] flex items-baseline gap-1">
             <p className="text-lg">
-              These are some of the projects I&apos;ve been working on:
+              Here are some of the projects I&apos;ve been working on:
             </p>
           </div>
         </div>
@@ -168,7 +167,7 @@ export default function About() {
         <div className="flex w-full flex-col px-4 pb-2 pt-6 xl:hidden">
           <div className="mb-[-2px] flex items-baseline gap-2">
             <p className="text-lg">
-              These are some of the projects I&apos;ve been working on:
+              Here are some of the projects I&apos;ve been working on:
             </p>
           </div>
         </div>
@@ -213,7 +212,7 @@ export default function About() {
           onClick={() => {
             toggle();
           }}
-          className="absolute opacity-0 transition-all duration-150 ease-in dark:opacity-100"
+          className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in dark:opacity-100"
         />
         <Image
           src={`/images/memoji/${current.dark}.webp`}
