@@ -2,7 +2,7 @@ import Head from "next/head";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import TravelMap from "@/components/travels/map";
+import TravelMap from "@/components/travels/travelMap";
 
 export const metadata: Metadata = {
   title: "Travels",

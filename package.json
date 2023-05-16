@@ -17,6 +17,7 @@
     "cookies-next": "^2.1.1",
     "framer-motion": "^10.12.11",
     "graphql": "^16.6.0",
+    "hast-to-hyperscript": "^10.0.3",
     "lodash": "^4.17.21",
     "next": "13.4.2",
     "next-themes": "^0.2.1",
@@ -26,6 +27,7 @@
     "react-map-gl": "^7.0.23",
     "react-svg-pan-zoom": "^3.12.1",
     "react-zoom-pan-pinch": "^3.0.7",
+    "svg-parser": "^2.0.4",
     "tailwind-scrollbar": "^3.0.4",
     "use-local-storage-state": "^18.3.2",
     "vercel": "^29.3.0",
@@ -58,3 +60,4 @@
     "initVersion": "7.4.0"
   }
 }
+

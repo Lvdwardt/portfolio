@@ -222,7 +222,7 @@ export default function About() {
           onClick={() => {
             toggle();
           }}
-          className="absolute opacity-100 transition-all duration-150 ease-in dark:opacity-0"
+          className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in dark:opacity-0"
         />
       </div>
       {/* mobile */}
