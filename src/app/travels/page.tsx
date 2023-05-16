@@ -2,7 +2,8 @@ import Head from "next/head";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import TravelMap from "@/components/travels/travelMap";
+import { lazy, Suspense } from "react";
+const TravelMap = lazy(() => import("@/components/travels/travelMap"));
 
 export const metadata: Metadata = {
   title: "Travels",
@@ -24,7 +25,9 @@ export default function Travels() {
               <About />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:col-span-2 sm:row-span-2 xl:col-span-4">
-              <TravelMap />
+              <Suspense fallback={<h1>Still Loading…</h1>}>
+                <TravelMap />
+              </Suspense>
             </div>
           </div>
         </div>

@@ -17,6 +17,10 @@ export default function TravelMap() {
       });
   }, []);
 
+  if (svg === <svg />) {
+    return <div />;
+  }
+
   return (
     <div>
       <UncontrolledReactSVGPanZoom
