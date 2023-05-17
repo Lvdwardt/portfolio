@@ -10,12 +10,34 @@ type MapsData = {
 
 export async function Maps() {
   const data = await MapsData();
-  const city = data[0].current_location
-    .split(",")[1]
-    .trim()
-    .replace(/[0-9]/g, "");
+  console.log(data);
+  const currentLocation = data[0].current_location as string;
 
-  const country = data[0].current_location.split(",")[2].trim();
+  const isDetailed = currentLocation.split(",").length > 2 ? true : false;
+
+  const longZipRegex = /[0-9]{4} [A-Z]{2}/g;
+  const shortZipRegex = /[0-9]{4}/g;
+
+  const longZipMatch = currentLocation
+    .match(longZipRegex)
+    ?.reduce((prev, curr) => (curr.length > prev.length ? curr : prev));
+  const shortZipMatch = currentLocation
+    .match(shortZipRegex)
+    ?.reduce((prev, curr) => (curr.length > prev.length ? curr : prev));
+
+  const zip = longZipMatch || shortZipMatch || "";
+
+  let city = isDetailed
+    ? currentLocation.split(",")[1].replace(zip, "").trim()
+    : currentLocation.split(",")[0].replace(zip, "").trim();
+
+  if (city === "Heidelberglaan 15") {
+    city = "Hogeschool Utrecht";
+  }
+
+  const acurateCountry = data[0].current_location.split(",")[2];
+  const globalCountry = data[0].current_location.split(",")[1];
+  const country = acurateCountry ? acurateCountry.trim() : globalCountry.trim();
   const countryISO = countries.getAlpha2Code(country, "en");
 
   const delta = data[0].delta;
@@ -29,11 +51,9 @@ export async function Maps() {
   const timeZoneOffset = timeZones ? timeZones[0].utcOffset : 0;
 
   const isSleeping =
-    date.getHours() + timeZoneOffset / 60 + 2 > 0 &&
-    date.getHours() + timeZoneOffset / 60 + 2 < 9 &&
+    date.getHours() + timeZoneOffset / 60 > 0 &&
+    date.getHours() + timeZoneOffset / 60 < 9 &&
     data[0].charging;
-
-  console.log(date.getHours(), "hours");
 
   return (
     <div className="flex flex-col overflow-hidden rounded-[2rem] bg-card p-8 sm:order-5 xl:order-8">
@@ -43,10 +63,10 @@ export async function Maps() {
         <div>
           <span className="pb-[1px] font-silka">
             {isSleeping
-              ? `sleeping, this night in:`
+              ? `sleeping, this night in: `
               : isOnline
-              ? `online, currently in:`
-              : `last seen ${delta} minutes ago in:`}
+              ? `online, currently in: `
+              : `last seen ${delta} minutes ago in: `}
           </span>
           <span className="text-xl font-bold">{city}</span>
         </div>
