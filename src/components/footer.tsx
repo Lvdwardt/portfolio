@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <div className="flex flex-col items-baseline justify-center pb-8 pt-16 text-center font-thin text-text sm:flex-row ">
-      <h3 className="w-full text-center sm:w-auto sm:text-left">
+      <span className="w-full text-center sm:w-auto sm:text-left">
         © {new Date().getFullYear()} Leon van de Wardt - Inspired by
-      </h3>
+      </span>
       <div className="flex w-full items-baseline justify-center sm:w-auto">
         <a
           href="https://nevflynn.com"
@@ -11,18 +11,18 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex items-baseline"
         >
-          <h2 className="ml-1 text-xl font-bold text-logo">Nev</h2>
-          <h2 className="ml-1 text-sm font-normal text-logo">Flynn</h2>
+          <span className="ml-1 text-xl font-bold text-logo">Nev</span>
+          <span className="ml-1 text-sm font-normal text-logo">Flynn</span>
         </a>
-        <h3>&nbsp;and</h3>
+        <span>&nbsp;and</span>
         <a
           href="https://robertozaccardi.dev/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-baseline"
         >
-          <h2 className="ml-1 text-xl font-bold text-logo">Rob</h2>
-          <h2 className="font-normal text-logo">erto Zaccardi</h2>
+          <span className="ml-1 text-xl font-bold text-logo">Rob</span>
+          <span className="font-normal text-logo">erto Zaccardi</span>
         </a>
       </div>
     </div>

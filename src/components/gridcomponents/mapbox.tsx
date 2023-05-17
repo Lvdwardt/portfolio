@@ -1,5 +1,12 @@
 "use client";
-import React, { useRef, useEffect, useState, useCallback, lazy } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  lazy,
+  startTransition,
+} from "react";
 const Map = lazy(() => import("react-map-gl"));
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -21,15 +28,18 @@ export default async function Mapbox() {
   );
 
   const onMapLoad = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    mapRef.current.getCenter() &&
+    if (!mapRef.current) return;
+    startTransition(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
-      setLng(mapRef.current.getCenter().lng.toFixed(4));
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    setLat(mapRef.current.getCenter().lat.toFixed(4));
+      mapRef.current.getCenter() &&
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        setLng(mapRef.current.getCenter().lng.toFixed(4));
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      setLat(mapRef.current.getCenter().lat.toFixed(4));
+    });
   }, []);
 
   useEffect(() => {
@@ -40,13 +50,15 @@ export default async function Mapbox() {
       clearTimeout(timeout);
 
       timeout = setTimeout(() => {
-        mutations.forEach((mutation) => {
-          if (mutation.attributeName === "data-theme") {
-            htmlElement?.getAttribute("data-theme") === "light"
-              ? setStyle("mapbox://styles/mapbox/light-v10")
-              : setStyle("mapbox://styles/leonvdw/ckza19352000615rsk08y22f3");
-            router.refresh();
-          }
+        startTransition(() => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === "data-theme") {
+              htmlElement?.getAttribute("data-theme") === "light"
+                ? setStyle("mapbox://styles/mapbox/light-v10")
+                : setStyle("mapbox://styles/leonvdw/ckza19352000615rsk08y22f3");
+              router.refresh();
+            }
+          });
         });
       }, 100);
     });
@@ -66,17 +78,21 @@ export default async function Mapbox() {
   }, []);
 
   const plus = () => {
-    setZoom(zoom + 2);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    mapRef.current?.flyTo({ zoom: zoom + 2, duration: 1000 });
+    startTransition(() => {
+      setZoom(zoom + 2);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      mapRef.current?.flyTo({ zoom: zoom + 2, duration: 1000 });
+    });
   };
 
   const minus = () => {
-    setZoom(zoom - 2);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    mapRef.current?.flyTo({ zoom: zoom - 2, duration: 1000 });
+    startTransition(() => {
+      setZoom(zoom - 2);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      mapRef.current?.flyTo({ zoom: zoom - 2, duration: 1000 });
+    });
   };
   const [awake, setAwake] = useState(false);
 
@@ -84,7 +100,6 @@ export default async function Mapbox() {
     <div>
       <Map
         ref={mapRef}
-        mapLib={import("mapbox-gl")}
         attributionControl={false}
         initialViewState={{
           longitude: lng,

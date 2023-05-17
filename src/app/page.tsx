@@ -29,6 +29,10 @@ const MapsLoading = () => (
   </div>
 );
 
+const Spinner = () => (
+  <div className="m-auto h-16 w-16 animate-spin rounded-full border-[10px] border-t-[10px] border-secondary border-t-primary" />
+);
+
 export default async function Home() {
   const res = await fetch(
     "https://cors-proxy.lvdw.workers.dev/?https://streak-stats.demolab.com/?user=Lvdwardt",
@@ -75,12 +79,12 @@ export default async function Home() {
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <Suspense fallback={<div>hey</div>}>
-            <div className="overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
+          <div className="flex h-full items-center justify-center overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
+            <Suspense fallback={<Spinner />}>
               {/* @ts-expect-error */}
               <Mapbox />
-            </div>
-          </Suspense>
+            </Suspense>
+          </div>
           <div className="rounded-[2rem] bg-br sm:hidden xl:order-3">
             <Janskapsalonsmall />
           </div>
