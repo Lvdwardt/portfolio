@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef, useEffect, useState, useCallback } from "react";
-import Map from "react-map-gl";
+import React, { useRef, useEffect, useState, useCallback, lazy } from "react";
+const Map = lazy(() => import("react-map-gl"));
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 //eslint-disable-next-line
-export default function Mapbox() {
+export default async function Mapbox() {
   const router = useRouter();
   //get html attribute for theme
 
@@ -84,6 +84,7 @@ export default function Mapbox() {
     <div>
       <Map
         ref={mapRef}
+        mapLib={import("mapbox-gl")}
         attributionControl={false}
         initialViewState={{
           longitude: lng,

@@ -14,11 +14,20 @@ import AnimatedLayout from "@/layouts/animatedLayout";
 import { type ElementCompact, xml2js } from "xml-js";
 import { type Metadata } from "next";
 import { Maps } from "@/components/gridcomponents/maps/maps";
+import { Suspense } from "react";
+import { SiGooglemaps } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Home",
   description: "Welcome to Leonvdw.nl!",
 };
+
+// loading component
+const MapsLoading = () => (
+  <div className="flex flex-col overflow-hidden rounded-[2rem] bg-card p-8 sm:order-5 xl:order-8">
+    <SiGooglemaps className="text-6xl text-primary" />
+  </div>
+);
 
 export default async function Home() {
   const res = await fetch(
@@ -66,9 +75,12 @@ export default async function Home() {
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <div className="overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
-            <Mapbox />
-          </div>
+          <Suspense fallback={<div>hey</div>}>
+            <div className="overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
+              {/* @ts-expect-error */}
+              <Mapbox />
+            </div>
+          </Suspense>
           <div className="rounded-[2rem] bg-br sm:hidden xl:order-3">
             <Janskapsalonsmall />
           </div>
@@ -86,8 +98,10 @@ export default async function Home() {
             <GithubStats data={data} />
           </div>
 
-          {/* @ts-expect-error */}
-          <Maps />
+          <Suspense fallback={<MapsLoading />}>
+            {/* @ts-expect-error */}
+            <Maps />
+          </Suspense>
           <Whatsapp />
           <div className="overflow-hidden rounded-[2rem] bg-br sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
             <Flyn />
