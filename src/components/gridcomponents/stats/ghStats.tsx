@@ -51,4 +51,3 @@ export default async function GithubStats() {
     </div>
   );
 }
-// className="bg-gradient-to-r from-secondary to-logo bg-clip-text text-transparent"
