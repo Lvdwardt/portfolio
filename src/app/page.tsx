@@ -1,17 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Head from "next/head";
 import About from "@/components/about";
-import Mapbox from "@/components/gridcomponents/mapbox";
 import Toggle from "@/components/gridcomponents/toggle";
 import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
 import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";
-import { Github, Whatsapp, Mail } from "@/components/gridcomponents/socials";
+import {
+  Github,
+  Whatsapp,
+  Mail,
+  Linkedin,
+} from "@/components/gridcomponents/socials";
 import Skills from "@/components/gridcomponents/skills";
 import Flyn from "@/components/gridcomponents/flynImg";
 import Footer from "@/components/footer";
-import GithubStats from "@/components/gridcomponents/githubStats";
+import GithubStats from "@/components/gridcomponents/ghStats";
+import WakatimeStats from "@/components/gridcomponents/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
-import { type ElementCompact, xml2js } from "xml-js";
 import { type Metadata } from "next";
 import { Maps } from "@/components/gridcomponents/maps/maps";
 import { Suspense } from "react";
@@ -29,42 +33,7 @@ const MapsLoading = () => (
   </div>
 );
 
-const Spinner = () => (
-  <div className="m-auto h-16 w-16 animate-spin rounded-full border-[10px] border-t-[10px] border-secondary border-t-primary" />
-);
-
 export default async function Home() {
-  const res = await fetch(
-    "https://cors-proxy.lvdw.workers.dev/?https://streak-stats.demolab.com/?user=Lvdwardt",
-    {
-      next: {
-        revalidate: 86400,
-      },
-    }
-  ).then(function (response) {
-    return response.text();
-  });
-
-  const svgObject = xml2js(res, { compact: true }) as ElementCompact;
-
-  const commits = svgObject.svg.g.g[2].g[0].text._text;
-  const streak = svgObject.svg.g.g[3].g[0].text._text;
-  const streakDate = svgObject.svg.g.g[3].g[2].text._text;
-  const longestStreak = svgObject.svg.g.g[4].g[0].text._text;
-  const longestStreakDate = svgObject.svg.g.g[4].g[2].text._text;
-
-  const data = {
-    commits: commits,
-    streak: {
-      number: streak,
-      date: streakDate,
-    },
-    longestStreak: {
-      number: longestStreak,
-      date: longestStreakDate,
-    },
-  };
-
   return (
     <AnimatedLayout>
       <Head>
@@ -79,10 +48,10 @@ export default async function Home() {
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <div className="flex h-full items-center justify-center overflow-hidden rounded-[2rem] border-4 border-card sm:order-6 xl:order-2">
-            <Suspense fallback={<Spinner />}>
+          <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
+            <Suspense fallback={<MapsLoading />}>
               {/* @ts-expect-error */}
-              <Mapbox />
+              <Maps />
             </Suspense>
           </div>
           <div className="rounded-[2rem] bg-br sm:hidden xl:order-3">
@@ -98,14 +67,14 @@ export default async function Home() {
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-2 xl:order-6 ">
             <Skills />
           </div>
-          <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 sm:col-span-2 xl:order-7">
-            <GithubStats data={data} />
+          <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 xl:order-7">
+            {/* @ts-expect-error */}
+            <GithubStats />
           </div>
 
-          <Suspense fallback={<MapsLoading />}>
-            {/* @ts-expect-error */}
-            <Maps />
-          </Suspense>
+          <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-pr p-8 sm:order-5 xl:order-8">
+            <Linkedin />
+          </div>
           <Whatsapp />
           <div className="overflow-hidden rounded-[2rem] bg-br sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
             <Flyn />
@@ -113,7 +82,12 @@ export default async function Home() {
           <div className="hidden overflow-hidden rounded-[2rem] bg-br sm:order-4 sm:col-span-2 sm:block xl:order-10">
             <Janskapsalonflat />
           </div>
+
           <Mail />
+          <div className="hidden overflow-hidden rounded-[2rem] bg-br  sm:block xl:order-12">
+            {/* @ts-expect-error */}
+            <WakatimeStats />
+          </div>
         </div>
         <Footer />
       </div>

@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import localfont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
-import { getCurrentScheme } from "../utils/colorScheme";
 
 import "../styles/globals.css";
 import "../styles/mapbox-gl.css";
 import Navbar from "../components/navbar";
+import Providers from "@/utils/providers";
 
 export const metadata: Metadata = {
   title: "Leonvdw.nl",
@@ -70,18 +70,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const scheme = await getCurrentScheme();
   return (
     <html
       lang="en"
-      data-theme={scheme === "light" ? "light" : "dark"}
-      className={`${gotham.variable} ${silka.variable} font-silka text-text ${
-        scheme === "light" ? "" : "dark"
-      }`}
+      data-theme="dark"
+      suppressHydrationWarning
+      className={`${gotham.variable} ${silka.variable} font-silka text-text`}
     >
       <body>
-        <Navbar />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
       <Analytics />
     </html>

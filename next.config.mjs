@@ -27,6 +27,11 @@ const config = {
         hostname: "github-readme-stats.vercel.app",
         pathname: "/api/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.mapbox.com",
+        pathname: "/styles/v1/**",
+      },
     ],
   },
 };

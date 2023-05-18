@@ -2,8 +2,10 @@ import Head from "next/head";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { lazy, Suspense } from "react";
-const TravelMap = lazy(() => import("@/components/travels/travelMap"));
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const TravelMap = dynamic(() => import("@/components/travels/travelMap"));
 
 export const metadata: Metadata = {
   title: "Travels",

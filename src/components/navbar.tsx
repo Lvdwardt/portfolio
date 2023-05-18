@@ -9,7 +9,6 @@ export default function Navbar() {
   //path == /about or /projects/janskapsalon
   //trim the path to /about or /projects
   const currentRoute = path.split("/")[1];
-  console.log(currentRoute);
 
   const routes = [
     { name: "Home", href: "", place: 1, width: 17.5, left: 2 },

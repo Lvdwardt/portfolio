@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export function Whatsapp() {
   return (
@@ -15,6 +15,20 @@ export function Whatsapp() {
     </Link>
   );
 }
+export function Linkedin() {
+  return (
+    <Link
+      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-bp sm:order-10"
+      href="https://www.linkedin.com/in/leonvandewardt/"
+      target={"_blank"}
+      rel="noreferrer"
+      title="Linkedin"
+    >
+      <FaLinkedin className="text-[100px] text-white" />
+    </Link>
+  );
+}
+
 export function Github() {
   return (
     <Link

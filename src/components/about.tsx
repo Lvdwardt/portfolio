@@ -1,16 +1,12 @@
 "use client";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { toggleScheme } from "../utils/colorScheme";
+import ToggleTheme from "@/hooks/toggleTheme";
+import { useTheme } from "next-themes";
 
 export default function About() {
-  const router = useRouter();
-
-  const toggle = async () => {
-    await toggleScheme();
-    router.refresh();
-  };
+  const { resolvedTheme, setTheme } = useTheme();
 
   let currentPath = usePathname();
   currentPath = currentPath.replace("/", "");
@@ -210,7 +206,7 @@ export default function About() {
           height={current.height}
           alt={current.alt}
           onClick={() => {
-            toggle();
+            ToggleTheme({ resolvedTheme, setTheme });
           }}
           className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in dark:opacity-100"
         />
@@ -220,7 +216,7 @@ export default function About() {
           height={current.height}
           alt={current.alt_dark}
           onClick={() => {
-            toggle();
+            ToggleTheme({ resolvedTheme, setTheme });
           }}
           className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in dark:opacity-0"
         />

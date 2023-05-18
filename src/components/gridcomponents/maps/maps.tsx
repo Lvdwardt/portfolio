@@ -2,6 +2,7 @@ import { SiGooglemaps } from "react-icons/si";
 import MapsData from "./mapsData";
 import ct from "countries-and-timezones";
 import countries from "i18n-iso-countries";
+import Image from "next/image";
 
 type MapsData = {
   current_location: string;
@@ -55,29 +56,42 @@ export async function Maps() {
     date.getHours() + timeZoneOffset / 60 < 9 &&
     data[0].charging;
 
-  return (
-    <div className="flex flex-col overflow-hidden rounded-[2rem] bg-card p-8 sm:order-5 xl:order-8">
-      <SiGooglemaps className="text-6xl text-primary" />
+  const mapbox_token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+  const illdefinedLocation = data[0].longitude + "," + data[0].latitude;
 
+  return (
+    <div className="flex h-full w-full flex-col p-8">
+      <div className="flex justify-between">
+        <SiGooglemaps className="text-6xl text-primary" />
+        <div className="h-24 w-24 overflow-hidden rounded-2xl bg-pg">
+          <Image
+            src={`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/${illdefinedLocation},12,0/200x300?access_token=${mapbox_token}`}
+            alt="map"
+            width={280}
+            height={280}
+            className="rounded-2xl dark:hidden"
+          />
+          <Image
+            src={`https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/${illdefinedLocation},12,0/200x300?access_token=${mapbox_token}`}
+            alt="map"
+            width={280}
+            height={280}
+            className="hidden rounded-2xl dark:block"
+          />
+        </div>
+      </div>
       <div className="mt-auto flex flex-col">
         <div>
           <span className="pb-[1px] font-silka">
             {isSleeping
-              ? `sleeping, this night in: `
+              ? `Sleeping, this night in: `
               : isOnline
-              ? `online, currently in: `
-              : `last seen ${delta} minutes ago in: `}
+              ? `Located! Currently in: `
+              : `Last seen ${delta} minutes ago in: `}
           </span>
-          <span className="text-xl font-bold">{city}</span>
+          <span className="text-2xl font-bold">{city}</span>
         </div>
         <span className="font-silka text-sm text-gray-400">{country}</span>
-
-        {/* <div className="flex items-center gap-2">
-          <FaHome className="mb-0.5 h-4 w-4 text-base" />
-          <span className="pb-[1px] font-silka">offline, last traveled to</span>
-        </div>
-        <span className="text-2xl font-bold">Zadar</span>
-        <span className="font-silka text-sm text-gray-400">Croatia</span> */}
       </div>
     </div>
   );

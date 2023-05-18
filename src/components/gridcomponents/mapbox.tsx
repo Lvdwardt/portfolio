@@ -4,10 +4,10 @@ import React, {
   useEffect,
   useState,
   useCallback,
-  lazy,
   startTransition,
 } from "react";
-const Map = lazy(() => import("react-map-gl"));
+// const Map = lazy(() => import("react-map-gl"));
+import { Map } from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
