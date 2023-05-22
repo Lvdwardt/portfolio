@@ -5,6 +5,7 @@ import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
 import Head from "next/head";
+import { SiGithub } from "react-icons/si";
 
 export default function Project() {
   const { id } = useParams();
@@ -65,6 +66,16 @@ export default function Project() {
                   {icon.icon}
                 </a>
               ))}
+              {project.githubUrl && (
+                <a
+                  className="ml-auto"
+                  href={project.githubUrl}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <SiGithub />
+                </a>
+              )}
             </div>
           </div>
           <div className="m-4 lg:h-auto lg:w-1/4">

@@ -183,7 +183,7 @@ export default function About() {
         <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
           <div className="mb-[-2px] flex items-baseline gap-1">
             <p className="text-lg">
-              Here is a map with all the countries I&apos;ve been to:
+              Here is a map with all the countries I&apos;ve visited:
             </p>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function About() {
         <div className="flex w-full flex-col px-4 pb-2 pt-6 xl:hidden">
           <div className="mb-[-2px] flex items-baseline gap-2">
             <p className="text-lg">
-              Here is a map with all the countries I&apos;ve been to:
+              Here is a map with all the countries I&apos;ve visited:
             </p>
           </div>
         </div>

@@ -8,12 +8,11 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
 
 - Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a set of pre-defined styles and classes to streamline the styling process and ensure consistency across the site.
 
-- Vercel is a cloud platform that provides hosting, deployment, and management. It’s the easiest way to host a Nextjs site. 
+- Vercel is a cloud platform that provides hosting, deployment, and management. It’s the easiest way to host a Nextjs site.
 
 - TypeScript: TypeScript is a typed superset of JavaScript that brings static typing and improved tooling to the development process. It helps catch errors early and provides better code documentation and autocompletion.
 
-
-
+<br/>
 <p align="center">
    <br/>
   <a href="https://skillicons.dev">
@@ -43,8 +42,8 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
    WAKATIME_KEY=your_wakatime_api_key
    GITHUB_KEY=your_github_api_key
    ```
-5. Start the development server with `pnpm dev`.
-6. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
+6. Start the development server with `pnpm dev`.
+7. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
 
 ## Contribution
 
@@ -54,10 +53,9 @@ I welcome contributions to enhance the functionality, design, and overall user e
 
 This project is licensed under the [MIT License](LICENSE). Feel free to modify and use the code for your own portfolio site. Just give me a shoutout somewhere :)
 
-
 ## Shoutout
 
-I would like to give a special shoutout to [Nev Flynn](https://nevflynn.com) for the amazing design of this portfolio site, and [Roberto Zaccardi](https://robertozaccardi.dev/) for the cool animation ideas!
+I would like to give a special shoutout to [Nev Flynn](https://nevflynn.com) for the amazing design of this portfolio site, and [Rob Zaccardi](https://robertozaccardi.dev/) for the cool animation ideas!
 
 ---
 

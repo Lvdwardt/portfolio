@@ -6,11 +6,12 @@ import {
   SiGooglemybusiness,
   SiNextdotjs,
   SiTailwindcss,
-  SiGithub,
   SiFramer,
   SiTurborepo,
   SiStorybook,
   SiFirebase,
+  SiCloudflare,
+  SiDigitalocean,
 } from "react-icons/si";
 import { ProjectList } from "@/types";
 
@@ -87,6 +88,7 @@ const projectList: ProjectList[] = [
         url: "https://play.google.com/console/about/",
       },
       { icon: <SiExpo />, url: "https://expo.dev/" },
+      { icon: <SiDocker />, url: "https://docker.com" },
     ],
   },
 
@@ -102,21 +104,29 @@ const projectList: ProjectList[] = [
     grid: "col-span-2 row-span-1",
     order: "order-2",
     description:
-      "This website is my portfolio. It is a place where I can show my work and skills. I made this website to show my skills and to learn new things. I made this website with Next.js and Tailwind CSS. I also used Framer Motion for animations.",
+      "This is my portfolio site. It is a place where I can show my work and skills. I made this website to show my skills and to learn new things. I made this website with Next.js and Tailwind CSS. I also used Framer Motion for animations.",
     workedOn: [
       { work: "I made the design for the website" },
       { work: "I realised the design with Next.js and Tailwind CSS" },
+      { work: "I made a cors proxy to fetch images with Cloudflare Workers" },
+      {
+        work: "I created a Python api and hosted it on Digital Ocean Functions",
+      },
     ],
     newSkills: [
       { skill: "Building a website with Next.js" },
       { skill: "Using Framer Motion for animations" },
+      { skill: "Working with Cloudflare Workers" },
+      { skill: "Hosting an api with Digital Ocean Functions" },
     ],
     icons: [
       { icon: <SiNextdotjs />, url: "https://nextjs.org/" },
       { icon: <SiTailwindcss />, url: "https://tailwindcss.com/" },
-      { icon: <SiGithub />, url: "https://github.com/lvdwardt/portfolio" },
+      { icon: <SiCloudflare />, url: "https://www.cloudflare.com/" },
+      { icon: <SiDigitalocean />, url: "https://digitalocean.com/" },
       { icon: <SiFramer />, url: "https://www.framer.com/motion/" },
     ],
+    githubUrl: "https://github.com/lvdwardt/portfolio",
   },
   {
     id: "babble",
@@ -145,7 +155,7 @@ const projectList: ProjectList[] = [
     icons: [
       { icon: <SiReact />, url: "https://react.dev/" },
       { icon: <SiTailwindcss />, url: "https://tailwindcss.com" },
-      { icon: <SiTurborepo />, url: "https://turbo.build" },
+      { icon: <SiTurborepo />, url: "https://turbo.build/repo" },
       { icon: <SiStorybook />, url: "https://storybook.js.org/" },
       { icon: <SiFirebase />, url: "https://firebase.google.com/" },
     ],

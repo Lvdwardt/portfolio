@@ -20,4 +20,5 @@ export type ProjectList = {
     icon: JSX.Element;
     url: string;
   }[];
+  githubUrl?: string;
 };
