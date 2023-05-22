@@ -179,6 +179,24 @@ export default function About() {
       width: 100,
       className:
         "relative, min-h-[100px] min-w-[100px] pt-[10px] mb-[11px] mt-[-5px] ml-[-2px]",
+      text: (
+        <div className="hidden w-full flex-col pl-4 pt-4 xl:flex">
+          <div className="mb-[-2px] flex items-baseline gap-1">
+            <p className="text-lg">
+              Here is a map with all the countries I&apos;ve been to:
+            </p>
+          </div>
+        </div>
+      ),
+      mobileText: (
+        <div className="flex w-full flex-col px-4 pb-2 pt-6 xl:hidden">
+          <div className="mb-[-2px] flex items-baseline gap-2">
+            <p className="text-lg">
+              Here is a map with all the countries I&apos;ve been to:
+            </p>
+          </div>
+        </div>
+      ),
     },
     {
       name: "else",

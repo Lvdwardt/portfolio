@@ -27,7 +27,7 @@ export default function TravelMap() {
         background="transparent"
         SVGBackground="transparent"
         width={2400}
-        height={600}
+        height={800}
         detectAutoPan={true}
         detectWheel={true}
         detectPinchGesture={true}

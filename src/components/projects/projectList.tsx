@@ -8,6 +8,9 @@ import {
   SiTailwindcss,
   SiGithub,
   SiFramer,
+  SiTurborepo,
+  SiStorybook,
+  SiFirebase,
 } from "react-icons/si";
 import { ProjectList } from "@/types";
 
@@ -40,10 +43,13 @@ const projectList: ProjectList[] = [
       },
     ],
     icons: [
-      { icon: <SiDocker /> },
-      { icon: <SiReact /> },
-      { icon: <SiTailwindcss /> },
-      { icon: <SiGooglemybusiness /> },
+      { icon: <SiDocker />, url: "https://www.docker.com/" },
+      { icon: <SiReact />, url: "https://react.dev/" },
+      { icon: <SiTailwindcss />, url: "https://tailwindcss.com/" },
+      {
+        icon: <SiGooglemybusiness />,
+        url: "https://www.google.com/business/",
+      },
     ],
   },
   {
@@ -75,9 +81,12 @@ const projectList: ProjectList[] = [
       { skill: "The drafting of a Terms of Service" },
     ],
     icons: [
-      { icon: <SiReact /> },
-      { icon: <SiGoogleplay /> },
-      { icon: <SiExpo /> },
+      { icon: <SiReact />, url: "https://react.dev/" },
+      {
+        icon: <SiGoogleplay />,
+        url: "https://play.google.com/console/about/",
+      },
+      { icon: <SiExpo />, url: "https://expo.dev/" },
     ],
   },
 
@@ -103,10 +112,42 @@ const projectList: ProjectList[] = [
       { skill: "Using Framer Motion for animations" },
     ],
     icons: [
-      { icon: <SiNextdotjs /> },
-      { icon: <SiTailwindcss /> },
-      { icon: <SiGithub /> },
-      { icon: <SiFramer /> },
+      { icon: <SiNextdotjs />, url: "https://nextjs.org/" },
+      { icon: <SiTailwindcss />, url: "https://tailwindcss.com/" },
+      { icon: <SiGithub />, url: "https://github.com/" },
+      { icon: <SiFramer />, url: "https://www.framer.com/motion/" },
+    ],
+  },
+  {
+    id: "babble",
+    title: "Babble",
+    coverImage: "/images/companies/babble.webp",
+    projectImage: "/images/companies/babble.webp",
+    projectImageLight: "/images/companies/babble.webp",
+    url: "https://hiperr.net",
+    translate: "translate-y-0 ",
+    width: "w-[120px]",
+    grid: "col-span-2 row-span-1",
+    order: "order-2",
+    description:
+      "Babble is a platform where streamers can play games with their chat. It is a great way for streamers to interact with their viewers and build a community. Viewers can simply use the Twitch or Youtube chat to play, and the streamer controls everything via the platform.",
+    workedOn: [
+      { work: "I created a monorepo with Turborepo" },
+      { work: "I implemented a design system with Storybook" },
+      { work: "I realised the design with React and TailwindCSS" },
+      { work: "I hosted the website with Firebase" },
+    ],
+    newSkills: [
+      { skill: "Implemeting and working with a monorepo" },
+      { skill: "Working with storybook to create a design system" },
+      { skill: "Hosting a website with Firebase" },
+    ],
+    icons: [
+      { icon: <SiReact />, url: "https://react.dev/" },
+      { icon: <SiTailwindcss />, url: "https://tailwindcss.com" },
+      { icon: <SiTurborepo />, url: "https://turbo.build" },
+      { icon: <SiStorybook />, url: "https://storybook.js.org/" },
+      { icon: <SiFirebase />, url: "https://firebase.google.com/" },
     ],
   },
 ];

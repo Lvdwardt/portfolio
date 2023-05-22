@@ -18,8 +18,10 @@ import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { Maps } from "@/components/gridcomponents/maps/maps";
+// import Mapbox from "@/components/gridcomponents/mapbox2";
 import { Suspense } from "react";
 import { SiGooglemaps } from "react-icons/si";
+// import MapsData from "@/components/gridcomponents/maps/mapsData";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -34,6 +36,7 @@ const MapsLoading = () => (
 );
 
 export default async function Home() {
+  // const data = await MapsData();
   return (
     <AnimatedLayout>
       <Head>

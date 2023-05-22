@@ -12,8 +12,8 @@ export default function Navbar() {
 
   const routes = [
     { name: "Home", href: "", place: 1, width: 17.5, left: 2 },
-    { name: "About", href: "about", place: 2, width: 18.5, left: 25.5 },
-    { name: "Projects", href: "projects", place: 3, width: 22, left: 50 },
+    { name: "About", href: "about", place: 2, width: 18.5, left: 25.1 },
+    { name: "Projects", href: "projects", place: 3, width: 22, left: 49.5 },
     { name: "Travels", href: "travels", place: 4, width: 20, left: 78 },
   ];
   const currentPlace = routes.find((route) => route.href === currentRoute)

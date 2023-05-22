@@ -18,5 +18,6 @@ export type ProjectList = {
   }[];
   icons: {
     icon: JSX.Element;
+    url: string;
   }[];
 };

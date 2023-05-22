@@ -6,18 +6,19 @@ import React, {
   useCallback,
   startTransition,
 } from "react";
-// const Map = lazy(() => import("react-map-gl"));
 import { Map } from "react-map-gl";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import clsx from "clsx";
+import MapsData from "./maps/mapsData";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 //eslint-disable-next-line
 export default async function Mapbox() {
+  const data = await MapsData();
+
   const router = useRouter();
-  //get html attribute for theme
 
   const mapRef = useRef(null);
   const [lng, setLng] = useState(5.5735);
@@ -28,6 +29,7 @@ export default async function Mapbox() {
   );
 
   const onMapLoad = useCallback(() => {
+    console.log(lat, lng);
     if (!mapRef.current) return;
     startTransition(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -99,6 +101,7 @@ export default async function Mapbox() {
   return (
     <div>
       <Map
+        reuseMaps
         ref={mapRef}
         attributionControl={false}
         initialViewState={{

@@ -38,7 +38,23 @@ export default async function WakatimeStats() {
     // set hours to the total hours coded in the past week
     .then((data) => {
       const hours = Math.floor(data.cumulative_total.seconds / 3600);
-      const dailyAverage = data.daily_average.text;
+      // const dailyAverage = data.daily_average.text;
+      // 5 hrs 1 min
+      // 2 hrs 10 min
+      // 10 hrs 0 min
+      //daily average looks like this
+      //make it so there's a , after the hours
+      const dailyAverage = data.daily_average.text
+        .split(" ")
+        .map((item: string, index: number) => {
+          if (index === 1) {
+            return item + ",";
+          } else {
+            return item;
+          }
+        })
+        .join(" ");
+
       return { hours, dailyAverage };
     });
 
@@ -64,7 +80,10 @@ export default async function WakatimeStats() {
         <br />
         <span className="text-2xl font-bold">{hours} hours</span>
         <br />
-        <span className="font-silka text-sm text-gray-400">past week</span>
+        <span className="font-silka text-sm text-gray-400">
+          {" "}
+          in the past week
+        </span>
         <br />
       </div>
     );
@@ -91,7 +110,7 @@ export default async function WakatimeStats() {
         <span className="text-2xl font-bold">{dailyAverage}</span>
         <br />
         <span className="font-silka text-sm text-gray-400">
-          in the past week
+          of coding in the past week
         </span>
         <br />
       </div>
@@ -128,7 +147,9 @@ export default async function WakatimeStats() {
 
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <SiWakatime className="text-6xl text-primary" />
+      <a href="https://wakatime.com/@LvdWardt" target="_blank" rel="noreferrer">
+        <SiWakatime className="text-6xl text-primary" />
+      </a>
       <div className="mt-auto flex flex-col">{returnRandom()}</div>
     </div>
   );

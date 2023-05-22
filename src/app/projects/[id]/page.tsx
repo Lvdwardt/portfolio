@@ -56,7 +56,14 @@ export default function Project() {
             </div>
             <div className="mt-auto flex gap-4 pt-6 text-4xl">
               {project.icons.map((icon, index) => (
-                <div key={index}>{icon.icon}</div>
+                <a
+                  href={icon.url}
+                  key={index}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  {icon.icon}
+                </a>
               ))}
             </div>
           </div>

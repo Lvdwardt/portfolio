@@ -36,7 +36,9 @@ export default async function GithubStats() {
 
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <SiGithub className="text-6xl text-primary" />
+      <a href="https://github.com/Lvdwardt" target="_blank" rel="noreferrer">
+        <SiGithub className="text-6xl text-primary" />
+      </a>
       <div className="mt-auto flex flex-col">
         <div>
           <div className="flex h-6 items-center gap-2">
