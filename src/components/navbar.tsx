@@ -68,6 +68,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <a
+        href="mailto:contact@leonvdw.nl"
+        target="_blank"
+        rel="noreffer"
+        className="absolute right-4 top-[3.8rem] text-sm text-gray-400 underline sm:right-14 sm:top-[7.25rem] xl:right-14 xl:top-[3.6rem]"
+      >
+        contact
+      </a>
     </div>
   );
 }

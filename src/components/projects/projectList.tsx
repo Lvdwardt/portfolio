@@ -114,7 +114,7 @@ const projectList: ProjectList[] = [
     icons: [
       { icon: <SiNextdotjs />, url: "https://nextjs.org/" },
       { icon: <SiTailwindcss />, url: "https://tailwindcss.com/" },
-      { icon: <SiGithub />, url: "https://github.com/" },
+      { icon: <SiGithub />, url: "https://github.com/lvdwardt/portfolio" },
       { icon: <SiFramer />, url: "https://www.framer.com/motion/" },
     ],
   },
