@@ -4,13 +4,22 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
 
 ## Technologies Used
 
-- Next.js (v13) with App Router: Next.js is a React framework that allows for server-side rendering, static site generation, and client-side rendering. App Router enables smooth navigation and seamless transitions between pages.
+- Next.js (v13) with App Router: Next.js is a React framework that allows for server-side rendering, static site generation, and client-side rendering. App Router provides a better syntax for writing and handling front- and back-end code.
 
 - Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a set of pre-defined styles and classes to streamline the styling process and ensure consistency across the site.
 
-- Framer Motion: Framer Motion is a popular animation library for React. It adds smooth and interactive animations to different elements and components, enhancing the visual appeal of the site.
+- Vercel is a cloud platform that provides hosting, deployment, and management. It’s the easiest way to host a Nextjs site. 
 
 - TypeScript: TypeScript is a typed superset of JavaScript that brings static typing and improved tooling to the development process. It helps catch errors early and provides better code documentation and autocompletion.
+
+
+
+<p align="center">
+   <br/>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=next,tailwind,vercel,typescript" />
+  </a>
+</p>
 
 ## APIs Used
 
