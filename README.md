@@ -1,30 +1,55 @@
-# Portfolio site
+# Portfolio Site
 
-### built using the T3 stack
+This is my personal portfolio site showcasing my projects, skills, and experiences. It is built using modern web technologies to provide an engaging and user-friendly experience. The site incorporates data from various APIs to enhance its functionality.
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Technologies Used
 
-## What's next? How do I make an app with this?
+- Next.js (v13) with App Router: Next.js is a React framework that allows for server-side rendering, static site generation, and client-side rendering. App Router enables smooth navigation and seamless transitions between pages.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a set of pre-defined styles and classes to streamline the styling process and ensure consistency across the site.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- Framer Motion: Framer Motion is a popular animation library for React. It adds smooth and interactive animations to different elements and components, enhancing the visual appeal of the site.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- TypeScript: TypeScript is a typed superset of JavaScript that brings static typing and improved tooling to the development process. It helps catch errors early and provides better code documentation and autocompletion.
 
-## Learn More
+## APIs Used
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- GitHub API: The GitHub API is utilized to fetch my github statistics
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- Wakatime API: The Wakatime API integration provides insights into my coding activity and productivity.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- Own api for google maps location retrieval using [locationsharinglib](https://github.com/costastf/locationsharinglib), hosted on [DigitalOcean Functions](https://www.digitalocean.com/products/functions)
 
-## How do I deploy this?
+## Installation and Setup
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running `pnpm install`.
+3. Setup your own [locationsharinglib api](https://github.com/costastf/locationsharinglib)
+4. Obtain API keys for the GitHub API, Wakatime API, Mapbox, and if used digital ocean functions X-Require-Whisk-Auth
+5. Create a `.env` file in the root directory and add your API keys as environment variables:
+   ```
+   MY_SECRET_TOKEN=your_api_revalidate_token (just generate a random token)
+   NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token
+   DO_KEY=your_digital_ocean_function_X-Require-Whisk-Auth_key
+   WAKATIME_KEY=your_wakatime_api_key
+   GITHUB_KEY=your_github_api_key
+   ```
+5. Start the development server with `pnpm dev`.
+6. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
+
+## Contribution
+
+I welcome contributions to enhance the functionality, design, and overall user experience of my portfolio site. If you have any suggestions, bug reports, or feature requests, please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to modify and use the code for your own portfolio site. Just give me a shoutout somewhere :)
+
+
+## Shoutout
+
+I would like to give a special shoutout to [Nev Flynn](https://nevflynn.com) for the amazing design of this portfolio site, and [Roberto Zaccardi](https://robertozaccardi.dev/) for the cool animation ideas!
+
+---
+
+Thank you for visiting my portfolio site! I hope you enjoy exploring my projects and learning more about my skills and experiences.
