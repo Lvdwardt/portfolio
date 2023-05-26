@@ -98,7 +98,7 @@ const projectList: ProjectList[] = [
     coverImage: "/images/portfolio.webp",
     projectImage: "/images/portfolio.webp",
     projectImageLight: "/images/portfolio_light.webp",
-    url: "https://leonvdwnl",
+    url: "https://leonvdw.nl",
     translate: "translate-y-0 ",
     width: "w-[120px]",
     grid: "col-span-2 row-span-1",
