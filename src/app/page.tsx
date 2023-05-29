@@ -21,6 +21,8 @@ import { Maps } from "@/components/gridcomponents/maps/maps";
 // import Mapbox from "@/components/gridcomponents/mapbox2";
 import { Suspense } from "react";
 import { SiGooglemaps } from "react-icons/si";
+import Mapbox from "@/components/gridcomponents/mapbox";
+import MapsData from "@/components/gridcomponents/maps/mapsData";
 // import MapsData from "@/components/gridcomponents/maps/mapsData";
 
 export const metadata: Metadata = {
@@ -28,15 +30,8 @@ export const metadata: Metadata = {
   description: "Welcome to Leonvdw.nl!",
 };
 
-// loading component
-const MapsLoading = () => (
-  <div className="flex flex-col overflow-hidden rounded-[2rem] bg-card p-8 sm:order-5 xl:order-8">
-    <SiGooglemaps className="text-6xl text-primary" />
-  </div>
-);
-
 export default async function Home() {
-  // const data = await MapsData();
+  const data = await MapsData();
   return (
     <AnimatedLayout>
       <Head>
@@ -52,19 +47,19 @@ export default async function Home() {
             <About />
           </div>
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
-            <Suspense fallback={<MapsLoading />}>
+            <Suspense fallback={<div className="bg-card" />}>
               {/* @ts-expect-error */}
-              <Maps />
+              <Mapbox data={data} />
             </Suspense>
           </div>
-          <div className="rounded-[2rem] bg-br sm:hidden xl:order-3">
+          <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">
             <Janskapsalonsmall />
           </div>
-          <div className="overflow-hidden rounded-[2rem] bg-pg sm:order-3  xl:order-4">
+          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-3  xl:order-4">
             <Toggle />
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] bg-rb sm:order-8 xl:order-5">
+          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-8 xl:order-5">
             <Github />
           </div>
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-2 xl:order-6 ">
@@ -75,19 +70,19 @@ export default async function Home() {
             <GithubStats />
           </div>
 
-          <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-pr p-8 sm:order-5 xl:order-8">
+          <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-secondary p-8 sm:order-5 xl:order-8">
             <Linkedin />
           </div>
           <Whatsapp />
-          <div className="overflow-hidden rounded-[2rem] bg-br sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
+          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
             <Flyn />
           </div>
-          <div className="hidden overflow-hidden rounded-[2rem] bg-br sm:order-4 sm:col-span-2 sm:block xl:order-10">
+          <div className="hidden overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 sm:block xl:order-10">
             <Janskapsalonflat />
           </div>
 
           <Mail />
-          <div className="hidden overflow-hidden rounded-[2rem] bg-br  sm:block xl:order-12">
+          <div className="hidden overflow-hidden rounded-[2rem] bg-card  sm:block xl:order-12">
             {/* @ts-expect-error */}
             <WakatimeStats />
           </div>

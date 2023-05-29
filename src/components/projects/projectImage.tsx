@@ -5,8 +5,8 @@ import type { ProjectList } from "@/types";
 
 export default function ProjectImage({ project }: { project: ProjectList }) {
   return (
-    <div className="group relative overflow-hidden rounded-[2rem] bg-br">
-      <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-pg sm:translate-y-[-12.5rem] sm:rounded-t-none" />
+    <div className="group relative overflow-hidden rounded-[2rem] bg-card">
+      <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-secondary sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className={clsx("block select-none dark:hidden", project.translate)}>
         <Image
           src={project.projectImageLight}
@@ -29,10 +29,10 @@ export default function ProjectImage({ project }: { project: ProjectList }) {
           `group-hover:${project.width}`
         )}
       >
-        <div className="rounded-full border-transparent transition-all duration-300 hover:border-4 hover:border-white/20">
+        <div className="rounded-full border-transparent transition-all duration-300 hover:border-4 hover:border-trans">
           <div
             className={clsx(
-              "flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-dw p-2 text-text transition-all duration-500",
+              "flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-background p-2 text-text transition-all duration-500",
               `group-hover:${project.width} hover:${project.width}`
             )}
           >

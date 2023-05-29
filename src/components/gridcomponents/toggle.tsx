@@ -21,10 +21,10 @@ export default function Toggle() {
 
   return (
     <div className="relative flex h-full w-full items-center justify-center">
-      <div className="absolute  z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-rr" />
+      <div className="absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-primary" />
       <span
         onClick={() => ToggleTheme({ setTheme, resolvedTheme })}
-        className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-dw text-text shadow-lg transition-all duration-300 ease-in"
+        className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background text-text shadow-lg transition-all duration-300 ease-in"
       >
         {resolvedTheme === "light" ? (
           <svg

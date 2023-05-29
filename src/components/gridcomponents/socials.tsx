@@ -5,7 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 export function Whatsapp() {
   return (
     <Link
-      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-pg sm:order-9"
+      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-secondary sm:order-9"
       href="https://api.whatsapp.com/send?phone=31630702130"
       target={"_blank"}
       rel="noreferrer"
@@ -32,7 +32,7 @@ export function Linkedin() {
 export function Github() {
   return (
     <Link
-      className="relative flex h-full items-center justify-center"
+      className="relative flex h-full items-center bg-primary justify-center"
       href="https://github.com/Lvdwardt"
       target={"_blank"}
       rel="noreferrer"
@@ -45,7 +45,7 @@ export function Github() {
 export function Mail() {
   return (
     <Link
-      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-rb sm:order-12"
+      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-primary sm:order-12"
       href="mailto:contact@leonvandewardt.nl"
       target={"_blank"}
       rel="noreferrer"

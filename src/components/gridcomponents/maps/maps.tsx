@@ -63,7 +63,7 @@ export async function Maps() {
     <div className="flex h-full w-full flex-col p-8">
       <div className="flex justify-between">
         <SiGooglemaps className="text-6xl text-primary" />
-        <div className="h-24 w-24 overflow-hidden rounded-2xl bg-pg">
+        <div className="h-24 w-24 overflow-hidden rounded-2xl bg-secondary">
           <Image
             src={`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/${illdefinedLocation},12,0/200x300?access_token=${mapbox_token}`}
             alt="map"

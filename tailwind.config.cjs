@@ -14,14 +14,6 @@ module.exports = {
         //varable colors
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        pg: "var(--pg)", //purple green
-        pr: "var(--pr)", //purple pink
-        rb: "var(--rb)", //pink blue
-        rg: "var(--rg)", //pink green
-        rr: "var(--rr)", //pink pink
-        br: "var(--br)", //blue pink
-        bp: "var(--bp)", //blue purple
-        dw: "var(--dw)", //darkblue white
         card: "var(--card)",
         background: "var(--background)",
         text: "var(--text)",

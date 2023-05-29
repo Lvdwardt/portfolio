@@ -12,7 +12,7 @@ export default function Footer() {
           className="flex items-baseline"
         >
           <span className="ml-1 text-xl font-bold text-logo">Nev</span>
-          <span className="ml-1 text-sm font-thin text-logo">Flynn</span>
+          <span className="ml-1 font-medium">Flynn</span>
         </a>
         <span>&nbsp;and</span>
         <a
@@ -22,7 +22,7 @@ export default function Footer() {
           className="flex items-baseline"
         >
           <span className="ml-1 pr-1 text-xl font-bold text-logo">Rob</span>
-          <span className="font-thin text-logo">Zaccardi</span>
+          <span className="font-medium">Zaccardi</span>
         </a>
       </div>
     </div>

@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <div className="grid py-4 font-medium xl:grid-cols-3">
-      <div className="flex w-full  justify-center xl:block xl:pl-8">
+      <div className="flex w-full justify-center xl:block xl:pl-8">
         <Link href="/" className="w-36 p-4" title="back to home">
           <Gradient />
           <svg
@@ -37,7 +37,7 @@ export default function Navbar() {
           </svg>
         </Link>
       </div>
-      <div className=" flex w-full justify-center">
+      <div className="flex w-full justify-center">
         <div className=" flex w-full max-w-[300px] items-center justify-center text-sm text-text sm:max-w-full">
           <div className="relative flex w-min scale-[90%] gap-4 rounded-full bg-card px-1 py-1.5 sm:scale-100">
             {routes.map((route) => (
