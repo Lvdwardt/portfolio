@@ -18,7 +18,7 @@ export function Whatsapp() {
 export function Linkedin() {
   return (
     <Link
-      className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-bp sm:order-10"
+      className="bg-bp relative flex items-center justify-center overflow-hidden rounded-[2rem] sm:order-10"
       href="https://www.linkedin.com/in/leonvandewardt/"
       target={"_blank"}
       rel="noreferrer"
@@ -32,7 +32,7 @@ export function Linkedin() {
 export function Github() {
   return (
     <Link
-      className="relative flex h-full items-center bg-primary justify-center"
+      className="relative flex h-full items-center justify-center bg-primary"
       href="https://github.com/Lvdwardt"
       target={"_blank"}
       rel="noreferrer"
