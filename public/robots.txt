@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://wijwetenhetwel.nl/sitemap.xml
+Sitemap: https://leonvdw.nl/sitemap.xml

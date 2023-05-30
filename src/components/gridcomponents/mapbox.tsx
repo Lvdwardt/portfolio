@@ -116,7 +116,7 @@ export default async function Mapbox({ data }: { data: any }) {
           alt="memoji sleeping"
           width={45}
           height={45}
-          onClick={() => setAwake(true)}
+          onClick={() => startTransition(() => setAwake(true))}
           className={clsx(
             "pointer-events-auto absolute inset-0 m-auto transform rounded-full transition duration-500 ease-in-out hover:animate-scale",
             awake ? "opacity-0" : "opacity-100"

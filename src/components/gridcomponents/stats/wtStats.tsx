@@ -3,8 +3,11 @@ import { SiWakatime } from "react-icons/si";
 export default async function WakatimeStats() {
   const wakatimeKey = process.env.WAKATIME_KEY;
 
+  // format: YYYY-MM-DD
+  const today = new Date().toISOString().slice(0, 10);
+
   const { workingOn, minutesDifference } = await fetch(
-    `https://wakatime.com/api/v1/users/current/heartbeats?date=2023-05-19&api_key=${wakatimeKey}`,
+    `https://wakatime.com/api/v1/users/current/heartbeats?date=${today}&api_key=${wakatimeKey}`,
     {
       next: {
         revalidate: 600,
@@ -38,12 +41,6 @@ export default async function WakatimeStats() {
     // set hours to the total hours coded in the past week
     .then((data) => {
       const hours = Math.floor(data.cumulative_total.seconds / 3600);
-      // const dailyAverage = data.daily_average.text;
-      // 5 hrs 1 min
-      // 2 hrs 10 min
-      // 10 hrs 0 min
-      //daily average looks like this
-      //make it so there's a , after the hours
       const dailyAverage = data.daily_average.text
         .split(" ")
         .map((item: string, index: number) => {
