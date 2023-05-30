@@ -22,7 +22,7 @@ export default async function Mapbox({ data }: { data: any }) {
   };
 
   //if data[0].longitude is 0 set to default
-  if (data && data[0].longitude !== 0) {
+  if (data && data[0]?.longitude !== 0 && data[0]?.longitude !== undefined) {
     coords = {
       longitude: data[0].longitude,
       latitude: data[0].latitude,

@@ -7,7 +7,6 @@ import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";
 import {
   Github,
   Whatsapp,
-  Mail,
   Linkedin,
 } from "@/components/gridcomponents/socials";
 import Skills from "@/components/gridcomponents/skills";
@@ -17,13 +16,10 @@ import GithubStats from "@/components/gridcomponents/stats/ghStats";
 import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { Maps } from "@/components/gridcomponents/maps/maps";
-// import Mapbox from "@/components/gridcomponents/mapbox2";
 import { Suspense } from "react";
-import { SiGooglemaps } from "react-icons/si";
 import Mapbox from "@/components/gridcomponents/mapbox";
 import MapsData from "@/components/gridcomponents/maps/mapsData";
-// import MapsData from "@/components/gridcomponents/maps/mapsData";
+import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -81,7 +77,10 @@ export default async function Home() {
             <Janskapsalonflat />
           </div>
 
-          <Mail />
+          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-9">
+            {/* @ts-expect-error */}
+            <SpotifyStats />
+          </div>
           <div className="hidden overflow-hidden rounded-[2rem] bg-card  sm:block xl:order-12">
             {/* @ts-expect-error */}
             <WakatimeStats />
