@@ -54,9 +54,9 @@ export default async function Home() {
           <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-3  xl:order-4">
             <Toggle />
           </div>
-
-          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-8 xl:order-5">
-            <Github />
+          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-8 xl:order-5">
+            {/* @ts-expect-error */}
+            <SpotifyStats />
           </div>
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-2 xl:order-6 ">
             <Skills />
@@ -65,7 +65,6 @@ export default async function Home() {
             {/* @ts-expect-error */}
             <GithubStats />
           </div>
-
           <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-secondary p-8 sm:order-5 xl:order-8">
             <Linkedin />
           </div>
@@ -73,13 +72,11 @@ export default async function Home() {
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
             <Flyn />
           </div>
+          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-9">
+            <Github />
+          </div>
           <div className="hidden overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 sm:block xl:order-10">
             <Janskapsalonflat />
-          </div>
-
-          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-9">
-            {/* @ts-expect-error */}
-            <SpotifyStats />
           </div>
           <div className="hidden overflow-hidden rounded-[2rem] bg-card  sm:block xl:order-12">
             {/* @ts-expect-error */}

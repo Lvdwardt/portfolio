@@ -24,8 +24,8 @@ export default async function MapsData() {
   // I don't want my real location to end up in the  frontend, so cut down the lat/long to 3 decimals
   console.log(data);
 
-  data[0] && (data[0].latitude = data[0]?.latitude?.toFixed(3) || 5.5735);
-  data[0] && (data[0].longitude = data[0]?.longitude?.toFixed(3) || 51.92735);
+  data[0] && (data[0].latitude = data[0]?.latitude?.toFixed(3) || 51.92735);
+  data[0] && (data[0].longitude = data[0]?.longitude?.toFixed(3) || 5.5735);
 
   return data;
 }

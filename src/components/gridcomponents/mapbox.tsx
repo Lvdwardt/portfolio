@@ -8,8 +8,6 @@ import {
   FaRegCopyright,
 } from "react-icons/fa";
 import { Map, MapRef, Marker } from "react-map-gl";
-//eslint-disable-next-line @typescript-eslint/no-unused-vars
-import mapboxgl from "mapbox-gl";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { SiMapbox } from "react-icons/si";
@@ -19,8 +17,8 @@ import clsx from "clsx";
 
 export default async function Mapbox({ data }: { data: any }) {
   let coords = {
-    longitude: 51.92735,
-    latitude: 5.5735,
+    latitude: 51.92735,
+    longitude: 5.5735,
   };
 
   //if data[0].longitude is 0 set to default
@@ -30,6 +28,7 @@ export default async function Mapbox({ data }: { data: any }) {
       latitude: data[0].latitude,
     };
   }
+  console.log(coords);
 
   const [awake, setAwake] = useState(false);
   const [contributionOpen, setContributionOpen] = useState(false);
