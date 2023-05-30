@@ -4,10 +4,9 @@ export default async function WakatimeStats() {
   const wakatimeKey = process.env.WAKATIME_KEY;
 
   // format: YYYY-MM-DD
-  const today = new Date().toISOString().slice(0, 10);
 
   const { workingOn, minutesDifference } = await fetch(
-    `https://wakatime.com/api/v1/users/current/heartbeats?date=${today}&api_key=${wakatimeKey}`,
+    `https://wakatime.com/api/v1/users/current/heartbeats?date=Today&api_key=${wakatimeKey}`,
     {
       next: {
         revalidate: 600,
