@@ -8,6 +8,8 @@ import {
   FaRegCopyright,
 } from "react-icons/fa";
 import { Map, MapRef, Marker } from "react-map-gl";
+//eslint-disable-next-line @typescript-eslint/no-unused-vars
+import mapboxgl from "mapbox-gl";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { SiMapbox } from "react-icons/si";
