@@ -24,6 +24,18 @@ export default async function SpotifyStats() {
       url: "https://open.spotify.com/track/0hl8k492sfcfLQudNctEiR",
       artistUrl: "https://open.spotify.com/artist/2dB3VxAmEw5Dqewiha1oO1",
     },
+    {
+      song: "Wii Coopa Cape",
+      artist: "AWCJ Media",
+      url: "https://open.spotify.com/track/0hl8k492sfcfLQudNctEiR",
+      artistUrl: "https://open.spotify.com/artist/1pFFdorEiw3aCOE3d2bAda",
+    },
+    {
+      song: "Elevator Music",
+      artist: "Mister Ethan",
+      url: "https://open.spotify.com/track/6mRwhCZx2RLutsWC7RcCF8",
+      artistUrl: "https://open.spotify.com/artist/03avwC0Ac0WDl5sPjWgA5h",
+    },
   ];
 
   const longSongName =

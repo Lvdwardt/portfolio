@@ -13,7 +13,7 @@
       <priority>0.8</priority>
     </url>
     <url>
-      <loc>https://leonvdw.nl/contact</loc>
+      <loc>https://leonvdw.nl/travels</loc>
       <lastmod>2023-04-10</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -32,6 +32,12 @@
     </url>
     <url>
       <loc>https://leonvdw.nl/projects/fly-n</loc>
+      <lastmod>2023-04-10</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+    </url>
+    <url>
+      <loc>https://leonvdw.nl/projects/babble</loc>
       <lastmod>2023-04-10</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.4</priority>
