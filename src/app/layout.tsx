@@ -41,13 +41,8 @@ const gotham = localfont({
 const silka = localfont({
   src: [
     {
-      path: "../assets/fonts/Moranga-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/Moranga-Medium.woff2",
-      weight: "600",
+      path: "../assets/fonts/Silka-Regular.woff",
+      weight: "400",
       style: "normal",
     },
     {
@@ -56,8 +51,13 @@ const silka = localfont({
       style: "normal",
     },
     {
-      path: "../assets/fonts/Silka-Regular.woff",
-      weight: "400",
+      path: "../assets/fonts/Moranga-Medium.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Moranga-Bold.woff2",
+      weight: "700",
       style: "normal",
     },
   ],

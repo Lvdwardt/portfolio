@@ -1,6 +1,8 @@
 export type ProjectList = {
   id: string;
   title: string;
+  quote: string;
+  logo: string;
   projectImage: string;
   projectImageLight: string;
   coverImage: string;

@@ -18,7 +18,6 @@ import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { Suspense } from "react";
 import Mapbox from "@/components/gridcomponents/mapbox";
-import MapsData from "@/components/gridcomponents/maps/mapsData";
 import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const data = await MapsData();
   return (
     <AnimatedLayout>
       <Head>
@@ -45,7 +43,7 @@ export default async function Home() {
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
             <Suspense fallback={<div className="bg-card" />}>
               {/* @ts-expect-error */}
-              <Mapbox data={data} />
+              <Mapbox />
             </Suspense>
           </div>
           <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">

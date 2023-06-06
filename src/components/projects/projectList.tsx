@@ -19,6 +19,8 @@ const projectList: ProjectList[] = [
   {
     id: "janskapsalon",
     title: "Jans kapsalon",
+    quote: "Cuttin' hair since 1980",
+    logo: "images/companies/jk.webp",
     coverImage: "/images/jk.webp",
     projectImage: "/images/jk.webp",
     projectImageLight: "/images/jk.webp",
@@ -56,6 +58,8 @@ const projectList: ProjectList[] = [
   {
     id: "fly-n",
     title: "Fly-n",
+    logo: "/images/companies/fly-n.webp",
+    quote: "Travel made easy - from doorstep to destination",
     coverImage: "/images/fly-n.webp",
     projectImage: "/images/fly-n-pf.webp",
     projectImageLight: "/images/fly-n-pf.webp",
@@ -95,6 +99,8 @@ const projectList: ProjectList[] = [
   {
     id: "portfolio",
     title: "Portfolio",
+    logo: "/lw.svg",
+    quote: "Buckle up! This site is so amazing you will loose your hajeebees!",
     coverImage: "/images/portfolio.webp",
     projectImage: "/images/portfolio.webp",
     projectImageLight: "/images/portfolio_light.webp",
@@ -104,14 +110,12 @@ const projectList: ProjectList[] = [
     grid: "col-span-2 row-span-1",
     order: "order-2",
     description:
-      "This is my portfolio site. It is a place where I can show my work and skills. I made this website to show my skills and to learn new things. I made this website with Next.js and Tailwind CSS. I also used Framer Motion for animations.",
+      "This is my portfolio site. It is a place where I can show my work and skills. I made this website to improve my skills and to learn new things. I made this website with Next.js and Tailwind CSS. I also used Framer Motion for animations.",
     workedOn: [
-      { work: "I made the design for the website" },
       { work: "I realised the design with Next.js and Tailwind CSS" },
-      { work: "I made a cors proxy to fetch images with Cloudflare Workers" },
-      {
-        work: "I created a Python api and hosted it on Digital Ocean Functions",
-      },
+      { work: "I made a cors proxy to fetch data with Cloudflare Workers" },
+      { work: "I worked with external api's to dynamically display data" },
+      { work: "I used Nextjs Server Components to fetch data efficiently" },
     ],
     newSkills: [
       { skill: "Building a website with Next.js" },
@@ -131,6 +135,10 @@ const projectList: ProjectList[] = [
   {
     id: "babble",
     title: "Babble",
+    quote:
+      "Elevate the way you and your viewers interact with each other, make friends. But most important, make memories.",
+    logo: "/images/companies/babble.webp",
+
     coverImage: "/images/companies/babble.webp",
     projectImage: "/images/companies/babble.webp",
     projectImageLight: "/images/companies/babble.webp",

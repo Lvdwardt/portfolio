@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, startTransition } from "react";
+import React, { useEffect, useRef, useState, startTransition } from "react";
 import {
   FaInfoCircle,
   FaMinus,
@@ -15,20 +15,11 @@ import Link from "next/link";
 import { AiFillCloseCircle } from "react-icons/ai";
 import clsx from "clsx";
 
-export default async function Mapbox({ data }: { data: any }) {
+export default async function Mapbox() {
   let coords = {
     latitude: 51.92735,
     longitude: 5.5735,
   };
-
-  //if data[0].longitude is 0 set to default
-  if (data && data[0]?.longitude !== 0 && data[0]?.longitude !== undefined) {
-    coords = {
-      longitude: data[0].longitude,
-      latitude: data[0].latitude,
-    };
-  }
-  console.log(coords);
 
   const [awake, setAwake] = useState(false);
   const [contributionOpen, setContributionOpen] = useState(false);
