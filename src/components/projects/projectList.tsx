@@ -20,7 +20,7 @@ const projectList: ProjectList[] = [
     id: "janskapsalon",
     title: "Jans kapsalon",
     quote: "Cuttin' hair since 1980",
-    logo: "images/companies/jk.webp",
+    logo: "/images/companies/jk.webp",
     coverImage: "/images/jk.webp",
     projectImage: "/images/jk.webp",
     projectImageLight: "/images/jk.webp",
