@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import localfont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 
-import "../styles/globals.css";
-import "../styles/mapbox-gl.css";
-import Navbar from "../components/navbar";
+import "@/styles/globals.css";
+import "@/styles/mapbox-gl.css";
+import Navbar from "@/components/nav/navbar";
 import Providers from "@/utils/providers";
 
 export const metadata: Metadata = {
@@ -78,10 +78,7 @@ export default async function RootLayout({
       className={`${gotham.variable} ${silka.variable} font-silka text-text`}
     >
       <body>
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
       <Analytics />
     </html>

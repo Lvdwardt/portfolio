@@ -58,10 +58,11 @@ export default async function SpotifyData() {
           (Date.now() - nowPlayingData.timestamp) / 60000
         ),
         nowPlaying: nowPlayingData.is_playing,
-        song: nowPlayingData.item.name,
-        artist: nowPlayingData.item.artists[0].name,
-        artistUrl: nowPlayingData.item.artists[0].external_urls.spotify,
-        url: nowPlayingData.item.external_urls.spotify,
+        song: nowPlayingData?.item?.name ? nowPlayingData.item.name : "Unknown",
+        artist: nowPlayingData?.item?.artists[0]?.name || "Unknown",
+        artistUrl:
+          nowPlayingData?.item?.artists[0]?.external_urls?.spotify || "",
+        url: nowPlayingData?.item?.external_urls?.spotify || "",
       },
     };
   }
