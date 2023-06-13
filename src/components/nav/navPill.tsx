@@ -50,4 +50,3 @@ export default function NavPill() {
     </div>
   );
 }
-

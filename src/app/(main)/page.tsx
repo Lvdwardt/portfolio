@@ -42,7 +42,7 @@ export default async function Home() {
           </div>
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
             <Suspense fallback={<div className="bg-card" />}>
-              {/* @ts-expect-error */}
+              {/* @ts-expect-error server-component */}
               <Mapbox />
             </Suspense>
           </div>
@@ -53,14 +53,14 @@ export default async function Home() {
             <Toggle />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-8 xl:order-5">
-            {/* @ts-expect-error */}
+            {/* @ts-expect-error server-component */}
             <SpotifyStats />
           </div>
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-2 xl:order-6 ">
             <Skills />
           </div>
           <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 xl:order-7">
-            {/* @ts-expect-error */}
+            {/* @ts-expect-error server-component */}
             <GithubStats />
           </div>
           <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-secondary p-8 sm:order-5 xl:order-8">
@@ -77,7 +77,7 @@ export default async function Home() {
             <Janskapsalonflat />
           </div>
           <div className="hidden overflow-hidden rounded-[2rem] bg-card  sm:block xl:order-12">
-            {/* @ts-expect-error */}
+            {/* @ts-expect-error server-component */}
             <WakatimeStats />
           </div>
         </div>

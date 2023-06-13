@@ -11,9 +11,9 @@ interface PageProps {
 
 export default function NotFound({ params, url }: PageProps) {
   return (
-    // @ts-expect-error
+    // @ts-expect-error server-component
     <MainLayout>
-      {/* @ts-expect-error */}
+      {/* @ts-expect-error server-component */}
       <NotFoundComponent params={params} url={url} />
     </MainLayout>
   );

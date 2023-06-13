@@ -1,4 +1,3 @@
-import { useParams } from "next/navigation";
 import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
@@ -16,7 +15,7 @@ export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
   const project = projectList.find((project) => project.id === params.id);
   if (!project) {
-    // @ts-expect-error
+    // @ts-expect-error server-component
     return <NotFoundComponent url="projects" />;
   }
   return (

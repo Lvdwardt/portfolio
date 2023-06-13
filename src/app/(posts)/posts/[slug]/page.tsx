@@ -43,4 +43,3 @@ const page = async ({ params }: PageProps) => {
 };
 
 export default page;
-
