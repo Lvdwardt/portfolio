@@ -1,7 +1,4 @@
-/* eslint-disable no-explicit-any */
-
 import * as React from "react";
-import Head from "next/head";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { cn } from "@/utils/utils";
@@ -165,4 +162,3 @@ export function Mdx({ code }: MdxProps) {
     </div>
   );
 }
-

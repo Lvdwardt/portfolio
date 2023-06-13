@@ -4,7 +4,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import "@/styles/mapbox-gl.css";
-import Navbar from "@/components/nav/navbar";
 import Providers from "@/utils/providers";
 
 export const metadata: Metadata = {

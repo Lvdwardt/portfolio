@@ -13,11 +13,13 @@ export default async function Post() {
         <div className="mx-4 flex w-full flex-col pr-8 lg:flex-row">
           <div className="m-4 flex w-full flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4">
             {allDocs.map((doc) => (
-              <Link href={`/posts/${doc.id}`} className="flex flex-col">
-                <div key={doc.id}>
-                  <h2 className="text-2xl font-bold">{doc.title}</h2>
-                  <p className="text-gray-500">{doc.description}</p>
-                </div>
+              <Link
+                key={doc.id}
+                href={`/posts/${doc.id}`}
+                className="flex flex-col"
+              >
+                <h2 className="text-2xl font-bold">{doc.title}</h2>
+                <p className="text-gray-500">{doc.description}</p>
               </Link>
             ))}
           </div>
@@ -26,4 +28,3 @@ export default async function Post() {
     </AnimatedLayout>
   );
 }
-

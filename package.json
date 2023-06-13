@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "pnpm contentlayer build && next build",
     "dev": "next dev",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "next start"
   },
