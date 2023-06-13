@@ -1,17 +1,23 @@
-"use client";
 import About from "../about";
-import { usePathname } from "next/navigation";
+interface ComponentProps {
+  params?: {
+    slug?: string;
+  };
+  url?: string;
+}
 
-export default function NotFoundComponent() {
+export default async function NotFoundComponent({
+  params,
+  url,
+}: ComponentProps) {
   let type = "page";
 
-  const pathname = usePathname();
-  //check if route includes /projects
-  if (pathname.includes("/projects")) {
+  const pathname = url ? url : params?.slug ? params.slug : "";
+  if (pathname.includes("projects")) {
     type = "project";
   }
   //if route includes /travels
-  if (pathname.includes("/travels")) {
+  if (pathname.includes("travels")) {
     type = "trip";
   }
 

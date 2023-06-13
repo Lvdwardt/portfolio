@@ -1,4 +1,3 @@
-"use client";
 import { useParams } from "next/navigation";
 import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
@@ -7,15 +6,18 @@ import ProjectImage from "@/components/projects/projectImage";
 import Head from "next/head";
 import { SiGithub } from "react-icons/si";
 
-export default function Project() {
-  const { id } = useParams();
-  if (typeof id !== "string") {
-    return null;
-  }
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = projectList.find((project) => project.id === id);
+  const project = projectList.find((project) => project.id === params.id);
   if (!project) {
-    return <NotFoundComponent />;
+    // @ts-expect-error
+    return <NotFoundComponent url="projects" />;
   }
   return (
     <AnimatedLayout>

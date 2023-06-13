@@ -1,23 +1,10 @@
 "use client";
 import type React from "react";
-// import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import ToggleTheme from "../../hooks/toggleTheme";
 
 export default function Toggle() {
-  // const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
-
-  // useEffect(() => {
-  //   const root = document.documentElement;
-  //   //if getAttribute is null, set to dark
-  //   if (root.getAttribute("data-theme") === null) {
-  //     setTheme("dark");
-  //     root.setAttribute("data-theme", "dark");
-  //   }
-  //   setMounted(true);
-  // }, []);
-  // if (!mounted) return <></>;
 
   return (
     <div className="relative flex h-full w-full items-center justify-center">
