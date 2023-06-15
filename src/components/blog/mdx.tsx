@@ -16,7 +16,7 @@ const components = {
   h2: ({ className, ...props }: { className?: string }) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -133,7 +133,7 @@ const components = {
   pre: ({ className, ...props }: { className?: string }) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black p-2 py-4",
         className
       )}
       {...props}
@@ -141,10 +141,7 @@ const components = {
   ),
   code: ({ className, ...props }: { className?: string }) => (
     <code
-      className={cn(
-        "font-mono relative rounded border px-[0.3rem] py-[0.2rem] text-sm",
-        className
-      )}
+      className={cn("font-mono relative rounded text-sm", className)}
       {...props}
     />
   ),

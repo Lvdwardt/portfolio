@@ -6,6 +6,9 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import("./src/env/server.mjs"));
 
+import { withContentlayer } from 'next-contentlayer'
+
+
 /** @type {import("next").NextConfig} */
 const config = {
   experimental: {
@@ -35,4 +38,4 @@ const config = {
     ],
   },
 };
-export default config;
+export default withContentlayer(config);
