@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
@@ -7,6 +6,11 @@ import { type Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "Here you can find all about me!",
+  icons: [
+    {
+      url: "/favicon.ico",
+    },
+  ],
 };
 
 export default function AboutPage() {
@@ -46,10 +50,6 @@ export default function AboutPage() {
   ];
   return (
     <AnimatedLayout>
-      <Head>
-        <title>About</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pb-8 pt-4">
           <div className=" =mx-auto w-full max-w-[320px] gap-5 sm:max-w-[640px] xl:max-w-[1200px] xl:px-0 ">

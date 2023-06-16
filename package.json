@@ -25,6 +25,7 @@
     "i18n-iso-countries": "^7.6.0",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.14.1",
+    "markdown-wasm": "^1.2.0",
     "next": "13.4.2",
     "next-contentlayer": "^0.3.3",
     "next-themes": "^0.2.1",

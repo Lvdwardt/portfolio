@@ -1,15 +1,16 @@
 import AnimatedLayout from "@/layouts/animatedLayout";
-import Head from "next/head";
 import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Posts",
+  description: "Posts",
+};
 
 export default async function Post() {
   return (
     <AnimatedLayout>
       <div className="w-fulltransition-all duration-300 ease-in">
-        <Head>
-          <title>Post</title>
-        </Head>
         <div className="flex w-full flex-col px-4 lg:flex-row">
           <div className="flex w-full flex-col rounded-[2rem] bg-card px-8 py-4">
             {allDocs.map((doc) => (

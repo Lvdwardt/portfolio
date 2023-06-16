@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import Head from "next/head";
 import About from "@/components/about";
 import Toggle from "@/components/gridcomponents/toggle";
 import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
@@ -21,20 +20,13 @@ import Mapbox from "@/components/gridcomponents/mapbox";
 import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Home - Leonvdw.nl",
   description: "Welcome to Leonvdw.nl!",
 };
 
 export default async function Home() {
   return (
     <AnimatedLayout>
-      <Head>
-        <title>Leon van de Wardt</title>
-        <meta
-          name="description"
-          content="Leon van de Wardt's portfolio website"
-        />
-      </Head>
       <div className="min-h-screen overflow-visible transition-all duration-300 ease-in ">
         <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">

@@ -2,12 +2,28 @@ import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
-import Head from "next/head";
 import { SiGithub } from "react-icons/si";
+import { Metadata } from "next";
 
 interface PageProps {
   params: {
     id: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const project = projectList.find((project) => project.id === params.id);
+  if (!project) {
+    return {
+      title: "Project not found",
+      description: "Project not found",
+    };
+  }
+  return {
+    title: project.title + " - Projects",
+    description: project.description,
   };
 }
 
@@ -21,10 +37,6 @@ export default async function Project({ params }: PageProps) {
   return (
     <AnimatedLayout>
       <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <Head>
-          <title>{project?.title}</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <div className="mx-4 flex flex-col lg:flex-row">
           <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4 lg:w-3/4">
             <h1 className="pb-2 text-3xl font-black">{project?.title}</h1>

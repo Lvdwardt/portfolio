@@ -11,6 +11,15 @@ interface PageProps {
   };
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const doc = await getDocFromParams(params.slug);
+
+  return {
+    title: doc.title + " - Posts",
+    description: doc.description,
+  };
+}
+
 async function getDocFromParams(slug: string) {
   const doc = allDocs.find((doc) => doc.id === slug);
 
