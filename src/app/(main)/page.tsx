@@ -21,7 +21,8 @@ import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats
 
 export const metadata: Metadata = {
   title: "Home - Leonvdw.nl",
-  description: "Welcome to Leonvdw.nl!",
+  description:
+    "Welcome to Leonvdw.nl! This is my personal portfolio website where you can find all my projects and more!",
 };
 
 export default async function Home() {

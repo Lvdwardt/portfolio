@@ -98,3 +98,21 @@ html {
 .react-transform-wrapper {
   overflow: visible !important;
 }
+
+.subheading-anchor {
+  position: relative;
+  text-decoration: none;
+}
+
+.subheading-anchor::before {
+  content: "#";
+  color: var(--primary);
+  position: absolute;
+  left: -20px;
+  opacity: 0; /* Hide the "#" symbol initially */
+}
+
+.subheading-anchor:hover::before {
+  opacity: 1; /* Show the "#" symbol on hover */
+  
+}
