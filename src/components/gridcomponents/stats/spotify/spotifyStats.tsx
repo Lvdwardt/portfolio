@@ -1,6 +1,7 @@
 import { SiSpotify } from "react-icons/si";
 import SpotifyData from "./spotifyData";
 import Link from "next/link";
+import SpotifyText from "./spotifyText";
 
 export default async function SpotifyStats() {
   const { props } = await SpotifyData();
@@ -44,24 +45,18 @@ export default async function SpotifyStats() {
       : props.song;
 
   const songName =
-    longSongName?.length > 18
-      ? longSongName?.substring(0, 15) + "..."
+    longSongName?.length > 28
+      ? longSongName?.substring(0, 25) + "..."
       : longSongName;
 
   const NowPlaying = () => {
     return (
       <div>
-        <span className="pb-[1px]">Now playing:</span>
+        <span className="pb-[4px]">Now playing:</span>
         <br />
-        <Link
-          href={props.url}
-          className="text-2xl font-bold"
-          target="_blank"
-          rel="norefferer"
-        >
-          {songName}
+        <Link href={props.url} target="_blank" rel="norefferer">
+          <SpotifyText>{songName}</SpotifyText>
         </Link>
-        <br />
         <span className="text-sm text-gray-400">
           by: <Link href={props.artistUrl}>{props.artist}</Link>
         </span>

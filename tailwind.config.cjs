@@ -78,6 +78,7 @@ module.exports = {
         "50/50": "100%",
       },
       animation: {
+        loader: 'loader 0.6s infinite alternate',
         scale: "scale 1s ease-in infinite",
         fadeIn: "fadeIn 2s ease-in forwards",
         fadeInRight: "fadeInRight 0.6s  ease-in forwards",
@@ -89,6 +90,12 @@ module.exports = {
         fadeIn50: "fadeIn50 2s ease-in forwards",
       },
       keyframes: {
+        loader: {
+          to: {
+            opacity: 0.1,
+            transform: 'translate3d(0, -1rem, 0)'
+          }
+        },
         scale: {
           //transform and rotate animation
           "0%": { transform: "scale(1) rotate(0deg)" },

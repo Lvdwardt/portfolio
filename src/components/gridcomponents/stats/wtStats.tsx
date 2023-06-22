@@ -18,7 +18,7 @@ export default async function WakatimeStats() {
       // get the last item in data array
       const lastItem = data.data.slice(-1)[0];
       // get the project name
-      const workingOn = lastItem.project;
+      const workingOn = lastItem.project ? lastItem.project : "Unknown";
       // get the last update
       const minutesDifference = Math.floor(
         (new Date().getTime() - new Date(lastItem.time * 1000).getTime()) /
