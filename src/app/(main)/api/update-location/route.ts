@@ -4,3 +4,7 @@
 // update location in vercel edge config db
 // revalidate with /api/revalidate
 // return success)
+
+export default async function GET() {
+  return new Response("Hello world!");
+}
