@@ -1,25 +1,19 @@
-"use client";
-
 import dynamic from "next/dynamic";
-
-import { useEffect, useState } from "react";
+import { get } from "@vercel/edge-config";
 
 const MapboxContent = dynamic(() => import("./mapboxContent"));
 
-const Loader = () => (
-  <div className="flex h-full w-full items-center justify-center bg-card">
-    <span className="circle mx-1 my-12 h-4 w-4 animate-loader rounded-full bg-gray-400"></span>
-    <span className="circle animation-delay-200 mx-1 my-12 h-4 w-4 animate-loader rounded-full bg-gray-400"></span>
-    <span className="circle animation-delay-400 mx-1 my-12 h-4 w-4 animate-loader rounded-full bg-gray-400"></span>
-  </div>
-);
+export default async function Mapbox() {
+  const location = (await get("location")) as {
+    latitude: number;
+    longitude: number;
+  };
 
-export default function Mapbox() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  let { latitude, longitude } = location;
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  if (!latitude || !longitude) {
+    (latitude = 51.92735), (longitude = 5.5735);
+  }
 
-  return isLoaded ? <MapboxContent /> : <Loader />;
+  return <MapboxContent coords={{ latitude, longitude }} />;
 }

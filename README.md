@@ -32,18 +32,31 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
 
 1. Clone the repository to your local machine.
 2. Install the required dependencies by running `pnpm install`.
-3. Setup your own [locationsharinglib api](https://github.com/costastf/locationsharinglib)
-4. Obtain API keys for the GitHub API, Wakatime API, Mapbox, and if used digital ocean functions X-Require-Whisk-Auth
-5. Create a `.env` file in the root directory and add your API keys as environment variables:
+3. Obtain API keys for the GitHub API, Wakatime API, and Mapbox
+4. Setup [[vercel edge config](https://vercel.com/storage/edge-config)] for the project
+5. Add the following to your edge config:
+
+   ```json
+   {
+     "location": {
+       "latitude": "number",
+       "longitude": "number"
+     }
+   }
+   ```
+
+6. Create a `.env` file in the root directory and add your API keys as environment variables:
+
    ```
    MY_SECRET_TOKEN=your_api_revalidate_token (just generate a random token)
    NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token
-   DO_KEY=your_digital_ocean_function_X-Require-Whisk-Auth_key
    WAKATIME_KEY=your_wakatime_api_key
    GITHUB_KEY=your_github_api_key
+   EDGE_CONFIG=your_vercel_edge_config (step 4)
    ```
-6. Start the development server with `pnpm dev`.
-7. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
+
+7. Start the development server with `pnpm dev`.
+8. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
 
 ## Contribution
 

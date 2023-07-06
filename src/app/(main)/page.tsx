@@ -35,6 +35,7 @@ export default async function Home() {
           </div>
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
             <Suspense fallback={<div className="bg-card" />}>
+              {/* @ts-expect-error server-component */}
               <Mapbox />
             </Suspense>
           </div>

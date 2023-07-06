@@ -15,12 +15,11 @@ import Link from "next/link";
 import { AiFillCloseCircle } from "react-icons/ai";
 import clsx from "clsx";
 
-export default function MapboxContent() {
-  const coords = {
-    latitude: 51.92735,
-    longitude: 5.5735,
-  };
-
+export default function MapboxContent({
+  coords,
+}: {
+  coords: { latitude: number; longitude: number };
+}) {
   const [awake, setAwake] = useState(false);
   const [contributionOpen, setContributionOpen] = useState(false);
   const { resolvedTheme } = useTheme();
