@@ -6,7 +6,7 @@ export default function ToggleTheme({
   setTheme: (theme: string) => void;
 }) {
   const root = document.documentElement;
-  setTheme(resolvedTheme === "light" ? "light" : "dark");
+  setTheme(resolvedTheme === "light" ? "dark" : "light");
   // add data-theme attribute to html
   switch (resolvedTheme) {
     case "light":

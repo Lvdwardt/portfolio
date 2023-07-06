@@ -14,12 +14,14 @@ import { SiMapbox } from "react-icons/si";
 import Link from "next/link";
 import { AiFillCloseCircle } from "react-icons/ai";
 import clsx from "clsx";
+import useThemeChecker from "@/hooks/useThemeChecker";
 
 export default function MapboxContent({
   coords,
 }: {
   coords: { latitude: number; longitude: number };
 }) {
+  useThemeChecker();
   const [awake, setAwake] = useState(false);
   const [contributionOpen, setContributionOpen] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -57,7 +59,6 @@ export default function MapboxContent({
 
   // if resolvedTheme changes, change map style
   useEffect(() => {
-    console.log(resolvedTheme, "resolvedTheme");
     if (resolvedTheme === "light") {
       startTransition(() => {
         setStyle("mapbox://styles/mapbox/light-v10");

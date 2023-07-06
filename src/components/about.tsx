@@ -4,9 +4,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ToggleTheme from "@/hooks/toggleTheme";
 import { useTheme } from "next-themes";
+import useThemeChecker from "@/hooks/useThemeChecker";
 
 export default function About() {
   const { resolvedTheme, setTheme } = useTheme();
+  useThemeChecker();
 
   let currentPath = usePathname();
   currentPath = currentPath.replace("/", "");
