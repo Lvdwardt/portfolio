@@ -55,7 +55,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 
 ## Shoutout
 
-I would like to give a special shoutout to [Nev Flynn](https://nevflynn.com) for the amazing design of this portfolio site, and [Rob Zaccardi](https://robertozaccardi.dev/) for the cool animation ideas!
+I would like to give a special shoutout to [Nev Flynn](https://nevflynn.com) for the amazing design of this portfolio site, and [Rob Zaccardi](https://robertozaccardi.dev/) for the awesome project page ideas!
 
 ---
 
