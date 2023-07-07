@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
+import { revalidatePath } from "next/cache";
 
 export async function GET(request: NextRequest) {
   const secret = request.headers.get("secret");
@@ -28,11 +29,13 @@ export async function POST(request: NextRequest) {
   location.latitude = location.latitude.toFixed(6);
   location.longitude = location.longitude.toFixed(6);
 
-  await sql`UPDATE location SET latitude = ${location.latitude}, longitude = ${location.longitude}`.catch(
-    (e) => {
+  await sql`UPDATE location SET latitude = ${location.latitude}, longitude = ${location.longitude}`
+    .then(() => {
+      revalidatePath("/");
+    })
+    .catch((e) => {
       console.log(e, "error");
-    }
-  );
+    });
 
   return NextResponse.json({ location: location });
 }
