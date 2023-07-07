@@ -42,6 +42,8 @@ export default async function WakatimeStats() {
       const hours = Math.floor(data.cumulative_total.seconds / 3600);
       const dailyAverage = data.daily_average.text
         .split(" ")
+        // // if length longer than 1, add a comma after the first item
+        .filter((item: string, index: number) => index > 1)
         .map((item: string, index: number) => {
           if (index === 1) {
             return item + ",";
@@ -129,14 +131,40 @@ export default async function WakatimeStats() {
     );
   };
 
+  const OnHoliday = () => {
+    return (
+      <div>
+        <span className="pb-[1px] font-silka">Currently on holiday</span>
+        <br />
+        <span className="text-2xl font-bold">🏖</span>
+        <br />
+        <span className="font-silka text-sm text-gray-400">
+          will be back on the grind soon
+        </span>
+        <br />
+      </div>
+    );
+  };
+
   function returnRandom() {
-    const possible = [Hours, DailyAverage];
+    console.log(dailyAverage, hours);
+    const possible = [];
+    if (hours > 4) {
+      possible.push(Hours);
+    }
+    if (dailyAverage !== "") {
+      possible.push(DailyAverage);
+    }
     if (todaySeconds > 14400) {
       possible.push(Today);
     }
     if (minutesDifference < 10) {
       possible.push(WorkingOn);
     }
+    if (possible.length === 0) {
+      possible.push(OnHoliday);
+    }
+
     const random = Math.floor(Math.random() * possible.length);
     return possible[random]();
   }

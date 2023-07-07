@@ -3,6 +3,7 @@ import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Image from "next/image";
+import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";
 
 interface PageProps {
@@ -56,7 +57,7 @@ export default async function Project({ params }: PageProps) {
             </div>
           </div>
           <div className="col-span-1 flex flex-col gap-6 sm:pt-14">
-            <span>{project.description}</span>
+            <Balancer className="font-light">{project.description}</Balancer>
             <div className="pl-4">
               <ul>
                 {project.workedOn.map((work, index) => (
