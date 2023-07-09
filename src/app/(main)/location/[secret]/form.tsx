@@ -62,7 +62,12 @@ export default function LocationForm({ secret }: { secret: string }) {
   return (
     <div className="flex flex-col items-center gap-2 pb-4 text-center">
       <h1>Location</h1>
-      <button onClick={getLocation}>Get Location</button>
+      <button
+        className="my-2 rounded-lg bg-secondary p-4"
+        onClick={getLocation}
+      >
+        Get Location
+      </button>
       {supported && location && (
         <div className="flex flex-col gap-2">
           <h2>Latitude: {location.latitude}</h2>

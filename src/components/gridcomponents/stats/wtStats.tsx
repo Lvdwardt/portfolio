@@ -15,6 +15,9 @@ export default async function WakatimeStats() {
   )
     .then((res) => res.json())
     .then((data) => {
+      if (data.data.length === 0) {
+        return { workingOn: "Unknown", minutesDifference: 0 };
+      }
       // get the last item in data array
       const lastItem = data.data.slice(-1)[0];
       // get the project name
@@ -40,18 +43,21 @@ export default async function WakatimeStats() {
     // set hours to the total hours coded in the past week
     .then((data) => {
       const hours = Math.floor(data.cumulative_total.seconds / 3600);
-      const dailyAverage = data.daily_average.text
+      let dailyAverage = data.daily_average.text
         .split(" ")
-        // // if length longer than 1, add a comma after the first item
-        .filter((item: string, index: number) => index > 1)
         .map((item: string, index: number) => {
           if (index === 1) {
-            return item + ",";
+            return item + ", ";
           } else {
             return item;
           }
         })
         .join(" ");
+
+      if (dailyAverage.length < 10) {
+        // remove comma
+        dailyAverage = dailyAverage.slice(0, -2);
+      }
 
       return { hours, dailyAverage };
     });
@@ -158,7 +164,7 @@ export default async function WakatimeStats() {
     if (todaySeconds > 14400) {
       possible.push(Today);
     }
-    if (minutesDifference < 10) {
+    if (minutesDifference < 10 && workingOn !== "Unknown") {
       possible.push(WorkingOn);
     }
     if (possible.length === 0) {
