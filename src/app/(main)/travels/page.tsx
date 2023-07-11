@@ -3,6 +3,7 @@ import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { headers } from "next/headers";
 
 const TravelMap = dynamic(() => import("@/components/travels/travelMap"));
 
@@ -12,7 +13,25 @@ export const metadata: Metadata = {
     "On this page you can find out about one of my biggest passions: traveling.",
 };
 
-export default function Travels() {
+export default async function Travels() {
+  const secret = process.env.MY_SECRET_TOKEN;
+  const host = headers().get("host");
+  const res = await fetch(`http://${host}/api/travelstats`, {
+    method: "GET",
+    headers: {
+      secret: secret || "",
+    },
+    // once every week
+    next: {
+      revalidate: 60 * 60 * 24 * 7,
+    },
+  });
+  const data = await res.json();
+  const stats = data.stats[0] as {
+    countries: number;
+    capitals: number;
+    airports: number;
+  };
   return (
     <AnimatedLayout>
       <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
@@ -31,7 +50,9 @@ export default function Travels() {
                 <div className="flex h-full flex-col justify-between">
                   <div className="">
                     <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">18</span>
+                      <span className="text-2xl font-bold">
+                        {stats.countries}
+                      </span>
                     </div>
                     <span className="font-silka text-sm text-gray-400">
                       countries visited
@@ -39,7 +60,9 @@ export default function Travels() {
                   </div>
                   <div className="">
                     <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">12</span>
+                      <span className="text-2xl font-bold">
+                        {stats.capitals}
+                      </span>
                     </div>
                     <span className="font-silka text-sm text-gray-400">
                       capitals explored
@@ -47,7 +70,9 @@ export default function Travels() {
                   </div>
                   <div className="">
                     <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">25</span>
+                      <span className="text-2xl font-bold">
+                        {stats.airports}
+                      </span>
                     </div>
                     <span className="font-silka text-sm text-gray-400">
                       airports conquered

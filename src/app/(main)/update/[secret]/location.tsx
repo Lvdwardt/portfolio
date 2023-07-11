@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function LocationForm({ secret }: { secret: string }) {
+export default function Location({ secret }: { secret: string }) {
   const [supported, setSupported] = useState(false);
   const [location, setLocation] = useState<{
     latitude: number;
