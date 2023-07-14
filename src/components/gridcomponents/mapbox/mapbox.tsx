@@ -1,7 +1,6 @@
-import dynamic from "next/dynamic";
+import MapboxContent from "@/components/map/map";
 import { headers } from "next/headers";
-
-const MapboxContent = dynamic(() => import("./mapboxContent"));
+import { Suspense } from "react";
 
 export default async function Mapbox() {
   const secret = process.env.MY_SECRET_TOKEN;
@@ -23,11 +22,14 @@ export default async function Mapbox() {
   }
 
   return (
-    <MapboxContent
-      coords={{
-        latitude: location[0].latitude,
-        longitude: location[0].longitude,
-      }}
-    />
+    <Suspense fallback={<div>Loading...</div>}>
+      {/* @ts-expect-error server-component */}
+      <MapboxContent
+        coords={{
+          latitude: location[0].latitude,
+          longitude: location[0].longitude,
+        }}
+      />
+    </Suspense>
   );
 }

@@ -7,10 +7,11 @@ export default function NavPill() {
   const path = usePathname();
   //path == /about or /projects/janskapsalon
   //trim the path to /about or /projects
-  const currentRoute = path.split("/")[1];
+  let currentRoute = path.split("/")[1];
+  if (currentRoute === "") currentRoute = "/";
 
   const routes = [
-    { name: "Home", href: "", place: 1, width: 17.5, left: 2 },
+    { name: "Home", href: "/", place: 1, width: 17.5, left: 2 },
     { name: "About", href: "about", place: 2, width: 18.5, left: 25.1 },
     { name: "Projects", href: "projects", place: 3, width: 22, left: 49.5 },
     { name: "Travels", href: "travels", place: 4, width: 20, left: 78 },

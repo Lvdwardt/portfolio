@@ -2,10 +2,9 @@ import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import { headers } from "next/headers";
-
-const TravelMap = dynamic(() => import("@/components/travels/travelMap"));
+import MapboxContent from "@/components/map/map";
+import useMapData from "./hooks/useMapData";
 
 export const metadata: Metadata = {
   title: "Travels",
@@ -32,6 +31,9 @@ export default async function Travels() {
     capitals: number;
     airports: number;
   };
+
+  const mapData = useMapData();
+
   return (
     <AnimatedLayout>
       <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
@@ -41,8 +43,9 @@ export default async function Travels() {
               <About />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:col-span-2 sm:row-span-2 xl:col-span-3">
-              <Suspense fallback={<h1>Still Loading…</h1>}>
-                <TravelMap />
+              <Suspense fallback={<></>}>
+                {/* @ts-expect-error server-component */}
+                <MapboxContent data={mapData} />
               </Suspense>
             </div>
             <div className="rounded-[2rem] bg-card">

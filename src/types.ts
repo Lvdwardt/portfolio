@@ -24,3 +24,26 @@ export type ProjectList = {
   }[];
   githubUrl?: string;
 };
+
+export type Airport = {
+  iata_code: string;
+  name: string;
+  coordinates: string;
+};
+export type Capital = {
+  CapitalName: string;
+  CountryCode: string;
+  lat: number;
+  lon: number;
+};
+
+export type CityFeature = {
+  type: "Feature";
+  properties: {
+    NAME: string;
+  };
+  geometry: {
+    type: "Polygon";
+    coordinates: number[][][];
+  };
+};
