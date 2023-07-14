@@ -10,8 +10,10 @@ import {
 } from "./markers";
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
-import { Airport, Capital, CityFeature } from "@/types";
+import { Station, Capital, CityFeature, Trip } from "@/types";
 import VisitedCities from "./visitedCities";
+import TripData from "./trip";
+import { useState } from "react";
 
 export default async function MapboxContent({
   coords,
@@ -19,15 +21,20 @@ export default async function MapboxContent({
 }: {
   coords?: { latitude: number; longitude: number };
   data?: {
-    airports: Airport[];
+    airports: Station[];
     countries: string[];
     capitals: Capital[];
     cities: CityFeature[];
+    trip: Trip;
   };
 }) {
   const countries = data?.countries;
   const airports = data?.airports;
   const capitals = data?.capitals;
+  const trip = data?.trip;
+
+  const [showTrip, setShowTrip] = useState(false);
+
   const {
     setUncontrolledZoom,
     mapRef,
@@ -55,7 +62,7 @@ export default async function MapboxContent({
         projection={"globe"}
         attributionControl={false}
       >
-        {!coords && (
+        {!coords && !showTrip && (
           <>
             {/* highlight all countries I've visited */}
             <VisitedCountries
@@ -72,7 +79,7 @@ export default async function MapboxContent({
             {airports &&
               airports.map((airport) => (
                 <AirportMarker
-                  key={airport.iata_code}
+                  key={airport.code}
                   exactZoom={exactZoom}
                   airport={airport}
                 />
@@ -88,6 +95,14 @@ export default async function MapboxContent({
               ))}
             {/* <VisitedCities resolvedTheme={resolvedTheme} /> */}
           </>
+        )}
+        {/* show all trips I've made */}
+        {!coords && trip && showTrip && (
+          <TripData
+            exactZoom={exactZoom}
+            trip={trip}
+            resolvedTheme={resolvedTheme}
+          />
         )}
         {/* Show a marker with my current location */}
         {coords && <LocationMarker exactZoom={exactZoom} coords={coords} />}

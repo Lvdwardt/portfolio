@@ -68,3 +68,115 @@ export const capitalNames = [
   "Bucharest",
   "London",
 ];
+
+export const trips = [
+  {
+    id: "1",
+    title: "London, Ibiza, Barcelona, Porto",
+    legs: [
+      {
+        from: "MST",
+        to: "LTN",
+        type: "plane",
+      },
+      {
+        from: "LTN",
+        to: "IBZ",
+        type: "plane",
+      },
+      {
+        from: "IBZ",
+        to: "BCN",
+        type: "plane",
+      },
+      {
+        from: "BCN",
+        to: "OPO",
+        type: "plane",
+      },
+      {
+        from: "OPO",
+        to: "MST",
+        type: "plane",
+      },
+    ],
+    duration: 8,
+    date: "2022-05",
+  },
+  {
+    id: "2",
+    title: "Catania, Dubai, Naples, Bari",
+    legs: [
+      {
+        from: "CGN",
+        to: "BGY",
+        type: "plane",
+      },
+      {
+        from: "BGY",
+        to: "CTA",
+        type: "plane",
+      },
+      {
+        from: "CTA",
+        to: "AUH",
+        type: "plane",
+      },
+      {
+        from: "AUH",
+        to: "Dubai",
+        type: "bus",
+      },
+      {
+        from: "Dubai",
+        to: "AUH",
+        type: "bus",
+      },
+      {
+        from: "AUH",
+        to: "NAP",
+        type: "plane",
+      },
+      {
+        from: "Naples",
+        to: "Bari",
+        type: "bus",
+      },
+      {
+        from: "BRI",
+        to: "MST",
+        type: "plane",
+      },
+    ],
+    duration: 10,
+    date: "2023-05",
+  },
+  {
+    id: "3",
+    title: "Milan, Bucharest, Sofia",
+    legs: [
+      {
+        from: "NRN",
+        to: "BGY",
+        type: "plane",
+      },
+      {
+        from: "BGY",
+        to: "OTP",
+        type: "plane",
+      },
+      {
+        from: "OTP",
+        to: "SOF",
+        type: "plane",
+      },
+      {
+        from: "SOF",
+        to: "EIN",
+        type: "plane",
+      },
+    ],
+    duration: 9,
+    date: "2023-07",
+  },
+];

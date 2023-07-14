@@ -1,3 +1,5 @@
+import { Feature, Geometry, GeoJsonProperties } from "geojson";
+
 export type ProjectList = {
   id: string;
   title: string;
@@ -25,10 +27,10 @@ export type ProjectList = {
   githubUrl?: string;
 };
 
-export type Airport = {
-  iata_code: string;
+export type Station = {
+  code: string;
   name: string;
-  coordinates: string;
+  coordinates: number[];
 };
 export type Capital = {
   CapitalName: string;
@@ -46,4 +48,19 @@ export type CityFeature = {
     type: "Polygon";
     coordinates: number[][][];
   };
+};
+
+export type Trip = {
+  trip: {
+    id: string;
+    title: string;
+    legs: {
+      from: string;
+      to: string;
+      type: string;
+    }[];
+    duration: number;
+  };
+  stations: Station[];
+  lines: Feature<Geometry, GeoJsonProperties>[];
 };

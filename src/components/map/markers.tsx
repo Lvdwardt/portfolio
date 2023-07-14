@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaHome, FaCity } from "react-icons/fa";
 import { MdLocalAirport } from "react-icons/md";
 import { Marker } from "react-map-gl";
-import { Airport, Capital } from "@/types";
+import { Station, Capital } from "@/types";
 
 type Coords = {
   latitude: number;
@@ -76,12 +76,13 @@ export const HomeMarker = ({ exactZoom }: MarkerProps) => {
 };
 
 interface AMarker extends MarkerProps {
-  airport: Airport;
+  airport: Station;
 }
 export const AirportMarker = ({ exactZoom, airport }: AMarker) => {
-  const lat = Number(airport.coordinates.split(", ")[1]);
-  const lon = Number(airport.coordinates.split(", ")[0]);
-  console.log(lat, lon);
+  //     coordinates: number[];
+
+  const lat = airport.coordinates[1];
+  const lon = airport.coordinates[0];
   return (
     <Marker draggable={false} latitude={lat} longitude={lon}>
       <MdLocalAirport

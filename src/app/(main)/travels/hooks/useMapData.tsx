@@ -1,9 +1,10 @@
 import { countryList } from "@/components/map/countrylist";
-import { Airport, Capital } from "@/types";
+import { Station, Capital } from "@/types";
 import { countries, airportCodes, capitalNames } from "../traveldata";
 import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
 import cityFeatures from "@/components/map/cities.json";
+import useTripRoute from "./useTripRoute";
 
 export default function useMapData() {
   const countryCodes = [] as string[];
@@ -13,12 +14,10 @@ export default function useMapData() {
     countryCodes.push(code);
   }
 
-  const airports = [] as Airport[];
+  const airports = [] as Station[];
   for (let i = 0; i < airportCodes.length; i++) {
     const airportCode = airportCodes[i];
-    const airport = airportList.find(
-      (airport) => airport.iata_code === airportCode
-    );
+    const airport = airportList.find((airport) => airport.code === airportCode);
     if (airport) {
       airports.push(airport);
     } else {
@@ -38,6 +37,8 @@ export default function useMapData() {
       console.log(capitalName);
     }
   }
+
+  const trip = useTripRoute();
 
   // const cityList = [] as CityFeature[];
   // const cityFeatures2 = cityFeatures as {
@@ -74,7 +75,7 @@ export default function useMapData() {
     countries: countryCodes,
     airports: airports,
     capitals: capitals,
-    // cities: cityList,
+    trip: trip,
   };
   return mapData;
 }

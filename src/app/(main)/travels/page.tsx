@@ -42,13 +42,7 @@ export default async function Travels() {
             <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
               <About />
             </div>
-            <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:col-span-2 sm:row-span-2 xl:col-span-3">
-              <Suspense fallback={<></>}>
-                {/* @ts-expect-error server-component */}
-                <MapboxContent data={mapData} />
-              </Suspense>
-            </div>
-            <div className="rounded-[2rem] bg-card">
+            <div className="order-2 rounded-[2rem] bg-card xl:order-3">
               <div className="flex h-full w-full flex-col p-8">
                 <div className="flex h-full flex-col justify-between">
                   <div className="">
@@ -84,6 +78,13 @@ export default async function Travels() {
                 </div>
               </div>
             </div>
+            <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3">
+              <Suspense fallback={<></>}>
+                {/* @ts-expect-error server-component */}
+                <MapboxContent data={mapData} />
+              </Suspense>
+            </div>
+            {/* <div className="order-4 col-span-2 row-span-2 rounded-[2rem] bg-card p-8"></div> */}
           </div>
         </div>
       </div>
