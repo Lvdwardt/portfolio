@@ -16,7 +16,7 @@ export default function VisitedCountries({
 
     paint: {
       "fill-color": resolvedTheme === "light" ? "#7bdff2" : "#ce81c7",
-      "fill-opacity": 0.3,
+      "fill-opacity": 0.7,
     },
   };
 
@@ -28,7 +28,7 @@ export default function VisitedCountries({
 
     paint: {
       "fill-color": resolvedTheme === "light" ? "#7bdff2" : "#ce81c7",
-      "fill-opacity": 0.7,
+      "fill-opacity": 0.9,
     },
     filter: ["in", "iso_3166_1", "NL"],
   };

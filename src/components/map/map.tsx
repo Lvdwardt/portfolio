@@ -13,7 +13,6 @@ import useMap from "./useMap";
 import { Station, Capital, CityFeature, Trip } from "@/types";
 import VisitedCities from "./visitedCities";
 import TripData from "./trip";
-import { useState } from "react";
 
 export default async function MapboxContent({
   coords,
@@ -28,12 +27,13 @@ export default async function MapboxContent({
     trip: Trip;
   };
 }) {
+  console.log(coords);
   const countries = data?.countries;
   const airports = data?.airports;
   const capitals = data?.capitals;
   const trip = data?.trip;
 
-  const [showTrip, setShowTrip] = useState(false);
+  const showTrip = false;
 
   const {
     setUncontrolledZoom,
@@ -43,7 +43,7 @@ export default async function MapboxContent({
     style,
     resolvedTheme,
     setTransitioning,
-  } = useMap({ coords, countries });
+  } = useMap({ coords });
 
   return (
     <div className="relative h-full w-full">
@@ -61,6 +61,7 @@ export default async function MapboxContent({
         }}
         projection={"globe"}
         attributionControl={false}
+        styleDiffing={false}
       >
         {!coords && !showTrip && (
           <>

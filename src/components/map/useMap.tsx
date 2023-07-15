@@ -8,7 +8,6 @@ export default function useMap({
   coords,
 }: {
   coords?: { latitude: number; longitude: number };
-  countries?: string[];
 }) {
   useThemeChecker();
   const { resolvedTheme } = useTheme();

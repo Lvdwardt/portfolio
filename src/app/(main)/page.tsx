@@ -15,7 +15,6 @@ import GithubStats from "@/components/gridcomponents/stats/ghStats";
 import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { Suspense } from "react";
 import Mapbox from "@/components/gridcomponents/mapbox/mapbox";
 import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 
@@ -34,10 +33,8 @@ export default async function Home() {
             <About />
           </div>
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
-            <Suspense fallback={<div className="bg-card" />}>
-              {/* @ts-expect-error server-component */}
-              <Mapbox />
-            </Suspense>
+            {/* @ts-expect-error server-component */}
+            <Mapbox />
           </div>
           <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">
             <Janskapsalonsmall />

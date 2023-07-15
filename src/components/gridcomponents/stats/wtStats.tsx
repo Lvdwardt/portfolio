@@ -153,7 +153,6 @@ export default async function WakatimeStats() {
   };
 
   function returnRandom() {
-    console.log(dailyAverage, hours);
     const possible = [];
     if (hours > 4) {
       possible.push(Hours);
