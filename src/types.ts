@@ -1,4 +1,10 @@
-import { Feature, Geometry, GeoJsonProperties } from "geojson";
+import {
+  Feature,
+  Geometry,
+  GeoJsonProperties,
+  Polygon,
+  MultiPolygon,
+} from "geojson";
 
 export type ProjectList = {
   id: string;
@@ -48,6 +54,14 @@ export type CityFeature = {
     type: "Polygon";
     coordinates: number[][][];
   };
+};
+
+export type City = {
+  id: number;
+  name: string;
+  country: string;
+  display_name: string;
+  geojson: Feature<Polygon | MultiPolygon>;
 };
 
 export type Trip = {

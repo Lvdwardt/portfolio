@@ -1,12 +1,13 @@
 import { countryList } from "@/components/map/countrylist";
-import { Station, Capital } from "@/types";
+import { Station, Capital, City } from "@/types";
 import { countries, airportCodes, capitalNames } from "../traveldata";
 import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
 import cityFeatures from "@/components/map/cities.json";
 import useTripRoute from "./useTripRoute";
+import { headers } from "next/headers";
 
-export default function useMapData() {
+export default async function useMapData() {
   const countryCodes = [] as string[];
   for (let i = 0; i < countries.length; i++) {
     const country = countries[i] as keyof typeof countryList;
@@ -71,11 +72,29 @@ export default function useMapData() {
   //   }
   // }
 
+  const host = headers().get("host");
+  const secret = process.env.MY_SECRET_TOKEN;
+  const { cities }: { cities: City[] } = await fetch(
+    `http://${host}/api/cities`,
+    {
+      method: "GET",
+      headers: {
+        secret: secret || "",
+      },
+      // once every week
+      next: {
+        revalidate: 60 * 60 * 24 * 7,
+      },
+    }
+  ).then((res) => res.json());
+
   const mapData = {
     countries: countryCodes,
     airports: airports,
     capitals: capitals,
     trip: trip,
+    cities: cities,
   };
+
   return mapData;
 }

@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { headers } from "next/headers";
 import MapboxContent from "@/components/map/map";
 import useMapData from "./hooks/useMapData";
+import { City } from "@/types";
 
 export const metadata: Metadata = {
   title: "Travels",
@@ -25,6 +26,7 @@ export default async function Travels() {
       revalidate: 60 * 60 * 24 * 7,
     },
   });
+
   const data = await res.json();
   const stats = data.stats[0] as {
     countries: number;
@@ -32,7 +34,7 @@ export default async function Travels() {
     airports: number;
   };
 
-  const mapData = useMapData();
+  const mapData = await useMapData();
 
   return (
     <AnimatedLayout>

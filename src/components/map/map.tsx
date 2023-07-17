@@ -10,7 +10,7 @@ import {
 } from "./markers";
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
-import { Station, Capital, CityFeature, Trip } from "@/types";
+import { Station, Capital, Trip, City } from "@/types";
 import VisitedCities from "./visitedCities";
 import TripData from "./trip";
 
@@ -23,11 +23,10 @@ export default async function MapboxContent({
     airports: Station[];
     countries: string[];
     capitals: Capital[];
-    cities: CityFeature[];
+    cities: City[];
     trip: Trip;
   };
 }) {
-  console.log(coords);
   const countries = data?.countries;
   const airports = data?.airports;
   const capitals = data?.capitals;
@@ -71,8 +70,8 @@ export default async function MapboxContent({
               resolvedTheme={resolvedTheme}
             />
             <VisitedCities
-              resolvedTheme={resolvedTheme}
               cities={data?.cities}
+              resolvedTheme={resolvedTheme}
             />
             {/* show where I live */}
             <HomeMarker exactZoom={exactZoom} />
@@ -94,7 +93,6 @@ export default async function MapboxContent({
                   capital={capital}
                 />
               ))}
-            {/* <VisitedCities resolvedTheme={resolvedTheme} /> */}
           </>
         )}
         {/* show all trips I've made */}
