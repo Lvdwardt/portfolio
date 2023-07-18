@@ -1,11 +1,7 @@
-import About from "@/components/about";
-import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { Suspense } from "react";
 import { headers } from "next/headers";
-import MapboxContent from "@/components/map/map";
 import useMapData from "./hooks/useMapData";
-import { City } from "@/types";
+import PageContent from "./pageContent";
 
 export const metadata: Metadata = {
   title: "Travels",
@@ -36,60 +32,5 @@ export default async function Travels() {
 
   const mapData = await useMapData();
 
-  return (
-    <AnimatedLayout>
-      <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
-        <div className="w-full overflow-visible transition-all duration-300 ease-in ">
-          <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
-            <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
-              <About />
-            </div>
-            <div className="order-2 rounded-[2rem] bg-card xl:order-3">
-              <div className="flex h-full w-full flex-col p-8">
-                <div className="flex h-full flex-col justify-between">
-                  <div className="">
-                    <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">
-                        {stats.countries}
-                      </span>
-                    </div>
-                    <span className="font-silka text-sm text-gray-400">
-                      countries visited
-                    </span>
-                  </div>
-                  <div className="">
-                    <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">
-                        {stats.capitals}
-                      </span>
-                    </div>
-                    <span className="font-silka text-sm text-gray-400">
-                      capitals explored
-                    </span>
-                  </div>
-                  <div className="">
-                    <div className="flex h-6 items-center gap-2">
-                      <span className="text-2xl font-bold">
-                        {stats.airports}
-                      </span>
-                    </div>
-                    <span className="font-silka text-sm text-gray-400">
-                      airports conquered
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3">
-              <Suspense fallback={<></>}>
-                {/* @ts-expect-error server-component */}
-                <MapboxContent data={mapData} />
-              </Suspense>
-            </div>
-            {/* <div className="order-4 col-span-2 row-span-2 rounded-[2rem] bg-card p-8"></div> */}
-          </div>
-        </div>
-      </div>
-    </AnimatedLayout>
-  );
+  return <PageContent stats={stats} mapData={mapData} />;
 }

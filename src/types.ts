@@ -1,10 +1,4 @@
-import {
-  Feature,
-  Geometry,
-  GeoJsonProperties,
-  Polygon,
-  MultiPolygon,
-} from "geojson";
+import { Feature, Polygon, MultiPolygon } from "geojson";
 
 export type ProjectList = {
   id: string;
@@ -65,16 +59,26 @@ export type City = {
 };
 
 export type Trip = {
-  trip: {
-    id: string;
-    title: string;
-    legs: {
-      from: string;
-      to: string;
-      type: string;
-    }[];
-    duration: number;
-  };
-  stations: Station[];
-  lines: Feature<Geometry, GeoJsonProperties>[];
+  id: string;
+  title: string;
+  legs: {
+    from: {
+      code: string;
+      coordinates: number[];
+    };
+    to: {
+      code: string;
+      coordinates: number[];
+    };
+    type: string;
+  }[];
+  duration: number;
+};
+
+export type MapData = {
+  airports: Station[];
+  countries: string[];
+  capitals: Capital[];
+  cities: City[];
+  showTrip: boolean;
 };

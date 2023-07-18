@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
 import { FaHome, FaCity } from "react-icons/fa";
-import { MdLocalAirport } from "react-icons/md";
+import { CiAirportSign1 } from "react-icons/ci";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
 
@@ -85,7 +85,7 @@ export const AirportMarker = ({ exactZoom, airport }: AMarker) => {
   const lon = airport.coordinates[0];
   return (
     <Marker draggable={false} latitude={lat} longitude={lon}>
-      <MdLocalAirport
+      <CiAirportSign1
         className="text-4xl text-black dark:text-white"
         style={{
           transform: `scale(${Math.min(Math.max(0.1, (exactZoom - 2) / 10), 1)}

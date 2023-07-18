@@ -3,8 +3,6 @@ import { Station, Capital, City } from "@/types";
 import { countries, airportCodes, capitalNames } from "../traveldata";
 import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
-import cityFeatures from "@/components/map/cities.json";
-import useTripRoute from "./useTripRoute";
 import { headers } from "next/headers";
 
 export default async function useMapData() {
@@ -38,8 +36,6 @@ export default async function useMapData() {
       console.log(capitalName);
     }
   }
-
-  const trip = useTripRoute();
 
   // const cityList = [] as CityFeature[];
   // const cityFeatures2 = cityFeatures as {
@@ -92,8 +88,8 @@ export default async function useMapData() {
     countries: countryCodes,
     airports: airports,
     capitals: capitals,
-    trip: trip,
     cities: cities,
+    showTrip: false,
   };
 
   return mapData;

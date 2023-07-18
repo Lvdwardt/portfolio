@@ -10,29 +10,29 @@ import {
 } from "./markers";
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
-import { Station, Capital, Trip, City } from "@/types";
+import { MapData, Station, Trip } from "@/types";
 import VisitedCities from "./visitedCities";
 import TripData from "./trip";
+import { startTransition } from "react";
 
 export default async function MapboxContent({
+  big,
   coords,
   data,
+  trip,
+  stations,
 }: {
+  big: boolean;
   coords?: { latitude: number; longitude: number };
-  data?: {
-    airports: Station[];
-    countries: string[];
-    capitals: Capital[];
-    cities: City[];
-    trip: Trip;
-  };
+  data?: MapData;
+  trip?: Trip;
+  stations?: Station[];
 }) {
   const countries = data?.countries;
   const airports = data?.airports;
   const capitals = data?.capitals;
-  const trip = data?.trip;
 
-  const showTrip = false;
+  const showTrip = data?.showTrip;
 
   const {
     setUncontrolledZoom,
@@ -49,6 +49,20 @@ export default async function MapboxContent({
       <Map
         onZoom={() => setUncontrolledZoom()}
         ref={mapRef}
+        onResize={(e) => {
+          startTransition(() => {
+            e.target.resize();
+          });
+        }}
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          right: "-50%",
+          left: "-50%",
+          margin: "auto",
+          width: big ? "895px" : "100%",
+        }}
         maxZoom={coords ? 11 : 20}
         minZoom={0.0000001}
         mapStyle={style}
@@ -96,11 +110,13 @@ export default async function MapboxContent({
           </>
         )}
         {/* show all trips I've made */}
-        {!coords && trip && showTrip && (
+        {!coords && trip && stations && showTrip && (
           <TripData
             exactZoom={exactZoom}
             trip={trip}
+            stations={stations}
             resolvedTheme={resolvedTheme}
+            mapRef={mapRef}
           />
         )}
         {/* Show a marker with my current location */}

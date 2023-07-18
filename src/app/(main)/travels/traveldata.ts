@@ -210,32 +210,114 @@ export const cityNames = [
 
 export const trips = [
   {
+    id: "0",
+    title: "Zargeb, Rome, Cagliari",
+    legs: [
+      {
+        from: {
+          code: "NRN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "ZAG",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "ZAG",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "FCO",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "CIA",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "CAG",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "CAG",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "NRN",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+    ],
+    duration: 7,
+    date: "2022/03",
+  },
+  {
     id: "1",
     title: "London, Ibiza, Barcelona, Porto",
     legs: [
       {
-        from: "MST",
-        to: "LTN",
+        from: {
+          code: "MST",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "LTN",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "LTN",
-        to: "IBZ",
+        from: {
+          code: "LTN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "IBZ",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "IBZ",
-        to: "BCN",
+        from: {
+          code: "IBZ",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "BCN",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "BCN",
-        to: "OPO",
+        from: {
+          code: "BCN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "OPO",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "OPO",
-        to: "MST",
+        from: {
+          code: "OPO",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "MST",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
     ],
@@ -244,74 +326,278 @@ export const trips = [
   },
   {
     id: "2",
+    title:
+      "Zadar, Pichl, Zermatt, Zürich, Zagreb, Budapest, Bratislava, Vienna, Zator, Krakow, Prague",
+    legs: [
+      {
+        from: {
+          code: "Rhenen",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Zadar",
+          coordinates: [] as unknown as number[],
+        },
+        type: "car",
+      },
+      {
+        from: {
+          code: "Zadar",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Pichl",
+          coordinates: [] as unknown as number[],
+        },
+        type: "car",
+      },
+      {
+        from: {
+          code: "Pichl",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Zermatt",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Zermatt",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Zürich",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Zürich",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Zagreb",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Zagreb",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Budapest",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Budapest",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Bratislava",
+          coordinates: [] as unknown as number[],
+        },
+        type: "bus",
+      },
+      {
+        from: {
+          code: "Bratislava",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Vienna",
+          coordinates: [] as unknown as number[],
+        },
+        type: "bus",
+      },
+      {
+        from: {
+          code: "Vienna",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Zator",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Zator",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Krakow",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Krakow",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Prague",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+      {
+        from: {
+          code: "Prague",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Rhenen",
+          coordinates: [] as unknown as number[],
+        },
+        type: "train",
+      },
+    ],
+    duration: 28,
+    date: "2022-07",
+  },
+  {
+    id: "3",
     title: "Catania, Dubai, Naples, Bari",
     legs: [
       {
-        from: "CGN",
-        to: "BGY",
+        from: {
+          code: "CGN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "BGY",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "BGY",
-        to: "CTA",
+        from: {
+          code: "BGY",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "CTA",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "CTA",
-        to: "AUH",
+        from: {
+          code: "CTA",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "AUH",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "AUH",
-        to: "Dubai",
+        from: {
+          code: "AUH",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Dubai",
+          coordinates: [] as unknown as number[],
+        },
         type: "bus",
       },
       {
-        from: "Dubai",
-        to: "AUH",
+        from: {
+          code: "Dubai",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "AUH",
+          coordinates: [] as unknown as number[],
+        },
         type: "bus",
       },
       {
-        from: "AUH",
-        to: "NAP",
+        from: {
+          code: "AUH",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "NAP",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "Naples",
-        to: "Bari",
+        from: {
+          code: "Naples",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "Bari",
+          coordinates: [] as unknown as number[],
+        },
         type: "bus",
       },
       {
-        from: "BRI",
-        to: "MST",
+        from: {
+          code: "BRI",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "MST",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
     ],
     duration: 10,
-    date: "2023-05",
+    date: "2023-03",
   },
   {
-    id: "3",
+    id: "4",
     title: "Milan, Bucharest, Sofia",
     legs: [
       {
-        from: "NRN",
-        to: "BGY",
+        from: {
+          code: "NRN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "BGY",
+          coordinates: [] as unknown as number[],
+        },
         type: "plane",
       },
       {
-        from: "BGY",
-        to: "OTP",
+        from: {
+          code: "BGY",
+          coordinates: [] as unknown as number[],
+        },
+        to: { code: "OTP", coordinates: [] },
         type: "plane",
       },
       {
-        from: "OTP",
-        to: "SOF",
+        from: {
+          code: "OTP",
+          coordinates: [] as unknown as number[],
+        },
+        to: { code: "SOF", coordinates: [] },
         type: "plane",
       },
       {
-        from: "SOF",
-        to: "EIN",
+        from: {
+          code: "SOF",
+          coordinates: [] as unknown as number[],
+        },
+        to: { code: "EIN", coordinates: [] },
         type: "plane",
       },
     ],

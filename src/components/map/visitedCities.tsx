@@ -14,7 +14,7 @@ export default function VisitedCities({
     type: "fill",
     source: "my-data",
     paint: {
-      "fill-color": resolvedTheme === "light" ? "#7bdff2" : "#ce81c7",
+      "fill-color": resolvedTheme === "light" ? "#b2f7ef" : "#8d5be9",
       "fill-opacity": 1,
     },
   };
@@ -28,6 +28,8 @@ export default function VisitedCities({
       "text-variable-anchor": ["top", "bottom", "left", "right"],
       "text-radial-offset": 0.5,
       "text-justify": "auto",
+      "text-allow-overlap": false,
+      "symbol-avoid-edges": true,
     },
   };
 
@@ -40,7 +42,7 @@ export default function VisitedCities({
         type: "Feature" as const,
         geometry: city.geojson as unknown as Geometry,
         properties: {
-          name: city.display_name,
+          name: city.name,
         },
       };
     }),

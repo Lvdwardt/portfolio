@@ -1,5 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { Geometry } from "geojson";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 interface Result {
@@ -88,6 +89,8 @@ export async function POST(request: NextRequest) {
   const { rows } = await sql`SELECT * FROM cities WHERE name = ${city}`;
 
   const display_name = rows[0].display_name;
+
+  revalidatePath("/travels");
 
   return NextResponse.json({
     message: `success, added ${display_name} to the DB`,

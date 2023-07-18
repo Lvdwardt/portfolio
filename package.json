@@ -13,6 +13,8 @@
   "dependencies": {
     "@apollo/client": "^3.7.14",
     "@svgr/webpack": "^8.0.1",
+    "@turf/turf": "^6.5.0",
+    "@types/lodash.memoize": "^4.1.7",
     "@vercel/analytics": "^1.0.1",
     "@vercel/postgres": "^0.4.0",
     "auto-text-size": "^0.2.2",
@@ -26,6 +28,7 @@
     "hast-to-hyperscript": "^10.0.3",
     "i18n-iso-countries": "^7.6.0",
     "lodash": "^4.17.21",
+    "lodash.memoize": "^4.1.2",
     "mapbox-gl": "^2.14.1",
     "markdown-wasm": "^1.2.0",
     "next": "13.4.2",
@@ -55,7 +58,6 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "@types/geojson": "^7946.0.10",
-    "@types/lodash": "^4.14.194",
     "@types/mapbox-gl": "^2.7.11",
     "@types/node": "^18.16.13",
     "@types/prettier": "^2.7.2",

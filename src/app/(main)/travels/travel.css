@@ -1,0 +1,14 @@
+
+:root{
+    --scroll:0%;
+    --width:100%;
+}
+
+
+
+@media (min-width: 1280px) {
+.map-element {
+    transform : translateY(calc(var(--scroll) * 1.6575));
+    width: var(--width);
+}
+}

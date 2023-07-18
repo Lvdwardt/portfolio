@@ -1,42 +1,66 @@
-import { Station } from "@/types";
 import airportList from "@/components/map/airports.json";
+import trainstationsList from "@/components/map/trainstations.json";
 import { Feature } from "geojson";
-import { trips } from "../traveldata";
+import memo from "lodash.memoize";
+import { Trip } from "@/types";
 
-export default function useTripRoute() {
-  const trip = trips[1];
-
+export default function useTripRoute(trip: Trip) {
   type Station = {
     code: string;
     name: string;
     coordinates: number[];
   };
+  // map with all stations
+  const stationsMap = new Map<string, Station>();
 
-  const stationsMap = new Map<string, Station | Station>();
-  for (const airport of airportList) {
-    stationsMap.set(airport.code, airport);
+  for (const station of airportList) {
+    stationsMap.set(station.code, station);
   }
+
+  // for (const station of trainstationsList) {
+  //   stationsMap.set(station.code, station);
+  // }
+
+  // for (const station of busstopsList) {
+  //   stationsMap.set(station.code, station);
+  // }
 
   // Use Set to store unique stations
-  const stationsSet = new Set<Station | Station>();
+  const stationsSet = new Set<Station>();
 
   for (const leg of trip.legs) {
-    const fromAirport = stationsMap.get(leg.from);
-    if (fromAirport) {
-      stationsSet.add(fromAirport);
+    const fromStation = stationsMap.get(leg.from.code);
+    if (fromStation) {
+      stationsSet.add(fromStation);
     }
 
-    const toAirport = stationsMap.get(leg.to);
-    if (toAirport) {
-      stationsSet.add(toAirport);
+    const toStation = stationsMap.get(leg.to.code);
+    if (toStation) {
+      stationsSet.add(toStation);
     }
   }
+
+  // Get the list of all stations that have been visited
+  const visitedStations = Array.from(stationsSet);
+
+  const findStation = memo((code: string) => {
+    return visitedStations.find((station) => station.code === code);
+  });
 
   // create a dashed line for each leg of the trip
   const lines = [] as Feature[];
   for (let i = 0; i < trip.legs.length; i++) {
-    const from = stationsMap.get(trip.legs[i].from);
-    const to = stationsMap.get(trip.legs[i].to);
+    const from = findStation(trip.legs[i].from.code);
+    const to = findStation(trip.legs[i].to.code);
+
+    // add the coordinates of the from and to stations to the trip
+    if (from) {
+      trip.legs[i].from.coordinates = from.coordinates;
+    }
+    if (to) {
+      trip.legs[i].to.coordinates = to.coordinates;
+    }
+
     if (from && to) {
       lines.push({
         type: "Feature",
