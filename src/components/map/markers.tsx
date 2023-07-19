@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaHome, FaCity } from "react-icons/fa";
 import { CiAirportSign1 } from "react-icons/ci";
+import { TbTrain } from "react-icons/tb";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
+import { IconBaseProps } from "react-icons/lib";
 
 type Coords = {
   latitude: number;
@@ -76,16 +78,20 @@ export const HomeMarker = ({ exactZoom }: MarkerProps) => {
 };
 
 interface AMarker extends MarkerProps {
-  airport: Station;
+  station: Station;
 }
-export const AirportMarker = ({ exactZoom, airport }: AMarker) => {
-  //     coordinates: number[];
 
-  const lat = airport.coordinates[1];
-  const lon = airport.coordinates[0];
+const airportIcon = (props: IconBaseProps) => <CiAirportSign1 {...props} />;
+const trainstationIcon = (props: IconBaseProps) => <TbTrain {...props} />;
+
+export const StationMarker = ({ exactZoom, station }: AMarker) => {
+  const lat = station.coordinates[1];
+  const lon = station.coordinates[0];
+
+  const Icon = station.type === "airport" ? airportIcon : trainstationIcon;
   return (
     <Marker draggable={false} latitude={lat} longitude={lon}>
-      <CiAirportSign1
+      <Icon
         className="text-4xl text-black dark:text-white"
         style={{
           transform: `scale(${Math.min(Math.max(0.1, (exactZoom - 2) / 10), 1)}

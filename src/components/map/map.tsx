@@ -3,14 +3,14 @@ import { Map } from "react-map-gl";
 import Contribution from "./contribution";
 import Controls from "./controls";
 import {
-  AirportMarker,
+  StationMarker,
   CapitalMarker,
   HomeMarker,
   LocationMarker,
 } from "./markers";
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
-import { MapData, Station, Trip } from "@/types";
+import { MapData, Station, Trip, TripLine } from "@/types";
 import VisitedCities from "./visitedCities";
 import TripData from "./trip";
 import { startTransition } from "react";
@@ -20,12 +20,14 @@ export default async function MapboxContent({
   coords,
   data,
   trip,
+  tripLine,
   stations,
 }: {
   big: boolean;
   coords?: { latitude: number; longitude: number };
   data?: MapData;
   trip?: Trip;
+  tripLine?: TripLine;
   stations?: Station[];
 }) {
   const countries = data?.countries;
@@ -92,10 +94,10 @@ export default async function MapboxContent({
             {/* show all airports I've visited */}
             {airports &&
               airports.map((airport) => (
-                <AirportMarker
+                <StationMarker
                   key={airport.code}
                   exactZoom={exactZoom}
-                  airport={airport}
+                  station={airport}
                 />
               ))}
             {/* show all capitals I've visited */}
@@ -110,10 +112,11 @@ export default async function MapboxContent({
           </>
         )}
         {/* show all trips I've made */}
-        {!coords && trip && stations && showTrip && (
+        {!coords && trip && stations && showTrip && tripLine && (
           <TripData
             exactZoom={exactZoom}
             trip={trip}
+            tripLine={tripLine}
             stations={stations}
             resolvedTheme={resolvedTheme}
             mapRef={mapRef}

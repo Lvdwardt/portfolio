@@ -1,9 +1,7 @@
 import { Layer, MapRef, Source } from "react-map-gl";
-import { Station, Trip } from "@/types";
-import { AirportMarker } from "./markers";
-import { type RefObject, useMemo } from "react";
-import type { Position } from "geojson";
-import * as turf from "@turf/turf";
+import { Station, Trip, TripLine } from "@/types";
+import { StationMarker } from "./markers";
+import { type RefObject } from "react";
 import useAnimatedTrip from "./hooks/useAnimatedTrip";
 
 type TripProps = {
@@ -12,38 +10,21 @@ type TripProps = {
   resolvedTheme: string | undefined;
   mapRef: RefObject<MapRef>;
   stations: Station[];
+  tripLine: TripLine;
 };
 
 export default function Trip({
   exactZoom,
-  trip,
   resolvedTheme,
   mapRef,
   stations,
+  tripLine,
 }: TripProps) {
-  const legs = trip.legs;
-
-  const lines = legs.reduce((acc: Position[], leg) => {
-    const from = leg.from.coordinates;
-    const to = leg.to.coordinates;
-    // from and to are sometimes []. if so, don't add them to the trip
-
-    if (from && to && from.length > 0 && to.length > 0) {
-      acc.push(from, to);
-    }
-
-    return acc;
-  }, []);
-
-  const line = useMemo(() => {
-    return turf.lineString(lines);
-  }, [trip]);
-
-  const { animationPhase } = useAnimatedTrip(mapRef, line, 2000);
+  const { animationPhase } = useAnimatedTrip(mapRef, tripLine, 2000);
 
   return (
     <>
-      <Source id="trip" type="geojson" data={line} lineMetrics={true}>
+      <Source id="trip" type="geojson" data={tripLine} lineMetrics={true}>
         <Layer
           id="trip"
           type="line"
@@ -59,10 +40,10 @@ export default function Trip({
         />
       </Source>
       {Array.from(stations).map((station) => (
-        <AirportMarker
+        <StationMarker
           key={station.code}
           exactZoom={exactZoom}
-          airport={station as Station}
+          station={station as Station}
         />
       ))}
     </>

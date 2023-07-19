@@ -1,13 +1,12 @@
 "use client";
-import { Feature, LineString } from "geojson";
 import { LngLatBounds, LngLat } from "mapbox-gl";
 import { RefObject, useState, startTransition, useEffect } from "react";
 import { MapRef } from "react-map-gl";
-import * as turf from "@turf/turf";
+import { TripLine } from "@/types";
 
 export default function useAnimatedTrip(
   mapRef: RefObject<MapRef>,
-  line: Feature<LineString, turf.Properties>,
+  line: TripLine,
   duration: number
 ) {
   const [animationPhase, setAnimationPhase] = useState(0);
@@ -50,9 +49,16 @@ export default function useAnimatedTrip(
   useEffect(() => {
     const bounds = new LngLatBounds();
 
-    line.geometry.coordinates.forEach((coordinate: number[]) => {
+    line.geometry.coordinates.forEach((coordinate: number[] | number[][]) => {
       if (coordinate.length === 0) return;
-      const [lng, lat] = coordinate;
+      if (typeof coordinate[0] === "number") {
+        const [lng, lat] = coordinate as number[];
+        const fromLngLat = new LngLat(lng, lat);
+        bounds.extend(fromLngLat);
+        return;
+      }
+
+      const [lng, lat] = (coordinate as number[][])[0];
       const fromLngLat = new LngLat(lng, lat);
       bounds.extend(fromLngLat);
     });

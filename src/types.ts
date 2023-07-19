@@ -1,4 +1,5 @@
-import { Feature, Polygon, MultiPolygon } from "geojson";
+import { Feature, Polygon, MultiPolygon, Position } from "geojson";
+import * as turf from "@turf/turf";
 
 export type ProjectList = {
   id: string;
@@ -31,6 +32,7 @@ export type Station = {
   code: string;
   name: string;
   coordinates: number[];
+  type: string;
 };
 export type Capital = {
   CapitalName: string;
@@ -70,6 +72,9 @@ export type Trip = {
       code: string;
       coordinates: number[];
     };
+    route?: {
+      coordinates: Position[];
+    };
     type: string;
   }[];
   duration: number;
@@ -82,3 +87,8 @@ export type MapData = {
   cities: City[];
   showTrip: boolean;
 };
+
+export type TripLine = turf.helpers.Feature<
+  turf.helpers.LineString,
+  turf.helpers.Properties
+>;

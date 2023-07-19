@@ -18,7 +18,9 @@ export default async function useMapData() {
     const airportCode = airportCodes[i];
     const airport = airportList.find((airport) => airport.code === airportCode);
     if (airport) {
-      airports.push(airport);
+      const extendedAirport = airport as Station;
+      extendedAirport.type = "airport";
+      airports.push(extendedAirport);
     } else {
       console.log(airportCode);
     }

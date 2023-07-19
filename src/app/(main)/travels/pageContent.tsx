@@ -23,7 +23,7 @@ export default function PageContent({
 }) {
   const [showTrip, setShowTrip] = useState(false);
   const [currentTrip, setCurrentTrip] = useState<Trip>(trips[0]);
-  const { trip, stations } = useTripRoute(currentTrip);
+  const { trip, stations, tripLine } = useTripRoute(currentTrip);
 
   mapData.showTrip = showTrip;
 
@@ -75,6 +75,7 @@ export default function PageContent({
                 big={big}
                 data={mapData}
                 trip={trip}
+                tripLine={tripLine}
                 stations={stations}
               />
             </Suspense>
@@ -101,9 +102,9 @@ export default function PageContent({
                     })
                   }
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex w-full items-center justify-between gap-2 text-left">
                     <span className="text-xl font-bold">{trip.title}</span>
-                    <span className="font-silka text-sm text-gray-400">
+                    <span className="text-gray-40 whitespace-nowrap font-silka text-sm">
                       {trip.date}
                     </span>
                   </div>
