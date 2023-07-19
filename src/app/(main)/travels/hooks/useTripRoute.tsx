@@ -15,7 +15,8 @@ export default function useTripRoute(trip: Trip) {
     stationsMap.set(station.code, extendedStation);
   }
 
-  // @ts-expect-error trainstationsList is too large
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore list is too large
   for (const station of trainstationsList) {
     const extendedStation = station as Station;
     extendedStation.type = "trainstation";
