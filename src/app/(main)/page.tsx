@@ -32,7 +32,10 @@ export default async function Home() {
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2"></div>
+          <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
+            {/* @ts-expect-error server-component */}
+            <Mapbox />
+          </div>
           <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">
             <Janskapsalonsmall />
           </div>
