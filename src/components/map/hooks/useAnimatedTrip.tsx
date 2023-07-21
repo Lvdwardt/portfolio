@@ -1,83 +1,66 @@
 "use client";
 import { LngLatBounds, LngLat } from "mapbox-gl";
-import { RefObject, useState, startTransition, useEffect } from "react";
+import { RefObject, useState, startTransition, useEffect, useRef } from "react";
 import { MapRef } from "react-map-gl";
 import { TripLine } from "@/types";
+import * as turf from "@turf/turf";
 
 export default function useAnimatedTrip(
   mapRef: RefObject<MapRef>,
-  line: TripLine,
-  duration: number
+  line: TripLine
 ) {
   const [animationPhase, setAnimationPhase] = useState(0);
-  const [start, setStart] = useState(false);
-  const startTime = Date.now();
+  const [duration, setDuration] = useState(0);
+  const animationRef = useRef<number | null>(null);
+  const startRef = useRef(false);
+  const startTimeRef = useRef<number>(0);
   const delay = 2000;
 
-  const beforeAnimationTimeout = setTimeout(() => {
-    startTransition(() => {
-      setStart(true);
-    });
-  }, delay);
-
-  beforeAnimationTimeout;
-
   useEffect(() => {
-    if (start) {
+    // center the trip on the map
+    const bbox = turf.bbox(line);
+    const bounds = new LngLatBounds(
+      new LngLat(bbox[0] - 15, bbox[1]),
+      new LngLat(bbox[2] + 15, bbox[3])
+    );
+
+    startTransition(() => {
+      mapRef.current?.fitBounds(bounds, {
+        duration: 2000,
+      });
+    });
+    // calculate speed based on length of the trip
+    const length = turf.lineDistance(line, { units: "kilometers" });
+    const duration = length * 1000 * 0.0008;
+    setDuration(duration);
+
+    startRef.current = false;
+    animationPhase !== 0 && setAnimationPhase(0);
+
+    animationRef.current = window.setTimeout(() => {
+      startRef.current = true;
+      startTimeRef.current = Date.now();
       const frame = async () => {
-        const elapsed = Date.now() - startTime;
+        const elapsed = Date.now() - startTimeRef.current;
         const progress = elapsed / duration;
 
         setAnimationPhase(progress > 1 ? 1 : progress);
 
-        if (progress < 1) {
-          requestAnimationFrame(frame);
+        if (progress < 1 && startRef.current) {
+          animationRef.current = requestAnimationFrame(frame);
         }
       };
 
       requestAnimationFrame(frame);
-    }
-  }, [start]);
+    }, delay);
 
-  useEffect(() => {
-    setAnimationPhase(0);
-    setStart(false);
-    beforeAnimationTimeout;
-  }, [line]);
-
-  //fly to the trip
-  useEffect(() => {
-    const bounds = new LngLatBounds();
-
-    line.geometry.coordinates.forEach((coordinate: number[] | number[][]) => {
-      if (coordinate.length === 0) return;
-      if (typeof coordinate[0] === "number") {
-        const [lng, lat] = coordinate as number[];
-        const fromLngLat = new LngLat(lng, lat);
-        bounds.extend(fromLngLat);
-        return;
+    return () => {
+      if (animationRef.current) {
+        clearTimeout(animationRef.current);
+        animationRef.current = null;
       }
-
-      const [lng, lat] = (coordinate as number[][])[0];
-      const fromLngLat = new LngLat(lng, lat);
-      bounds.extend(fromLngLat);
-    });
-
-    startTransition(() => {
-      mapRef.current?.fitBounds(bounds, {
-        padding: { top: 100, bottom: 100, left: 100, right: 100 },
-        duration: 2000,
-      });
-    });
-    setTimeout(() => {
-      startTransition(() => {
-        mapRef.current?.flyTo({
-          zoom: mapRef.current.getZoom() - 0.5,
-          duration: 1000,
-        });
-      });
-    }, 1000);
-  }, [line]);
+    };
+  }, [line, duration]);
 
   return { animationPhase };
 }

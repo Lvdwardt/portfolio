@@ -13,6 +13,7 @@
 
 
 :root {
+  scroll-behavior: smooth;
   --primary: #ce81c7;
   --secondary: #8d5be9;
   --card: #2f3763;

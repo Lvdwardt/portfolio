@@ -20,7 +20,7 @@ export default function Trip({
   stations,
   tripLine,
 }: TripProps) {
-  const { animationPhase } = useAnimatedTrip(mapRef, tripLine, 2000);
+  const { animationPhase } = useAnimatedTrip(mapRef, tripLine);
 
   return (
     <>
