@@ -11,6 +11,7 @@ export default function Contribution() {
     <>
       <button
         className="absolute bottom-4 left-4 z-50 flex items-center"
+        aria-label="contribution"
         onClick={() =>
           startTransition(() => {
             setContributionOpen(!contributionOpen);
