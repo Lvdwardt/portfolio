@@ -65,9 +65,10 @@ export default async function SpotifyStats() {
     );
   };
 
+  const randomSong =
+    offlineList[Math.floor(Math.random() * offlineList.length)];
+
   const LastPlayed = () => {
-    const randomSong =
-      offlineList[Math.floor(Math.random() * offlineList.length)];
     return (
       <div>
         <span className="pb-[1px]">Offline, Last played:</span>
@@ -83,11 +84,19 @@ export default async function SpotifyStats() {
       </div>
     );
   };
+
+  const url = props.nowPlaying ? props.song.url : randomSong.url;
+  console.log(url);
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <a href="https://wakatime.com/@LvdWardt" target="_blank" rel="noreferrer">
+      <Link
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="listen to this song on spotify"
+      >
         <SiSpotify className="text-6xl text-primary" />
-      </a>
+      </Link>
       <div className="mt-auto flex flex-col">
         {props.nowPlaying ? <NowPlaying /> : <LastPlayed />}
       </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiWakatime } from "react-icons/si";
 
 export default async function WakatimeStats() {
@@ -176,9 +177,14 @@ export default async function WakatimeStats() {
 
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <a href="https://wakatime.com/@LvdWardt" target="_blank" rel="noreferrer">
+      <Link
+        href="https://wakatime.com/@LvdWardt"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="look at my stats on wakatime"
+      >
         <SiWakatime className="text-6xl text-primary" />
-      </a>
+      </Link>
       <div className="mt-auto flex flex-col">{returnRandom()}</div>
     </div>
   );

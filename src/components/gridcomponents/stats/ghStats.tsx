@@ -1,6 +1,7 @@
 import { SiGithub } from "react-icons/si";
 import { FiGitCommit } from "react-icons/fi";
 import { type ElementCompact, xml2js } from "xml-js";
+import Link from "next/link";
 
 export default async function GithubStats() {
   const res = await fetch(
@@ -36,9 +37,14 @@ export default async function GithubStats() {
 
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <a href="https://github.com/Lvdwardt" target="_blank" rel="noreferrer">
+      <Link
+        href="https://github.com/Lvdwardt"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="visit my github page"
+      >
         <SiGithub className="text-6xl text-primary" />
-      </a>
+      </Link>
       <div className="mt-auto flex flex-col">
         <div>
           <div className="flex h-6 items-center gap-2">
