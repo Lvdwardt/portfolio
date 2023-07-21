@@ -1,5 +1,11 @@
-import { Feature, Polygon, MultiPolygon, Position } from "geojson";
-import * as turf from "@turf/turf";
+import type {
+  Feature,
+  Polygon,
+  MultiPolygon,
+  Position,
+  LineString,
+  GeoJsonProperties,
+} from "geojson";
 
 export type ProjectList = {
   id: string;
@@ -88,7 +94,4 @@ export type MapData = {
   showTrip: boolean;
 };
 
-export type TripLine = turf.helpers.Feature<
-  turf.helpers.LineString,
-  turf.helpers.Properties
->;
+export type TripLine = Feature<LineString, GeoJsonProperties>;

@@ -89,7 +89,12 @@ export default async function SpotifyStats() {
   console.log(url);
   return (
     <div className="flex h-full w-full flex-col p-8">
-      <Link href={url} target="_blank" rel="noreferrer">
+      <Link
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="listen to this song on spotify"
+      >
         <SiSpotify className="text-6xl text-primary" />
       </Link>
       <div className="mt-auto flex flex-col">

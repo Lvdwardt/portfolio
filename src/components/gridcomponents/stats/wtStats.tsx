@@ -181,6 +181,7 @@ export default async function WakatimeStats() {
         href="https://wakatime.com/@LvdWardt"
         target="_blank"
         rel="noreferrer"
+        aria-label="look at my stats on wakatime"
       >
         <SiWakatime className="text-6xl text-primary" />
       </Link>
