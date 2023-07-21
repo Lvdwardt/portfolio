@@ -17,6 +17,7 @@ import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import Mapbox from "@/components/gridcomponents/mapbox/mapbox";
 import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Home - Leonvdw.nl",
@@ -33,8 +34,10 @@ export default async function Home() {
             <About />
           </div>
           <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
-            {/* @ts-expect-error server-component */}
-            <Mapbox />
+            <Suspense fallback={<div>Loading...</div>}>
+              {/* @ts-expect-error server-component */}
+              <Mapbox />
+            </Suspense>
           </div>
           <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">
             <Janskapsalonsmall />
