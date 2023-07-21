@@ -9,6 +9,7 @@ import useTripRoute from "./hooks/useTripRoute";
 import { Trip } from "@/types";
 import { trips } from "./traveldata";
 import useCenter from "./hooks/useCenter";
+import { AiFillCaretDown } from "react-icons/ai";
 
 export default function PageContent({
   stats,
@@ -29,9 +30,16 @@ export default function PageContent({
 
   const big = useCenter();
 
+  const scrollDown = () => {
+    const options: ScrollToOptions = {};
+    options.behavior = "smooth";
+    options.top = 1000000;
+    window.scrollTo(options);
+  };
+
   return (
     <AnimatedLayout>
-      <div className="flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
+      <div className="relative flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-screen xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
           <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
             <About />
@@ -113,6 +121,14 @@ export default function PageContent({
             </div>
           </div>
         </div>
+        <button
+          onFocus={() => scrollDown()}
+          onClick={() => scrollDown()}
+          className="sticky bottom-4 left-0 right-0 mx-auto rounded-full pb-2 focus-visible:opacity-0 active:opacity-0"
+        >
+          <AiFillCaretDown className="mx-auto animate-pulse text-4xl text-primary" />
+        </button>
+        <div className="absolute bottom-6 left-0 right-0 mx-auto h-8 w-8 bg-background " />
       </div>
     </AnimatedLayout>
   );

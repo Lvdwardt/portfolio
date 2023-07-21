@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import { Geometry } from "geojson";
+import type { Geometry } from "geojson";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 

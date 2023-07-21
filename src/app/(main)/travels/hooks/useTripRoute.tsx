@@ -2,7 +2,7 @@ import airportList from "@/components/map/airports.json";
 import trainstationsList from "@/components/map/trainstations.json";
 import memo from "lodash.memoize";
 import { Station, Trip } from "@/types";
-import * as turf from "@turf/turf";
+import * as turf from "@turf/helpers";
 
 export default function useTripRoute(trip: Trip) {
   // map with all stations

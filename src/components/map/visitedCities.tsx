@@ -1,5 +1,5 @@
 import { City } from "@/types";
-import { Geometry } from "geojson";
+import type { Geometry } from "geojson";
 import { FillLayer, Layer, Source, SymbolLayer } from "react-map-gl";
 
 export default function VisitedCities({
