@@ -28,7 +28,11 @@ export default function Trip({
         <Layer
           id="trip"
           type="line"
+          layout={{
+            "line-cap": "round",
+          }}
           paint={{
+            "line-width": 2,
             "line-gradient": [
               "step",
               ["line-progress"],

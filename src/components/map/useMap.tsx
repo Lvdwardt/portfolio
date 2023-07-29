@@ -74,6 +74,18 @@ export default function useMap({
     });
   };
 
+  if (coords)
+    return {
+      setUncontrolledZoom,
+      mapRef,
+      zoom,
+      setZoom,
+      exactZoom,
+      style,
+      resolvedTheme,
+      setTransitioning,
+    };
+
   // hide all labels
   const show = false;
   const mapboxMap = mapRef.current?.getMap();

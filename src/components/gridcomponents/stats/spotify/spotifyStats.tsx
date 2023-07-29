@@ -85,8 +85,7 @@ export default async function SpotifyStats() {
     );
   };
 
-  const url = props.nowPlaying ? props.song.url : randomSong.url;
-  console.log(url);
+  const url = props.nowPlaying ? props.url : randomSong.url;
   return (
     <div className="flex h-full w-full flex-col p-8">
       <Link
