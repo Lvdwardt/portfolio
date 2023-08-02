@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
-import { headers } from "next/headers";
 import useMapData from "./hooks/useMapData";
 import PageContent from "./pageContent";
+import { sql } from "@vercel/postgres";
 
 export const metadata: Metadata = {
   title: "Travels",
@@ -9,26 +9,23 @@ export const metadata: Metadata = {
     "On this page you can find out about one of my biggest passions: traveling.",
 };
 
-export default async function Travels() {
-  const secret = process.env.MY_SECRET_TOKEN;
-  const host = headers().get("host");
-  const res = await fetch(`http://${host}/api/travelstats`, {
-    method: "GET",
-    headers: {
-      secret: secret || "",
-    },
-    // once every week
-    next: {
-      revalidate: 60 * 60 * 24 * 7,
-    },
-  });
-
-  const data = await res.json();
-  const stats = data.stats[0] as {
+async function getStats() {
+  const { rows } = await sql`SELECT * FROM travelstats`;
+  const stats = {} as {
     countries: number;
     capitals: number;
     airports: number;
   };
+
+  stats.countries = rows[0].countries;
+  stats.capitals = rows[0].capitals;
+  stats.airports = rows[0].airports;
+
+  return stats;
+}
+
+export default async function Travels() {
+  const stats = await getStats();
 
   const mapData = await useMapData();
 

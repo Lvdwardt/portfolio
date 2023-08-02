@@ -21,6 +21,10 @@ export const countries = [
   "Switzerland",
   "Egypt",
   "United Kingdom",
+  "Denmark",
+  "Norway",
+  // "Faroe Islands",
+  // "Iceland",
 ];
 
 export const airportCodes = [
@@ -54,6 +58,7 @@ export const airportCodes = [
 ];
 
 export const capitalNames = [
+  "Amsterdam",
   "Brussels",
   "Berlin",
   "Paris",
@@ -69,6 +74,8 @@ export const capitalNames = [
   "Sofia",
   "Bucharest",
   "London",
+  "Copenhagen",
+  "Oslo",
 ];
 
 export const cityNames = [
@@ -207,6 +214,14 @@ export const cityNames = [
   {
     name: "Dubai",
     country: "ae",
+  },
+  {
+    name: "Copenhagen",
+    country: "dk",
+  },
+  {
+    name: "Oslo",
+    country: "no",
   },
 ];
 
@@ -1348,4 +1363,11 @@ export const trips = [
     duration: 9,
     date: "2023-07",
   },
+  // {
+  //   id: "5",
+  //   title: "Copenhagen, Oslo, Tromsø, Reykjavik",
+  //   legs: [],
+  //   duration: 20,
+  //   date: "2023-08",
+  // },
 ];

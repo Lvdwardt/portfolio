@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import MapLoading from "./mapLoading";
 import { sql } from "@vercel/postgres";
 
-export default async function Mapbox() {
+async function getData() {
   const { rows } = await sql`SELECT * FROM location`;
   const location = {} as {
     latitude: number;
@@ -20,6 +20,11 @@ export default async function Mapbox() {
     latitude: location.latitude,
     longitude: location.longitude,
   };
+  return coords;
+}
+
+export default async function Mapbox() {
+  const coords = await getData();
 
   return (
     <Suspense fallback={<MapLoading />}>
