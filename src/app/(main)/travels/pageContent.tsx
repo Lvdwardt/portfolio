@@ -23,7 +23,8 @@ export default function PageContent({
   mapData: MapData;
 }) {
   const [showTrip, setShowTrip] = useState(false);
-  const [currentTrip, setCurrentTrip] = useState<Trip>(trips[0]);
+  const [currentTrip, setCurrentTrip] = useState<Trip | null>(null);
+
   const { trip, stations, tripLine } = useTripRoute(currentTrip);
 
   mapData.showTrip = showTrip;
@@ -36,6 +37,8 @@ export default function PageContent({
     options.top = 1000000;
     window.scrollTo(options);
   };
+
+  console.log(currentTrip);
 
   return (
     <AnimatedLayout>
@@ -94,30 +97,47 @@ export default function PageContent({
             {/* toggle for trip */}
             <button
               className="flex= items-center justify-center"
-              onClick={() => startTransition(() => setShowTrip(false))}
+              onClick={() =>
+                startTransition(
+                  () => (setShowTrip(false), setCurrentTrip(null))
+                )
+              }
             >
               show all visited countries
             </button>
             {/* map over the trips */}
             <div className="mt-4 flex flex-col gap-4">
-              {trips.map((trip) => (
-                <button
-                  className="flex flex-col gap-2"
-                  key={trip.id}
-                  onClick={() =>
-                    startTransition(() => {
-                      setShowTrip(true), setCurrentTrip(trip);
-                    })
-                  }
-                >
+              {!showTrip ? (
+                trips.map((trip) => (
+                  <button
+                    className="flex flex-col gap-2"
+                    key={trip.id}
+                    onClick={() =>
+                      startTransition(() => {
+                        setShowTrip(true), setCurrentTrip(trip);
+                      })
+                    }
+                  >
+                    <div className="flex w-full items-center justify-between gap-2 text-left">
+                      <span className="text-xl font-bold">{trip.title}</span>
+                      <span className="text-gray-40 whitespace-nowrap font-silka text-sm">
+                        {trip.date}
+                      </span>
+                    </div>
+                  </button>
+                ))
+              ) : (
+                <div>
                   <div className="flex w-full items-center justify-between gap-2 text-left">
-                    <span className="text-xl font-bold">{trip.title}</span>
-                    <span className="text-gray-40 whitespace-nowrap font-silka text-sm">
-                      {trip.date}
+                    <span className="text-xl font-bold text-primary">
+                      {currentTrip?.title}
+                    </span>
+                    <span className="whitespace-nowrap font-silka text-sm text-primary">
+                      {currentTrip?.date}
                     </span>
                   </div>
-                </button>
-              ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -23,8 +23,8 @@ export const countries = [
   "United Kingdom",
   "Denmark",
   "Norway",
-  // "Faroe Islands",
-  // "Iceland",
+  "Faroe Islands",
+  "Iceland",
 ];
 
 export const airportCodes = [
@@ -55,6 +55,12 @@ export const airportCodes = [
   "BRI",
   "OTP",
   "SOF",
+  "TRD",
+  "BOO",
+  "TOS",
+  "DJU",
+  "KEF",
+  "WRO",
 ];
 
 export const capitalNames = [
@@ -76,6 +82,8 @@ export const capitalNames = [
   "London",
   "Copenhagen",
   "Oslo",
+  "Torshavn",
+  "Reykjavik",
 ];
 
 export const cityNames = [
@@ -223,6 +231,34 @@ export const cityNames = [
     name: "Oslo",
     country: "no",
   },
+  {
+    name: "Tromsø",
+    country: "no",
+  },
+  {
+    name: "Olden",
+    country: "no",
+  },
+  {
+    name: "Djubivogur",
+    country: "is",
+  },
+  {
+    name: "Ísafjörður",
+    country: "is",
+  },
+  {
+    name: "Grundarfjordur",
+    country: "is",
+  },
+  {
+    name: "Torshavn",
+    country: "fo",
+  },
+  {
+    name: "Reykjavik",
+    country: "is",
+  },
 ];
 
 export const trips = [
@@ -277,72 +313,15 @@ export const trips = [
     ],
     duration: 7,
     date: "2022/03",
+    story: "",
+    facts: "",
+    prices: {
+      flights: 0,
+      total: 0,
+    },
   },
   {
     id: "1",
-    title: "London, Ibiza, Barcelona, Porto",
-    legs: [
-      {
-        from: {
-          code: "MST",
-          coordinates: [] as unknown as number[],
-        },
-        to: {
-          code: "LTN",
-          coordinates: [] as unknown as number[],
-        },
-        type: "plane",
-      },
-      {
-        from: {
-          code: "LTN",
-          coordinates: [] as unknown as number[],
-        },
-        to: {
-          code: "IBZ",
-          coordinates: [] as unknown as number[],
-        },
-        type: "plane",
-      },
-      {
-        from: {
-          code: "IBZ",
-          coordinates: [] as unknown as number[],
-        },
-        to: {
-          code: "BCN",
-          coordinates: [] as unknown as number[],
-        },
-        type: "plane",
-      },
-      {
-        from: {
-          code: "BCN",
-          coordinates: [] as unknown as number[],
-        },
-        to: {
-          code: "OPO",
-          coordinates: [] as unknown as number[],
-        },
-        type: "plane",
-      },
-      {
-        from: {
-          code: "OPO",
-          coordinates: [] as unknown as number[],
-        },
-        to: {
-          code: "MST",
-          coordinates: [] as unknown as number[],
-        },
-        type: "plane",
-      },
-    ],
-    duration: 8,
-    date: "2022-05",
-  },
-  {
-    id: "2",
     title:
       "Zadar, Pichl, Zermatt, Zürich, Zagreb, Budapest, Bratislava, Vienna, Zator, Krakow, Prague",
     legs: [
@@ -1148,6 +1127,81 @@ export const trips = [
     ],
     duration: 28,
     date: "2022-07",
+    story: "",
+    facts: "",
+    prices: {
+      flights: 0,
+      total: 0,
+    },
+  },
+  {
+    id: "2",
+    title: "London, Ibiza, Barcelona, Porto",
+    legs: [
+      {
+        from: {
+          code: "MST",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "LTN",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "LTN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "IBZ",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "IBZ",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "BCN",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "BCN",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "OPO",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+      {
+        from: {
+          code: "OPO",
+          coordinates: [] as unknown as number[],
+        },
+        to: {
+          code: "MST",
+          coordinates: [] as unknown as number[],
+        },
+        type: "plane",
+      },
+    ],
+    duration: 8,
+    date: "2022-10",
+    story: "",
+    facts: "",
+    prices: {
+      flights: 0,
+      total: 0,
+    },
   },
   {
     id: "3",
@@ -1319,6 +1373,12 @@ export const trips = [
     ],
     duration: 10,
     date: "2023-03",
+    story: "",
+    facts: "",
+    prices: {
+      flights: 0,
+      total: 0,
+    },
   },
   {
     id: "4",
@@ -1362,6 +1422,12 @@ export const trips = [
     ],
     duration: 9,
     date: "2023-07",
+    story: "",
+    facts: "",
+    prices: {
+      flights: 0,
+      total: 0,
+    },
   },
   // {
   //   id: "5",
@@ -1369,5 +1435,11 @@ export const trips = [
   //   legs: [],
   //   duration: 20,
   //   date: "2023-08",
+  //   story: "",
+  //   facts: "",
+  //   prices: {
+  //    flights: 0,
+  //    total: 0,
+  //   },
   // },
 ];

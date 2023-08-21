@@ -4,7 +4,7 @@ import memo from "lodash.memoize";
 import { Station, Trip } from "@/types";
 import * as turf from "@turf/helpers";
 
-export default function useTripRoute(trip: Trip) {
+export default function useTripRoute(trip: Trip | null) {
   // map with all stations
   const stationsMap = new Map<string, Station>();
 
@@ -29,6 +29,11 @@ export default function useTripRoute(trip: Trip) {
 
   // Use Set to store unique stations
   const stationsSet = new Set<Station>();
+
+  if (!trip) {
+    // TODO: zoom back out to the world
+    return { lines: [], stations: [] };
+  }
 
   for (const leg of trip.legs) {
     if (leg.type !== "train" && leg.type !== "plane") {

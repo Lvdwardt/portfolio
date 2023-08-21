@@ -84,6 +84,13 @@ export type Trip = {
     type: string;
   }[];
   duration: number;
+  date: string;
+  story: string;
+  facts: string | string[];
+  prices?: {
+    flights?: number;
+    total?: number;
+  };
 };
 
 export type MapData = {
