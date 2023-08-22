@@ -1,6 +1,4 @@
 import MapboxContent from "@/components/map/smallMap";
-import { Suspense } from "react";
-import MapLoading from "./mapLoading";
 import { sql } from "@vercel/postgres";
 
 async function getData() {
@@ -26,10 +24,5 @@ async function getData() {
 export default async function Mapbox() {
   const coords = await getData();
 
-  return (
-    <Suspense fallback={<MapLoading />}>
-      {/* @ts-expect-error server-component */}
-      <MapboxContent coords={coords} />
-    </Suspense>
-  );
+  return <MapboxContent coords={coords} />;
 }

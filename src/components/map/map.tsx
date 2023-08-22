@@ -15,7 +15,7 @@ import VisitedCities from "./visitedCities";
 import TripData from "./trip";
 import { startTransition } from "react";
 
-export default async function MapboxContent({
+export default function MapboxContent({
   big,
   coords,
   data,

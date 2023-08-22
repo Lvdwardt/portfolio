@@ -6,7 +6,7 @@ import { LocationMarker } from "./markers";
 import useMap from "./useMap";
 import { useState } from "react";
 
-export default async function MapboxContent({
+export default function MapboxContent({
   coords,
 }: {
   coords: { latitude: number; longitude: number };

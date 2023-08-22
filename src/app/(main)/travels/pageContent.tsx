@@ -81,7 +81,6 @@ export default function PageContent({
           </div>
           <div className="map-element flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3 xl:ml-auto">
             <Suspense fallback={<></>}>
-              {/* @ts-expect-error react-server-component */}
               <MapboxContent
                 big={big}
                 data={mapData}
