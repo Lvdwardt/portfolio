@@ -20,7 +20,7 @@
     "@turf/turf": "^6.5.0",
     "@types/lodash.memoize": "^4.1.7",
     "@vercel/analytics": "^1.0.1",
-    "@vercel/postgres": "^0.4.1",
+    "@vercel/postgres": "^0.4.0",
     "auto-text-size": "^0.2.2",
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.3",
