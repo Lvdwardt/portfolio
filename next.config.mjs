@@ -26,6 +26,10 @@ const config = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+      {
+        protocol: "https",
         hostname: "github-readme-stats.vercel.app",
         pathname: "/api/**",
       },

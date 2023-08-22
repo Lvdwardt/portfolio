@@ -2,6 +2,9 @@ import Image from "next/image";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
+import { getExperiences } from "../../../../sanity/sanity-utils";
+import { Experience } from "@/types";
+import { urlForImage } from "../../../../sanity/lib/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,41 +16,23 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function AboutPage() {
-  const experiences = [
-    {
-      name: "Hiperr",
-      small: "Hiperr",
-      role: "Software Developer",
-      hours: "internship",
-      description:
-        "Hiperr is company that aims to improve the interaction between streamers and their viewers. I'm working on the frontend of a web application that provides minigames for streamers to play with their chat. The application is being build with react and typescript.",
-      image: "/images/companies/babble.webp",
-      link: "https://hiperr.net",
-      dates: "sep 2022 - present",
-    },
-    // {
-    //   name: "Flyn",
-    //   role: "Software Developer",
-    //   hours: "full-time",
-    //   description:
-    //     "Fly-n is a travel application that allows users to find the best route to their destination. I worked on the frontend of the app, using react native.",
-    //   image: "/images/companies/fly-n.webp",
-    //   link: "https://hiperr.net",
-    //   dates: "oct 2021 - jun 2022",
-    // },
-    {
-      name: "Uw Computerstudent",
-      small: "UCS",
-      role: "Technical Support",
-      hours: "part-time",
-      description:
-        "Uw Computerstudent is a company that provides IT support for elderly people. I'm working at the helpdesk, helping people with their computer problems.",
-      image: "/images/companies/ucs.webp",
-      link: "https://uwcomputerstudent.nl",
-      dates: "jul 2021 - present",
-    },
-  ];
+export default async function AboutPage() {
+  const experiences = (await getExperiences()) as Experience[];
+
+  function getDates(startDate: Date, endDate: Date | null) {
+    return `${new Date(startDate).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+    })} - ${
+      endDate
+        ? new Date(endDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+          })
+        : "present"
+    }`;
+  }
+
   return (
     <AnimatedLayout>
       <div className="flex w-full justify-center">
@@ -68,11 +53,11 @@ export default function AboutPage() {
               >
                 <a href={experience.link}>
                   <Image
-                    src={experience.image}
+                    src={urlForImage(experience.image).url()}
                     alt={experience.name}
-                    width={50}
-                    height={50}
-                    className="rounded-xl bg-black"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 rounded-xl bg-black object-cover"
                   />
                 </a>
                 <div className="flex w-full flex-col [@media(hover:none)_and_(pointer:coarse)]:select-none">
@@ -92,7 +77,9 @@ export default function AboutPage() {
                       )}
                       <h4 className="w-20 sm:ml-1">{experience.hours}</h4>
                     </div>
-                    <h4 className="text-end">{experience.dates}</h4>
+                    <h4 className="text-end">
+                      {getDates(experience.startDate, experience.endDate)}
+                    </h4>
                   </div>
                   <div className="font-thin">
                     <p className="line-clamp-2 hover:line-clamp-none focus:line-clamp-none active:line-clamp-none">

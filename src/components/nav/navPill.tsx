@@ -22,16 +22,17 @@ export default function NavPill() {
   //calculate difference between current place and the place of the clicked route
   //remove negative sign
   return (
-    <div className="relative flex w-min scale-[90%] gap-4 rounded-full bg-card px-1 py-1.5 sm:scale-100">
-      {routes.map((route) => (
-        <Link
-          key={route.name}
-          className="z-50 rounded-full px-3 py-1.5 transition-all hover:scale-105 "
-          href={route.href}
-        >
-          {route.name}
-        </Link>
-      ))}
+    <nav className="relative scale-[90%] sm:scale-100">
+      <ul className="flex w-min gap-4 rounded-full bg-card px-1 py-1.5 ">
+        {routes.map((route) => (
+          <li
+            key={route.name}
+            className="z-50 rounded-full px-3 py-1.5 transition-all hover:scale-105 "
+          >
+            <Link href={route.href}>{route.name}</Link>
+          </li>
+        ))}
+      </ul>
 
       <motion.div
         initial={{
@@ -46,8 +47,8 @@ export default function NavPill() {
             ease: "backInOut",
           },
         }}
-        className="absolute h-[75%] w-full rounded-full bg-secondary"
+        className="absolute top-1.5 h-[75%] w-full rounded-full bg-secondary"
       ></motion.div>
-    </div>
+    </nav>
   );
 }

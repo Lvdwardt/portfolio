@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import About from "@/components/about";
 import Toggle from "@/components/gridcomponents/toggle";
 import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
@@ -28,12 +27,12 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <AnimatedLayout>
-      <div className="min-h-screen overflow-visible transition-all duration-300 ease-in ">
+      <main className="min-h-screen overflow-visible transition-all duration-300 ease-in ">
         <div className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
           <div className=" col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 xl:col-span-2">
             <About />
           </div>
-          <div className=" overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
+          <div className="overflow-hidden rounded-[2rem] bg-card  sm:order-6 xl:order-2">
             <Suspense fallback={<div>Loading...</div>}>
               {/* @ts-expect-error server-component */}
               <Mapbox />
@@ -75,7 +74,7 @@ export default async function Home() {
           </div>
         </div>
         <Footer />
-      </div>
+      </main>
     </AnimatedLayout>
   );
 }

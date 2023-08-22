@@ -6,6 +6,7 @@ import type {
   LineString,
   GeoJsonProperties,
 } from "geojson";
+import type { Image } from "sanity";
 
 export type ProjectList = {
   id: string;
@@ -102,3 +103,16 @@ export type MapData = {
 };
 
 export type TripLine = Feature<LineString, GeoJsonProperties>;
+
+export type Experience = {
+  name: string;
+  small: string;
+  role: string;
+  hours: string;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+  link: string;
+  image: Image;
+  id: number;
+};
