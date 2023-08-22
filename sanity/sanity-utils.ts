@@ -4,6 +4,7 @@ export async function getExperiences() {
   const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    apiVersion: "2023-08-22",
     useCdn: true,
   });
   /* eslint-disable import/no-anonymous-default-export */
