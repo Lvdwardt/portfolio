@@ -1,15 +1,20 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { ImArrowUpRight2 } from "react-icons/im";
-import type { ProjectList } from "@/types";
+import type { Project } from "@/types";
+import { urlForImage } from "s/lib/image";
 
-export default function ProjectImage({ project }: { project: ProjectList }) {
+export default function ProjectImage({ project }: { project: Project }) {
   return (
     <div className="group relative overflow-hidden rounded-[2rem] bg-card">
       <div className="absolute h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full bg-secondary sm:translate-y-[-12.5rem] sm:rounded-t-none" />
       <div className={clsx("block select-none dark:hidden", project.translate)}>
         <Image
-          src={project.projectImageLight}
+          src={urlForImage(
+            project.projectImageLight
+              ? project.projectImageLight
+              : project.projectImage
+          ).url()}
           alt={`product photo of ${project.title}`}
           width={2002}
           height={3292}
@@ -17,7 +22,7 @@ export default function ProjectImage({ project }: { project: ProjectList }) {
       </div>
       <div className={clsx("hidden select-none dark:block", project.translate)}>
         <Image
-          src={project.projectImage}
+          src={urlForImage(project.projectImage).url()}
           alt={`product photo of ${project.title}`}
           width={2002}
           height={3292}

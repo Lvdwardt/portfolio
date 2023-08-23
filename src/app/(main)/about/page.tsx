@@ -2,9 +2,11 @@ import Image from "next/image";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { getExperiences } from "../../../../sanity/sanity-utils";
-import { Experience } from "@/types";
 import { urlForImage } from "../../../../sanity/lib/image";
+import { cachedClient } from "s/lib/client";
+import type { SanityDocument } from "next-sanity";
+import { experiencesQuery } from "s/lib/queries";
+import type { Experience } from "@/types";
 
 export const metadata: Metadata = {
   title: "About",
@@ -17,7 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const experiences = (await getExperiences()) as Experience[];
+  const experiences = (await cachedClient<SanityDocument>(
+    experiencesQuery
+  )) as unknown as Experience[];
 
   function getDates(startDate: Date, endDate: Date | null) {
     return `${new Date(startDate).toLocaleDateString("en-US", {

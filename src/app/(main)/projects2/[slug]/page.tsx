@@ -1,25 +1,30 @@
-import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";
+import { urlForImage } from "s/lib/image";
+
+import { Project } from "@/types";
+import type { SanityDocument } from "next-sanity";
+import { cachedClient } from "s/lib/client";
+import { projectQuery } from "s/lib/queries";
 
 interface PageProps {
   params: {
-    id: string;
+    slug: string;
   };
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = projectList.find((project) => project.id === params.id);
+  const project = await cachedClient<SanityDocument>(projectQuery, params);
   if (!project) {
     return {
       title: "Project not found",
-      description: "Project not found",
+      description: "Unfortunately, this project does not exist.",
     };
   }
   return {
@@ -30,7 +35,11 @@ export async function generateMetadata({
 
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = projectList.find((project) => project.id === params.id);
+  const project = (await cachedClient<SanityDocument>(
+    projectQuery,
+    params
+  )) as unknown as Project | undefined;
+
   if (!project) {
     // @ts-expect-error server-component
     return <NotFoundComponent url="projects" />;
@@ -79,7 +88,7 @@ export default async function Project({ params }: PageProps) {
           <div className="h-full w-full rounded-[2rem] bg-card sm:order-5 sm:col-span-2 xl:order-4"></div>
           <div className="flex h-full w-full items-center justify-center rounded-[2rem] bg-card sm:order-4 xl:order-1">
             <Image
-              src={project.logo}
+              src={urlForImage(project.logo).url()}
               alt={project.title}
               width={100}
               height={100}

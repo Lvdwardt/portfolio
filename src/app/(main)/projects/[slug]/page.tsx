@@ -1,24 +1,30 @@
-import projectList from "@/components/projects/projectList";
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
 import { SiGithub } from "react-icons/si";
 import { Metadata } from "next";
+import { Project } from "@/types";
+import { projectQuery } from "s/lib/queries";
+import { cachedClient } from "s/lib/client";
+import type { SanityDocument } from "next-sanity";
 
 interface PageProps {
   params: {
-    id: string;
+    slug: string;
   };
 }
 
+// generate metadata for the page
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = projectList.find((project) => project.id === params.id);
+  // const project = await findProject(params.slug);
+  const project = await cachedClient<SanityDocument>(projectQuery, params);
+
   if (!project) {
     return {
       title: "Project not found",
-      description: "Project not found",
+      description: "Unfortunately, this project does not exist.",
     };
   }
   return {
@@ -26,20 +32,24 @@ export async function generateMetadata({
     description: project.description,
   };
 }
-
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = projectList.find((project) => project.id === params.id);
+  const project = (await cachedClient<SanityDocument>(
+    projectQuery,
+    params
+  )) as unknown as Project | undefined;
+
   if (!project) {
     // @ts-expect-error server-component
     return <NotFoundComponent url="projects" />;
   }
+
   return (
     <AnimatedLayout>
       <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
         <div className="mx-4 flex flex-col lg:flex-row">
           <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4 lg:w-3/4">
-            <h1 className="pb-2 text-3xl font-black">{project?.title}</h1>
+            <h1 className="pb-2 text-3xl font-black">{project.title}</h1>
             <hr />
             <span className="font-light">{project.description}</span>
             <div className=" pt-6">
@@ -76,7 +86,7 @@ export default async function Project({ params }: PageProps) {
                   target={"_blank"}
                   rel="noreferrer"
                 >
-                  {icon.icon}
+                  {/* {icon.icon} */}
                 </a>
               ))}
               {project.githubUrl && (

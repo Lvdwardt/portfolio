@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default {
+export const Experiences = {
   name: "experiences",
   type: "document",
   title: "Experiences",

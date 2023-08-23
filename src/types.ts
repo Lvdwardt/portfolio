@@ -8,14 +8,16 @@ import type {
 } from "geojson";
 import type { Image } from "sanity";
 
-export type ProjectList = {
-  id: string;
+export type Project = {
   title: string;
+  slug: {
+    current: string;
+  };
   quote: string;
-  logo: string;
-  projectImage: string;
-  projectImageLight: string;
-  coverImage: string;
+  logo: Image;
+  projectImage: Image;
+  projectImageLight: Image | null;
+  coverImage: Image;
   translate: string;
   width: string;
   url: string;
@@ -29,7 +31,10 @@ export type ProjectList = {
     skill: string;
   }[];
   icons: {
-    icon: JSX.Element;
+    icon: {
+      name: string;
+      provider: string;
+    };
     url: string;
   }[];
   githubUrl?: string;
