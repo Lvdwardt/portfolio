@@ -1,6 +1,8 @@
-/* eslint-disable import/no-anonymous-default-export */
+import { CaseIcon } from "@sanity/icons";
+
 export const Experiences = {
   name: "experiences",
+  icon: CaseIcon,
   type: "document",
   title: "Experiences",
   fields: [

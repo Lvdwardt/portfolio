@@ -1,7 +1,10 @@
+import { FolderIcon } from "@sanity/icons";
+
 import { preview } from "sanity-plugin-icon-picker";
 
 export const Projects = {
   name: "projects",
+  icon: FolderIcon,
   type: "document",
   title: "Projects",
   groups: [

@@ -34,10 +34,10 @@ export async function generateMetadata({
 }
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = (await cachedClient<SanityDocument>(
+  const project = await cachedClient<SanityDocument<Project>>(
     projectQuery,
     params
-  )) as unknown as Project | undefined;
+  );
 
   if (!project) {
     // @ts-expect-error server-component

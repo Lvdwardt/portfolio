@@ -99,6 +99,12 @@ export type Trip = {
   };
 };
 
+export type TravelStats = {
+  countries: number;
+  capitals: number;
+  airports: number;
+};
+
 export type MapData = {
   airports: Station[];
   countries: string[];
@@ -120,4 +126,11 @@ export type Experience = {
   link: string;
   image: Image;
   id: number;
+};
+
+export type CurrentLocation = {
+  currentLocation: {
+    lat: number;
+    lng: number;
+  };
 };

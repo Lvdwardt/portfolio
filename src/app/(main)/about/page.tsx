@@ -2,7 +2,7 @@ import Image from "next/image";
 import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { urlForImage } from "../../../../sanity/lib/image";
+import { urlForImage } from "s/lib/image";
 import { cachedClient } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { experiencesQuery } from "s/lib/queries";
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const experiences = (await cachedClient<SanityDocument>(
+  const experiences = await cachedClient<SanityDocument<Experience[]>>(
     experiencesQuery
-  )) as unknown as Experience[];
+  );
 
   function getDates(startDate: Date, endDate: Date | null) {
     return `${new Date(startDate).toLocaleDateString("en-US", {

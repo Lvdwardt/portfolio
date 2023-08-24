@@ -10,4 +10,6 @@ export const client = createClient({
   useCdn,
 });
 
+export const normalClient = client.fetch.bind(client);
+
 export const cachedClient = cache(client.fetch.bind(client));

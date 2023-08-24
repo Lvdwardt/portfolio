@@ -6,7 +6,7 @@ import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";
 import { urlForImage } from "s/lib/image";
 
-import { Project } from "@/types";
+import { Project as ProjectType } from "@/types";
 import type { SanityDocument } from "next-sanity";
 import { cachedClient } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
@@ -35,10 +35,10 @@ export async function generateMetadata({
 
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = (await cachedClient<SanityDocument>(
+  const project = await cachedClient<SanityDocument<ProjectType>>(
     projectQuery,
     params
-  )) as unknown as Project | undefined;
+  );
 
   if (!project) {
     // @ts-expect-error server-component

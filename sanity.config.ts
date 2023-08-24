@@ -6,23 +6,48 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { iconPicker } from "sanity-plugin-icon-picker";
-
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
+import { googleMapsInput } from "@sanity/google-maps-input";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schema";
+import { deskStructure } from "s/structures/deskstructure";
+
+const singletonTypes = new Set(["travelStats", "location"]);
+
+const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+if (!key) {
+  throw new Error(
+    "The GOOGLE_MAPS_API_KEY environment variable is required to run the studio."
+  );
+}
 
 export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
-  // Add and edit the content schema in the './sanity/schema' folder
-  schema,
+  // Add and edit the content schema in './sanity/schema.ts'
+  schema: {
+    ...schema,
+    // Filter out singleton types from the global “New document” menu options
+    templates: (templates) =>
+      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+  },
   plugins: [
-    deskTool(),
+    deskTool({
+      structure: deskStructure,
+    }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
     // iconPicker to get react-icons in Sanity Studio
     iconPicker(),
+    // Google maps input component
+    googleMapsInput({
+      apiKey: key,
+      defaultLocation: {
+        lat: 51.92735,
+        lng: 5.5735,
+      },
+    }),
   ],
 });

@@ -1,22 +1,21 @@
 import MapboxContent from "@/components/map/smallMap";
-import { sql } from "@vercel/postgres";
+import { normalClient } from "s/lib/client";
+import type { SanityDocument } from "next-sanity";
+import { locationQuery } from "s/lib/queries";
+import type { CurrentLocation } from "@/types";
 
 async function getData() {
-  const { rows } = await sql`SELECT * FROM location`;
-  const location = {} as {
-    latitude: number;
-    longitude: number;
-  };
-  location.latitude = rows[0].latitude;
-  location.longitude = rows[0].longitude;
+  const { currentLocation } = await normalClient<
+    SanityDocument<CurrentLocation>
+  >(locationQuery);
 
-  if (!location.latitude || !location.longitude) {
+  if (!currentLocation.lat || !currentLocation.lng) {
     console.log("no location found, using default");
-    (location.latitude = 51.92735), (location.longitude = 5.5735);
+    (currentLocation.lat = 51.92735), (currentLocation.lng = 5.5735);
   }
   const coords = {
-    latitude: location.latitude,
-    longitude: location.longitude,
+    latitude: currentLocation.lat,
+    longitude: currentLocation.lng,
   };
   return coords;
 }

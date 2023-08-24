@@ -52,3 +52,23 @@ export const projectPathsQuery = groq`*[_type == "projects" && defined(slug.curr
         "slug": slug.current
     }
 }`;
+
+/**
+ * Current Location
+ */
+
+// get the current location
+export const locationQuery = groq`*[_type == "location"][0]{
+    currentLocation
+}`;
+
+/**
+ * Travel Stats
+ */
+
+// get all travel stats
+export const travelStatsQuery = groq`*[_type == "travelStats"][0]{
+    countries,
+    capitals,
+    airports
+}`;
