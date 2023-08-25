@@ -31,7 +31,8 @@
     "react/jsx-uses-react": "off", // only if using React version 17+
     "react/react-in-jsx-scope": "off", // only if using React version 17+
     "react-hooks/rules-of-hooks": "error", // if using hooks
-    "react-hooks/exhaustive-deps": "off" // if using hooks
+    "react-hooks/exhaustive-deps": "off", // if using hooks
+    "@typescript-eslint/no-unused-vars": "off"
   },
   "settings": {
     "react": {

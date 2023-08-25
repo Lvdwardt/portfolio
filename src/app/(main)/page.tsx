@@ -1,4 +1,4 @@
-import About from "@/components/about";
+import About from "@/components/about/about";
 import Toggle from "@/components/gridcomponents/toggle";
 import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
 import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";

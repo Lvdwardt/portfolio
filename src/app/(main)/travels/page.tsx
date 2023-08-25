@@ -5,7 +5,7 @@ import { getSanityData } from "s/lib/client";
 import { SanityDocument } from "next-sanity";
 import { travelStatsQuery } from "s/lib/queries";
 import { TravelStats } from "@/types";
-import About from "@/components/about";
+import About from "@/components/about/about";
 
 export const metadata: Metadata = {
   title: "Travels",

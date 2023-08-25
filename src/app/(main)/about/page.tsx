@@ -1,5 +1,5 @@
 import Image from "next/image";
-import About from "@/components/about";
+import About from "@/components/about/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { urlForImage } from "s/lib/image";

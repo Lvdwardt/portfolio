@@ -1,4 +1,4 @@
-import About from "../about";
+import About from "../about/about";
 interface ComponentProps {
   params?: {
     slug?: string;
