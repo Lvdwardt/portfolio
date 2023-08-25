@@ -72,3 +72,14 @@ export const travelStatsQuery = groq`*[_type == "travelStats"][0]{
     capitals,
     airports
 }`;
+
+/**
+ * About
+ */
+
+// get the about section for a given slug
+export const aboutQuery = groq`*[_type == "about" && slug.current == $slug][0]{
+    slug,
+    memojis,
+    text
+}`;

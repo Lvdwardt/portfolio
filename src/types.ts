@@ -6,7 +6,7 @@ import type {
   LineString,
   GeoJsonProperties,
 } from "geojson";
-import type { Image } from "sanity";
+import type { Image, Block } from "sanity";
 
 export type Project = {
   title: string;
@@ -132,5 +132,19 @@ export type CurrentLocation = {
   currentLocation: {
     lat: number;
     lng: number;
+  };
+};
+
+export type AboutContent = {
+  slug: {
+    current: string;
+  };
+  memojis: {
+    lightMemoji: Image;
+    darkMemoji: Image;
+  };
+  text: {
+    mobileText: Block[];
+    text: Block[];
   };
 };

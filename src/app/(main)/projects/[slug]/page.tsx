@@ -3,9 +3,9 @@ import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
 import { SiGithub } from "react-icons/si";
 import { Metadata } from "next";
-import { Project } from "@/types";
+import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
-import { cachedClient } from "s/lib/client";
+import { getSanityData } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 
 interface PageProps {
@@ -18,8 +18,13 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  // const project = await findProject(params.slug);
-  const project = await cachedClient<SanityDocument>(projectQuery, params);
+  const project = await getSanityData<SanityDocument<Project>>(
+    projectQuery,
+    ["projects"],
+    params
+  );
+
+  console.log(project);
 
   if (!project) {
     return {
@@ -34,8 +39,9 @@ export async function generateMetadata({
 }
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = await cachedClient<SanityDocument<Project>>(
+  const project = await getSanityData<SanityDocument<Project>>(
     projectQuery,
+    ["projects"],
     params
   );
 

@@ -3,7 +3,7 @@ import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { urlForImage } from "s/lib/image";
-import { cachedClient } from "s/lib/client";
+import { getSanityData } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { experiencesQuery } from "s/lib/queries";
 import type { Experience } from "@/types";
@@ -19,8 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const experiences = await cachedClient<SanityDocument<Experience[]>>(
-    experiencesQuery
+  const experiences = await getSanityData<SanityDocument<Experience[]>>(
+    experiencesQuery,
+    ["experiences"]
   );
 
   function getDates(startDate: Date, endDate: Date | null) {
@@ -42,7 +43,8 @@ export default async function AboutPage() {
       <div className="flex w-full justify-center">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pb-8 pt-4">
           <div className=" =mx-auto w-full max-w-[320px] gap-5 sm:max-w-[640px] xl:max-w-[1200px] xl:px-0 ">
-            <div className="col-span-full  h-full w-full rounded-[2rem] bg-card p-6 text-text">
+            <div className="col-span-full  h-full w-full rounded-[2rem] bg-card px-10 py-6 text-text">
+              {/* @ts-expect-error server-component */}
               <About />
             </div>
           </div>

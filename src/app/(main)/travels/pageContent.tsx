@@ -1,5 +1,5 @@
 "use client";
-import About from "@/components/about";
+// import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { Suspense, startTransition, useState } from "react";
 import "./travel.css";
@@ -14,6 +14,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 export default function PageContent({
   stats,
   mapData,
+  about,
 }: {
   stats: {
     countries: number;
@@ -21,6 +22,7 @@ export default function PageContent({
     airports: number;
   };
   mapData: MapData;
+  about: JSX.Element;
 }) {
   const [showTrip, setShowTrip] = useState(false);
   const [currentTrip, setCurrentTrip] = useState<Trip | null>(null);
@@ -45,7 +47,7 @@ export default function PageContent({
       <div className="relative flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-screen xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
           <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
-            <About />
+            {about}
           </div>
           <div className="order-2 rounded-[2rem] bg-card xl:order-3">
             <div className="flex h-full w-full flex-col p-8">
