@@ -40,8 +40,6 @@ export default function PageContent({
     window.scrollTo(options);
   };
 
-  console.log(currentTrip);
-
   return (
     <AnimatedLayout>
       <div className="relative flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">

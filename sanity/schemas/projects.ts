@@ -1,10 +1,10 @@
-import { FolderIcon } from "@sanity/icons";
+import { AiFillFolderOpen } from "react-icons/ai";
 
 import { preview } from "sanity-plugin-icon-picker";
 
 export const Projects = {
   name: "projects",
-  icon: FolderIcon,
+  icon: AiFillFolderOpen,
   type: "document",
   title: "Projects",
   groups: [

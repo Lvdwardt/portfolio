@@ -87,19 +87,20 @@ export default function useMap({
     };
 
   // hide all labels
-  const show = false;
-  const mapboxMap = mapRef.current?.getMap();
-  if (mapboxMap) {
-    mapboxMap.getStyle().layers?.forEach(function (layer) {
-      if (layer.type === "symbol" && layer.id !== "my-data-label") {
-        mapboxMap.setLayoutProperty(
-          layer.id,
-          "visibility",
-          show ? "visible" : "none"
-        );
-      }
-    });
-  }
+  // const show = false;
+  // const mapboxMap = mapRef.current?.getMap();
+  // if (mapboxMap) {
+  //   console.log(mapboxMap.getStyle().layers[0]);
+  //   mapboxMap.getStyle().layers?.forEach(function (layer) {
+  //     if (layer.type === "symbol" && layer.id !== "my-data-label") {
+  //       mapboxMap.setLayoutProperty(
+  //         layer.id,
+  //         "visibility",
+  //         show ? "visible" : "none"
+  //       );
+  //     }
+  //   });
+  // }
 
   return {
     setUncontrolledZoom,

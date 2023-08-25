@@ -1,10 +1,10 @@
 // singleton
 
-import { PinIcon } from "@sanity/icons";
+import { MdLocationPin } from "react-icons/md";
 
 export const Location = {
   name: "location",
-  icon: PinIcon,
+  icon: MdLocationPin,
   type: "document",
   title: "Location",
   fields: [

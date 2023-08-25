@@ -1,5 +1,5 @@
 import { FaGlobeEurope } from "react-icons/fa";
-import { PinIcon } from "@sanity/icons";
+import { MdLocationPin } from "react-icons/md";
 import type { StructureBuilder } from "sanity/desk";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
@@ -21,7 +21,7 @@ export const deskStructure = (S: StructureBuilder) =>
 
       S.listItem()
         .title("Location")
-        .icon(PinIcon)
+        .icon(MdLocationPin)
         .id("location")
         .child(S.document().schemaType("location").documentId("location")),
       S.divider(),

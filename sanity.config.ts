@@ -13,9 +13,9 @@ import { deskStructure } from "s/structures/deskstructure";
 
 const singletonTypes = new Set(["travelStats", "location"]);
 
-const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-if (!key) {
+if (!GOOGLE_MAPS_KEY) {
   throw new Error(
     "The GOOGLE_MAPS_API_KEY environment variable is required to run the studio."
   );
@@ -43,7 +43,7 @@ export default defineConfig({
     iconPicker(),
     // Google maps input component
     googleMapsInput({
-      apiKey: key,
+      apiKey: GOOGLE_MAPS_KEY,
       defaultLocation: {
         lat: 51.92735,
         lng: 5.5735,

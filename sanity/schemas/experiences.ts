@@ -1,8 +1,8 @@
-import { CaseIcon } from "@sanity/icons";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 
 export const Experiences = {
   name: "experiences",
-  icon: CaseIcon,
+  icon: BsFillBriefcaseFill,
   type: "document",
   title: "Experiences",
   fields: [
