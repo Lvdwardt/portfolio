@@ -46,7 +46,6 @@ export default async function Project({ params }: PageProps) {
   );
 
   if (!project) {
-    // @ts-expect-error server-component
     return <NotFoundComponent url="projects" />;
   }
 

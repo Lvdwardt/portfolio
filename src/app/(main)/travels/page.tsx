@@ -20,7 +20,6 @@ export default async function Travels() {
   );
   const mapData = await useMapData();
 
-  // @ts-expect-error server-component
   const about = <About />;
 
   return <PageContent stats={travelStats} mapData={mapData} about={about} />;
