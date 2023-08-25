@@ -17,9 +17,7 @@ export const metadata: Metadata = {
 
 export default function NotFound({ params, url }: PageProps) {
   return (
-    // @ts-expect-error server-component
     <MainLayout>
-      {/* @ts-expect-error server-component */}
       <NotFoundComponent params={params} url={url} />
     </MainLayout>
   );
