@@ -1,5 +1,5 @@
 "use client";
-import { Map } from "react-map-gl";
+import { Map, type Projection } from "react-map-gl";
 import Contribution from "./contribution";
 import Controls from "./controls";
 import { LocationMarker } from "./markers";
@@ -20,6 +20,10 @@ export default function MapboxContent({
     setTransitioning,
   } = useMap({ coords });
 
+  const projection: Projection = {
+    name: "globe",
+  };
+
   const [visible, setVisible] = useState(false);
   return (
     <div className="relative h-full w-full">
@@ -37,7 +41,7 @@ export default function MapboxContent({
           latitude: coords.latitude,
           zoom: 11,
         }}
-        projection={"globe"}
+        projection={projection}
         attributionControl={false}
       >
         {/* Show a marker with my current location */}

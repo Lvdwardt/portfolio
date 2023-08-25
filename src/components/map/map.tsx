@@ -14,6 +14,7 @@ import { MapData, Station, Trip, TripLine } from "@/types";
 import VisitedCities from "./visitedCities";
 import TripData from "./trip";
 import { startTransition } from "react";
+import type { Projection } from "react-map-gl";
 
 export default function MapboxContent({
   big,
@@ -46,6 +47,10 @@ export default function MapboxContent({
     setTransitioning,
   } = useMap({ coords });
 
+  const projection: Projection = {
+    name: "globe",
+  };
+
   return (
     <div className="relative h-full w-full">
       <Map
@@ -74,7 +79,7 @@ export default function MapboxContent({
           latitude: coords ? coords.latitude : 40,
           zoom: coords ? 11 : 2.7,
         }}
-        projection={"globe"}
+        projection={projection}
         attributionControl={false}
         styleDiffing={false}
       >
