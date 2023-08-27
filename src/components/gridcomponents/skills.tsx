@@ -1,8 +1,16 @@
 import clsx from "clsx";
 import Gradient from "@/assets/lineargradient";
-import skills from "./skillList";
+import type { Skills } from "@/types";
+import type { SanityDocument } from "next-sanity";
+import { skillsQuery } from "s/lib/queries";
+import { getSanityData } from "s/lib/client";
+import SiIcon from "s/utils/SiIcon";
 
-export default function Skills() {
+export default async function Skills() {
+  const skills = await getSanityData<SanityDocument<Skills>>(skillsQuery, [
+    "skills",
+  ]);
+
   return (
     <div>
       <h1 className="text-center text-2xl font-semibold">Skills</h1>
@@ -10,24 +18,18 @@ export default function Skills() {
         <Gradient />
         <div className="flex w-full flex-col items-center justify-center font-medium">
           <div className="flex w-full flex-col items-center justify-center py-8">
-            {skills.map((skill) => (
+            {skills.icons.map((icon, index) => (
               <div
-                key={skill.title}
+                key={icon.title}
                 className={clsx(
                   "my-[-10px] flex w-full",
-                  skill.position === "left" ? "justify-start" : "justify-end"
+                  index % 2 === 0 ? "justify-start" : "justify-end"
                 )}
               >
-                <div className="flex w-[120px] flex-col items-center gap-2 px-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox={skill.viewBox}
-                    className="flex h-10 w-10 items-center justify-center"
-                    fill="url(#logo)"
-                  >
-                    {skill.path}
-                  </svg>
-                  <p>{skill.title}</p>
+                <div className="flex w-[120px] flex-col items-center gap-2 stroke-[url(#logo)] px-4">
+                  <Gradient />
+                  {SiIcon(icon.icon.name, "h-10 w-9 fill-[url(#logo)]")}
+                  <p>{icon.title}</p>
                 </div>
               </div>
             ))}

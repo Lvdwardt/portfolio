@@ -7,7 +7,7 @@ import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
 import { getSanityData } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
-
+import SiIcon from "s/utils/SiIcon";
 interface PageProps {
   params: {
     slug: string;
@@ -24,8 +24,6 @@ export async function generateMetadata({
     params
   );
 
-  console.log(project);
-
   if (!project) {
     return {
       title: "Project not found",
@@ -37,6 +35,7 @@ export async function generateMetadata({
     description: project.description,
   };
 }
+
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
   const project = await getSanityData<SanityDocument<Project>>(
@@ -91,7 +90,7 @@ export default async function Project({ params }: PageProps) {
                   target={"_blank"}
                   rel="noreferrer"
                 >
-                  {/* {icon.icon} */}
+                  {SiIcon(icon.icon.name)}
                 </a>
               ))}
               {project.githubUrl && (

@@ -83,3 +83,12 @@ export const aboutQuery = groq`*[_type == "about"]{
     memojis,
     text
 }`;
+
+/**
+ * Skills
+ */
+
+// get all skills
+export const skillsQuery = groq`*[_type == "skills"]{
+    icons
+}`;

@@ -27,9 +27,11 @@ export default function NavPill() {
         {routes.map((route) => (
           <li
             key={route.name}
-            className="z-50 rounded-full px-3 py-1.5 transition-all hover:scale-105 "
+            className="z-50 py-1.5 transition-all hover:scale-105 "
           >
-            <Link href={route.href}>{route.name}</Link>
+            <Link href={route.href} className="rounded-full  px-3 py-1.5">
+              {route.name}
+            </Link>
           </li>
         ))}
       </ul>
