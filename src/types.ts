@@ -148,3 +148,13 @@ export type AboutContent = {
     text: TypedObject[];
   };
 };
+
+export type Skills = {
+  icons: {
+    title: string;
+    icon: {
+      name: string;
+      provider: string;
+    };
+  }[];
+};
