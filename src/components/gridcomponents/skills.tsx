@@ -11,6 +11,14 @@ export default async function Skills() {
     "skills",
   ]);
 
+  if (!skills) {
+    return (
+      <div>
+        <p>Sorry, something went wrong.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1 className="text-center text-2xl font-semibold">Skills</h1>
