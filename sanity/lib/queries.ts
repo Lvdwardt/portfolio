@@ -89,6 +89,6 @@ export const aboutQuery = groq`*[_type == "about"]{
  */
 
 // get all skills
-export const skillsQuery = groq`*[_type == "skills"]{
+export const skillsQuery = groq`*[_type == "skills"][0]{
     icons
 }`;

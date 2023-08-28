@@ -25,7 +25,7 @@ export const Skills = {
               type: "iconPicker",
               title: "Icon",
               options: {
-                outputFormat: "react",
+                storeSvg: true,
                 providers: ["si"],
               },
             },
