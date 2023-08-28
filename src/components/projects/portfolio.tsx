@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ImArrowUpRight2 } from "react-icons/im";
+import { ImArrowUpRight2 } from "@react-icons/all-files/im/ImArrowUpRight2";
 
 export default function Portfolio() {
   return (

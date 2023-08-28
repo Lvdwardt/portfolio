@@ -1,6 +1,6 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
-import { ImArrowUpRight2 } from "react-icons/im";
+import { ImArrowUpRight2 } from "@react-icons/all-files/im/ImArrowUpRight2";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";

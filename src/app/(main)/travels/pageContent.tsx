@@ -9,7 +9,7 @@ import useTripRoute from "./hooks/useTripRoute";
 import { Trip } from "@/types";
 import { trips } from "./traveldata";
 import useCenter from "./hooks/useCenter";
-import { AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretDown } from "@react-icons/all-files/ai/AiFillCaretDown";
 
 export default function PageContent({
   stats,

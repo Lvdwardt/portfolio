@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImArrowUpRight2 } from "react-icons/im";
+import { ImArrowUpRight2 } from "@react-icons/all-files/im/ImArrowUpRight2";
 import Link from "next/link";
 export default function LwSmall() {
   return (

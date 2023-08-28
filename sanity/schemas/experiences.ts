@@ -1,4 +1,4 @@
-import { BsFillBriefcaseFill } from "react-icons/bs";
+import { BsFillBriefcaseFill } from "@react-icons/all-files/bs/BsFillBriefcaseFill";
 
 export const Experiences = {
   name: "experiences",

@@ -8,6 +8,12 @@ dependencies:
   '@portabletext/react':
     specifier: ^3.0.7
     version: 3.0.7(react@18.2.0)
+  '@radix-ui/react-slot':
+    specifier: ^1.0.2
+    version: 1.0.2(@types/react@18.2.21)(react@18.2.0)
+  '@react-icons/all-files':
+    specifier: https://github.com/react-icons/react-icons/releases/download/v4.10.1/react-icons-all-files-4.10.1.tgz
+    version: '@github.com/react-icons/react-icons/releases/download/v4.10.1/react-icons-all-files-4.10.1.tgz(react@18.2.0)'
   '@sanity/asset-utils':
     specifier: ^1.3.0
     version: 1.3.0
@@ -20,6 +26,9 @@ dependencies:
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
+  '@sanity/preview-kit':
+    specifier: ^3.1.6
+    version: 3.1.6(@sanity/client@6.4.9)(react@18.2.0)
   '@sanity/vision':
     specifier: 3.15.1
     version: 3.15.1(@babel/runtime@7.22.11)(@codemirror/lint@6.4.0)(@codemirror/state@6.2.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.4)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.0.7)
@@ -89,9 +98,6 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  react-icons:
-    specifier: ^4.10.1
-    version: 4.10.1(react@18.2.0)
   react-map-gl:
     specifier: ^7.1.5
     version: 7.1.5(mapbox-gl@2.15.0)(react-dom@18.2.0)(react@18.2.0)
@@ -119,12 +125,18 @@ dependencies:
   sanity-plugin-icon-picker:
     specifier: ^3.2.2
     version: 3.2.2(react-dom@18.2.0)(react@18.2.0)(sanity@3.15.1)
+  sanity-plugin-iframe-pane:
+    specifier: ^2.5.5
+    version: 2.5.5(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.15.1)(styled-components@6.0.7)
   sanity-plugin-media:
     specifier: ^2.2.2
     version: 2.2.2(@types/react@18.2.21)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.15.1)(styled-components@6.0.7)
   styled-components:
     specifier: 6.0.7
     version: 6.0.7(react-dom@18.2.0)(react@18.2.0)
+  suspend-react:
+    specifier: ^0.1.3
+    version: 0.1.3(react@18.2.0)
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -3165,6 +3177,35 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
+  /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.21)(react@18.2.0):
+    resolution: {integrity: sha512-fDSBgd44FKHa1FRMU59qBMPFcl2PZE+2nmqunj+BWFyYYjnhIDWL2ItDs3rrbJDQOtzt5nIebLCQc4QRfz6LJw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.11
+      '@types/react': 18.2.21
+      react: 18.2.0
+    dev: false
+
+  /@radix-ui/react-slot@1.0.2(@types/react@18.2.21)(react@18.2.0):
+    resolution: {integrity: sha512-YeTpuq4deV+6DusvVUW4ivBgnkHwECUu0BiN43L5UCDFgdhsRUWAghhTF5MbvNTPzmiFOx90asDSUjWuCNapwg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.11
+      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.21)(react@18.2.0)
+      '@types/react': 18.2.21
+      react: 18.2.0
+    dev: false
+
   /@reduxjs/toolkit@1.9.5(react-redux@7.2.9)(react@18.2.0):
     resolution: {integrity: sha512-Rt97jHmfTeaxL4swLRNPD/zV4OxTes4la07Xc4hetpUW/vc75t5m1ANyxG6ymnEQ2FsLQsoMlYB2vV1sO3m8tQ==}
     peerDependencies:
@@ -3346,6 +3387,23 @@ packages:
       - supports-color
     dev: false
 
+  /@sanity/groq-store@4.1.1:
+    resolution: {integrity: sha512-SZg6i5Vb/fncUk5le42ijwkPeOm8WRkPoofM5d+BBqcAAuHctD1qZV0TMyZkw+HFNXbjzhW76rrytTgzsP+ZaQ==}
+    engines: {node: '>=14.18'}
+    dependencies:
+      '@sanity/eventsource': 5.0.0
+      '@sanity/types': 3.15.1
+      fast-deep-equal: 3.1.3
+      groq: 3.15.1
+      groq-js: 1.2.0
+      mendoza: 3.0.3
+      simple-get: 4.0.1
+      split2: 4.2.0
+      throttle-debounce: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@sanity/icons@1.3.10(react@18.2.0):
     resolution: {integrity: sha512-5wVG/vIiGuGrSmq+Bl3PY7XDgQrGv0fyHdJI64FSulnr2wH3NMqZ6C59UFxnrZ93sr7kOt0zQFoNv2lkPBi0Cg==}
     peerDependencies:
@@ -3467,6 +3525,31 @@ packages:
       '@sanity/client': 6.4.9
       '@sanity/eventsource': 5.0.0
       '@sanity/groq-store': 4.0.4
+      '@vercel/stega': 0.1.0
+      lodash.get: 4.4.2
+      lodash.isplainobject: 4.0.6
+      lru-cache: 10.0.1
+      mendoza: 3.0.3
+      react: 18.2.0
+      react-fast-compare: 3.2.2
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@sanity/preview-kit@3.1.6(@sanity/client@6.4.9)(react@18.2.0):
+    resolution: {integrity: sha512-V8gZlIcyqqMr1WDAzrNXntrgYVeR56EKEZHbXOoHIr3qjgCRXPogVJ5w09DJ6cMhv2NKClOpAqmA9MWzt81wXw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@sanity/client': ^6.4.9
+      react: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      '@sanity/client': 6.4.9
+      '@sanity/eventsource': 5.0.0
+      '@sanity/groq-store': 4.1.1
       '@vercel/stega': 0.1.0
       lodash.get: 4.4.2
       lodash.isplainobject: 4.0.6
@@ -11994,6 +12077,27 @@ packages:
       - react-dom
     dev: false
 
+  /sanity-plugin-iframe-pane@2.5.5(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.15.1)(styled-components@6.0.7):
+    resolution: {integrity: sha512-GoOjYXw7KKmPwA5+dy3ebR27cN/v6DGPtBxx2eaiBvJdVBHQ74JiCs97Kx9y0cAPFBtmTQ+bg0JkKPtxJLl9cw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: ^18
+      sanity: ^3
+      styled-components: ^5.2
+    dependencies:
+      '@sanity/icons': 2.4.1(react@18.2.0)
+      '@sanity/incompatible-plugin': 1.0.4(react-dom@18.2.0)(react@18.2.0)
+      '@sanity/ui': 1.7.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.0.7)
+      framer-motion: 10.16.1(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      sanity: 3.15.1(@types/node@18.16.13)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.0.7)
+      styled-components: 6.0.7(react-dom@18.2.0)(react@18.2.0)
+      usehooks-ts: 2.9.1(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+    dev: false
+
   /sanity-plugin-media@2.2.2(@types/react@18.2.21)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.15.1)(styled-components@6.0.7):
     resolution: {integrity: sha512-z453GUpxugtVg2jPV39eAU6wWXZ4PKPZ7Ewaq83M2SABeO+YHB2l1f+gtPjP3iJ7Mpf+8BQEg6lo/mPW2y0cTA==}
     engines: {node: '>=14'}
@@ -12675,6 +12779,14 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  /suspend-react@0.1.3(react@18.2.0):
+    resolution: {integrity: sha512-aqldKgX9aZqpoDp3e8/BZ8Dm7x1pJl+qI3ZKxDN0i/IQTWUwBx/ManmlVJ3wowqbno6c2bmiIfs+Um6LbsjJyQ==}
+    peerDependencies:
+      react: '>=17.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /svg-parser@2.0.4:
     resolution: {integrity: sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==}
     dev: false
@@ -13331,6 +13443,17 @@ packages:
       react: 18.2.0
     dev: false
 
+  /usehooks-ts@2.9.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2FAuSIGHlY+apM9FVlj8/oNhd+1y+Uwv5QNkMQz1oSfdHk4PXo1qoCw9I5M7j0vpH8CSWFJwXbVPeYDjLCx9PA==}
+    engines: {node: '>=16.15.0', npm: '>=8'}
+    peerDependencies:
+      react: ^16.8.0  || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /utf-8-validate@6.0.3:
     resolution: {integrity: sha512-uIuGf9TWQ/y+0Lp+KGZCMuJWc3N9BHA+l/UmHd/oUHwJJDeysyTRxNQVkbzsIWfGFbRe3OcgML/i0mvVRPOyDA==}
     engines: {node: '>=6.14.2'}
@@ -13732,4 +13855,15 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
+    dev: false
+
+  '@github.com/react-icons/react-icons/releases/download/v4.10.1/react-icons-all-files-4.10.1.tgz(react@18.2.0)':
+    resolution: {tarball: https://github.com/react-icons/react-icons/releases/download/v4.10.1/react-icons-all-files-4.10.1.tgz}
+    id: '@github.com/react-icons/react-icons/releases/download/v4.10.1/react-icons-all-files-4.10.1.tgz'
+    name: '@react-icons/all-files'
+    version: 4.10.1
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false

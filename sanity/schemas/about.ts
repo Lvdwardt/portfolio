@@ -1,5 +1,4 @@
-import { FaUser } from "react-icons/fa";
-import { TbSlash } from "react-icons/tb";
+import { FaUser } from "@react-icons/all-files/fa/FaUser";
 
 export const About = {
   name: "about",

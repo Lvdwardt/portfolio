@@ -1,4 +1,4 @@
-import { SiSpotify } from "react-icons/si";
+import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import SpotifyData from "./spotifyData";
 import Link from "next/link";
 import SpotifyText from "./spotifyText";

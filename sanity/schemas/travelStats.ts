@@ -1,6 +1,6 @@
 // singleton
 
-import { FaGlobeEurope } from "react-icons/fa";
+import { FaGlobeEurope } from "@react-icons/all-files/fa/FaGlobeEurope";
 
 export const TravelStats = {
   name: "travelStats",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiWakatime } from "react-icons/si";
+import { SiWakatime } from "@react-icons/all-files/si/SiWakatime";
 
 export default async function WakatimeStats() {
   const wakatimeKey = process.env.WAKATIME_KEY;

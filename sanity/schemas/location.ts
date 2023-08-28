@@ -1,6 +1,6 @@
 // singleton
 
-import { MdLocationPin } from "react-icons/md";
+import { MdLocationPin } from "@react-icons/all-files/md/MdLocationPin";
 
 export const Location = {
   name: "location",

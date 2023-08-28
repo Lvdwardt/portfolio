@@ -1,4 +1,4 @@
-import { FaCode } from "react-icons/fa";
+import { FaCode } from "@react-icons/all-files/fa/FaCode";
 import { preview } from "sanity-plugin-icon-picker";
 export const Skills = {
   name: "skills",

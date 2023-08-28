@@ -1,12 +1,13 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
-import { SiGithub } from "react-icons/si";
+import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { Metadata } from "next";
 import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
 import { getSanityData } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
+
 interface PageProps {
   params: {
     slug: string;

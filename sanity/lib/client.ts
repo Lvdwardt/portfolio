@@ -1,5 +1,4 @@
 import { createClient } from "next-sanity";
-
 import { apiVersion, dataset, projectId, useCdn } from "../env";
 
 export const client = createClient({
@@ -14,7 +13,7 @@ export const normalClient = client.fetch.bind(client);
 export async function getSanityData<T>(
   query: string,
   tags: string[],
-  params?: any
+  params?: Record<string, string>
 ): Promise<T> {
   const res = await fetch(
     `https://${projectId}.api.sanity.io/v2021-06-07/data/query/${dataset}`,

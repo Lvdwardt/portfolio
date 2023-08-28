@@ -2,12 +2,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHome, FaCity } from "react-icons/fa";
-import { CiAirportSign1 } from "react-icons/ci";
-import { TbTrain } from "react-icons/tb";
+import { FaHome } from "@react-icons/all-files/fa/FaHome";
+import { FaCity } from "@react-icons/all-files/fa/FaCity";
+import { MdLocalAirport } from "@react-icons/all-files/md/MdLocalAirport";
+import { MdTrain } from "@react-icons/all-files/md/MdTrain";
+import type { IconBaseProps } from "@react-icons/all-files/lib";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
-import { IconBaseProps } from "react-icons/lib";
 
 type Coords = {
   latitude: number;
@@ -81,8 +82,8 @@ interface AMarker extends MarkerProps {
   station: Station;
 }
 
-const airportIcon = (props: IconBaseProps) => <CiAirportSign1 {...props} />;
-const trainstationIcon = (props: IconBaseProps) => <TbTrain {...props} />;
+const airportIcon = (props: IconBaseProps) => <MdLocalAirport {...props} />;
+const trainstationIcon = (props: IconBaseProps) => <MdTrain {...props} />;
 
 export const StationMarker = ({ exactZoom, station }: AMarker) => {
   const lat = station.coordinates[1];

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-import { ImArrowUpRight2 } from "react-icons/im";
+import { ImArrowUpRight2 } from "@react-icons/all-files/im/ImArrowUpRight2";
 import type { Project } from "@/types";
 import { urlForImage } from "s/lib/image";
 
