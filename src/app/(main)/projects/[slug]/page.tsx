@@ -7,7 +7,6 @@ import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
 import { getSanityData } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
-import SiIcon from "s/utils/SiIcon";
 interface PageProps {
   params: {
     slug: string;
@@ -90,7 +89,7 @@ export default async function Project({ params }: PageProps) {
                   target={"_blank"}
                   rel="noreferrer"
                 >
-                  {SiIcon(icon.icon.name)}
+                  {/* {SiIcon(icon.icon.name)} */}
                 </a>
               ))}
               {project.githubUrl && (

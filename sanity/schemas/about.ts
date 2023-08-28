@@ -26,7 +26,8 @@ export const About = {
               name: "alt",
               type: "string",
               title: "Alt",
-              validation: (Rule: { required: () => any }) => Rule.required(),
+              validation: (Rule: { required: () => unknown }) =>
+                Rule.required(),
             },
           ],
         },
@@ -39,7 +40,8 @@ export const About = {
               name: "alt",
               type: "string",
               title: "Alt",
-              validation: (Rule: { required: () => any }) => Rule.required(),
+              validation: (Rule: { required: () => unknown }) =>
+                Rule.required(),
             },
           ],
         },
