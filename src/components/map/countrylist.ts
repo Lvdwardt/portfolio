@@ -1,249 +1,982 @@
-export const countryList = {
-  Afghanistan: "AF",
-  "Aland Islands": "AX",
-  Albania: "AL",
-  Algeria: "DZ",
-  "American Samoa": "AS",
-  Andorra: "AD",
-  Angola: "AO",
-  Anguilla: "AI",
-  Antarctica: "AQ",
-  "Antigua And Barbuda": "AG",
-  Argentina: "AR",
-  Armenia: "AM",
-  Aruba: "AW",
-  Australia: "AU",
-  Austria: "AT",
-  Azerbaijan: "AZ",
-  Bahamas: "BS",
-  Bahrain: "BH",
-  Bangladesh: "BD",
-  Barbados: "BB",
-  Belarus: "BY",
-  Belgium: "BE",
-  Belize: "BZ",
-  Benin: "BJ",
-  Bermuda: "BM",
-  Bhutan: "BT",
-  Bolivia: "BO",
-  "Bosnia And Herzegovina": "BA",
-  Botswana: "BW",
-  "Bouvet Island": "BV",
-  Brazil: "BR",
-  "British Indian Ocean Territory": "IO",
-  "Brunei Darussalam": "BN",
-  Bulgaria: "BG",
-  "Burkina Faso": "BF",
-  Burundi: "BI",
-  Cambodia: "KH",
-  Cameroon: "CM",
-  Canada: "CA",
-  "Cape Verde": "CV",
-  "Cayman Islands": "KY",
-  "Central African Republic": "CF",
-  Chad: "TD",
-  Chile: "CL",
-  China: "CN",
-  "Christmas Island": "CX",
-  "Cocos (Keeling) Islands": "CC",
-  Colombia: "CO",
-  Comoros: "KM",
-  Congo: "CG",
-  "Congo, Democratic Republic": "CD",
-  "Cook Islands": "CK",
-  "Costa Rica": "CR",
-  "Cote D'Ivoire": "CI",
-  Croatia: "HR",
-  Cuba: "CU",
-  Cyprus: "CY",
-  "Czech Republic": "CZ",
-  Denmark: "DK",
-  Djibouti: "DJ",
-  Dominica: "DM",
-  "Dominican Republic": "DO",
-  Ecuador: "EC",
-  Egypt: "EG",
-  "El Salvador": "SV",
-  "Equatorial Guinea": "GQ",
-  Eritrea: "ER",
-  Estonia: "EE",
-  Ethiopia: "ET",
-  "Falkland Islands (Malvinas)": "FK",
-  "Faroe Islands": "FO",
-  Fiji: "FJ",
-  Finland: "FI",
-  France: "FR",
-  "French Guiana": "GF",
-  "French Polynesia": "PF",
-  "French Southern Territories": "TF",
-  Gabon: "GA",
-  Gambia: "GM",
-  Georgia: "GE",
-  Germany: "DE",
-  Ghana: "GH",
-  Gibraltar: "GI",
-  Greece: "GR",
-  Greenland: "GL",
-  Grenada: "GD",
-  Guadeloupe: "GP",
-  Guam: "GU",
-  Guatemala: "GT",
-  Guernsey: "GG",
-  Guinea: "GN",
-  "Guinea-Bissau": "GW",
-  Guyana: "GY",
-  Haiti: "HT",
-  "Heard Island & Mcdonald Islands": "HM",
-  "Vatican City": "VA",
-  Honduras: "HN",
-  "Hong Kong": "HK",
-  Hungary: "HU",
-  Iceland: "IS",
-  India: "IN",
-  Indonesia: "ID",
-  "Iran, Islamic Republic Of": "IR",
-  Iraq: "IQ",
-  Ireland: "IE",
-  "Isle Of Man": "IM",
-  Israel: "IL",
-  Italy: "IT",
-  Jamaica: "JM",
-  Japan: "JP",
-  Jersey: "JE",
-  Jordan: "JO",
-  Kazakhstan: "KZ",
-  Kenya: "KE",
-  Kiribati: "KI",
-  Korea: "KR",
-  Kuwait: "KW",
-  Kyrgyzstan: "KG",
-  "Lao People's Democratic Republic": "LA",
-  Latvia: "LV",
-  Lebanon: "LB",
-  Lesotho: "LS",
-  Liberia: "LR",
-  "Libyan Arab Jamahiriya": "LY",
-  Liechtenstein: "LI",
-  Lithuania: "LT",
-  Luxembourg: "LU",
-  Macao: "MO",
-  Macedonia: "MK",
-  Madagascar: "MG",
-  Malawi: "MW",
-  Malaysia: "MY",
-  Maldives: "MV",
-  Mali: "ML",
-  Malta: "MT",
-  "Marshall Islands": "MH",
-  Martinique: "MQ",
-  Mauritania: "MR",
-  Mauritius: "MU",
-  Mayotte: "YT",
-  Mexico: "MX",
-  "Micronesia, Federated States Of": "FM",
-  Moldova: "MD",
-  Monaco: "MC",
-  Mongolia: "MN",
-  Montenegro: "ME",
-  Montserrat: "MS",
-  Morocco: "MA",
-  Mozambique: "MZ",
-  Myanmar: "MM",
-  Namibia: "NA",
-  Nauru: "NR",
-  Nepal: "NP",
-  Netherlands: "NL",
-  "Netherlands Antilles": "AN",
-  "New Caledonia": "NC",
-  "New Zealand": "NZ",
-  Nicaragua: "NI",
-  Niger: "NE",
-  Nigeria: "NG",
-  Niue: "NU",
-  "Norfolk Island": "NF",
-  "Northern Mariana Islands": "MP",
-  Norway: "NO",
-  Oman: "OM",
-  Pakistan: "PK",
-  Palau: "PW",
-  "Palestinian Territory, Occupied": "PS",
-  Panama: "PA",
-  "Papua New Guinea": "PG",
-  Paraguay: "PY",
-  Peru: "PE",
-  Philippines: "PH",
-  Pitcairn: "PN",
-  Poland: "PL",
-  Portugal: "PT",
-  "Puerto Rico": "PR",
-  Qatar: "QA",
-  Reunion: "RE",
-  Romania: "RO",
-  "Russian Federation": "RU",
-  Rwanda: "RW",
-  "Saint Barthelemy": "BL",
-  "Saint Helena": "SH",
-  "Saint Kitts And Nevis": "KN",
-  "Saint Lucia": "LC",
-  "Saint Martin": "MF",
-  "Saint Pierre And Miquelon": "PM",
-  "Saint Vincent And Grenadines": "VC",
-  Samoa: "WS",
-  "San Marino": "SM",
-  "Sao Tome And Principe": "ST",
-  "Saudi Arabia": "SA",
-  Senegal: "SN",
-  Serbia: "RS",
-  Seychelles: "SC",
-  "Sierra Leone": "SL",
-  Singapore: "SG",
-  Slovakia: "SK",
-  Slovenia: "SI",
-  "Solomon Islands": "SB",
-  Somalia: "SO",
-  "South Africa": "ZA",
-  "South Georgia And Sandwich Isl.": "GS",
-  Spain: "ES",
-  "Sri Lanka": "LK",
-  Sudan: "SD",
-  Suriname: "SR",
-  "Svalbard And Jan Mayen": "SJ",
-  Swaziland: "SZ",
-  Sweden: "SE",
-  Switzerland: "CH",
-  "Syrian Arab Republic": "SY",
-  Taiwan: "TW",
-  Tajikistan: "TJ",
-  Tanzania: "TZ",
-  Thailand: "TH",
-  "Timor-Leste": "TL",
-  Togo: "TG",
-  Tokelau: "TK",
-  Tonga: "TO",
-  "Trinidad And Tobago": "TT",
-  Tunisia: "TN",
-  Turkey: "TR",
-  Turkmenistan: "TM",
-  "Turks And Caicos Islands": "TC",
-  Tuvalu: "TV",
-  Uganda: "UG",
-  Ukraine: "UA",
-  "United Arab Emirates": "AE",
-  "United Kingdom": "GB",
-  "United States": "US",
-  "United States Outlying Islands": "UM",
-  Uruguay: "UY",
-  Uzbekistan: "UZ",
-  Vanuatu: "VU",
-  Venezuela: "VE",
-  "Viet Nam": "VN",
-  "Virgin Islands, British": "VG",
-  "Virgin Islands, U.S.": "VI",
-  "Wallis And Futuna": "WF",
-  "Western Sahara": "EH",
-  Yemen: "YE",
-  Zambia: "ZM",
-  Zimbabwe: "ZW",
-  "North Macedonia": "MK",
-  Češka: "CZ",
-};
+export const countryList = [
+  {
+    country: "Afghanistan",
+    code: "AF",
+  },
+  {
+    country: "Aland Islands",
+    code: "AX",
+  },
+  {
+    country: "Albania",
+    code: "AL",
+  },
+  {
+    country: "Algeria",
+    code: "DZ",
+  },
+  {
+    country: "American Samoa",
+    code: "AS",
+  },
+  {
+    country: "Andorra",
+    code: "AD",
+  },
+  {
+    country: "Angola",
+    code: "AO",
+  },
+  {
+    country: "Anguilla",
+    code: "AI",
+  },
+  {
+    country: "Antarctica",
+    code: "AQ",
+  },
+  {
+    country: "Antigua And Barbuda",
+    code: "AG",
+  },
+  {
+    country: "Argentina",
+    code: "AR",
+  },
+  {
+    country: "Armenia",
+    code: "AM",
+  },
+  {
+    country: "Aruba",
+    code: "AW",
+  },
+  {
+    country: "Australia",
+    code: "AU",
+  },
+  {
+    country: "Austria",
+    code: "AT",
+  },
+  {
+    country: "Azerbaijan",
+    code: "AZ",
+  },
+  {
+    country: "Bahamas",
+    code: "BS",
+  },
+  {
+    country: "Bahrain",
+    code: "BH",
+  },
+  {
+    country: "Bangladesh",
+    code: "BD",
+  },
+  {
+    country: "Barbados",
+    code: "BB",
+  },
+  {
+    country: "Belarus",
+    code: "BY",
+  },
+  {
+    country: "Belgium",
+    code: "BE",
+  },
+  {
+    country: "Belize",
+    code: "BZ",
+  },
+  {
+    country: "Benin",
+    code: "BJ",
+  },
+  {
+    country: "Bermuda",
+    code: "BM",
+  },
+  {
+    country: "Bhutan",
+    code: "BT",
+  },
+  {
+    country: "Bolivia",
+    code: "BO",
+  },
+  {
+    country: "Bosnia And Herzegovina",
+    code: "BA",
+  },
+  {
+    country: "Botswana",
+    code: "BW",
+  },
+  {
+    country: "Bouvet Island",
+    code: "BV",
+  },
+  {
+    country: "Brazil",
+    code: "BR",
+  },
+  {
+    country: "British Indian Ocean Territory",
+    code: "IO",
+  },
+  {
+    country: "Brunei Darussalam",
+    code: "BN",
+  },
+  {
+    country: "Bulgaria",
+    code: "BG",
+  },
+  {
+    country: "Burkina Faso",
+    code: "BF",
+  },
+  {
+    country: "Burundi",
+    code: "BI",
+  },
+  {
+    country: "Cambodia",
+    code: "KH",
+  },
+  {
+    country: "Cameroon",
+    code: "CM",
+  },
+  {
+    country: "Canada",
+    code: "CA",
+  },
+  {
+    country: "Cape Verde",
+    code: "CV",
+  },
+  {
+    country: "Cayman Islands",
+    code: "KY",
+  },
+  {
+    country: "Central African Republic",
+    code: "CF",
+  },
+  {
+    country: "Chad",
+    code: "TD",
+  },
+  {
+    country: "Chile",
+    code: "CL",
+  },
+  {
+    country: "China",
+    code: "CN",
+  },
+  {
+    country: "Christmas Island",
+    code: "CX",
+  },
+  {
+    country: "Cocos (Keeling) Islands",
+    code: "CC",
+  },
+  {
+    country: "Colombia",
+    code: "CO",
+  },
+  {
+    country: "Comoros",
+    code: "KM",
+  },
+  {
+    country: "Congo",
+    code: "CG",
+  },
+  {
+    country: "Congo, Democratic Republic",
+    code: "CD",
+  },
+  {
+    country: "Cook Islands",
+    code: "CK",
+  },
+  {
+    country: "Costa Rica",
+    code: "CR",
+  },
+  {
+    country: "Cote D'Ivoire",
+    code: "CI",
+  },
+  {
+    country: "Croatia",
+    code: "HR",
+  },
+  {
+    country: "Cuba",
+    code: "CU",
+  },
+  {
+    country: "Cyprus",
+    code: "CY",
+  },
+  {
+    country: "Czech Republic",
+    code: "CZ",
+  },
+  {
+    country: "Denmark",
+    code: "DK",
+  },
+  {
+    country: "Djibouti",
+    code: "DJ",
+  },
+  {
+    country: "Dominica",
+    code: "DM",
+  },
+  {
+    country: "Dominican Republic",
+    code: "DO",
+  },
+  {
+    country: "Ecuador",
+    code: "EC",
+  },
+  {
+    country: "Egypt",
+    code: "EG",
+  },
+  {
+    country: "El Salvador",
+    code: "SV",
+  },
+  {
+    country: "Equatorial Guinea",
+    code: "GQ",
+  },
+  {
+    country: "Eritrea",
+    code: "ER",
+  },
+  {
+    country: "Estonia",
+    code: "EE",
+  },
+  {
+    country: "Ethiopia",
+    code: "ET",
+  },
+  {
+    country: "Falkland Islands (Malvinas)",
+    code: "FK",
+  },
+  {
+    country: "Faroe Islands",
+    code: "FO",
+  },
+  {
+    country: "Fiji",
+    code: "FJ",
+  },
+  {
+    country: "Finland",
+    code: "FI",
+  },
+  {
+    country: "France",
+    code: "FR",
+  },
+  {
+    country: "French Guiana",
+    code: "GF",
+  },
+  {
+    country: "French Polynesia",
+    code: "PF",
+  },
+  {
+    country: "French Southern Territories",
+    code: "TF",
+  },
+  {
+    country: "Gabon",
+    code: "GA",
+  },
+  {
+    country: "Gambia",
+    code: "GM",
+  },
+  {
+    country: "Georgia",
+    code: "GE",
+  },
+  {
+    country: "Germany",
+    code: "DE",
+  },
+  {
+    country: "Ghana",
+    code: "GH",
+  },
+  {
+    country: "Gibraltar",
+    code: "GI",
+  },
+  {
+    country: "Greece",
+    code: "GR",
+  },
+  {
+    country: "Greenland",
+    code: "GL",
+  },
+  {
+    country: "Grenada",
+    code: "GD",
+  },
+  {
+    country: "Guadeloupe",
+    code: "GP",
+  },
+  {
+    country: "Guam",
+    code: "GU",
+  },
+  {
+    country: "Guatemala",
+    code: "GT",
+  },
+  {
+    country: "Guernsey",
+    code: "GG",
+  },
+  {
+    country: "Guinea",
+    code: "GN",
+  },
+  {
+    country: "Guinea-Bissau",
+    code: "GW",
+  },
+  {
+    country: "Guyana",
+    code: "GY",
+  },
+  {
+    country: "Haiti",
+    code: "HT",
+  },
+  {
+    country: "Heard Island & Mcdonald Islands",
+    code: "HM",
+  },
+  {
+    country: "Vatican City",
+    code: "VA",
+  },
+  {
+    country: "Honduras",
+    code: "HN",
+  },
+  {
+    country: "Hong Kong",
+    code: "HK",
+  },
+  {
+    country: "Hungary",
+    code: "HU",
+  },
+  {
+    country: "Iceland",
+    code: "IS",
+  },
+  {
+    country: "India",
+    code: "IN",
+  },
+  {
+    country: "Indonesia",
+    code: "ID",
+  },
+  {
+    country: "Iran, Islamic Republic Of",
+    code: "IR",
+  },
+  {
+    country: "Iraq",
+    code: "IQ",
+  },
+  {
+    country: "Ireland",
+    code: "IE",
+  },
+  {
+    country: "Isle Of Man",
+    code: "IM",
+  },
+  {
+    country: "Israel",
+    code: "IL",
+  },
+  {
+    country: "Italy",
+    code: "IT",
+  },
+  {
+    country: "Jamaica",
+    code: "JM",
+  },
+  {
+    country: "Japan",
+    code: "JP",
+  },
+  {
+    country: "Jersey",
+    code: "JE",
+  },
+  {
+    country: "Jordan",
+    code: "JO",
+  },
+  {
+    country: "Kazakhstan",
+    code: "KZ",
+  },
+  {
+    country: "Kenya",
+    code: "KE",
+  },
+  {
+    country: "Kiribati",
+    code: "KI",
+  },
+  {
+    country: "Korea",
+    code: "KR",
+  },
+  {
+    country: "Kuwait",
+    code: "KW",
+  },
+  {
+    country: "Kyrgyzstan",
+    code: "KG",
+  },
+  {
+    country: "Lao People's Democratic Republic",
+    code: "LA",
+  },
+  {
+    country: "Latvia",
+    code: "LV",
+  },
+  {
+    country: "Lebanon",
+    code: "LB",
+  },
+  {
+    country: "Lesotho",
+    code: "LS",
+  },
+  {
+    country: "Liberia",
+    code: "LR",
+  },
+  {
+    country: "Libyan Arab Jamahiriya",
+    code: "LY",
+  },
+  {
+    country: "Liechtenstein",
+    code: "LI",
+  },
+  {
+    country: "Lithuania",
+    code: "LT",
+  },
+  {
+    country: "Luxembourg",
+    code: "LU",
+  },
+  {
+    country: "Macao",
+    code: "MO",
+  },
+  {
+    country: "Macedonia",
+    code: "MK",
+  },
+  {
+    country: "Madagascar",
+    code: "MG",
+  },
+  {
+    country: "Malawi",
+    code: "MW",
+  },
+  {
+    country: "Malaysia",
+    code: "MY",
+  },
+  {
+    country: "Maldives",
+    code: "MV",
+  },
+  {
+    country: "Mali",
+    code: "ML",
+  },
+  {
+    country: "Malta",
+    code: "MT",
+  },
+  {
+    country: "Marshall Islands",
+    code: "MH",
+  },
+  {
+    country: "Martinique",
+    code: "MQ",
+  },
+  {
+    country: "Mauritania",
+    code: "MR",
+  },
+  {
+    country: "Mauritius",
+    code: "MU",
+  },
+  {
+    country: "Mayotte",
+    code: "YT",
+  },
+  {
+    country: "Mexico",
+    code: "MX",
+  },
+  {
+    country: "Micronesia, Federated States Of",
+    code: "FM",
+  },
+  {
+    country: "Moldova",
+    code: "MD",
+  },
+  {
+    country: "Monaco",
+    code: "MC",
+  },
+  {
+    country: "Mongolia",
+    code: "MN",
+  },
+  {
+    country: "Montenegro",
+    code: "ME",
+  },
+  {
+    country: "Montserrat",
+    code: "MS",
+  },
+  {
+    country: "Morocco",
+    code: "MA",
+  },
+  {
+    country: "Mozambique",
+    code: "MZ",
+  },
+  {
+    country: "Myanmar",
+    code: "MM",
+  },
+  {
+    country: "Namibia",
+    code: "NA",
+  },
+  {
+    country: "Nauru",
+    code: "NR",
+  },
+  {
+    country: "Nepal",
+    code: "NP",
+  },
+  {
+    country: "Netherlands",
+    code: "NL",
+  },
+  {
+    country: "Netherlands Antilles",
+    code: "AN",
+  },
+  {
+    country: "New Caledonia",
+    code: "NC",
+  },
+  {
+    country: "New Zealand",
+    code: "NZ",
+  },
+  {
+    country: "Nicaragua",
+    code: "NI",
+  },
+  {
+    country: "Niger",
+    code: "NE",
+  },
+  {
+    country: "Nigeria",
+    code: "NG",
+  },
+  {
+    country: "Niue",
+    code: "NU",
+  },
+  {
+    country: "Norfolk Island",
+    code: "NF",
+  },
+  {
+    country: "Northern Mariana Islands",
+    code: "MP",
+  },
+  {
+    country: "Norway",
+    code: "NO",
+  },
+  {
+    country: "Oman",
+    code: "OM",
+  },
+  {
+    country: "Pakistan",
+    code: "PK",
+  },
+  {
+    country: "Palau",
+    code: "PW",
+  },
+  {
+    country: "Palestinian Territory, Occupied",
+    code: "PS",
+  },
+  {
+    country: "Panama",
+    code: "PA",
+  },
+  {
+    country: "Papua New Guinea",
+    code: "PG",
+  },
+  {
+    country: "Paraguay",
+    code: "PY",
+  },
+  {
+    country: "Peru",
+    code: "PE",
+  },
+  {
+    country: "Philippines",
+    code: "PH",
+  },
+  {
+    country: "Pitcairn",
+    code: "PN",
+  },
+  {
+    country: "Poland",
+    code: "PL",
+  },
+  {
+    country: "Portugal",
+    code: "PT",
+  },
+  {
+    country: "Puerto Rico",
+    code: "PR",
+  },
+  {
+    country: "Qatar",
+    code: "QA",
+  },
+  {
+    country: "Reunion",
+    code: "RE",
+  },
+  {
+    country: "Romania",
+    code: "RO",
+  },
+  {
+    country: "Russian Federation",
+    code: "RU",
+  },
+  {
+    country: "Rwanda",
+    code: "RW",
+  },
+  {
+    country: "Saint Barthelemy",
+    code: "BL",
+  },
+  {
+    country: "Saint Helena",
+    code: "SH",
+  },
+  {
+    country: "Saint Kitts And Nevis",
+    code: "KN",
+  },
+  {
+    country: "Saint Lucia",
+    code: "LC",
+  },
+  {
+    country: "Saint Martin",
+    code: "MF",
+  },
+  {
+    country: "Saint Pierre And Miquelon",
+    code: "PM",
+  },
+  {
+    country: "Saint Vincent And Grenadines",
+    code: "VC",
+  },
+  {
+    country: "Samoa",
+    code: "WS",
+  },
+  {
+    country: "San Marino",
+    code: "SM",
+  },
+  {
+    country: "Sao Tome And Principe",
+    code: "ST",
+  },
+  {
+    country: "Saudi Arabia",
+    code: "SA",
+  },
+  {
+    country: "Senegal",
+    code: "SN",
+  },
+  {
+    country: "Serbia",
+    code: "RS",
+  },
+  {
+    country: "Seychelles",
+    code: "SC",
+  },
+  {
+    country: "Sierra Leone",
+    code: "SL",
+  },
+  {
+    country: "Singapore",
+    code: "SG",
+  },
+  {
+    country: "Slovakia",
+    code: "SK",
+  },
+  {
+    country: "Slovenia",
+    code: "SI",
+  },
+  {
+    country: "Solomon Islands",
+    code: "SB",
+  },
+  {
+    country: "Somalia",
+    code: "SO",
+  },
+  {
+    country: "South Africa",
+    code: "ZA",
+  },
+  {
+    country: "South Georgia And Sandwich Isl.",
+    code: "GS",
+  },
+  {
+    country: "Spain",
+    code: "ES",
+  },
+  {
+    country: "Sri Lanka",
+    code: "LK",
+  },
+  {
+    country: "Sudan",
+    code: "SD",
+  },
+  {
+    country: "Suriname",
+    code: "SR",
+  },
+  {
+    country: "Svalbard And Jan Mayen",
+    code: "SJ",
+  },
+  {
+    country: "Swaziland",
+    code: "SZ",
+  },
+  {
+    country: "Sweden",
+    code: "SE",
+  },
+  {
+    country: "Switzerland",
+    code: "CH",
+  },
+  {
+    country: "Syrian Arab Republic",
+    code: "SY",
+  },
+  {
+    country: "Taiwan",
+    code: "TW",
+  },
+  {
+    country: "Tajikistan",
+    code: "TJ",
+  },
+  {
+    country: "Tanzania",
+    code: "TZ",
+  },
+  {
+    country: "Thailand",
+    code: "TH",
+  },
+  {
+    country: "Timor-Leste",
+    code: "TL",
+  },
+  {
+    country: "Togo",
+    code: "TG",
+  },
+  {
+    country: "Tokelau",
+    code: "TK",
+  },
+  {
+    country: "Tonga",
+    code: "TO",
+  },
+  {
+    country: "Trinidad And Tobago",
+    code: "TT",
+  },
+  {
+    country: "Tunisia",
+    code: "TN",
+  },
+  {
+    country: "Turkey",
+    code: "TR",
+  },
+  {
+    country: "Turkmenistan",
+    code: "TM",
+  },
+  {
+    country: "Turks And Caicos Islands",
+    code: "TC",
+  },
+  {
+    country: "Tuvalu",
+    code: "TV",
+  },
+  {
+    country: "Uganda",
+    code: "UG",
+  },
+  {
+    country: "Ukraine",
+    code: "UA",
+  },
+  {
+    country: "United Arab Emirates",
+    code: "AE",
+  },
+  {
+    country: "United Kingdom",
+    code: "GB",
+  },
+  {
+    country: "United States",
+    code: "US",
+  },
+  {
+    country: "United States Outlying Islands",
+    code: "UM",
+  },
+  {
+    country: "Uruguay",
+    code: "UY",
+  },
+  {
+    country: "Uzbekistan",
+    code: "UZ",
+  },
+  {
+    country: "Vanuatu",
+    code: "VU",
+  },
+  {
+    country: "Venezuela",
+    code: "VE",
+  },
+  {
+    country: "Viet Nam",
+    code: "VN",
+  },
+  {
+    country: "Virgin Islands, British",
+    code: "VG",
+  },
+  {
+    country: "Virgin Islands, U.S.",
+    code: "VI",
+  },
+  {
+    country: "Wallis And Futuna",
+    code: "WF",
+  },
+  {
+    country: "Western Sahara",
+    code: "EH",
+  },
+  {
+    country: "Yemen",
+    code: "YE",
+  },
+  {
+    country: "Zambia",
+    code: "ZM",
+  },
+  {
+    country: "Zimbabwe",
+    code: "ZW",
+  },
+];

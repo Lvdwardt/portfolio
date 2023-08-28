@@ -8,9 +8,14 @@ import { headers } from "next/headers";
 export default async function useMapData() {
   const countryCodes = [] as string[];
   for (let i = 0; i < countries.length; i++) {
-    const country = countries[i] as keyof typeof countryList;
-    const code = countryList[country];
-    countryCodes.push(code);
+    const country = countryList.find(
+      (country) => country.country === countries[i]
+    );
+    if (country) {
+      countryCodes.push(country.code);
+    } else {
+      console.log(countries[i]);
+    }
   }
 
   const airports = [] as Station[];

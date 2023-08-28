@@ -7,7 +7,17 @@ import { TravelStats } from "./schemas/travelStats";
 import { About } from "./schemas/about";
 import { Pages } from "./schemas/pages";
 import { Skills } from "./schemas/skills";
+import { TravelData } from "./schemas/travelData";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [Experiences, Projects, Location, TravelStats, About, Pages, Skills],
+  types: [
+    Experiences,
+    Projects,
+    Location,
+    TravelStats,
+    TravelData,
+    About,
+    Pages,
+    Skills,
+  ],
 };

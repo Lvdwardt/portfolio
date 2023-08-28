@@ -10,8 +10,7 @@ import { googleMapsInput } from "@sanity/google-maps-input";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schema";
 import { deskStructure } from "s/structures/deskstructure";
-
-const singletonTypes = new Set(["travelStats", "location"]);
+import { singletonTypes } from "s/singletons";
 
 const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
