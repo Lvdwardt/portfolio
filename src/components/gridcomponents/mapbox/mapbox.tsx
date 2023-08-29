@@ -1,13 +1,13 @@
 import MapboxContent from "@/components/map/smallMap";
-import { normalClient } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { locationQuery } from "s/lib/queries";
 import type { CurrentLocation } from "@/types";
 
 async function getData() {
-  const { currentLocation } = await normalClient<
+  const { currentLocation } = await sanityFetch<
     SanityDocument<CurrentLocation>
-  >(locationQuery);
+  >(locationQuery, ["location"]);
 
   if (!currentLocation.lat || !currentLocation.lng) {
     console.log("no location found, using default");

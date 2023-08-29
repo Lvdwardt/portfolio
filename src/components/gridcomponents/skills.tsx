@@ -3,10 +3,10 @@ import Gradient from "@/assets/lineargradient";
 import type { Skills } from "@/types";
 import type { SanityDocument } from "next-sanity";
 import { skillsQuery } from "s/lib/queries";
-import { getSanityData } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 
 export default async function Skills() {
-  const skills = await getSanityData<SanityDocument<Skills>>(skillsQuery, [
+  const skills = await sanityFetch<SanityDocument<Skills>>(skillsQuery, [
     "skills",
   ]);
 

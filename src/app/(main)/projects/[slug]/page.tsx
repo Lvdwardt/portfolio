@@ -5,7 +5,7 @@ import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { Metadata } from "next";
 import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
-import { getSanityData } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 
 interface PageProps {
@@ -18,7 +18,7 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = await getSanityData<SanityDocument<Project>>(
+  const project = await sanityFetch<SanityDocument<Project>>(
     projectQuery,
     ["projects"],
     params
@@ -38,7 +38,7 @@ export async function generateMetadata({
 
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = await getSanityData<SanityDocument<Project>>(
+  const project = await sanityFetch<SanityDocument<Project>>(
     projectQuery,
     ["projects"],
     params

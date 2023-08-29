@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import useMapData from "./hooks/useMapData";
 import PageContent from "./pageContent";
-import { getSanityData } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 import { SanityDocument } from "next-sanity";
 import { travelStatsQuery } from "s/lib/queries";
 import { TravelStats } from "@/types";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Travels() {
-  const travelStats = await getSanityData<SanityDocument<TravelStats>>(
+  const travelStats = await sanityFetch<SanityDocument<TravelStats>>(
     travelStatsQuery,
     ["travelStats"]
   );

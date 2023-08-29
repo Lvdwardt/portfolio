@@ -3,7 +3,7 @@ import About from "@/components/about/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import { urlForImage } from "s/lib/image";
-import { getSanityData } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { experiencesQuery } from "s/lib/queries";
 import type { Experience } from "@/types";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const experiences = await getSanityData<SanityDocument<Experience[]>>(
+  const experiences = await sanityFetch<SanityDocument<Experience[]>>(
     experiencesQuery,
     ["experiences"]
   );

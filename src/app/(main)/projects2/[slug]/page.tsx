@@ -8,7 +8,7 @@ import { urlForImage } from "s/lib/image";
 
 import { Project as ProjectType } from "@/types";
 import type { SanityDocument } from "next-sanity";
-import { getSanityData } from "s/lib/client";
+import { sanityFetch } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
 
 interface PageProps {
@@ -20,7 +20,7 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = await getSanityData<SanityDocument>(
+  const project = await sanityFetch<SanityDocument>(
     projectQuery,
     ["projects"],
     params
@@ -39,7 +39,7 @@ export async function generateMetadata({
 
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = await getSanityData<SanityDocument<ProjectType>>(
+  const project = await sanityFetch<SanityDocument<ProjectType>>(
     projectQuery,
     ["projects"],
     params
