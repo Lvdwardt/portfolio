@@ -1,12 +1,13 @@
 import { FaCode } from "@react-icons/all-files/fa/FaCode";
+import { defineType } from "sanity";
 import { preview } from "sanity-plugin-icon-picker";
-export const Skills = {
+
+export default defineType({
   name: "skills",
   icon: FaCode,
   type: "document",
   title: "Skills",
   fields: [
-    //    array of skills
     {
       name: "icons",
       type: "array",
@@ -36,14 +37,7 @@ export const Skills = {
               icon: "icon",
               title: "title",
             },
-            prepare(selection: {
-              icon: {
-                provider: string;
-                name: string;
-                options: { outputFormat: string };
-              };
-              title: string;
-            }) {
+            prepare(selection) {
               const { icon, title } = selection;
               return {
                 media: preview(icon),
@@ -55,4 +49,4 @@ export const Skills = {
       ],
     },
   ],
-};
+});

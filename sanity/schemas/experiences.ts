@@ -1,6 +1,7 @@
 import { BsFillBriefcaseFill } from "@react-icons/all-files/bs/BsFillBriefcaseFill";
+import { defineType } from "sanity";
 
-export const Experiences = {
+export default defineType({
   name: "experiences",
   icon: BsFillBriefcaseFill,
   type: "document",
@@ -53,4 +54,4 @@ export const Experiences = {
       initialValue: null,
     },
   ],
-};
+});

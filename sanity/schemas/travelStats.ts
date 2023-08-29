@@ -1,8 +1,9 @@
 // singleton
 
 import { FaGlobeEurope } from "@react-icons/all-files/fa/FaGlobeEurope";
+import { defineType } from "sanity";
 
-export const TravelStats = {
+export default defineType({
   name: "travelStats",
   icon: FaGlobeEurope,
   type: "document",
@@ -24,4 +25,4 @@ export const TravelStats = {
       title: "Airports",
     },
   ],
-};
+});

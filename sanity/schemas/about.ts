@@ -1,6 +1,7 @@
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { defineType } from "sanity";
 
-export const About = {
+export default defineType({
   name: "about",
   icon: FaUser,
   type: "document",
@@ -25,8 +26,9 @@ export const About = {
               name: "alt",
               type: "string",
               title: "Alt",
-              validation: (Rule: { required: () => unknown }) =>
-                Rule.required(),
+              validation(rule) {
+                return rule.required();
+              },
             },
           ],
         },
@@ -39,8 +41,9 @@ export const About = {
               name: "alt",
               type: "string",
               title: "Alt",
-              validation: (Rule: { required: () => unknown }) =>
-                Rule.required(),
+              validation(rule) {
+                return rule.required();
+              },
             },
           ],
         },
@@ -71,4 +74,4 @@ export const About = {
       title: "slug.current",
     },
   },
-};
+});

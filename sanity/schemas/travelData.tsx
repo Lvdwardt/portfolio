@@ -1,7 +1,8 @@
 import { FaRoute } from "@react-icons/all-files/fa/FaRoute";
 import { countryList } from "@/components/map/countrylist";
+import { defineType } from "sanity";
 
-export const TravelData = {
+export default defineType({
   name: "travelData",
   icon: FaRoute,
   type: "document",
@@ -36,18 +37,22 @@ export const TravelData = {
             select: {
               code: "countrycode",
             },
-            prepare(selection: { code: string }) {
-              function getFlagEmoji(countryCode: string) {
+            prepare(selection) {
+              const { code } = selection;
+              const getFlagEmoji = (countryCode: string) => {
                 return countryCode
                   .toUpperCase()
                   .replace(/./g, (char) =>
                     String.fromCodePoint(127397 + char.charCodeAt(0))
                   );
-              }
-              if (!selection.code) return;
+              };
+              if (!code)
+                return {
+                  media: <span>{code}</span>,
+                  title: code,
+                };
               return {
-                media: <span>{getFlagEmoji(selection.code)}</span>,
-                title: selection.code,
+                media: <span>{getFlagEmoji(code)}</span>,
               };
             },
           },
@@ -67,4 +72,4 @@ export const TravelData = {
     //   of: [{ type: "string" }],
     // },
   ],
-};
+});

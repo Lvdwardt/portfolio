@@ -1,8 +1,9 @@
 import { AiFillFolderOpen } from "@react-icons/all-files/ai/AiFillFolderOpen";
+import { defineType } from "sanity";
 
 import { preview } from "sanity-plugin-icon-picker";
 
-export const Projects = {
+export default defineType({
   name: "projects",
   icon: AiFillFolderOpen,
   type: "document",
@@ -61,7 +62,6 @@ export const Projects = {
       type: "image",
       title: "Project Image Light (optional)",
       group: "image",
-      defaultValue: null,
     },
 
     {
@@ -151,14 +151,10 @@ export const Projects = {
               provider: "icon.provider",
               name: "icon.name",
             },
-            prepare(icon: {
-              provider: string;
-              name: string;
-              options: { outputFormat: string };
-            }) {
+            prepare({ provider, name }) {
               return {
-                title: icon.name,
-                media: preview(icon),
+                title: name,
+                media: preview(provider),
               };
             },
           },
@@ -169,7 +165,6 @@ export const Projects = {
       name: "githubUrl",
       type: "url",
       title: "Github URL (optional)",
-      defaultValue: null,
     },
   ],
-};
+});

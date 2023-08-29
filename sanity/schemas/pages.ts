@@ -2,8 +2,9 @@
 // Path: sanity/schemas/pages.ts
 
 import { FaFile } from "@react-icons/all-files/fa/FaFile";
+import { defineType } from "sanity";
 
-export const Pages = {
+export default defineType({
   name: "pages",
   icon: FaFile,
   type: "document",
@@ -27,12 +28,6 @@ export const Pages = {
       description: "The title of the page",
       title: "Title",
       group: "seo",
-      validations: [
-        {
-          rule: "minLength",
-          value: 65,
-        },
-      ],
     },
     {
       name: "keywords",
@@ -48,4 +43,4 @@ export const Pages = {
       group: "seo",
     },
   ],
-};
+});

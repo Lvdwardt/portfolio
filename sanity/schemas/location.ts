@@ -1,8 +1,9 @@
 // singleton
 
 import { MdLocationPin } from "@react-icons/all-files/md/MdLocationPin";
+import { defineType } from "sanity";
 
-export const Location = {
+export default defineType({
   name: "location",
   icon: MdLocationPin,
   type: "document",
@@ -15,4 +16,4 @@ export const Location = {
       description: "Please do not choose your exact location",
     },
   ],
-};
+});
