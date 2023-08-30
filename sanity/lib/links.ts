@@ -2,14 +2,15 @@ export function resolveHref(
   documentType?: string,
   slug?: string
 ): string | undefined {
-  console.log("resolveHref", documentType, slug);
   switch (documentType) {
-    case "home":
+    case "home" || "skills" || "currentLocation":
       return "/";
-    case "page":
+    case "experiences":
+      return "/about";
+    case "page" || "about":
       return slug ? `/${slug}` : undefined;
     case "projects":
-      return slug ? `/projects/${slug}` : undefined;
+      return slug ? `/projects2/${slug}` : undefined;
     default:
       console.warn("Invalid document type:", documentType);
       return undefined;

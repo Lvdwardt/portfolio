@@ -14,6 +14,7 @@ import Iframe, {
 import { previewUrl } from "sanity-plugin-iframe-pane/preview-url";
 import Projects from "s/schemas/projects";
 import { previewSecretId } from "s/lib/api";
+import Skills from "s/schemas/skills";
 
 const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
@@ -23,7 +24,10 @@ if (!GOOGLE_MAPS_KEY) {
   );
 }
 
-export const PREVIEWABLE_DOCUMENT_TYPES = [Projects.name] satisfies string[];
+export const PREVIEWABLE_DOCUMENT_TYPES = [
+  Projects.name,
+  Skills.name,
+] satisfies string[];
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
   Projects.name,

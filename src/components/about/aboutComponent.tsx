@@ -1,14 +1,13 @@
 "use client";
 
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { urlForImage } from "s/lib/image";
 import { AboutContent } from "@/types";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import useThemeChecker from "@/hooks/useThemeChecker";
 import { useTheme } from "next-themes";
 import type { SanityDocument } from "next-sanity";
 import ToggleTheme from "@/hooks/toggleTheme";
+import { SanityImg } from "../imageComponent";
 
 export default function AboutComponent({
   allAboutData,
@@ -32,18 +31,14 @@ export default function AboutComponent({
   return (
     <div className="w-full flex-col items-center gap-2 sm:items-start">
       <div className="relative h-[120px] w-[175px] translate-x-[-20px] translate-y-[-25px]">
-        <Image
-          src={urlForImage(about.memojis.darkMemoji).url()}
-          width={140}
-          height={140}
-          alt={about.memojis.darkMemoji.alt as string}
+        <SanityImg
+          image={about.memojis.darkMemoji}
+          size="medium"
           className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in dark:opacity-100"
         />
-        <Image
-          src={urlForImage(about.memojis.lightMemoji).url()}
-          width={140}
-          height={140}
-          alt={about.memojis.lightMemoji.alt as string}
+        <SanityImg
+          image={about.memojis.lightMemoji}
+          size="medium"
           className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in dark:opacity-0"
         />
         <button

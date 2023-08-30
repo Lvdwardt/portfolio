@@ -1,4 +1,4 @@
-import { createClient, groq } from "next-sanity";
+import { createClient } from "next-sanity";
 import type { QueryParams } from "@sanity/client";
 import { apiVersion, dataset, projectId, useCdn } from "../env";
 import { draftMode } from "next/headers";
@@ -32,7 +32,7 @@ export async function sanityFetch<QueryResponse>(
       perspective: "previewDrafts",
     }),
     next: {
-      ...(isDraftMode && { revalidate: 30 }),
+      ...(isDraftMode && { revalidate: 0 }),
       tags,
     },
   });

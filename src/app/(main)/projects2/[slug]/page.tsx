@@ -1,15 +1,14 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { ImArrowUpRight2 } from "@react-icons/all-files/im/ImArrowUpRight2";
-import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";
-import { urlForImage } from "s/lib/image";
 
 import { Project as ProjectType } from "@/types";
 import type { SanityDocument } from "next-sanity";
 import { sanityFetch } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
+import { SanityImg } from "@/components/imageComponent";
 
 interface PageProps {
   params: {
@@ -51,7 +50,7 @@ export default async function Project({ params }: PageProps) {
   return (
     <AnimatedLayout>
       <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <div className="grid w-full gap-8 p-4 sm:grid-cols-2 sm:px-16 sm:py-16 xl:px-32">
+        <div className="grid w-full gap-8 p-4 sm:px-16 sm:py-16 xl:grid-cols-2 xl:px-32">
           <div className="col-span-1 flex flex-col gap-4">
             <h1 className="text-3xl font-bold sm:text-4xl">{project.title}</h1>
             <h2 className="text-xl">{project.quote}</h2>
@@ -69,7 +68,7 @@ export default async function Project({ params }: PageProps) {
               </div>
             </div>
           </div>
-          <div className="col-span-1 flex flex-col gap-6 sm:pt-14">
+          <div className="col-span-1 flex flex-col gap-6 xl:pt-14">
             <Balancer className="font-light">{project.description}</Balancer>
             <div className="pl-4">
               <ul>
@@ -85,19 +84,13 @@ export default async function Project({ params }: PageProps) {
             </div>
           </div>
         </div>
-        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
-          <div className="order-1 h-full w-full rounded-[2rem] bg-card sm:order-2 xl:order-5"></div>
-          <div className="h-full w-full rounded-[2rem] bg-card sm:order-1 sm:col-span-2 xl:order-2"></div>
-          <div className="h-full w-full rounded-[2rem] bg-card sm:order-3 sm:row-span-2 xl:order-3"></div>
-          <div className="h-full w-full rounded-[2rem] bg-card sm:order-5 sm:col-span-2 xl:order-4"></div>
-          <div className="flex h-full w-full items-center justify-center rounded-[2rem] bg-card sm:order-4 xl:order-1">
-            <Image
-              src={urlForImage(project.logo).url()}
-              alt={project.title}
-              width={100}
-              height={100}
-              className="rounded-2xl"
-            />
+        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:132.5px] [grid-auto-rows:132.5px] sm:max-w-[640px] sm:grid-cols-2 sm:[grid-auto-columns:265px] sm:[grid-auto-rows:265px] xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
+          <div className="order-2 h-full w-full rounded-[2rem] bg-card xl:order-5"></div>
+          <div className="order-1 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-2"></div>
+          <div className="order-3 row-span-2 h-full w-full rounded-[2rem] bg-card"></div>
+          <div className="order-5 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-4"></div>
+          <div className="order-4 flex h-full w-full items-center justify-center rounded-[2rem] bg-card p-8 sm:p-24 xl:order-1">
+            <SanityImg image={project.logo} round={18} />
           </div>
         </div>
       </div>

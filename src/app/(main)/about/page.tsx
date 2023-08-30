@@ -1,12 +1,11 @@
-import Image from "next/image";
 import About from "@/components/about/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
-import { urlForImage } from "s/lib/image";
 import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { experiencesQuery } from "s/lib/queries";
 import type { Experience } from "@/types";
+import { SanityImg } from "@/components/imageComponent";
 
 export const metadata: Metadata = {
   title: "About",
@@ -57,13 +56,7 @@ export default async function AboutPage() {
                 key={experience.name}
               >
                 <a href={experience.link}>
-                  <Image
-                    src={urlForImage(experience.image).url()}
-                    alt={experience.name}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 rounded-xl bg-black object-cover"
-                  />
+                  <SanityImg image={experience.image} round={14} size="small" />
                 </a>
                 <div className="flex w-full flex-col [@media(hover:none)_and_(pointer:coarse)]:select-none">
                   <h3 className="mt-[-4px] align-text-top text-lg text-text">
