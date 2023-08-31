@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],  
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
   theme: {
     //change font family
@@ -18,6 +18,7 @@ module.exports = {
         background: "var(--background)",
         text: "var(--text)",
         trans: "var(--trans)",
+        lessTrans: "var(--lessTrans)",
         logo: "var(--logo)",
       },
       gridTemplateRows: {
@@ -78,7 +79,7 @@ module.exports = {
         "50/50": "100%",
       },
       animation: {
-        loader: 'loader 0.6s infinite alternate',
+        loader: "loader 0.6s infinite alternate",
         scale: "scale 1s ease-in infinite",
         fadeIn: "fadeIn 2s ease-in forwards",
         fadeInRight: "fadeInRight 0.6s  ease-in forwards",
@@ -93,8 +94,8 @@ module.exports = {
         loader: {
           to: {
             opacity: 0.1,
-            transform: 'translate3d(0, -1rem, 0)'
-          }
+            transform: "translate3d(0, -1rem, 0)",
+          },
         },
         scale: {
           //transform and rotate animation

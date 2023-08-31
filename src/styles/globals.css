@@ -23,6 +23,7 @@
   --logo: #ce81c7;
   --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
+  --lessTrans: hsla(305, 44%, 66%, 0.5);
 }
 
 [data-theme="dark"] {
@@ -35,6 +36,7 @@
   --logo: #ce81c7;
   --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
+  --lessTrans: hsla(305, 44%, 66%, 0.5);
 }
 
 [data-theme="light"] {
@@ -46,7 +48,8 @@
   --thumb: #ffffff;
   --logo: #7bdff2;
   --text: #111111;
-  --trans: hsla(190, 82%, 72%, 0.8);
+  --trans: hsla(190, 82%, 72%, 0.5);
+  --lessTrans: hsla(190, 82%, 72%, 0.8);
 }
 
 /* [data-theme="light"] {

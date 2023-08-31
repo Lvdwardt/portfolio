@@ -10,7 +10,6 @@ async function getData() {
   >(locationQuery, ["location"]);
 
   if (!currentLocation.lat || !currentLocation.lng) {
-    console.log("no location found, using default");
     (currentLocation.lat = 51.92735), (currentLocation.lng = 5.5735);
   }
   const coords = {

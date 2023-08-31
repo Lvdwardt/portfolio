@@ -21,7 +21,6 @@ export default function useCenter() {
         Math.max(percentOfScreenheightScrolled * (windowHeight / 8.7) - 7.5, 0),
         minHeight
       );
-      console.log(windowHeight / 9.11);
 
       const width = Math.max(590, 895 - scroll * 7.6) + "px";
 

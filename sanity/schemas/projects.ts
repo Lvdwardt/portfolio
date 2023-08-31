@@ -52,6 +52,12 @@ export default defineType({
       title: "Cover Image",
     },
     {
+      name: "position",
+      type: "number",
+      title: "Position",
+      description: "Position in the grid the projects page",
+    },
+    {
       name: "projectImage",
       type: "image",
       title: "Project Image",

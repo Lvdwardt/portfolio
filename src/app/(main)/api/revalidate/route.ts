@@ -19,10 +19,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  console.log("revalidating", req);
-
   if (!revalidateSecret) {
-    console.log("The `MY_SECRET_TOKEN` environment variable is required.");
     return new Response(
       "The `MY_SECRET_TOKEN` environment variable is required."
     );
@@ -33,16 +30,13 @@ export async function POST(req: NextRequest) {
       slug?: string | undefined;
     }>(req, revalidateSecret);
     if (!isValidSignature) {
-      console.log("Invalid signature");
       const message = "Invalid signature";
       return new Response(message, { status: 401 });
     }
 
     if (!body?._type) {
-      console.log("Bad Request");
       return new Response("Bad Request", { status: 400 });
     }
-    console.log("revalidating", body._type, body.slug);
 
     revalidateTag(body._type);
     if (body.slug) {

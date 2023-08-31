@@ -20,9 +20,9 @@ export const experiencesQuery = groq`*[_type == "experiences"]{
 /**
  * Projects
  */
-// get all projects
+// get all projects with image ans slug
 export const projectsQuery = groq`*[_type == "projects" && defined(slug.current)] {
-    _id, title, slug
+    _id, title, slug, coverImage, position
   }`;
 
 // get the project with the given slug

@@ -18,6 +18,7 @@ export type Project = {
   projectImage: Image;
   projectImageLight: Image | null;
   coverImage: Image;
+  position: number;
   translate: string;
   width: string;
   url: string;
@@ -38,6 +39,15 @@ export type Project = {
     url: string;
   }[];
   githubUrl?: string;
+};
+
+export type Projects = {
+  title: string;
+  slug: {
+    current: string;
+  };
+  coverImage: Image;
+  position: number;
 };
 
 export type Station = {
