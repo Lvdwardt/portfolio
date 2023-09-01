@@ -7,6 +7,7 @@ import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";
 import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
+import Link from "next/link";
 
 interface PageProps {
   params: {
@@ -50,7 +51,7 @@ export default async function Project({ params }: PageProps) {
 
   return (
     <AnimatedLayout>
-      <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
+      <main className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
         <div className="mx-4 flex flex-col lg:flex-row">
           <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4 lg:w-3/4">
             <h1 className="pb-2 text-3xl font-black">{project.title}</h1>
@@ -83,16 +84,23 @@ export default async function Project({ params }: PageProps) {
               </ul>
             </div>
             <div className="mt-auto flex gap-4 pt-6 text-4xl">
-              {project.icons.map((icon, index) => (
-                <a
-                  href={icon.url}
-                  key={index}
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  {/* {SiIcon(icon.icon.name)} */}
-                </a>
-              ))}
+              {/* {project.icons.map((icon, index) => {
+                const innerHtml = icon.icon.svg;
+                return (
+                  <a
+                    href={icon.url}
+                    key={index}
+                    target={"_blank"}
+                    rel="noreferrer"
+                    aria-label={icon.icon.name}
+                  >
+                  <div
+                    dangerouslySetInnerHTML={{ __html: innerHtml }}
+                    key={index}
+                  />
+                  </a>
+                );
+              })} */}
               {project.githubUrl && (
                 <a
                   className="ml-auto"
@@ -109,7 +117,7 @@ export default async function Project({ params }: PageProps) {
             {ProjectImage({ project })}
           </div>
         </div>
-      </div>
+      </main>
     </AnimatedLayout>
   );
 }

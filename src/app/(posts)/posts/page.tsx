@@ -19,7 +19,7 @@ export default async function Post() {
 
   return (
     <AnimatedLayout>
-      <div className="w-fulltransition-all duration-300 ease-in">
+      <main className="w-fulltransition-all duration-300 ease-in">
         <div className="flex w-full flex-col gap-8 px-4">
           {docs.map((doc) => (
             <Link
@@ -32,7 +32,7 @@ export default async function Post() {
             </Link>
           ))}
         </div>
-      </div>
+      </main>
     </AnimatedLayout>
   );
 }

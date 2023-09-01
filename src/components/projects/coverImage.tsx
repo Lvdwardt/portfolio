@@ -11,8 +11,8 @@ type Props = {
 export default function CoverImage({ project }: Props) {
   function getRandomColor(project: Projects) {
     return project.slug.current.length % 2 === 0
-      ? "var(--secondary)"
-      : "var(--primary)";
+      ? "var(--primary)"
+      : "var(--secondary)";
   }
 
   return (
@@ -31,17 +31,15 @@ export default function CoverImage({ project }: Props) {
       {/* arrow */}
       <div className="absolute bottom-3 left-3 z-20 m-2 rounded-full border-4 border-transparent transition-all duration-300 group-hover:border-trans hover:!border-lessTrans">
         <div className="box-border rounded-full bg-background px-3 py-1 text-text">
-          <div className="flex items-center gap-2 ">
-            <Link
-              href={`/projects/${project.slug.current}`}
-              className="whitespace-nowrap"
-            >
-              <span className="">{project.title}</span>
-            </Link>
+          <Link
+            href={`/projects/${project.slug.current}`}
+            className="flex items-center gap-2 whitespace-nowrap"
+          >
+            <span className="">{project.title}</span>
             <div className="">
               <ImArrowUpRight2 />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

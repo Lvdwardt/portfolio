@@ -34,7 +34,7 @@ const page = async ({ params }: PageProps) => {
   const doc = await getDocFromParams(params.slug);
 
   return (
-    <div className="flex flex-col items-center gap-12 px-4 sm:px-8 xl:mt-[-4rem]">
+    <main className="flex flex-col items-center gap-12 px-4 sm:px-8 xl:mt-[-4rem]">
       <div className="flex h-10 w-10 items-center justify-center">
         <Link
           href="/posts"
@@ -47,7 +47,7 @@ const page = async ({ params }: PageProps) => {
         <h1 className="text-center text-4xl font-bold">{doc.title}</h1>
         <Mdx code={doc.body.code} />
       </div>
-    </div>
+    </main>
   );
 };
 

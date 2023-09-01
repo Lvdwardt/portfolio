@@ -33,6 +33,7 @@ export type Project = {
   }[];
   icons: {
     icon: {
+      svg: string;
       name: string;
       provider: string;
     };

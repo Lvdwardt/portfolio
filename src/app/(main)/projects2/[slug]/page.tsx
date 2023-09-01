@@ -49,7 +49,7 @@ export default async function Project({ params }: PageProps) {
   }
   return (
     <AnimatedLayout>
-      <div className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
+      <main className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
         <div className="grid w-full gap-8 p-4 sm:px-16 sm:py-16 xl:grid-cols-2 xl:px-32">
           <div className="col-span-1 flex flex-col gap-4">
             <h1 className="text-3xl font-bold sm:text-4xl">{project.title}</h1>
@@ -93,7 +93,7 @@ export default async function Project({ params }: PageProps) {
             <SanityImg image={project.logo} round={18} />
           </div>
         </div>
-      </div>
+      </main>
     </AnimatedLayout>
   );
 }

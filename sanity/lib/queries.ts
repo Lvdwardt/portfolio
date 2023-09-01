@@ -25,6 +25,11 @@ export const projectsQuery = groq`*[_type == "projects" && defined(slug.current)
     _id, title, slug, coverImage, position
   }`;
 
+// get the featured projects with image and slug
+export const featuredProjectsQuery = groq`*[_type == "projects" && defined(slug.current) && featured == true] {
+    _id, title, slug, coverImage
+    }`;
+
 // get the project with the given slug
 export const projectQuery = groq`*[_type == "projects" && slug.current == $slug][0]{
     title,

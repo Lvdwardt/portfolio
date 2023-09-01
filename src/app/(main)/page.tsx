@@ -1,14 +1,11 @@
 import About from "@/components/about/about";
 import Toggle from "@/components/gridcomponents/toggle";
-import Janskapsalonsmall from "@/components/gridcomponents/janskapsalonsmall";
-import Janskapsalonflat from "@/components/gridcomponents/janskapsalonflat";
 import {
   Github,
   Whatsapp,
   Linkedin,
 } from "@/components/gridcomponents/socials";
 import Skills from "@/components/gridcomponents/skills";
-import Flyn from "@/components/gridcomponents/flynImg";
 import Footer from "@/components/footer";
 import GithubStats from "@/components/gridcomponents/stats/ghStats";
 import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
@@ -17,6 +14,11 @@ import { type Metadata } from "next";
 import Mapbox from "@/components/gridcomponents/mapbox/mapbox";
 import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 import { Suspense } from "react";
+import { sanityFetch } from "s/lib/client";
+import type { SanityDocument } from "next-sanity";
+import { Projects } from "@/types";
+import { featuredProjectsQuery } from "s/lib/queries";
+import CoverImage from "@/components/projects/coverImage";
 
 export const metadata: Metadata = {
   title: "Home - Leonvdw.nl",
@@ -25,6 +27,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const projects = await sanityFetch<SanityDocument<Projects[]>>(
+    featuredProjectsQuery,
+    ["projects"]
+  );
+
   return (
     <AnimatedLayout>
       <main className="min-h-screen overflow-visible transition-all duration-300 ease-in ">
@@ -36,9 +43,6 @@ export default async function Home() {
             <Suspense fallback={<div>Loading...</div>}>
               <Mapbox />
             </Suspense>
-          </div>
-          <div className="rounded-[2rem] bg-card sm:hidden xl:order-3">
-            <Janskapsalonsmall />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-4  xl:order-4">
             <Toggle />
@@ -56,16 +60,16 @@ export default async function Home() {
             <Linkedin />
           </div>
           <Whatsapp />
-          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-7 sm:row-span-2 xl:order-3 xl:col-start-4 xl:row-start-1">
-            <Flyn />
+          <div className="row-span-2 overflow-hidden rounded-[2rem] bg-card sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
+            <CoverImage project={projects[0]} />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-9">
             <Github />
           </div>
-          <div className="hidden overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 sm:block xl:order-10">
-            <Janskapsalonflat />
+          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 xl:order-10">
+            <CoverImage project={projects[1]} />
           </div>
-          <div className="hidden overflow-hidden rounded-[2rem] bg-card sm:order-5 sm:block xl:order-12">
+          <div className="overflow-hidden rounded-[2rem] bg-card sm:order-5  xl:order-12">
             <WakatimeStats />
           </div>
         </div>

@@ -26,6 +26,11 @@ export default defineType({
       title: "Slug",
     },
     {
+      name: "featured",
+      type: "boolean",
+      title: "Featured",
+    },
+    {
       name: "quote",
       type: "string",
       title: "Quote",
@@ -141,7 +146,7 @@ export default defineType({
               type: "iconPicker",
               title: "Icon",
               options: {
-                outputFormat: "react",
+                storeSvg: true,
                 providers: ["si"],
               },
             },
@@ -156,11 +161,12 @@ export default defineType({
             select: {
               provider: "icon.provider",
               name: "icon.name",
+              icon: "icon",
             },
-            prepare({ provider, name }) {
+            prepare({ icon, name }) {
               return {
                 title: name,
-                media: preview(provider),
+                media: preview(icon),
               };
             },
           },
