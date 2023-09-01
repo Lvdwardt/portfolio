@@ -42,6 +42,7 @@ export default function AboutComponent({
           className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in dark:opacity-0"
         />
         <button
+          aria-label="Toggle theme"
           className="absolute left-8 top-5 z-50 h-28 w-20 cursor-pointer"
           onClick={() => {
             ToggleTheme({ resolvedTheme, setTheme });

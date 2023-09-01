@@ -8,9 +8,15 @@ export async function GET(request: NextRequest) {
   // get the secret from the query
   const secret = request.nextUrl.searchParams.get("secret");
   const route = request.nextUrl.searchParams.get("route") ?? "/";
+  const tag = request.nextUrl.searchParams.get("tag");
   // check if the secret is valid
   if (secret !== revalidateSecret) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+  }
+
+  if (tag) {
+    revalidateTag(tag);
+    return NextResponse.json({ revalidated: true, now: Date.now() });
   }
 
   revalidatePath(route);

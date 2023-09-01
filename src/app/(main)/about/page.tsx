@@ -6,6 +6,7 @@ import type { SanityDocument } from "next-sanity";
 import { experiencesQuery } from "s/lib/queries";
 import type { Experience } from "@/types";
 import { SanityImg } from "@/components/imageComponent";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -55,9 +56,9 @@ export default async function AboutPage() {
                 className="flex items-start gap-4 pb-2 [@media(hover:none)and(pointer:coarse)]:select-none"
                 key={experience.name}
               >
-                <a href={experience.link}>
+                <Link href={experience.link} aria-label="Link to company site">
                   <SanityImg image={experience.image} round={14} size="small" />
-                </a>
+                </Link>
                 <div className="flex w-full flex-col [@media(hover:none)_and_(pointer:coarse)]:select-none">
                   <h3 className="mt-[-4px] align-text-top text-lg text-text">
                     {experience.role}
