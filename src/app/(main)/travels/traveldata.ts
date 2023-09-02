@@ -1,32 +1,5 @@
 import type { Position } from "geojson";
 
-export const countries = [
-  "Belgium",
-  "Germany",
-  "France",
-  "Spain",
-  "Portugal",
-  "Italy",
-  "Turkey",
-  "Vatican City",
-  "United Arab Emirates",
-  "Austria",
-  "Czech Republic",
-  "Poland",
-  "Hungary",
-  "Slovakia",
-  "Croatia",
-  "Bulgaria",
-  "Romania",
-  "Switzerland",
-  "Egypt",
-  "United Kingdom",
-  "Denmark",
-  "Norway",
-  "Faroe Islands",
-  "Iceland",
-];
-
 export const airportCodes = [
   "AMS",
   "EIN",

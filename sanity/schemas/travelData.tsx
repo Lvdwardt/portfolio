@@ -23,22 +23,18 @@ export default defineType({
               options: {
                 list: countryList.map((country) => ({
                   title: `${country.country} (${country.code})`,
-                  value: country.country,
+                  value: `${country.country} (${country.code})`,
                 })),
               },
-            },
-            {
-              name: "countrycode",
-              type: "string",
-              title: "Country Code",
             },
           ],
           preview: {
             select: {
-              code: "countrycode",
+              name: "countryname",
             },
             prepare(selection) {
-              const { code } = selection;
+              const { name } = selection;
+              const code = name.split(" ")[1].replace("(", "").replace(")", "");
               const getFlagEmoji = (countryCode: string) => {
                 return countryCode
                   .toUpperCase()
@@ -49,16 +45,65 @@ export default defineType({
               if (!code)
                 return {
                   media: <span>{code}</span>,
-                  title: code,
+                  title: name,
                 };
               return {
                 media: <span>{getFlagEmoji(code)}</span>,
+                title: name,
               };
             },
           },
         },
       ],
     },
+    // {
+    //   name: "visitedAirports",
+    //   type: "array",
+    //   title: "Visited Airports",
+    //   of: [
+    //     {
+    //       type: "object",
+    //       fields: [
+    //         {
+    //           name: "airport",
+    //           type: "string",
+    //           title: "Airport",
+    //           options: {
+    //             list: countryList.map((country) => ({
+    //               title: `${country.country} (${country.code})`,
+    //               value: `${country.country} (${country.code})`,
+    //             })),
+    //           },
+    //         },
+    //       ],
+    //       preview: {
+    //         select: {
+    //           name: "airport",
+    //         },
+    //         // prepare(selection) {
+    //         //   const { name } = selection;
+    //         //   const code = name.split(" ")[1].replace("(", "").replace(")", "");
+    //         //   const getFlagEmoji = (countryCode: string) => {
+    //         //     return countryCode
+    //         //       .toUpperCase()
+    //         //       .replace(/./g, (char) =>
+    //         //         String.fromCodePoint(127397 + char.charCodeAt(0))
+    //         //       );
+    //         //   };
+    //         //   if (!code)
+    //         //     return {
+    //         //       media: <span>{code}</span>,
+    //         //       title: name,
+    //         //     };
+    //         //   return {
+    //         //     media: <span>{getFlagEmoji(code)}</span>,
+    //         //     title: name,
+    //         //   };
+    //         // },
+    //       },
+    //     },
+    //   ],
+    // },
     // {
     //   name: "visitedCapitals",
     //   type: "array",

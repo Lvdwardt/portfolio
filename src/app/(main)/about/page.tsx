@@ -25,17 +25,17 @@ export default async function AboutPage() {
   );
 
   function getDates(startDate: Date, endDate: Date | null) {
-    return `${new Date(startDate).toLocaleDateString("en-US", {
+    const start = new Date(startDate).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
-    })} - ${
-      endDate
-        ? new Date(endDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-          })
-        : "present"
-    }`;
+    });
+    const end = endDate
+      ? new Date(endDate).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+        })
+      : "present";
+    return `${start} - ${end}`;
   }
 
   return (
@@ -57,7 +57,7 @@ export default async function AboutPage() {
                 key={experience.name}
               >
                 <Link href={experience.link} aria-label="Link to company site">
-                  <SanityImg image={experience.image} round={14} size="small" />
+                  <SanityImg image={experience.image} round={10} size="small" />
                 </Link>
                 <div className="flex w-full flex-col [@media(hover:none)_and_(pointer:coarse)]:select-none">
                   <h3 className="mt-[-4px] align-text-top text-lg text-text">

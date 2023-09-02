@@ -15,7 +15,7 @@ export const experiencesQuery = groq`*[_type == "experiences"]{
     link,
     startDate,
     endDate
-}`;
+} | order(startDate desc)`;
 
 /**
  * Projects
@@ -97,3 +97,14 @@ export const aboutQuery = groq`*[_type == "about"]{
 export const skillsQuery = groq`*[_type == "skills"][0]{
     icons
 }`;
+
+/**
+ * Travel Data
+ */
+
+// get all travel data
+export const travelDataQuery = groq`*[_type == "travelData"]{
+    visitedCountries,
+}`;
+// capitals,
+// airports

@@ -1,21 +1,24 @@
-import { countryList } from "@/components/map/countrylist";
-import { Station, Capital, City } from "@/types";
-import { countries, airportCodes, capitalNames } from "../traveldata";
+import { Station, Capital, City, TravelData } from "@/types";
+import { airportCodes, capitalNames } from "../traveldata";
 import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
 import { headers } from "next/headers";
+import { sanityFetch } from "s/lib/client";
+import type { SanityDocument } from "next-sanity";
+import { travelDataQuery } from "s/lib/queries";
 
 export default async function useMapData() {
+  const travelData = await sanityFetch<SanityDocument<TravelData[]>>(
+    travelDataQuery,
+    ["traveldata"]
+  );
+
   const countryCodes = [] as string[];
-  for (let i = 0; i < countries.length; i++) {
-    const country = countryList.find(
-      (country) => country.country === countries[i]
-    );
-    if (country) {
-      countryCodes.push(country.code);
-    } else {
-      console.log(countries[i]);
-    }
+  for (let i = 0; i < travelData[0].visitedCountries.length; i++) {
+    const countryCode = travelData[0].visitedCountries[i].countryname
+      .split("(")[1]
+      .replace(")", "");
+    countryCodes.push(countryCode);
   }
 
   const airports = [] as Station[];

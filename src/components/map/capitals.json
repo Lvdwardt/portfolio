@@ -1427,12 +1427,7 @@
     "lat": -77.0,
     "lon": 38.883333
   },
-  {
-    "CapitalName": "N/A",
-    "CountryCode": "AQ",
-    "lat": 0,
-    "lon": 0
-  },
+
   {
     "CapitalName": "North Nicosia",
     "CountryCode": "NULL",
@@ -1440,27 +1435,9 @@
     "lon": 33.366667
   },
   {
-    "CapitalName": "N/A",
-    "CountryCode": "HK",
-    "lat": 0,
-    "lon": 0
-  },
-  {
-    "CapitalName": "N/A",
-    "CountryCode": "HM",
-    "lat": 0,
-    "lon": 0
-  },
-  {
     "CapitalName": "Diego Garcia",
     "CountryCode": "IO",
     "lat": -7.3,
     "lon": 72.4
-  },
-  {
-    "CapitalName": "N/A",
-    "CountryCode": "MO",
-    "lat": 0,
-    "lon": 0
   }
 ]

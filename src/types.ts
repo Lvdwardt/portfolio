@@ -170,3 +170,15 @@ export type Skills = {
     };
   }[];
 };
+
+export type TravelData = {
+  visitedCountries: {
+    countryname: string;
+  }[];
+  // visitedCities: {
+  //   city: string;
+  // }[];
+  // visitedAirports: {
+  //   airport: string;
+  // }[];
+};
