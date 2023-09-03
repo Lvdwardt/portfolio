@@ -34,7 +34,6 @@ export default function MapboxContent({
   const countries = data?.countries;
   const airports = data?.airports;
   const capitals = data?.capitals;
-
   const showTrip = data?.showTrip;
 
   const {
@@ -90,10 +89,6 @@ export default function MapboxContent({
               countries={countries}
               resolvedTheme={resolvedTheme}
             />
-            <VisitedCities
-              cities={data?.cities}
-              resolvedTheme={resolvedTheme}
-            />
             {/* show where I live */}
             <HomeMarker exactZoom={exactZoom} />
             {/* show all airports I've visited */}
@@ -109,7 +104,7 @@ export default function MapboxContent({
             {capitals &&
               capitals.map((capital) => (
                 <CapitalMarker
-                  key={capital.CountryCode}
+                  key={capital.countryCode}
                   exactZoom={exactZoom}
                   capital={capital}
                 />

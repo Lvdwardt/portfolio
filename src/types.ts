@@ -53,15 +53,13 @@ export type Projects = {
 
 export type Station = {
   code: string;
-  name: string;
   coordinates: number[];
   type: string;
 };
 export type Capital = {
-  CapitalName: string;
-  CountryCode: string;
-  lat: number;
-  lon: number;
+  name: string;
+  countryCode: string;
+  coordinates: number[];
 };
 
 export type CityFeature = {
@@ -120,7 +118,6 @@ export type MapData = {
   airports: Station[];
   countries: string[];
   capitals: Capital[];
-  cities: City[];
   showTrip: boolean;
 };
 
@@ -174,6 +171,12 @@ export type Skills = {
 export type TravelData = {
   visitedCountries: {
     countryname: string;
+  }[];
+  visitedAirports: {
+    airport: string;
+  }[];
+  visitedCapitals: {
+    capital: string;
   }[];
   // visitedCities: {
   //   city: string;

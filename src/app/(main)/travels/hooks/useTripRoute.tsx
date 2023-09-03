@@ -1,31 +1,15 @@
-import airportList from "@/components/map/airports.json";
-import trainstationsList from "@/components/map/trainstations.json";
 import memo from "lodash.memoize";
-import { Station, Trip } from "@/types";
+import { MapData, Station, Trip } from "@/types";
 import * as turf from "@turf/helpers";
 
-export default function useTripRoute(trip: Trip | null) {
-  // map with all stations
-  const stationsMap = new Map<string, Station>();
+export default function useTripRoute(trip: Trip | null, mapData: MapData) {
+  // map with all airports
+  const airports = new Map<string, Station>();
 
-  for (const station of airportList) {
-    // extend type to include type
+  for (const station of mapData.airports) {
     const extendedStation = station as Station;
-    extendedStation.type = "airport";
-    stationsMap.set(station.code, extendedStation);
+    airports.set(station.code, extendedStation);
   }
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore list is too large
-  for (const station of trainstationsList) {
-    const extendedStation = station as Station;
-    extendedStation.type = "trainstation";
-    stationsMap.set(station.code, extendedStation);
-  }
-
-  // for (const station of busstopsList) {
-  //   stationsMap.set(station.code, station);
-  // }
 
   // Use Set to store unique stations
   const stationsSet = new Set<Station>();
@@ -36,17 +20,17 @@ export default function useTripRoute(trip: Trip | null) {
   }
 
   for (const leg of trip.legs) {
-    if (leg.type !== "train" && leg.type !== "plane") {
+    if (leg.type !== "plane") {
       continue;
     }
-    const fromStation = stationsMap.get(leg.from.code);
+    const fromStation = airports.get(leg.from.code);
     if (fromStation) {
       stationsSet.add(fromStation);
     } else {
       console.log("fromStation not found", leg.from.code);
     }
 
-    const toStation = stationsMap.get(leg.to.code);
+    const toStation = airports.get(leg.to.code);
     if (toStation) {
       stationsSet.add(toStation);
     } else {
@@ -54,21 +38,17 @@ export default function useTripRoute(trip: Trip | null) {
     }
   }
 
-  // Get the list of all stations that have been visited
-  const visitedStations = Array.from(stationsSet);
-
   const findStation = memo((code: string) => {
-    return visitedStations.find((station) => station.code === code);
+    return mapData.airports.find((station) => station.code === code);
   });
 
   // create a dashed line for each leg of the trip
   const lines = [] as turf.Feature<turf.LineString>[];
   for (let i = 0; i < trip.legs.length; i++) {
-    console.log(trip.legs[i].type);
     let from;
     let to;
     let route;
-    if (trip.legs[i].type === "train" || trip.legs[i].type === "plane") {
+    if (trip.legs[i].type === "plane") {
       from = findStation(trip.legs[i].from.code);
       to = findStation(trip.legs[i].to.code);
       if (from) {
@@ -78,10 +58,24 @@ export default function useTripRoute(trip: Trip | null) {
         trip.legs[i].to.coordinates = to.coordinates;
       }
     }
+    if (trip.legs[i].type === "train") {
+      from = trip.legs[i].from;
+      to = trip.legs[i].to;
+      // add to the stations set
+      stationsSet.add({
+        code: from.code,
+        coordinates: from.coordinates,
+        type: "train",
+      });
+      stationsSet.add({
+        code: to.code,
+        coordinates: to.coordinates,
+        type: "train",
+      });
+    }
 
     // if the leg is a car, add the route to the map
     if (trip.legs[i].type === "car") {
-      console.log("car");
       route = trip.legs[i].route?.coordinates ?? [];
     }
 

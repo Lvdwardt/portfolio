@@ -48,7 +48,7 @@
     "rehype-pretty-code": "^0.10.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
-    "sanity": "^3.15.1",
+    "sanity": "^3.16.2",
     "sanity-lighthouse-plugin": "^1.0.0",
     "sanity-plugin-icon-picker": "^3.2.2",
     "sanity-plugin-iframe-pane": "^2.5.5",

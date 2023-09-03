@@ -1,5 +1,4 @@
 "use client";
-// import About from "@/components/about";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { Suspense, startTransition, useState } from "react";
 import "./travel.css";
@@ -7,7 +6,7 @@ import MapboxContent from "@/components/map/map";
 import { MapData } from "@/types";
 import useTripRoute from "./hooks/useTripRoute";
 import { Trip } from "@/types";
-import { trips } from "./traveldata";
+import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
 import { AiFillCaretDown } from "@react-icons/all-files/ai/AiFillCaretDown";
 
@@ -27,7 +26,7 @@ export default function PageContent({
   const [showTrip, setShowTrip] = useState(false);
   const [currentTrip, setCurrentTrip] = useState<Trip | null>(null);
 
-  const { trip, stations, tripLine } = useTripRoute(currentTrip);
+  const { trip, stations, tripLine } = useTripRoute(currentTrip, mapData);
 
   mapData.showTrip = showTrip;
 

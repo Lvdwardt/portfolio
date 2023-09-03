@@ -103,8 +103,8 @@ export const skillsQuery = groq`*[_type == "skills"][0]{
  */
 
 // get all travel data
-export const travelDataQuery = groq`*[_type == "travelData"]{
+export const travelDataQuery = groq`*[_type == "travelData"][0]{
     visitedCountries,
+    visitedAirports,
+    visitedCapitals,
 }`;
-// capitals,
-// airports

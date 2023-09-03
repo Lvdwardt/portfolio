@@ -108,8 +108,8 @@ interface CMarker extends MarkerProps {
 }
 
 export const CapitalMarker = ({ exactZoom, capital }: CMarker) => {
-  const lat = Number(capital.lat);
-  const lon = Number(capital.lon);
+  const lat = capital.coordinates[0];
+  const lon = capital.coordinates[1];
   return (
     <Marker draggable={false} longitude={lon} latitude={lat}>
       <FaCity
