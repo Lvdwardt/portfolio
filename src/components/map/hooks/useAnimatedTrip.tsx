@@ -3,7 +3,7 @@ import { LngLatBounds, LngLat } from "mapbox-gl";
 import { RefObject, useState, startTransition, useEffect, useRef } from "react";
 import { MapRef } from "react-map-gl";
 import { TripLine } from "@/types";
-import * as turf from "@turf/turf";
+import { bbox, lineDistance } from "@turf/turf";
 
 export default function useAnimatedTrip(
   mapRef: RefObject<MapRef>,
@@ -18,10 +18,10 @@ export default function useAnimatedTrip(
 
   useEffect(() => {
     // center the trip on the map
-    const bbox = turf.bbox(line);
+    const box = bbox(line);
     const bounds = new LngLatBounds(
-      new LngLat(bbox[0] - 15, bbox[1]),
-      new LngLat(bbox[2] + 15, bbox[3])
+      new LngLat(box[0] - 15, box[1]),
+      new LngLat(box[2] + 15, box[3])
     );
 
     startTransition(() => {
@@ -30,7 +30,7 @@ export default function useAnimatedTrip(
       });
     });
     // calculate speed based on length of the trip
-    const length = turf.lineDistance(line, { units: "kilometers" });
+    const length = lineDistance(line, { units: "kilometers" });
     const duration = length * 1000 * 0.0008;
     setDuration(duration);
 

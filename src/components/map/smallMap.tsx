@@ -5,6 +5,7 @@ import Controls from "./controls";
 import { LocationMarker } from "./markers";
 import useMap from "./useMap";
 import { useState } from "react";
+import "@/styles/mapbox-gl.css";
 
 export default function MapboxContent({
   coords,

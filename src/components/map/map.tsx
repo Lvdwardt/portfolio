@@ -11,10 +11,10 @@ import {
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
 import { MapData, Station, Trip, TripLine } from "@/types";
-import VisitedCities from "./visitedCities";
 import TripData from "./trip";
 import { startTransition } from "react";
 import type { Projection } from "react-map-gl";
+import "@/styles/mapbox-gl.css";
 
 export default function MapboxContent({
   big,

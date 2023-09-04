@@ -1,6 +1,6 @@
 import memo from "lodash.memoize";
 import { MapData, Station, Trip } from "@/types";
-import * as turf from "@turf/helpers";
+import { type LineString, type Feature, lineString } from "@turf/helpers";
 
 export default function useTripRoute(trip: Trip | null, mapData: MapData) {
   // map with all airports
@@ -43,7 +43,7 @@ export default function useTripRoute(trip: Trip | null, mapData: MapData) {
   });
 
   // create a dashed line for each leg of the trip
-  const lines = [] as turf.Feature<turf.LineString>[];
+  const lines = [] as Feature<LineString>[];
   for (let i = 0; i < trip.legs.length; i++) {
     let from;
     let to;
@@ -118,7 +118,7 @@ export default function useTripRoute(trip: Trip | null, mapData: MapData) {
   }
 
   // make one line for the whole trip. connect all gaps
-  const tripLine = turf.lineString(
+  const tripLine = lineString(
     lines.reduce((acc, line) => {
       return [...acc, ...line.geometry.coordinates];
     }, [] as number[][])

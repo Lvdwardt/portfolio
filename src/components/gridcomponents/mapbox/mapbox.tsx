@@ -3,6 +3,7 @@ import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { locationQuery } from "s/lib/queries";
 import type { CurrentLocation } from "@/types";
+import "@/styles/mapbox-gl.css";
 
 async function getData() {
   const { currentLocation } = await sanityFetch<
