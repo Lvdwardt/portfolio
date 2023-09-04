@@ -11,15 +11,9 @@ import useCenter from "./hooks/useCenter";
 import { AiFillCaretDown } from "@react-icons/all-files/ai/AiFillCaretDown";
 
 export default function PageContent({
-  stats,
   mapData,
   about,
 }: {
-  stats: {
-    countries: number;
-    capitals: number;
-    airports: number;
-  };
   mapData: MapData;
   about: JSX.Element;
 }) {
@@ -38,6 +32,8 @@ export default function PageContent({
     options.top = 1000000;
     window.scrollTo(options);
   };
+
+  const stats = mapData.travelStats;
 
   return (
     <AnimatedLayout>
@@ -91,7 +87,7 @@ export default function PageContent({
           </div>
         </div>
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-[calc(100vh_-_130px)]  xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
-          <div className="order-4 row-span-2 rounded-[2rem] bg-card p-8 lg:col-span-2">
+          <div className="order-4 row-span-3 rounded-[2rem] bg-card p-8 sm:col-span-2 sm:row-span-2">
             {/* toggle for trip */}
             <button
               className="flex= items-center justify-center"

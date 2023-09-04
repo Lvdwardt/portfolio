@@ -4,11 +4,6 @@ import { MdLocationPin } from "@react-icons/all-files/md/MdLocationPin";
 
 export const singletons = [
   {
-    title: "Travel Stats",
-    id: "travelStats",
-    icon: FaGlobeEurope,
-  },
-  {
     title: "Location",
     id: "location",
     icon: MdLocationPin,

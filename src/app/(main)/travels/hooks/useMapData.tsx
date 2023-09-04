@@ -60,11 +60,18 @@ export default async function useMapData() {
   //   }
   // ).then((res) => res.json());
 
+  const travelStats = {
+    countries: travelData.visitedCountries.length,
+    airports: travelData.visitedAirports.length,
+    capitals: travelData.visitedCapitals.length,
+  };
+
   const mapData = {
     countries: countries,
     airports: airports,
     capitals: capitals,
     showTrip: false,
+    travelStats: travelStats,
   };
 
   return mapData;

@@ -9,7 +9,7 @@ export function Whatsapp() {
   return (
     <Link
       className="relative flex items-center justify-center overflow-hidden rounded-[2rem] bg-primary sm:order-9"
-      href="https://api.whatsapp.com/send?phone=31630702130"
+      href="https://wa.me/31630702130"
       target={"_blank"}
       rel="noreferrer"
       title="Whatsapp"

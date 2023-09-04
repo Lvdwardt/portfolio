@@ -68,17 +68,6 @@ export const locationQuery = groq`*[_type == "location"][0]{
 }`;
 
 /**
- * Travel Stats
- */
-
-// get all travel stats
-export const travelStatsQuery = groq`*[_type == "travelStats"][0]{
-    countries,
-    capitals,
-    airports
-}`;
-
-/**
  * About
  */
 

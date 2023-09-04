@@ -119,6 +119,7 @@ export type MapData = {
   countries: string[];
   capitals: Capital[];
   showTrip: boolean;
+  travelStats: TravelStats;
 };
 
 export type TripLine = Feature<LineString, GeoJsonProperties>;
