@@ -24,7 +24,7 @@ export default function FlynImg() {
             href="/projects/fly-n"
             passHref
             title="go to the fly-n project page"
-            className="flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-background p-2 text-text transition-all duration-500 group-hover:w-[90px] hover:w-[90px] "
+            className="flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-background p-2 text-text transition-all duration-500 hover:w-[90px] group-hover:w-[90px] "
           >
             <div className="flex items-center gap-2">
               <h1 className="translate-x-[-10px] whitespace-nowrap opacity-0 transition-all delay-200 duration-300 group-hover:translate-x-0 group-hover:opacity-100">

@@ -11,9 +11,6 @@ const { withContentlayer } = require("next-contentlayer");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  experimental: {
-    appDir: true,
-  },
   swcMinify: false,
   webpack(config) {
     config.module.rules.push({

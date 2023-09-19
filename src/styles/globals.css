@@ -128,5 +128,4 @@ html {
 
 .subheading-anchor:hover::before {
   opacity: 1; /* Show the "#" symbol on hover */
-  
 }

@@ -21,7 +21,7 @@ export default function Janskapsalonflat() {
             href="/projects/janskapsalon"
             passHref
             title="go to the jans kapsalon project page"
-            className="flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-background p-2 text-text transition-all duration-500 group-hover:w-[162px] hover:w-[162px] "
+            className="flex h-8 w-8 items-center justify-end gap-4 overflow-hidden rounded-full bg-background p-2 text-text transition-all duration-500 hover:w-[162px] group-hover:w-[162px] "
           >
             <div className="flex items-center gap-2">
               <h1 className="translate-x-[-10px] opacity-0 transition-all delay-200 duration-300 group-hover:translate-x-0 group-hover:opacity-100">

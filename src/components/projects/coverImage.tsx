@@ -29,7 +29,7 @@ export default function CoverImage({ project }: Props) {
       <SanityImg image={project.coverImage} className="relative z-10" />
 
       {/* arrow */}
-      <div className="absolute bottom-3 left-3 z-20 m-2 rounded-full border-4 border-transparent transition-all duration-300 group-hover:border-trans hover:!border-lessTrans">
+      <div className="absolute bottom-3 left-3 z-20 m-2 rounded-full border-4 border-transparent transition-all duration-300 hover:!border-lessTrans group-hover:border-trans">
         <div className="box-border rounded-full bg-background px-3 py-1 text-text">
           <Link
             href={`/projects/${project.slug.current}`}
