@@ -6,9 +6,10 @@ import { SanityImg } from "../imageComponent";
 
 type Props = {
   project: Projects;
+  color?: string;
 };
 
-export default function CoverImage({ project }: Props) {
+export default function CoverImage({ project, color }: Props) {
   function getRandomColor(project: Projects) {
     return project.slug.current.length % 2 === 0
       ? "var(--primary)"
@@ -21,7 +22,7 @@ export default function CoverImage({ project }: Props) {
       <div
         className="absolute z-0 h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full sm:translate-y-[-12.5rem] sm:rounded-t-none"
         style={{
-          backgroundColor: getRandomColor(project),
+          backgroundColor: color ? `var(--${color})` : getRandomColor(project),
         }}
       />
 

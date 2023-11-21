@@ -7,11 +7,7 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schema";
 import { deskStructure } from "s/structures/deskstructure";
 import { singletonTypes } from "s/singletons";
-import Iframe, {
-  defineUrlResolver,
-  IframeOptions,
-} from "sanity-plugin-iframe-pane";
-import { previewUrl } from "sanity-plugin-iframe-pane/preview-url";
+import Iframe from "sanity-plugin-iframe-pane";
 import Projects from "s/schemas/projects";
 import { previewSecretId } from "s/lib/api";
 import Skills from "s/schemas/skills";
@@ -24,27 +20,27 @@ if (!GOOGLE_MAPS_KEY) {
   );
 }
 
-export const PREVIEWABLE_DOCUMENT_TYPES = [
-  Projects.name,
-  Skills.name,
-] satisfies string[];
+// export const PREVIEWABLE_DOCUMENT_TYPES = [
+//   Projects.name,
+//   Skills.name,
+// ] satisfies string[];
 
-export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
-  Projects.name,
-] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES;
+// export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
+//   Projects.name,
+// ] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES;
 
 // Used to generate URLs for drafts and live previews
-export const PREVIEW_BASE_URL = "/api/draft";
+// export const PREVIEW_BASE_URL = "/api/draft";
 
-export const urlResolver = defineUrlResolver({
-  base: PREVIEW_BASE_URL,
-  requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
-});
+// export const urlResolver = defineUrlResolver({
+//   base: PREVIEW_BASE_URL,
+//   requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
+// });
 
-export const iframeOptions = {
-  url: urlResolver,
-  urlSecretId: previewSecretId,
-} satisfies IframeOptions;
+// export const iframeOptions = {
+//   url: urlResolver,
+//   urlSecretId: previewSecretId,
+// } satisfies IframeOptions;
 
 export default defineConfig({
   basePath: "/studio",
@@ -60,24 +56,25 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: deskStructure,
-      defaultDocumentNode: (S, { schemaType }) => {
-        if ((PREVIEWABLE_DOCUMENT_TYPES as string[]).includes(schemaType)) {
-          return S.document().views([
-            // Default form view
-            S.view.form(),
-            // Preview
-            S.view.component(Iframe).options(iframeOptions).title("Preview"),
-          ]);
-        }
-        return null;
-      },
+      // defaultDocumentNode: (S, { schemaType }) => {
+      //   // if ((PREVIEWABLE_DOCUMENT_TYPES as string[]).includes(schemaType)) {
+      //   //   return S.document().views([
+      //   //     // Default form view
+      //   //     S.view.form(),
+      //   //     // Preview
+      //   //     S.view.component(Iframe).options(iframeOptions).title("Preview"),
+      //   //   ]);
+      //   // }
+      //   // return null;
+      //   S.document().views([S.view.form()]);
+      // },
     }),
-    previewUrl({
-      base: PREVIEW_BASE_URL,
-      requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
-      urlSecretId: previewSecretId,
-      matchTypes: PREVIEWABLE_DOCUMENT_TYPES,
-    }),
+    // previewUrl({
+    //   base: PREVIEW_BASE_URL,
+    //   requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
+    //   urlSecretId: previewSecretId,
+    //   matchTypes: PREVIEWABLE_DOCUMENT_TYPES,
+    // }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
