@@ -3,7 +3,7 @@ import { client, token } from "s/lib/client";
 import { resolveHref } from "s/lib/links";
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
-import { isValidSecret } from "sanity-plugin-iframe-pane/is-valid-secret";
+// import { isValidSecret } from "sanity-plugin-iframe-pane/is-valid-secret";
 
 // export const runtime = "edge";
 
@@ -23,14 +23,14 @@ export async function GET(request: Request) {
   }
 
   const authenticatedClient = client.withConfig({ token });
-  const validSecret = await isValidSecret(
-    authenticatedClient,
-    previewSecretId,
-    secret
-  );
-  if (!validSecret) {
-    return new Response("Invalid secret", { status: 401 });
-  }
+  // const validSecret = await isValidSecret(
+  //   authenticatedClient,
+  //   previewSecretId,
+  //   secret
+  // );
+  // if (!validSecret) {
+  //   return new Response("Invalid secret", { status: 401 });
+  // }
 
   const href = resolveHref(documentType!, slug!);
   if (!href) {
