@@ -37,7 +37,7 @@ export default function PageContent({
 
   return (
     <AnimatedLayout>
-      <main className="relative flex flex-col items-center justify-center rounded-xl  p-4 pt-2 xl:col-span-2 xl:row-span-2">
+      <main className="animate-moveUp relative flex flex-col items-center justify-center rounded-xl p-4 pt-2 transition-all duration-300 ease-in xl:col-span-2 xl:row-span-2">
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-screen xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
           <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
             {about}

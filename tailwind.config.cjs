@@ -20,6 +20,7 @@ module.exports = {
         trans: "var(--trans)",
         lessTrans: "var(--lessTrans)",
         logo: "var(--logo)",
+        map: "var(--map)",
       },
       gridTemplateRows: {
         auto: "repeat(auto, minmax(0, 1fr))",
@@ -89,6 +90,7 @@ module.exports = {
         fadeIn30: "fadeIn30 2s ease-in forwards",
         fadeIn15: "fadeIn15 2s ease-in forwards",
         fadeIn50: "fadeIn50 2s ease-in forwards",
+        moveUp: "moveUp 0.75s ease-in-out forwards",
       },
       keyframes: {
         loader: {
@@ -104,6 +106,10 @@ module.exports = {
           "50%": { transform: "scale(1) rotate(0deg)" },
           "75%": { transform: "scale(1.1) rotate(-10deg)" },
           "100%": { transform: "scale(1) rotate(0deg)" },
+        },
+        moveUp: {
+          "0%": { transform: "translateY(5%)" },
+          "100%": { transform: "translateY(0%)" },
         },
         fade: {
           "0%": { opacity: 1 },

@@ -8,6 +8,8 @@ import { useTheme } from "next-themes";
 import type { SanityDocument } from "next-sanity";
 import ToggleTheme from "@/hooks/toggleTheme";
 import { SanityImg } from "../imageComponent";
+import { motion } from "framer-motion";
+import { generateAnimationConfig, scaleUp, translateUp20 } from "../animations";
 
 export default function AboutComponent({
   allAboutData,
@@ -28,9 +30,21 @@ export default function AboutComponent({
 
   if (!about) return null;
 
+  const animateMemoji = generateAnimationConfig(
+    {
+      scale: [0.2, 1],
+      translateX: [-20, -20],
+      translateY: [-25, -25],
+      rotate: [20, 0],
+      originX: [0.5, 0.5],
+      originY: [0.5, 0.5],
+    },
+    { duration: 0.5, delay: 0.1 }
+  );
+
   return (
     <div className="w-full flex-col items-center gap-2 sm:items-start">
-      <div className="relative h-[120px] w-[175px] translate-x-[-20px] translate-y-[-25px]">
+      <motion.div {...animateMemoji} className="relative h-[120px] w-[175px]">
         <SanityImg
           image={about.memojis.darkMemoji}
           size="medium"
@@ -48,7 +62,7 @@ export default function AboutComponent({
             ToggleTheme({ resolvedTheme, setTheme });
           }}
         />
-      </div>
+      </motion.div>
 
       <div className="">
         {/* mobile */}

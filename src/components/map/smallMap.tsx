@@ -25,14 +25,12 @@ export default function MapboxContent({
     name: "globe",
   };
 
-  const [visible, setVisible] = useState(false);
   return (
     <div className="relative h-full w-full">
       <Map
         onZoom={() => setUncontrolledZoom()}
-        style={{ opacity: visible ? "100" : "0" }}
+        style={{ opacity: "100%" }}
         ref={mapRef}
-        onLoad={() => setVisible(true)}
         maxZoom={coords ? 11 : 20}
         minZoom={0.0000001}
         mapStyle={style}

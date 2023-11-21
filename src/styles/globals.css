@@ -24,6 +24,7 @@
   --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
   --lessTrans: hsla(305, 44%, 66%, 0.5);
+  --map: #272626;
 }
 
 [data-theme="dark"] {
@@ -37,6 +38,7 @@
   --text: #ffffff;
   --trans: hsla(305, 44%, 66%, 0.3);
   --lessTrans: hsla(305, 44%, 66%, 0.5);
+  --map: #272626;
 }
 
 [data-theme="light"] {
@@ -50,6 +52,7 @@
   --text: #111111;
   --trans: hsla(190, 82%, 72%, 0.5);
   --lessTrans: hsla(190, 82%, 72%, 0.8);
+  --map: #F6F6F4;
 }
 
 /* [data-theme="light"] {
