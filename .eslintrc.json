@@ -9,8 +9,7 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:@next/next/recommended",
-    "next/core-web-vitals"
+    "plugin:@next/next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -32,7 +31,8 @@
     "react/react-in-jsx-scope": "off", // only if using React version 17+
     "react-hooks/rules-of-hooks": "error", // if using hooks
     "react-hooks/exhaustive-deps": "off", // if using hooks
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {
