@@ -28,9 +28,7 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
   return (
     <button
       onMouseEnter={() => {
-        console.log("enter");
         if (!clicked) return;
-        console.log("play");
         audioRef?.current?.play();
       }}
       onClick={() => {
@@ -42,7 +40,10 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         if (!clicked) return;
         audioRef?.current?.pause();
       }}
-      className={previewUrl ? "cursor-pointer" : "cursor-default"}
+      className={clsx(
+        "h-min w-min",
+        previewUrl ? "cursor-pointer" : "cursor-default"
+      )}
     >
       <SiSpotify
         className={clsx(
