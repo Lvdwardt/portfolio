@@ -28,7 +28,7 @@ export default function Navbar({ children }: { children?: React.ReactNode }) {
         rel="noreffer noreferrer"
         className="absolute right-4 top-[3.8rem] text-sm text-gray-400 underline sm:right-14 sm:top-[7.25rem] xl:right-14 xl:top-[3.6rem]"
       >
-        contact
+        mail
       </a>
     </div>
   );

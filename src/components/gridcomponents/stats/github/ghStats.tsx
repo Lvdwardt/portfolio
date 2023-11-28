@@ -2,6 +2,7 @@ import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { FiGitCommit } from "@react-icons/all-files/fi/FiGitCommit";
 import { type ElementCompact, xml2js } from "xml-js";
 import Link from "next/link";
+import Counter from "./counter";
 
 export default async function GithubStats() {
   const res = await fetch(
@@ -35,6 +36,8 @@ export default async function GithubStats() {
     },
   };
 
+  const sanitizedCommits = commits.replace(/\s/g, "").replace(/,/g, "");
+
   return (
     <div className="flex h-full w-full flex-col p-8">
       <Link
@@ -49,7 +52,9 @@ export default async function GithubStats() {
         <div>
           <div className="flex h-6 items-center gap-2">
             <FiGitCommit className="text-4xl" />
-            <span className="text-2xl font-bold">{data.commits}</span>
+            <span className="text-2xl font-bold">
+              <Counter value={Number(sanitizedCommits)} duration={300} />
+            </span>
           </div>
           <span className="font-silka text-sm text-gray-400">
             commits made so far

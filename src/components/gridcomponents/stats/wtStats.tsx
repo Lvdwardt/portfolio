@@ -130,8 +130,12 @@ export default async function WakatimeStats() {
         <span className="text-2xl font-bold">{workingOn}</span>
         <br />
         <span className="font-silka text-sm text-gray-400">
-          last update: {minutesDifference} minute
-          {minutesDifference === 1 ? "" : "s"} ago
+          last update:{" "}
+          {minutesDifference === 0
+            ? " just now"
+            : `${minutesDifference} minute${
+                minutesDifference === 1 ? "" : "s"
+              } ago`}
         </span>
         <br />
       </div>
@@ -155,35 +159,35 @@ export default async function WakatimeStats() {
 
   function returnRandom() {
     const possible = [];
-    if (hours > 4) {
-      possible.push(Hours);
-    }
-    if (dailyAverage !== "") {
-      possible.push(DailyAverage);
-    }
-    if (todaySeconds > 14400) {
-      possible.push(Today);
-    }
+    // if (hours > 4) {
+    //   possible.push(Hours);
+    // }
+    // if (dailyAverage !== "") {
+    //   possible.push(DailyAverage);
+    // }
+    // if (todaySeconds > 14400) {
+    //   possible.push(Today);
+    // }
     if (minutesDifference < 10 && workingOn !== "Unknown") {
       possible.push(WorkingOn);
     }
-    if (possible.length === 0) {
-      possible.push(OnHoliday);
-    }
+    // if (possible.length === 0) {
+    //   possible.push(OnHoliday);
+    // }
 
     const random = Math.floor(Math.random() * possible.length);
     return possible[random]();
   }
 
   return (
-    <div className="flex h-full w-full flex-col p-8">
+    <div className="group flex h-full w-full flex-col p-8">
       <Link
         href="https://wakatime.com/@LvdWardt"
         target="_blank"
         rel="noreferrer"
         aria-label="look at my stats on wakatime"
       >
-        <SiWakatime className="text-6xl text-primary" />
+        <SiWakatime className="text-6xl text-primary animate-once group-hover:animate-rotate-y" />
       </Link>
       <div className="mt-auto flex flex-col">{returnRandom()}</div>
     </div>

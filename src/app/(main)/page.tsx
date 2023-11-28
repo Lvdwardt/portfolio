@@ -7,7 +7,7 @@ import {
 } from "@/components/gridcomponents/socials";
 import Skills from "@/components/gridcomponents/skills";
 import Footer from "@/components/footer";
-import GithubStats from "@/components/gridcomponents/stats/ghStats";
+import GithubStats from "@/components/gridcomponents/stats/github/ghStats";
 import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
@@ -34,7 +34,7 @@ export default async function Home() {
 
   return (
     <AnimatedLayout>
-      <main className="min-h-screen animate-moveUp overflow-visible transition-all duration-300 ease-in">
+      <main className="min-h-screen animate-fade-up overflow-visible transition-all duration-300 ease-in">
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
           <div className="col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 sm:col-span-2">
             <About />
@@ -44,7 +44,7 @@ export default async function Home() {
               <Mapbox />
             </Suspense>
           </div>
-          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-4  xl:order-4">
+          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-4 xl:order-4">
             <Toggle />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-8 xl:order-5">
@@ -63,7 +63,7 @@ export default async function Home() {
           <div className="row-span-2 overflow-hidden rounded-[2rem] bg-card sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
             <CoverImage project={projects[0]} />
           </div>
-          <div className="overflow-hidden rounded-[2rem] bg-secondary sm:order-9">
+          <div className=" overflow-hidden rounded-[2rem] sm:order-9 ">
             <Github />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 xl:order-10">

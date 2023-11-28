@@ -63,6 +63,7 @@ export default async function SpotifyData() {
         artistUrl:
           nowPlayingData?.item?.artists[0]?.external_urls?.spotify || "",
         url: nowPlayingData?.item?.external_urls?.spotify || "",
+        previewUrl: nowPlayingData?.item?.preview_url || "",
       },
     };
   }

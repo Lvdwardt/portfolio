@@ -90,7 +90,6 @@ module.exports = {
         fadeIn30: "fadeIn30 2s ease-in forwards",
         fadeIn15: "fadeIn15 2s ease-in forwards",
         fadeIn50: "fadeIn50 2s ease-in forwards",
-        moveUp: "moveUp 0.75s ease-in-out forwards",
       },
       keyframes: {
         loader: {
@@ -106,10 +105,6 @@ module.exports = {
           "50%": { transform: "scale(1) rotate(0deg)" },
           "75%": { transform: "scale(1.1) rotate(-10deg)" },
           "100%": { transform: "scale(1) rotate(0deg)" },
-        },
-        moveUp: {
-          "0%": { transform: "translateY(5%)" },
-          "100%": { transform: "translateY(0%)" },
         },
         fade: {
           "0%": { opacity: 1 },
@@ -170,4 +165,7 @@ module.exports = {
   safelist: [
     "w-[90px] hover:w-[90px] group-hover:[w-[90px] translate-y-[10px] sm:translate-y-0 w-[162px] hover:w-[162px] group-hover:w-[162px] translate-y-[10px] sm:translate-y-[-96px]",
   ],
+  plugins: [
+    require("tailwindcss-animated")
+  ]
 };

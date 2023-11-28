@@ -2,49 +2,55 @@
 import type React from "react";
 import { useTheme } from "next-themes";
 import ToggleTheme from "../../hooks/toggleTheme";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiMoon } from "@react-icons/all-files/fi/FiMoon";
+import { FiSun } from "@react-icons/all-files/fi/FiSun";
+import useSound from "use-sound";
 
 export default function Toggle() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [play] = useSound("/sounds/click.mp3", { volume: 0.2 });
+
+  /**
+   * credits to Melanie Seltzer for this toggle animation!
+   * https://github.com/melanieseltzer/framer-motion-playground/
+   */
+  const variants = {
+    initial: { opacity: 0, scale: 0.5, x: 0, rotate: -90 },
+    animate: { opacity: 1, scale: 1, x: 0, rotate: 0 },
+    exit: { opacity: 0, scale: 0.5, x: 0, rotate: 90 },
+  };
+
+  const ariaLabel =
+    resolvedTheme === "light" ? "Activate dark mode" : "Activate light mode";
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center">
-      <div className="absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-primary" />
-      <span
-        onClick={() => ToggleTheme({ setTheme, resolvedTheme })}
-        className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background text-text shadow-lg transition-all duration-300 ease-in"
-      >
-        {resolvedTheme === "light" ? (
-          <svg
-            className="h-10 w-10"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    <div className="relative flex h-full w-full items-center justify-center text-3xl text-text">
+      <div className="absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-primary " />
+      <AnimatePresence initial={false}>
+        <button
+          aria-label={ariaLabel}
+          onClick={() => {
+            play();
+            ToggleTheme({ setTheme, resolvedTheme });
+          }}
+          className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background text-text shadow-lg transition-colors duration-100 ease-in-out"
+        >
+          <motion.div
+            key={resolvedTheme}
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-            />
-          </svg>
-        ) : (
-          <svg
-            className="h-10 w-10"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-            />
-          </svg>
-        )}
-      </span>
+            {resolvedTheme === "light" ? (
+              <FiSun suppressHydrationWarning />
+            ) : (
+              <FiMoon suppressHydrationWarning />
+            )}
+          </motion.div>
+        </button>
+      </AnimatePresence>
     </div>
   );
 }
