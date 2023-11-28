@@ -1,38 +1,46 @@
 "use client";
 import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { Ref, RefObject, useEffect, useRef, useState } from "react";
 
 type PlayMusicProps = { previewUrl?: string; nowPlaying?: boolean };
 
 export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
-  // const audio = new Audio(`${previewUrl}.mp3` || "");
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [audioRef, setAudioRef] = useState<RefObject<HTMLAudioElement> | null>(
+    null
+  );
 
   useEffect(() => {
     if (!previewUrl) return;
     setAudio(new Audio(`${previewUrl}.mp3`));
-  }, [previewUrl]);
+  }, []);
+
+  useEffect(() => {
+    if (!audio || audioRef) return;
+    setAudioRef({ current: audio });
+  }, [audio, audioRef]);
 
   audio && (audio.loop = true);
-  const audioRef = useRef(audio);
 
   const [clicked, setClicked] = useState(false);
 
   return (
     <button
       onMouseEnter={() => {
-        if (!clicked || !audioRef.current) return;
-        audioRef.current.play();
+        console.log("enter");
+        if (!clicked) return;
+        console.log("play");
+        audioRef?.current?.play();
       }}
       onClick={() => {
-        if (clicked || !audioRef.current) return;
-        audioRef.current.play();
+        if (clicked) return;
+        audioRef?.current?.play();
         setClicked(true);
       }}
       onMouseLeave={() => {
-        if (!clicked || !audioRef.current) return;
-        audioRef.current.pause();
+        if (!clicked) return;
+        audioRef?.current?.pause();
       }}
       className={previewUrl ? "cursor-pointer" : "cursor-default"}
     >
