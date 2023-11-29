@@ -159,23 +159,22 @@ export default async function WakatimeStats() {
 
   function returnRandom() {
     const possible = [];
-    // if (hours > 4) {
-    //   possible.push(Hours);
-    // }
-    // if (dailyAverage !== "") {
-    //   possible.push(DailyAverage);
-    // }
-    // if (todaySeconds > 14400) {
-    //   possible.push(Today);
-    // }
+    if (hours > 4) {
+      possible.push(Hours);
+    }
+    if (dailyAverage !== "") {
+      possible.push(DailyAverage);
+    }
+    if (todaySeconds > 14400) {
+      possible.push(Today);
+    }
     if (minutesDifference < 10 && workingOn !== "Unknown") {
       possible.push(WorkingOn);
     }
-    // if (possible.length === 0) {
-    //   possible.push(OnHoliday);
-    // }
-
     const random = Math.floor(Math.random() * possible.length);
+    if (possible.length === 0) {
+      return <OnHoliday />;
+    }
     return possible[random]();
   }
 
@@ -187,7 +186,7 @@ export default async function WakatimeStats() {
         rel="noreferrer"
         aria-label="look at my stats on wakatime"
       >
-        <SiWakatime className="text-6xl text-primary animate-once group-hover:animate-rotate-y" />
+        <SiWakatime className="text-6xl text-primary  animate-once group-hover:animate-rotate-x" />
       </Link>
       <div className="mt-auto flex flex-col">{returnRandom()}</div>
     </div>

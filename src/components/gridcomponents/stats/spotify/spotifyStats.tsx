@@ -99,7 +99,7 @@ export default async function SpotifyStats() {
     : randomSong.previewUrl;
 
   return (
-    <div className="flex h-full w-full flex-col p-8">
+    <div className="group flex h-full w-full flex-col p-8">
       <PlayMusic previewUrl={previewUrl} nowPlaying={props.nowPlaying} />
       <div className="mt-auto flex flex-col">
         {props.nowPlaying ? <NowPlaying /> : <LastPlayed />}

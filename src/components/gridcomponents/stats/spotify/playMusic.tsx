@@ -1,7 +1,7 @@
 "use client";
 import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import clsx from "clsx";
-import { Ref, RefObject, useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 type PlayMusicProps = { previewUrl?: string; nowPlaying?: boolean };
 
@@ -32,8 +32,12 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         audioRef?.current?.play();
       }}
       onClick={() => {
+        if (audioRef?.current?.paused) {
+          audioRef?.current?.play();
+        } else {
+          audioRef?.current?.pause();
+        }
         if (clicked) return;
-        audioRef?.current?.play();
         setClicked(true);
       }}
       onMouseLeave={() => {
@@ -41,8 +45,9 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         audioRef?.current?.pause();
       }}
       className={clsx(
-        "h-min w-min",
-        previewUrl ? "cursor-pointer" : "cursor-default"
+        "h-min w-min  animate-delay-[5000ms] animate-duration-[800ms] animate-once group-hover:scale-110",
+        previewUrl ? "cursor-pointer" : "cursor-default",
+        !clicked && "animate-pulse"
       )}
     >
       <SiSpotify

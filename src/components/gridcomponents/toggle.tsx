@@ -25,7 +25,7 @@ export default function Toggle() {
     resolvedTheme === "light" ? "Activate dark mode" : "Activate light mode";
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center text-3xl text-text">
+    <div className="group relative flex h-full w-full items-center justify-center text-3xl text-text">
       <div className="absolute z-0 h-80 w-80 translate-x-[-12rem] translate-y-32 rounded-t-full bg-primary " />
       <AnimatePresence initial={false}>
         <button
@@ -44,9 +44,15 @@ export default function Toggle() {
             exit="exit"
           >
             {resolvedTheme === "light" ? (
-              <FiSun suppressHydrationWarning />
+              <FiSun
+                suppressHydrationWarning
+                className="group-hover:scale-110"
+              />
             ) : (
-              <FiMoon suppressHydrationWarning />
+              <FiMoon
+                suppressHydrationWarning
+                className="group-hover:scale-110"
+              />
             )}
           </motion.div>
         </button>

@@ -48,12 +48,12 @@ export default function AboutComponent({
         <SanityImg
           image={about.memojis.darkMemoji}
           size="medium"
-          className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in dark:opacity-100"
+          className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in group-hover:scale-105 dark:opacity-100"
         />
         <SanityImg
           image={about.memojis.lightMemoji}
           size="medium"
-          className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in dark:opacity-0"
+          className="absolute cursor-pointer opacity-100 transition-all duration-150 ease-in group-hover:scale-105 dark:opacity-0"
         />
         <button
           aria-label="Toggle theme"

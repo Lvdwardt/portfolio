@@ -36,7 +36,7 @@ export default async function Home() {
     <AnimatedLayout>
       <main className="min-h-screen animate-fade-up overflow-visible transition-all duration-300 ease-in">
         <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px,265px,265px] xl:px-0 ">
-          <div className="col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 sm:col-span-2">
+          <div className="group col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:order-1 sm:col-span-2">
             <About />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-map sm:order-2 xl:order-2">

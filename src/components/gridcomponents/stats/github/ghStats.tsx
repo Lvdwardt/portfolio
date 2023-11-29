@@ -39,14 +39,14 @@ export default async function GithubStats() {
   const sanitizedCommits = commits.replace(/\s/g, "").replace(/,/g, "");
 
   return (
-    <div className="flex h-full w-full flex-col p-8">
+    <div className="group flex h-full w-full flex-col p-8">
       <Link
         href="https://github.com/Lvdwardt"
         target="_blank"
         rel="noreferrer"
         aria-label="visit my github page"
       >
-        <SiGithub className="text-6xl text-primary" />
+        <SiGithub className="text-6xl text-primary animate-once group-hover:animate-rotate-y" />
       </Link>
       <div className="mt-auto flex flex-col">
         <div>
