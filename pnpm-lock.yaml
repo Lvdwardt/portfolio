@@ -53,6 +53,9 @@ dependencies:
   cookies-next:
     specifier: ^4.1.0
     version: 4.1.0
+  cva:
+    specifier: 1.0.0-beta.1
+    version: 1.0.0-beta.1(typescript@5.3.2)
   framer-motion:
     specifier: 10.16.9
     version: 10.16.9(react-dom@18.2.0)(react@18.2.0)
@@ -6668,6 +6671,18 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+
+  /cva@1.0.0-beta.1(typescript@5.3.2):
+    resolution: {integrity: sha512-gznFqTgERU9q4wg7jfgqtt34+RUt9S5t0xDAAEuDwQEAXEgjdDkKXpLLNjwSxsB4Ln/sqWJEH7yhE8Ny0mxd0w==}
+    peerDependencies:
+      typescript: '>= 4.5.5 < 6'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      clsx: 2.0.0
+      typescript: 5.3.2
+    dev: false
 
   /cyclist@1.0.2:
     resolution: {integrity: sha512-0sVXIohTfLqVIW3kb/0n6IiWF3Ifj5nm2XaSrLq2DI6fKIGa2fYAZdk917rUneaeLVpYfFcyXE2ft0fe3remsA==}

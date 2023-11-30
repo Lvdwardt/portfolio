@@ -45,7 +45,7 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         audioRef?.current?.pause();
       }}
       className={clsx(
-        "h-min w-min  animate-delay-[5000ms] animate-duration-[800ms] animate-once group-hover:scale-110",
+        "h-min w-min  transition-transform duration-300 animate-delay-[5000ms] animate-duration-[800ms] animate-once group-hover:scale-110",
         previewUrl ? "cursor-pointer" : "cursor-default",
         !clicked && "animate-pulse"
       )}

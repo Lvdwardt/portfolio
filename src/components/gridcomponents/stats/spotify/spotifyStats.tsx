@@ -12,7 +12,7 @@ export default async function SpotifyStats() {
       artist: "Vonzual",
       url: "https://open.spotify.com/track/779lj5kPd4pH5TIIl8uzJ5",
       artistUrl: "https://open.spotify.com/artist/5QdEbQJ3ylBnc3gsIASAT5",
-      previewUrl: "",
+      previewUrl: "/sounds/shreksophone",
     },
     {
       song: "Stormvogel",

@@ -3,7 +3,7 @@ import Toggle from "@/components/gridcomponents/toggle";
 import {
   Github,
   Whatsapp,
-  Linkedin,
+  LinkedIn,
 } from "@/components/gridcomponents/socials";
 import Skills from "@/components/gridcomponents/skills";
 import Footer from "@/components/footer";
@@ -56,16 +56,12 @@ export default async function Home() {
           <div className="peer h-full rounded-[2rem] bg-card text-text transition-all duration-300 ease-in sm:order-10 xl:order-7">
             <GithubStats />
           </div>
-          <div className="flex items-center justify-center overflow-hidden rounded-[2rem] bg-secondary p-8 sm:order-6 xl:order-8">
-            <Linkedin />
-          </div>
-          <Whatsapp />
-          <div className="row-span-2 overflow-hidden rounded-[2rem] bg-card sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
+          <LinkedIn className="sm:order-6 xl:order-8" />
+          <Whatsapp className="sm:order-9" />
+          <div className="row-span-2 overflow-hidden rounded-[2rem] sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
             <CoverImage project={projects[0]} />
           </div>
-          <div className=" overflow-hidden rounded-[2rem] sm:order-9 ">
-            <Github />
-          </div>
+          <Github className="sm:order-10" />
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 xl:order-10">
             <CoverImage project={projects[1]} />
           </div>
