@@ -9,10 +9,31 @@ export default function NavPill() {
   if (currentRoute === "") currentRoute = "/";
 
   const routes = [
-    { name: "Home", href: "/", place: 1, width: 17.5, left: 2 },
-    { name: "About", href: "/about", place: 2, width: 18.5, left: 25.1 },
-    { name: "Projects", href: "/projects", place: 3, width: 22, left: 49.5 },
-    { name: "Travels", href: "/travels", place: 4, width: 20, left: 78 },
+    { name: "Home", href: "/", place: 1, width: 17.5, left: 2, prefetch: true },
+    {
+      name: "About",
+      href: "/about",
+      place: 2,
+      width: 18.5,
+      left: 25.1,
+      prefetch: true,
+    },
+    {
+      name: "Projects",
+      href: "/projects",
+      place: 3,
+      width: 22,
+      left: 49.5,
+      prefetch: true,
+    },
+    {
+      name: "Travels",
+      href: "/travels",
+      place: 4,
+      width: 20,
+      left: 78,
+      prefetch: false,
+    },
   ];
   const currentPlace = routes.find((route) => route.href.includes(currentRoute))
     ?.place as number;
@@ -27,7 +48,11 @@ export default function NavPill() {
             key={route.name}
             className="z-50 py-1.5 transition-all hover:scale-105 "
           >
-            <Link href={route.href} className="rounded-full  px-3 py-1.5">
+            <Link
+              href={route.href}
+              className="rounded-full  px-3 py-1.5"
+              prefetch={route.prefetch}
+            >
               {route.name}
             </Link>
           </li>
