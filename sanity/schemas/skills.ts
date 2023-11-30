@@ -1,4 +1,4 @@
-import { FaCode } from "@react-icons/all-files/fa/FaCode";
+import { FaCode } from "react-icons/fa";
 import { defineType } from "sanity";
 import { preview } from "sanity-plugin-icon-picker";
 

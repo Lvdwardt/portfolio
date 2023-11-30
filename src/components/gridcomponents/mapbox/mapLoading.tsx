@@ -1,5 +1,5 @@
 import Contribution from "@/components/map/contribution";
-import { FaMinus } from "@react-icons/all-files/fa/FaMinus";
+import { FaMinus } from "react-icons/fa";
 
 export default function MapLoading() {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
+import { SiSpotify } from "react-icons/si";
 import clsx from "clsx";
 import { RefObject, useEffect, useState } from "react";
 

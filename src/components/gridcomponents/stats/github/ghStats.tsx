@@ -1,5 +1,5 @@
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
-import { FiGitCommit } from "@react-icons/all-files/fi/FiGitCommit";
+import { SiGithub } from "react-icons/si";
+import { FiGitCommit } from "react-icons/fi";
 import { type ElementCompact, xml2js } from "xml-js";
 import Link from "next/link";
 import Counter from "./counter";

@@ -1,9 +1,9 @@
-import { FaRoute } from "@react-icons/all-files/fa/FaRoute";
+import { FaRoute } from "react-icons/fa";
 import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
 import { countryList } from "@/components/map/countrylist";
 import { defineType } from "sanity";
-import { MdLocalAirport } from "@react-icons/all-files/md/MdLocalAirport";
+import { MdLocalAirport } from "react-icons/md";
 
 export default defineType({
   name: "travelData",

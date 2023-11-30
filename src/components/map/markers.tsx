@@ -2,11 +2,9 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHome } from "@react-icons/all-files/fa/FaHome";
-import { FaCity } from "@react-icons/all-files/fa/FaCity";
-import { MdLocalAirport } from "@react-icons/all-files/md/MdLocalAirport";
-import { MdTrain } from "@react-icons/all-files/md/MdTrain";
-import type { IconBaseProps } from "@react-icons/all-files/lib";
+import { FaHome, FaCity } from "react-icons/fa";
+import { MdLocalAirport, MdTrain } from "react-icons/md";
+import type { IconBaseProps } from "react-icons";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
 

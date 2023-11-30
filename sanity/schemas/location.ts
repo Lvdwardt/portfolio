@@ -1,6 +1,6 @@
 // singleton
 
-import { MdLocationPin } from "@react-icons/all-files/md/MdLocationPin";
+import { MdLocationPin } from "react-icons/md";
 import { defineType } from "sanity";
 
 export default defineType({

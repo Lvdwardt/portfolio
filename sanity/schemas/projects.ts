@@ -1,4 +1,4 @@
-import { AiFillFolderOpen } from "@react-icons/all-files/ai/AiFillFolderOpen";
+import { AiFillFolderOpen } from "react-icons/ai";
 import { defineType } from "sanity";
 
 import { preview } from "sanity-plugin-icon-picker";

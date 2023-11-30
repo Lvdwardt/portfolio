@@ -1,4 +1,4 @@
-import { BsFillBriefcaseFill } from "@react-icons/all-files/bs/BsFillBriefcaseFill";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 import { defineType } from "sanity";
 
 export default defineType({

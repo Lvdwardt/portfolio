@@ -1,6 +1,5 @@
-import { FaCode } from "@react-icons/all-files/fa/FaCode";
-import { FaGlobeEurope } from "@react-icons/all-files/fa/FaGlobeEurope";
-import { MdLocationPin } from "@react-icons/all-files/md/MdLocationPin";
+import { FaCode, FaGlobeEurope } from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
 import { singletonTypes, singletons } from "s/singletons";
 import type { StructureBuilder } from "sanity/desk";
 

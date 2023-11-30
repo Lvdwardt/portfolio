@@ -1,7 +1,7 @@
 // schema to define SEO for each page
 // Path: sanity/schemas/pages.ts
 
-import { FaFile } from "@react-icons/all-files/fa/FaFile";
+import { FaFile } from "react-icons/fa";
 import { defineType } from "sanity";
 
 export default defineType({

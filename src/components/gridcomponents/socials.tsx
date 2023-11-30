@@ -1,9 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaWhatsapp } from "@react-icons/all-files/fa/FaWhatsapp";
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export function Whatsapp() {
   return (

@@ -1,4 +1,4 @@
-import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { FaUser } from "react-icons/fa";
 import { defineType } from "sanity";
 
 export default defineType({

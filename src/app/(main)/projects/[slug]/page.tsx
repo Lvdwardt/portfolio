@@ -1,7 +1,7 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import ProjectImage from "@/components/projects/projectImage";
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
+import { SiGithub } from "react-icons/si";
 import { Metadata } from "next";
 import type { Project } from "@/types";
 import { projectQuery } from "s/lib/queries";

@@ -3,8 +3,7 @@ import type React from "react";
 import { useTheme } from "next-themes";
 import ToggleTheme from "../../hooks/toggleTheme";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiMoon } from "@react-icons/all-files/fi/FiMoon";
-import { FiSun } from "@react-icons/all-files/fi/FiSun";
+import { FiMoon, FiSun } from "react-icons/fi";
 import useSound from "use-sound";
 
 export default function Toggle() {
