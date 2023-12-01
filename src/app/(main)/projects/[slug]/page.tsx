@@ -1,12 +1,14 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
-import ProjectImage from "@/components/projects/projectImage";
-import { SiGithub } from "react-icons/si";
-import { Metadata } from "next";
-import type { Project } from "@/types";
-import { projectQuery } from "s/lib/queries";
-import { sanityFetch } from "s/lib/client";
+import { ImArrowUpRight2 } from "react-icons/im";
+import { Balancer } from "react-wrap-balancer";
+import { type Metadata } from "next";
+
+import { Project as ProjectType } from "@/types";
 import type { SanityDocument } from "next-sanity";
+import { sanityFetch } from "s/lib/client";
+import { projectQuery } from "s/lib/queries";
+import { SanityImg } from "@/components/imageComponent";
 import Link from "next/link";
 
 interface PageProps {
@@ -15,16 +17,14 @@ interface PageProps {
   };
 }
 
-// generate metadata for the page
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const project = await sanityFetch<SanityDocument<Project>>(
+  const project = await sanityFetch<SanityDocument>(
     projectQuery,
     ["projects"],
     params
   );
-
   if (!project) {
     return {
       title: "Project not found",
@@ -39,7 +39,7 @@ export async function generateMetadata({
 
 export default async function Project({ params }: PageProps) {
   //find the project with the same title as the url
-  const project = await sanityFetch<SanityDocument<Project>>(
+  const project = await sanityFetch<SanityDocument<ProjectType>>(
     projectQuery,
     ["projects"],
     params
@@ -48,73 +48,60 @@ export default async function Project({ params }: PageProps) {
   if (!project) {
     return <NotFoundComponent url="projects" />;
   }
-
   return (
     <AnimatedLayout>
       <main className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <div className="mx-4 flex flex-col lg:flex-row">
-          <div className="m-4 flex flex-col rounded-[2rem] bg-card px-8 pb-6 pt-4 lg:w-3/4">
-            <h1 className="pb-2 text-3xl font-black">{project.title}</h1>
-            <hr />
-            <span className="font-light">{project.description}</span>
-            <div className=" pt-6">
-              <h2 className="font-medium">
-                For this project I have done the following:
-              </h2>
-              <hr />
+        <div className="grid w-full gap-8 p-4 sm:px-16 sm:py-16 xl:grid-cols-2 xl:px-32">
+          <div className="col-span-1 flex flex-col gap-4">
+            <h1 className="text-3xl font-bold sm:text-4xl">{project.title}</h1>
+            <h2 className="text-xl">{project.quote}</h2>
+            <div className="w-min rounded-full border-4 border-card">
+              <div className="flex h-8 items-center justify-end gap-4 overflow-hidden rounded-full  bg-card p-2 text-text">
+                <a
+                  href={project.url}
+                  target={"_blank"}
+                  rel="noreferrer"
+                  className="flex items-center gap-3"
+                >
+                  <span className="text-sm">Web</span>
+                  <ImArrowUpRight2 />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-1 flex flex-col gap-6 xl:pt-14">
+            <Balancer className="font-light">{project.description}</Balancer>
+            <div className="pl-4">
               <ul>
                 {project.workedOn.map((work, index) => (
-                  <li className="ml-4 list-disc pl-2 font-light" key={index}>
+                  <li
+                    className="ml-6 list-disc pb-1 pl-2 font-light"
+                    key={index}
+                  >
                     {work.work}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="pt-6">
-              <h2 className="font-medium">
-                I have learned the following from this project:
-              </h2>
-              <hr />
-              <ul>
-                {project.newSkills.map((skill, index) => (
-                  <li className="ml-4 list-disc pl-2 font-light" key={index}>
-                    {skill.skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-auto flex gap-4 pt-6 text-4xl">
-              {/* {project.icons.map((icon, index) => {
-                const innerHtml = icon.icon.svg;
-                return (
-                  <a
-                    href={icon.url}
-                    key={index}
-                    target={"_blank"}
-                    rel="noreferrer"
-                    aria-label={icon.icon.name}
-                  >
-                  <div
-                    dangerouslySetInnerHTML={{ __html: innerHtml }}
-                    key={index}
+            <div className="flex w-full gap-6 pl-1 sm:justify-end">
+              {project.icons.map((icon, index) => (
+                <Link href={icon.url} key={index}>
+                  <svg
+                    dangerouslySetInnerHTML={{ __html: icon.icon.svg }}
+                    className="h-4 w-4 scale-125"
                   />
-                  </a>
-                );
-              })} */}
-              {project.githubUrl && (
-                <a
-                  className="ml-auto"
-                  href={project.githubUrl}
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <SiGithub />
-                </a>
-              )}
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="m-4 lg:h-auto lg:w-1/4">
-            {ProjectImage({ project })}
+        </div>
+        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:132.5px] [grid-auto-rows:132.5px] sm:max-w-[640px] sm:grid-cols-2 sm:[grid-auto-columns:265px] sm:[grid-auto-rows:265px] xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
+          <div className="order-2 h-full w-full rounded-[2rem] bg-card xl:order-5"></div>
+          <div className="order-1 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-2"></div>
+          <div className="order-3 row-span-2 h-full w-full rounded-[2rem] bg-card"></div>
+          <div className="order-5 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-4"></div>
+          <div className="order-4 flex h-full w-full items-center justify-center rounded-[2rem] bg-card p-8 sm:p-24 xl:order-1">
+            <SanityImg image={project.logo} round={18} />
           </div>
         </div>
       </main>
