@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 export async function GET() {
   const client_id = process.env.SPOTIFY_CLIENT_ID;
   const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -21,11 +21,7 @@ export async function GET() {
   });
 
   if (!response.ok) {
-    return {
-      props: {
-        isPlaying: false,
-      },
-    };
+    return NextResponse.json({ isPlaying: false });
   }
 
   const data = await response.json();
