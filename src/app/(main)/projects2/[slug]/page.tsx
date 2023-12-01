@@ -9,6 +9,7 @@ import type { SanityDocument } from "next-sanity";
 import { sanityFetch } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
 import { SanityImg } from "@/components/imageComponent";
+import Link from "next/link";
 
 interface PageProps {
   params: {
@@ -81,6 +82,16 @@ export default async function Project({ params }: PageProps) {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="flex w-full gap-6 pl-1 sm:justify-end">
+              {project.icons.map((icon, index) => (
+                <Link href={icon.url} key={index}>
+                  <svg
+                    dangerouslySetInnerHTML={{ __html: icon.icon.svg }}
+                    className="h-4 w-4 scale-125"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
