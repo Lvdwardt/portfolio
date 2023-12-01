@@ -2,11 +2,6 @@
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
-/**
- *
- * @param root0
- * @param root0.value
- */
 export default function Counter({
   value,
   direction = "up",

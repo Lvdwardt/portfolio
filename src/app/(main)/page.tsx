@@ -12,13 +12,13 @@ import WakatimeStats from "@/components/gridcomponents/stats/wtStats";
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { type Metadata } from "next";
 import Mapbox from "@/components/gridcomponents/mapbox/mapbox";
-import SpotifyStats from "@/components/gridcomponents/stats/spotify/spotifyStats";
 import { Suspense } from "react";
 import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { Projects } from "@/types";
 import { featuredProjectsQuery } from "s/lib/queries";
 import CoverImage from "@/components/projects/coverImage";
+import Spotify from "@/components/gridcomponents/stats/spotify/spotify";
 
 export const metadata: Metadata = {
   title: "Home - Leonvdw.nl",
@@ -48,7 +48,7 @@ export default async function Home() {
             <Toggle />
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-8 xl:order-5">
-            <SpotifyStats />
+            <Spotify />
           </div>
           <div className="relative row-span-2 overflow-hidden rounded-[2rem] bg-card p-6 font-medium text-text sm:order-3 xl:order-6 ">
             <Skills />
