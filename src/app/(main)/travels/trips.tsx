@@ -8,44 +8,44 @@ export const trips = [
       {
         from: {
           code: "NRN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "ZAG",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "ZAG",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "FCO",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "CIA",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "CAG",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "CAG",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "NRN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
@@ -67,11 +67,11 @@ export const trips = [
       {
         from: {
           code: "Rhenen",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Zadar",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         route: {
           coordinates: [
@@ -574,11 +574,11 @@ export const trips = [
       {
         from: {
           code: "Zadar",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Pichl",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         route: {
           coordinates: [
@@ -800,22 +800,22 @@ export const trips = [
       {
         from: {
           code: "Budapest",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Bratislava",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "bus",
       },
       {
         from: {
           code: "Bratislava",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Vienna",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "bus",
       },
@@ -880,55 +880,55 @@ export const trips = [
       {
         from: {
           code: "MST",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "LTN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "LTN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "IBZ",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "IBZ",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "BCN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "BCN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "OPO",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "OPO",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "MST",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
@@ -949,22 +949,22 @@ export const trips = [
       {
         from: {
           code: "rhenen",
-          coordinates: [] as unknown as number[],
+          coordinates: [5.578319, 51.95801],
         },
         to: {
           code: "amsterdam-sloterdijk",
-          coordinates: [] as unknown as number[],
+          coordinates: [4.838111, 52.389025],
         },
         type: "train",
       },
       {
         from: {
           code: "amsterdam-sloterdijk",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "CGN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         route: {
           coordinates: [
@@ -1024,90 +1024,101 @@ export const trips = [
       {
         from: {
           code: "CGN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "BGY",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "BGY",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "CTA",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "CTA",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "AUH",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "AUH",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Dubai",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "bus",
       },
       {
         from: {
           code: "Dubai",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "AUH",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "bus",
       },
       {
         from: {
           code: "AUH",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "NAP",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "Naples",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "Bari",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "bus",
       },
       {
         from: {
           code: "BRI",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "MST",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
+      },
+      {
+        from: {
+          code: "maastricht",
+          coordinates: [5.705875, 50.849811],
+        },
+        to: {
+          code: "kesteren",
+          coordinates: [5.5833465, 51.9313869],
+        },
+        type: "train",
       },
     ],
     duration: 10,
@@ -1126,18 +1137,18 @@ export const trips = [
       {
         from: {
           code: "NRN",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: {
           code: "BGY",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         type: "plane",
       },
       {
         from: {
           code: "BGY",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: { code: "OTP", coordinates: [] },
         type: "plane",
@@ -1145,7 +1156,7 @@ export const trips = [
       {
         from: {
           code: "OTP",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: { code: "SOF", coordinates: [] },
         type: "plane",
@@ -1153,7 +1164,7 @@ export const trips = [
       {
         from: {
           code: "SOF",
-          coordinates: [] as unknown as number[],
+          coordinates: [] as number[],
         },
         to: { code: "EIN", coordinates: [] },
         type: "plane",
