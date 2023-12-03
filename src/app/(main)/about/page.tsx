@@ -43,7 +43,7 @@ export default async function AboutPage() {
       <main className="flex w-full animate-fade-up justify-center transition-all duration-300 ease-in">
         <div className="mx-6 flex max-w-[1200px] flex-col gap-6 pb-8 pt-4">
           <div className=" =mx-auto w-full max-w-[320px] gap-5 sm:max-w-[640px] xl:max-w-[1200px] xl:px-0 ">
-            <div className="col-span-full  h-full w-full rounded-[2rem] bg-card px-10 py-6 text-text">
+            <div className="col-span-full h-full w-full rounded-[2rem] bg-card px-10 py-6 text-text">
               <About />
             </div>
           </div>

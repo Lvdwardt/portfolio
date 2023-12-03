@@ -2,7 +2,7 @@ import { SiGithub } from "react-icons/si";
 import { FiGitCommit } from "react-icons/fi";
 import { type ElementCompact, xml2js } from "xml-js";
 import Link from "next/link";
-import Counter from "./counter";
+import Counter from "@/components/global/counter";
 
 export default async function GithubStats() {
   const res = await fetch(

@@ -9,6 +9,7 @@ import { Trip } from "@/types";
 import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
 import { AiFillCaretDown } from "react-icons/ai";
+import Counter from "@/components/global/counter";
 
 export default function PageContent({
   mapData,
@@ -48,7 +49,11 @@ export default function PageContent({
                 <div className="">
                   <div className="flex h-6 items-center gap-2">
                     <span className="text-2xl font-bold">
-                      {stats.countries}
+                      <Counter
+                        value={stats.countries}
+                        duration={500}
+                        delay={300}
+                      />
                     </span>
                   </div>
                   <span className="font-silka text-sm text-gray-400">
@@ -57,7 +62,13 @@ export default function PageContent({
                 </div>
                 <div className="">
                   <div className="flex h-6 items-center gap-2">
-                    <span className="text-2xl font-bold">{stats.capitals}</span>
+                    <span className="text-2xl font-bold">
+                      <Counter
+                        value={stats.capitals}
+                        duration={500}
+                        delay={400}
+                      />
+                    </span>
                   </div>
                   <span className="font-silka text-sm text-gray-400">
                     capitals explored
@@ -65,7 +76,13 @@ export default function PageContent({
                 </div>
                 <div className="">
                   <div className="flex h-6 items-center gap-2">
-                    <span className="text-2xl font-bold">{stats.airports}</span>
+                    <span className="text-2xl font-bold">
+                      <Counter
+                        value={stats.airports}
+                        duration={500}
+                        delay={600}
+                      />
+                    </span>
                   </div>
                   <span className="font-silka text-sm text-gray-400">
                     airports conquered

@@ -114,7 +114,6 @@ const getNowPlaying = async (token: string) => {
   );
 
   if (nowPlaying.status === 204) {
-    console.log("No song playing");
     return {
       props: {
         isPlaying: false,
