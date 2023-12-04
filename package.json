@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "bun contentlayer build && next build",
+    "build": "pnpm contentlayer build && next build",
     "dev": "next dev",
     "bun-dev": "bun dev",
     "lint": "next lint",

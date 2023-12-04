@@ -31,7 +31,7 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
 ## Installation and Setup
 
 1. Clone the repository to your local machine.
-2. Install the required dependencies by running `bun install`.
+2. Install the required dependencies by running `pnpm install`.
 3. Obtain API keys for the GitHub API, Wakatime API, and Mapbox
 4. Setup [[vercel edge config](https://vercel.com/storage/edge-config)] for the project
 5. Add the following to your edge config:
@@ -55,7 +55,7 @@ This is my personal portfolio site showcasing my projects, skills, and experienc
    EDGE_CONFIG=your_vercel_edge_config (step 4)
    ```
 
-7. Start the development server with `bun dev`.
+7. Start the development server with `pnpm dev`.
 8. Open your browser and navigate to `http://localhost:3000` to see the portfolio site in action.
 
 ## Contribution

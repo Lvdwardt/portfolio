@@ -16,6 +16,8 @@ interface PageProps {
   };
 }
 
+export const runtime = process.env.HOST === "cloudflare" ? "edge" : "node";
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
