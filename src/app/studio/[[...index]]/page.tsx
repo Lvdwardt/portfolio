@@ -15,7 +15,7 @@ import config from "sanity.config";
 
 type Config = NextStudioProps["config"];
 
-export const runtime = process.env.HOST === "cloudflare" ? "edge" : "node";
+export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
 
 export default function StudioPage() {
   return <NextStudio config={config as Config} />;

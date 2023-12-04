@@ -16,7 +16,7 @@ interface PageProps {
   };
 }
 
-export const runtime = process.env.HOST === "cloudflare" ? "edge" : "node";
+export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
 
 export async function generateMetadata({
   params,
