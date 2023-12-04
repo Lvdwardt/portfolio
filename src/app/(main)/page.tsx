@@ -59,7 +59,7 @@ export default async function Home() {
           <LinkedIn className="sm:order-6 xl:order-8" />
           <Whatsapp className="sm:order-9" />
           <div className="row-span-2 overflow-hidden rounded-[2rem] sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
-            <CoverImage project={projects[0]} />
+            <CoverImage project={projects[0]} loading="eager" />
           </div>
           <Github className="sm:order-10" />
           <div className="overflow-hidden rounded-[2rem] bg-card sm:order-4 sm:col-span-2 xl:order-10">

@@ -1,7 +1,7 @@
 "use client";
-import { SiSpotify } from "react-icons/si";
 import clsx from "clsx";
 import { RefObject, useEffect, useState } from "react";
+import SiSpotify from "public/icons/si/SiSpotify.svg";
 
 type PlayMusicProps = { previewUrl?: string; nowPlaying?: boolean };
 
@@ -15,7 +15,6 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
     if (!previewUrl) return;
     setAudio(new Audio(`${previewUrl}.mp3`));
   }, []);
-
   useEffect(() => {
     if (!audio || audioRef) return;
     setAudioRef({ current: audio });
@@ -49,6 +48,7 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         previewUrl ? "cursor-pointer" : "cursor-default",
         !clicked && "animate-pulse"
       )}
+      aria-label={audioRef?.current?.paused ? "play" : "pause"}
     >
       <SiSpotify
         className={clsx(

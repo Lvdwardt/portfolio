@@ -11,6 +11,7 @@ export const SanityImg = ({
   size,
   className,
   alt,
+  loading,
 }: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: any;
@@ -18,6 +19,7 @@ export const SanityImg = ({
   size?: "small" | "medium" | "large";
   className?: string;
   alt?: string;
+  loading?: "lazy" | "eager";
 }): ReactElement => {
   const altText = alt ?? image?.alt ?? "";
   const dimensions = getImageDimensions(image);
@@ -43,6 +45,7 @@ export const SanityImg = ({
           width={dimensions.width}
           height={dimensions.height}
           placeholder="blur"
+          loading={loading ?? "lazy"}
           blurDataURL={urlForImage(image).width(24).height(24).blur(10).url()}
           sizes="
               (max-width: 768px) 100vw,

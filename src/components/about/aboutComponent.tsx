@@ -46,6 +46,7 @@ export default function AboutComponent({
     <div className="w-full flex-col items-center gap-2 sm:items-start">
       <motion.div {...animateMemoji} className="relative h-[120px] w-[175px]">
         <SanityImg
+          loading="eager"
           image={about.memojis.darkMemoji}
           size="medium"
           className="absolute cursor-pointer opacity-0 transition-all duration-150 ease-in group-hover:scale-105 dark:opacity-100"

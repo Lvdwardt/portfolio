@@ -1,15 +1,14 @@
 import NotFoundComponent from "@/components/projects/notFound";
 import AnimatedLayout from "@/layouts/animatedLayout";
-import { ImArrowUpRight2 } from "react-icons/im";
 import { Balancer } from "react-wrap-balancer";
 import { type Metadata } from "next";
-
 import { Project as ProjectType } from "@/types";
 import type { SanityDocument } from "next-sanity";
 import { sanityFetch } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
 import { SanityImg } from "@/components/imageComponent";
 import Link from "next/link";
+import ImArrowUpRight2 from "public/icons/im/ImArrowUpRight2.svg";
 
 interface PageProps {
   params: {
@@ -51,7 +50,7 @@ export default async function Project({ params }: PageProps) {
   return (
     <AnimatedLayout>
       <main className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <div className="grid w-full gap-8 p-4 sm:px-16 sm:py-16 xl:grid-cols-2 xl:px-32">
+        <div className="mx-auto grid w-full max-w-[320px] gap-8 p-4 sm:max-w-[640px] sm:py-16 xl:max-w-[1200px] xl:grid-cols-2">
           <div className="col-span-1 flex flex-col gap-4">
             <h1 className="text-3xl font-bold sm:text-4xl">{project.title}</h1>
             <h2 className="text-xl">{project.quote}</h2>
@@ -83,9 +82,20 @@ export default async function Project({ params }: PageProps) {
                 ))}
               </ul>
             </div>
-            <div className="flex w-full gap-6 pl-1 sm:justify-end">
+            <div
+              className="flex w-full gap-6 pl-1 sm:justify-end"
+              role="list"
+              aria-description="Links to the technologies used in this project."
+            >
               {project.icons.map((icon, index) => (
-                <Link href={icon.url} key={index}>
+                <Link
+                  href={icon.url}
+                  key={index}
+                  target="_blank"
+                  rel="norefferer"
+                  aria-label={icon.icon.name}
+                  role="listitem"
+                >
                   <svg
                     dangerouslySetInnerHTML={{ __html: icon.icon.svg }}
                     className="h-4 w-4 scale-125"

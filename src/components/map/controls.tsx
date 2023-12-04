@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { startTransition } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import FaPlus from "public/icons/fa/FaPlus.svg";
+import FaMinus from "public/icons/fa/FaMinus.svg";
 
 export default function Controls({
   setZoom,

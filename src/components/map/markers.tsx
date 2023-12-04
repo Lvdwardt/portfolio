@@ -2,11 +2,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHome, FaCity } from "react-icons/fa";
-import { MdLocalAirport, MdTrain } from "react-icons/md";
 import type { IconBaseProps } from "react-icons";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
+import FaCity from "public/icons/fa/FaCity.svg";
+import FaHome from "public/icons/fa/FaHome.svg";
+import MdLocalAirport from "public/icons/md/MdLocalAirport.svg";
+import MdTrain from "public/icons/md/MdTrain.svg";
 
 type Coords = {
   latitude: number;

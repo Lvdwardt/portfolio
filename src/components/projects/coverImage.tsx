@@ -1,5 +1,5 @@
 import { Projects } from "@/types";
-import { ImArrowUpRight2 } from "react-icons/im";
+import ImArrowUpRight2 from "public/icons/im/ImArrowUpRight2.svg";
 import Link from "next/link";
 import React from "react";
 import { SanityImg } from "../imageComponent";
@@ -7,9 +7,10 @@ import { SanityImg } from "../imageComponent";
 type Props = {
   project: Projects;
   color?: string;
+  loading?: "lazy" | "eager";
 };
 
-export default function CoverImage({ project, color }: Props) {
+export default function CoverImage({ project, color, loading }: Props) {
   function getRandomColor(project: Projects) {
     return project.slug.current.length % 2 === 0
       ? "var(--primary)"
@@ -25,9 +26,12 @@ export default function CoverImage({ project, color }: Props) {
           backgroundColor: color ? `var(--${color})` : getRandomColor(project),
         }}
       />
-
       {/* image */}
-      <SanityImg image={project.coverImage} className="relative z-10" />
+      <SanityImg
+        image={project.coverImage}
+        className="relative z-10"
+        loading={loading}
+      />
 
       {/* arrow */}
       <div className="absolute bottom-3 left-3 z-20 m-2 rounded-full border-4 border-transparent transition-all duration-300 hover:!border-lessTrans group-hover:border-trans">

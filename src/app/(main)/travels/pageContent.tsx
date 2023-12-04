@@ -8,7 +8,7 @@ import useTripRoute from "./hooks/useTripRoute";
 import { Trip } from "@/types";
 import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
-import { AiFillCaretDown } from "react-icons/ai";
+import AiFillCaretDown from "public/icons/ai/AiFillCaretDown.svg";
 import Counter from "@/components/global/counter";
 
 export default function PageContent({

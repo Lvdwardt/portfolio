@@ -1,5 +1,5 @@
 import { Project } from "@/types";
-import { ImArrowUpRight2 } from "react-icons/im";
+import ImArrowUpRight2 from "public/icons/im/ImArrowUpRight2.svg";
 import Link from "next/link";
 import React from "react";
 import { SanityImg } from "../imageComponent";

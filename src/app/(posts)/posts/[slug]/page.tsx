@@ -2,7 +2,7 @@ import { allDocs } from "contentlayer/generated";
 
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/blog/mdx";
-import { IoClose } from "react-icons/io5";
+import IoClose from "public/icons/io5/IoClose.svg";
 import Link from "next/link";
 
 interface PageProps {

@@ -1,4 +1,4 @@
-import { AiFillFire } from "react-icons/ai";
+import AiFillFire from "public/icons/ai-fill-fire.svg";
 import Gradient from "@/assets/lineargradient";
 import clsx from "clsx";
 

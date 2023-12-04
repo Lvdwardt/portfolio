@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { startTransition, useState } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
-import { FaInfoCircle } from "react-icons/fa";
-import { FaRegCommentDots } from "react-icons/fa";
-import { FaRegCopyright } from "react-icons/fa";
-import { SiMapbox } from "react-icons/si";
+import AiFillCloseCircle from "public/icons/ai/AiFillCloseCircle.svg";
+import FaInfoCircle from "public/icons/fa/FaInfoCircle.svg";
+import FaRegCommentDots from "public/icons/fa/FaRegCommentDots.svg";
+import FaRegCopyright from "public/icons/fa/FaRegCopyright.svg";
+import SiMapbox from "public/icons/si/SiMapbox.svg";
 
 export default function Contribution() {
   const [contributionOpen, setContributionOpen] = useState(false);
