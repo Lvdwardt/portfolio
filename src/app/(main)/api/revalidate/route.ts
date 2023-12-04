@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { parseBody } from "next-sanity/webhook";
 
-const revalidateSecret = process.env.MY_SECRET_TOKEN;
+export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
   // get the secret from the query
@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const route = request.nextUrl.searchParams.get("route") ?? "/";
   const tag = request.nextUrl.searchParams.get("tag");
   // check if the secret is valid
-  if (secret !== revalidateSecret) {
+  if (secret !== process.env.MY_SECRET_TOKEN) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  if (!revalidateSecret) {
+  if (!process.env.MY_SECRET_TOKEN) {
     return new Response(
       "The `MY_SECRET_TOKEN` environment variable is required."
     );
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     const { body, isValidSignature } = await parseBody<{
       _type: string;
       slug?: string | undefined;
-    }>(req, revalidateSecret);
+    }>(req, process.env.MY_SECRET_TOKEN);
     if (!isValidSignature) {
       const message = "Invalid signature";
       return new Response(message, { status: 401 });

@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+
+export const runtime = "edge";
+
 export async function GET() {
   const client_id = process.env.SPOTIFY_CLIENT_ID;
   const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
