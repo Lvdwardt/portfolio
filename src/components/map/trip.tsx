@@ -1,12 +1,12 @@
 import { Layer, MapRef, Source } from "react-map-gl";
-import { Station, Trip, TripLine } from "@/types";
+import { Station, TripType, TripLine } from "@/types";
 import { StationMarker } from "./markers";
 import { type RefObject } from "react";
 import useAnimatedTrip from "./hooks/useAnimatedTrip";
 
 type TripProps = {
   exactZoom: number;
-  trip: Trip;
+  trip: TripType;
   resolvedTheme: string | undefined;
   mapRef: RefObject<MapRef>;
   stations: Station[];

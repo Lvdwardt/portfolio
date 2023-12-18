@@ -2,3 +2,4 @@ node_modules
 prettier.config.cjs
 tailwind.config.cjs
 postcss.config.cjs
+next.config.js

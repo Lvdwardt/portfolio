@@ -15,7 +15,7 @@ import Mapbox from "@/components/gridcomponents/mapbox/mapbox";
 import { Suspense } from "react";
 import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
-import { Projects } from "@/types";
+import { ProjectsType } from "@/types";
 import { featuredProjectsQuery } from "s/lib/queries";
 import CoverImage from "@/components/projects/coverImage";
 import Spotify from "@/components/gridcomponents/stats/spotify/spotify";
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = await sanityFetch<SanityDocument<Projects[]>>(
+  const projects = await sanityFetch<SanityDocument<ProjectsType[]>>(
     featuredProjectsQuery,
     ["projects"]
   );

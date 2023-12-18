@@ -1,17 +1,17 @@
-import { Projects } from "@/types";
+import { ProjectsType } from "@/types";
 import ImArrowUpRight2 from "public/icons/im/ImArrowUpRight2.svg";
 import Link from "next/link";
 import React from "react";
 import { SanityImg } from "../imageComponent";
 
 type Props = {
-  project: Projects;
+  project: ProjectsType;
   color?: string;
   loading?: "lazy" | "eager";
 };
 
 export default function CoverImage({ project, color, loading }: Props) {
-  function getRandomColor(project: Projects) {
+  function getRandomColor(project: ProjectsType) {
     return project.slug.current.length % 2 === 0
       ? "var(--primary)"
       : "var(--secondary)";

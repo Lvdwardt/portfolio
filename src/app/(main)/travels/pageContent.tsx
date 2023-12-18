@@ -5,7 +5,7 @@ import "./travel.css";
 import MapboxContent from "@/components/map/map";
 import { MapData } from "@/types";
 import useTripRoute from "./hooks/useTripRoute";
-import { Trip } from "@/types";
+import { TripType } from "@/types";
 import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
 import AiFillCaretDown from "public/icons/ai/AiFillCaretDown.svg";
@@ -19,7 +19,7 @@ export default function PageContent({
   about: JSX.Element;
 }) {
   const [showTrip, setShowTrip] = useState(false);
-  const [currentTrip, setCurrentTrip] = useState<Trip | null>(null);
+  const [currentTrip, setCurrentTrip] = useState<TripType | null>(null);
 
   const { trip, stations, tripLine } = useTripRoute(currentTrip, mapData);
 

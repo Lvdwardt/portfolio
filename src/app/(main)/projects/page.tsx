@@ -4,7 +4,7 @@ import { type Metadata } from "next";
 import { SanityDocument } from "next-sanity";
 import { sanityFetch } from "s/lib/client";
 import { projectsQuery } from "s/lib/queries";
-import { Projects } from "@/types";
+import { ProjectsType } from "@/types";
 import CoverImage from "@/components/projects/coverImage";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Projects() {
-  const projectsData = await sanityFetch<SanityDocument<Projects[]>>(
+  const projectsData = await sanityFetch<SanityDocument<ProjectsType[]>>(
     projectsQuery,
     ["projects"]
   );

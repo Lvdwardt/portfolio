@@ -38,6 +38,9 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.0.2
     version: 1.1.1
+  '@vercel/speed-insights':
+    specifier: ^1.0.2
+    version: 1.0.2
   auto-text-size:
     specifier: ^0.2.2
     version: 0.2.2(react@18.2.0)
@@ -65,6 +68,9 @@ dependencies:
   mapbox-gl:
     specifier: 3.0.0
     version: 3.0.0
+  million:
+    specifier: ^2.6.4
+    version: 2.6.4
   next:
     specifier: 14.0.4-canary.7
     version: 14.0.4-canary.7(@babel/core@7.23.5)(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0)
@@ -122,9 +128,9 @@ dependencies:
   sanity-plugin-media:
     specifier: ^2.2.4
     version: 2.2.4(@types/react@18.2.39)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.20.2)(styled-components@6.1.1)
-  shiki:
-    specifier: ^0.14.5
-    version: 0.14.5
+  shikiji:
+    specifier: ^0.9.9
+    version: 0.9.9
   styled-components:
     specifier: 6.1.1
     version: 6.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -627,7 +633,6 @@ packages:
     dependencies:
       '@babel/core': 7.23.5
       '@babel/helper-plugin-utils': 7.22.5
-    dev: true
 
   /@babel/plugin-syntax-logical-assignment-operators@7.10.4(@babel/core@7.23.5):
     resolution: {integrity: sha512-d8waShlpFDinQ5MtvGU9xDAOzKH47+FFoney2baFIoMr952hKOLp1HR7VszoZvOsV/4+RRszNY7D17ba0te0ig==}
@@ -711,7 +716,6 @@ packages:
     dependencies:
       '@babel/core': 7.23.5
       '@babel/helper-plugin-utils': 7.22.5
-    dev: true
 
   /@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.23.5):
     resolution: {integrity: sha512-727YkEAPwSIQTv5im8QHz3upqp92JTWhidIC81Tdx4VJYIte/VndKf1qKrfnnhPLiPghStWfvC/iFaMCQu7Nqg==}
@@ -5803,6 +5807,11 @@ packages:
 
   /@vercel/ruby@2.0.3:
     resolution: {integrity: sha512-INZjBvBxQlANvj7LvHeXtfjpU+ZtwGL45vyys5+hI594MokpkrKdzUaTuK4kUX+KsEJUR7Xule5JiS89fW77BA==}
+
+  /@vercel/speed-insights@1.0.2:
+    resolution: {integrity: sha512-y5HWeB6RmlyVYxJAMrjiDEz8qAIy2cit0fhBq+MD78WaUwQvuBnQlX4+5MuwVTWi46bV3klaRMq83u9zUy1KOg==}
+    requiresBuild: true
+    dev: false
 
   /@vercel/static-build@2.0.12:
     resolution: {integrity: sha512-7X7fhkdoxOInbjvXcswiv7AtAj9a1A/DojJuHh8iDNBMOti/umNSjEp1Orzm7sr7qmLEuSAcZrGoBa8R5jVKEQ==}
@@ -10993,6 +11002,22 @@ packages:
       braces: 3.0.2
       picomatch: 2.3.1
 
+  /million@2.6.4:
+    resolution: {integrity: sha512-voUkdd/jHWrG+7NS+mX49Pat+POKdgGW78V7pYMSrTaOjUitR6ySEcAci8hn17Rsx1IMI3+5w41dkADM1J1ZEg==}
+    hasBin: true
+    dependencies:
+      '@babel/core': 7.23.5
+      '@babel/generator': 7.23.5
+      '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.23.5)
+      '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.23.5)
+      '@babel/types': 7.23.5
+      kleur: 4.1.5
+      rollup: 3.29.4
+      unplugin: 1.5.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
@@ -13464,6 +13489,16 @@ packages:
       vscode-textmate: 8.0.0
     dev: false
 
+  /shikiji-core@0.9.9:
+    resolution: {integrity: sha512-qu5Qq7Co6JIMY312J9Ek6WYjXieeyJT/fIqmkcjF4MdnMNlUnhSqPo8/42g5UdPgdyTCwijS7Nhg8DfLSLodkg==}
+    dev: false
+
+  /shikiji@0.9.9:
+    resolution: {integrity: sha512-/S3unr/0mZTstNOuAmNDEufeimtqeQb8lXvPMLsYfDvqyfmG6334bO2xmDzD0kfxH2y8gnFgSWAJpdEzksmYXg==}
+    dependencies:
+      shikiji-core: 0.9.9
+    dev: false
+
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -14565,6 +14600,15 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
+  /unplugin@1.5.1:
+    resolution: {integrity: sha512-0QkvG13z6RD+1L1FoibQqnvTwVBXvS4XSPwAyinVgoOCl2jAgwzdUKmEj05o4Lt8xwQI85Hb6mSyYkcAGwZPew==}
+    dependencies:
+      acorn: 8.11.2
+      chokidar: 3.5.3
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.1
+    dev: false
+
   /untildify@4.0.0:
     resolution: {integrity: sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==}
     engines: {node: '>=8'}
@@ -14893,6 +14937,15 @@ packages:
       - bufferutil
       - utf-8-validate
     dev: true
+
+  /webpack-sources@3.2.3:
+    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
+    engines: {node: '>=10.13.0'}
+    dev: false
+
+  /webpack-virtual-modules@0.6.1:
+    resolution: {integrity: sha512-poXpCylU7ExuvZK8z+On3kX+S8o/2dQ/SVYueKA0D4WEMXROXgY8Ez50/bQEUmvoSMMrWcrJqCHuhAbsiwg7Dg==}
+    dev: false
 
   /whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}

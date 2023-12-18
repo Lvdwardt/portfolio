@@ -10,7 +10,7 @@ import {
 } from "./markers";
 import VisitedCountries from "./visitedCountries";
 import useMap from "./useMap";
-import { MapData, Station, Trip, TripLine } from "@/types";
+import { MapData, Station, TripType, TripLine } from "@/types";
 import TripData from "./trip";
 import { startTransition } from "react";
 import type { Projection } from "react-map-gl";
@@ -27,7 +27,7 @@ export default function MapboxContent({
   big: boolean;
   coords?: { latitude: number; longitude: number };
   data?: MapData;
-  trip?: Trip;
+  trip?: TripType;
   tripLine?: TripLine;
   stations?: Station[];
 }) {

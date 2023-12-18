@@ -42,7 +42,7 @@ export type Project = {
   githubUrl?: string;
 };
 
-export type Projects = {
+export type ProjectsType = {
   title: string;
   slug: {
     current: string;
@@ -81,7 +81,7 @@ export type City = {
   geojson: Feature<Polygon | MultiPolygon>;
 };
 
-export type Trip = {
+export type TripType = {
   id: string;
   title: string;
   legs: {

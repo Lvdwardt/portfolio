@@ -1,3 +1,4 @@
+const million = require("million/compiler");
 /* eslint-disable no-undef */
 // @ts-check
 /**
@@ -8,10 +9,9 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withContentlayer } = require("next-contentlayer");
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
-
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -44,4 +44,6 @@ const config = {
   },
 };
 
-module.exports = withBundleAnalyzer(withContentlayer(config));
+module.exports = million.next(withBundleAnalyzer(withContentlayer(config)), {
+  auto: { rsc: true },
+});

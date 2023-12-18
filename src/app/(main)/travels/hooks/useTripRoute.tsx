@@ -1,8 +1,8 @@
 import memo from "lodash.memoize";
-import { MapData, Station, Trip } from "@/types";
+import { MapData, Station, TripType } from "@/types";
 import { type LineString, type Feature, lineString } from "@turf/helpers";
 
-export default function useTripRoute(trip: Trip | null, mapData: MapData) {
+export default function useTripRoute(trip: TripType | null, mapData: MapData) {
   // map with all airports
   const airports = new Map<string, Station>();
 

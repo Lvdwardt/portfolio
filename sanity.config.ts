@@ -8,7 +8,7 @@ import { schema } from "./sanity/schema";
 import { deskStructure } from "s/structures/deskstructure";
 import { singletonTypes } from "s/singletons";
 import Iframe from "sanity-plugin-iframe-pane";
-import Projects from "s/schemas/projects";
+import ProjectsSchema from "s/schemas/projects";
 import { previewSecretId } from "s/lib/api";
 import Skills from "s/schemas/skills";
 
