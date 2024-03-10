@@ -1,9 +1,10 @@
 import type { ReactElement } from "react";
-import { getImageDimensions } from "@sanity/asset-utils";
+import { SanityImageSource, getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 
 import { urlForImage } from "s/lib/image";
 import { cn } from "@/utils/utils";
+import { Image as ImageType } from "sanity";
 
 export const SanityImg = ({
   image,
@@ -14,7 +15,7 @@ export const SanityImg = ({
   loading,
 }: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image: any;
+  image: ImageType;
   round?: number;
   size?: "small" | "medium" | "large";
   className?: string;
@@ -22,7 +23,7 @@ export const SanityImg = ({
   loading?: "lazy" | "eager";
 }): ReactElement => {
   const altText = alt ?? image?.alt ?? "";
-  const dimensions = getImageDimensions(image);
+  const dimensions = getImageDimensions(image as SanityImageSource);
   if (size === "small") {
     dimensions.width = 50;
     dimensions.height = 50;
@@ -41,7 +42,7 @@ export const SanityImg = ({
       {image?.asset && (
         <Image
           src={urlForImage(image).url()}
-          alt={altText}
+          alt={altText as string}
           width={dimensions.width}
           height={dimensions.height}
           placeholder="blur"

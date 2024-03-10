@@ -50,7 +50,7 @@ export default defineType({
       type: "image",
       title: "Logo",
     },
-
+    { name: "hasBg", type: "boolean", title: "Has Background" },
     {
       name: "coverImage",
       type: "image",

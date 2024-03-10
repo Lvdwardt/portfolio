@@ -15,6 +15,7 @@ export type Project = {
   };
   quote: string;
   logo: Image;
+  hasBg: boolean;
   projectImage: Image;
   projectImageLight: Image | null;
   coverImage: Image;
@@ -135,6 +136,12 @@ export type Experience = {
   link: string;
   image: Image;
   id: number;
+};
+
+export type Use = {
+  name: string;
+  link: string;
+  image: Image;
 };
 
 export type CurrentLocation = {

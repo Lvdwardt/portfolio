@@ -1,4 +1,4 @@
-export default function ToggleTheme({
+export default function toggleTheme({
   resolvedTheme,
   setTheme,
 }: {

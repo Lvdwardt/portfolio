@@ -938,8 +938,8 @@ export const trips = [
     story: "",
     facts: "",
     prices: {
-      flights: 0,
-      total: 0,
+      flights: 61,
+      total: 445,
     },
   },
   {
@@ -1220,12 +1220,37 @@ export const trips = [
     story: "",
     facts: "",
     prices: {
-      flights: 0,
-      total: 0,
+      flights: 150,
+      total: 332,
     },
   },
+  // {
+  //   id: "4",
+  //   title: "Hitchhike to Zadar",
+  //   legs: [
+  //     {
+  //       from: {
+  //         code: "ZAD",
+  //         coordinates: [] as number[],
+  //       },
+  //       to: {
+  //         code: "NRN",
+  //         coordinates: [] as number[],
+  //       },
+  //       type: "plane",
+  //     },
+  //   ],
+  //   duration: 7,
+  //   date: "2023-05",
+  //   story: "",
+  //   facts: "",
+  //   prices: {
+  //     flights: 31,
+  //     total: 0,
+  //   },
+  // },
   {
-    id: "4",
+    id: "5",
     title: "Milan, Bucharest, Sofia",
     legs: [
       {
@@ -1269,12 +1294,12 @@ export const trips = [
     story: "",
     facts: "",
     prices: {
-      flights: 0,
-      total: 0,
+      flights: 92,
+      total: 330,
     },
   },
   // {
-  //   id: "5",
+  //   id: "6",
   //   title: "Copenhagen, Oslo, Tromsø, Reykjavik",
   //   legs: [],
   //   duration: 20,
@@ -1282,8 +1307,8 @@ export const trips = [
   //   story: "",
   //   facts: "",
   //   prices: {
-  //    flights: 0,
-  //    total: 0,
+  //     flights: 0,
+  //     total: 0,
   //   },
   // },
 ];

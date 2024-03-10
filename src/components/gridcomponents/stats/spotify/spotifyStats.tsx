@@ -81,7 +81,11 @@ export default function SpotifyStats({
 
   return (
     <div className="group flex h-full w-full flex-col p-8">
-      <PlayMusic previewUrl={previewUrl} nowPlaying={props.nowPlaying} />
+      <PlayMusic
+        previewUrl={previewUrl}
+        nowPlaying={props.nowPlaying}
+        key={previewUrl}
+      />
       <div className="mt-auto flex flex-col">
         {props.nowPlaying ? <NowPlaying /> : <LastPlayed />}
       </div>

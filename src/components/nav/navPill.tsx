@@ -68,7 +68,7 @@ export default function NavPill() {
           width: `${routes[currentPlace - 1]?.width || 96}%`,
           left: `${routes[currentPlace - 1]?.left || 2}%`,
           transition: {
-            duration: 1,
+            duration: 0.3,
             ease: "backInOut",
           },
         }}

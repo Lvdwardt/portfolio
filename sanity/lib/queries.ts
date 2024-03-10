@@ -17,6 +17,13 @@ export const experiencesQuery = groq`*[_type == "experiences"]{
     endDate
 } | order(startDate desc)`;
 
+// get all uses
+export const usesQuery = groq`*[_type == "uses"]{
+    name,
+    link,
+    image
+}`;
+
 /**
  * Projects
  */
@@ -38,6 +45,7 @@ export const projectQuery = groq`*[_type == "projects" && slug.current == $slug]
     description,
     url,
     logo,
+    hasBg,
     coverImage,
     projectImage,
     projectImageLight,

@@ -22,11 +22,11 @@ export default async function NotFoundComponent({
   }
 
   return (
-    <main className=" mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px] xl:px-0 ">
-      <div className="col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:col-span-2">
+    <main className="mx-auto grid w-full max-w-320 grid-cols-1 gap-5 px-4 pb-6 pt-4 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-640 sm:grid-cols-2 xl:max-w-1200 xl:grid-cols-4 xl:grid-rows-[265px] xl:px-0 ">
+      <div className="col-span-1 h-full w-full rounded-4xl bg-card p-6 text-text sm:col-span-2">
         <About />
       </div>
-      <div className="col-span-1 h-full w-full rounded-[2rem] bg-card p-6 text-text sm:col-span-2">
+      <div className="col-span-1 h-full w-full rounded-4xl bg-card p-6 text-text sm:col-span-2">
         <h1 className="text-3x flex h-full w-full items-center justify-center p-4 font-extrabold sm:text-3xl">
           Sorry, this {type} does not exist
         </h1>

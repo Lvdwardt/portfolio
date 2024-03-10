@@ -66,7 +66,7 @@ export default function Contribution() {
         className="absolute bottom-4 right-4 flex items-center"
       >
         <SiMapbox className="" />
-        <span className=" mx-1 select-none text-xs font-bold text-text">
+        <span className="mx-1 select-none text-xs font-bold text-text">
           mapbox
         </span>
       </Link>

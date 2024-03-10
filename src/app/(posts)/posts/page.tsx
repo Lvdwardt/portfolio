@@ -25,7 +25,7 @@ export default async function Post() {
             <Link
               key={doc.id}
               href={`/posts/${doc.id}`}
-              className="flex flex-col rounded-[2rem] bg-card px-8 py-4"
+              className="flex flex-col rounded-4xl bg-card px-8 py-4"
             >
               <h2 className="pb-2 text-2xl font-bold">{doc.title}</h2>
               <p className="text-gray-500">{doc.description}</p>

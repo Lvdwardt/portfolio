@@ -39,11 +39,9 @@ export default function PageContent({
   return (
     <AnimatedLayout>
       <main className="relative flex animate-fade-up flex-col items-center justify-center rounded-xl p-4 pt-2 transition-all duration-300 ease-in xl:col-span-2 xl:row-span-2">
-        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-screen xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
-          <div className="rounded-[2rem] bg-card p-4 px-6 pt-[18px]">
-            {about}
-          </div>
-          <div className="order-2 rounded-[2rem] bg-card xl:order-3">
+        <div className="mx-auto grid w-full max-w-320 grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-640 sm:grid-cols-2 xl:min-h-screen xl:max-w-1200 xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
+          <div className="rounded-4xl bg-card p-4 px-6 pt-[18px]">{about}</div>
+          <div className="order-2 rounded-4xl bg-card xl:order-3">
             <div className="flex h-full w-full flex-col p-8">
               <div className="flex h-full flex-col justify-between">
                 <div className="">
@@ -91,7 +89,7 @@ export default function PageContent({
               </div>
             </div>
           </div>
-          <div className="map-element flex items-center justify-center overflow-hidden rounded-[2rem] bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3 xl:ml-auto">
+          <div className="map-element flex items-center justify-center overflow-hidden rounded-4xl bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3 xl:ml-auto">
             <Suspense fallback={<></>}>
               <MapboxContent
                 big={big}
@@ -103,8 +101,8 @@ export default function PageContent({
             </Suspense>
           </div>
         </div>
-        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-[640px] sm:grid-cols-2 xl:min-h-[calc(100vh_-_130px)]  xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
-          <div className="order-4 row-span-3 rounded-[2rem] bg-card p-8 sm:col-span-2 sm:row-span-2">
+        <div className="mx-auto grid w-full max-w-320 grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-640 sm:grid-cols-2 xl:min-h-[calc(100vh_-_130px)]  xl:max-w-1200 xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
+          <div className="order-4 row-span-3 rounded-4xl bg-card p-8 sm:col-span-2 sm:row-span-2">
             {/* toggle for trip */}
             <button
               className="flex= items-center justify-center"

@@ -18,7 +18,7 @@ export default function CoverImage({ project, color, loading }: Props) {
   }
 
   return (
-    <div className="group relative h-full w-full rounded-[2rem] bg-card">
+    <div className="group relative h-full w-full rounded-4xl bg-card">
       {/* colored circle */}
       <div
         className="absolute z-0 h-[500px] w-[500px] translate-x-12 translate-y-8 overflow-hidden rounded-full sm:translate-y-[-12.5rem] sm:rounded-t-none"

@@ -52,7 +52,7 @@ export default async function Project({ params }: PageProps) {
   return (
     <AnimatedLayout>
       <main className="overflow-y-visible bg-background transition-all duration-300 ease-in ">
-        <div className="mx-auto grid w-full max-w-[320px] gap-8 p-4 sm:max-w-[640px] sm:py-16 xl:max-w-[1200px] xl:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-320 gap-8 p-4 sm:max-w-640 sm:py-16 xl:max-w-1200 xl:grid-cols-2">
           <div className="col-span-1 flex flex-col gap-4">
             <h1 className="text-3xl font-bold sm:text-4xl">{project.title}</h1>
             <h2 className="text-xl">{project.quote}</h2>
@@ -107,13 +107,13 @@ export default async function Project({ params }: PageProps) {
             </div>
           </div>
         </div>
-        <div className="mx-auto grid w-full max-w-[320px] grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:132.5px] [grid-auto-rows:132.5px] sm:max-w-[640px] sm:grid-cols-2 sm:[grid-auto-columns:265px] sm:[grid-auto-rows:265px] xl:max-w-[1200px] xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
-          <div className="order-2 h-full w-full rounded-[2rem] bg-card xl:order-5"></div>
-          <div className="order-1 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-2"></div>
-          <div className="order-3 row-span-2 h-full w-full rounded-[2rem] bg-card"></div>
-          <div className="order-5 col-span-2 h-full w-full rounded-[2rem] bg-card xl:order-4"></div>
-          <div className="order-4 flex h-full w-full items-center justify-center rounded-[2rem] bg-card p-8 sm:p-24 xl:order-1">
-            <SanityImg image={project.logo} round={18} />
+        <div className="mx-auto grid w-full max-w-320 grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:132.5px] [grid-auto-rows:132.5px] sm:max-w-640 sm:grid-cols-2 sm:[grid-auto-columns:265px] sm:[grid-auto-rows:265px] xl:max-w-1200 xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0 ">
+          <div className="order-2 h-full w-full rounded-4xl bg-card xl:order-5"></div>
+          <div className="order-1 col-span-2 h-full w-full rounded-4xl bg-card xl:order-2"></div>
+          <div className="order-3 row-span-2 h-full w-full rounded-4xl bg-card"></div>
+          <div className="order-5 col-span-2 h-full w-full rounded-4xl bg-card xl:order-4"></div>
+          <div className="order-4 flex h-full w-full items-center justify-center rounded-4xl bg-card p-8 sm:p-24 xl:order-1">
+            <SanityImg image={project.logo} round={project.hasBg ? 18 : 0} />
           </div>
         </div>
       </main>

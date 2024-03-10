@@ -25,6 +25,7 @@ const config = {
   },
   reactStrictMode: true,
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",

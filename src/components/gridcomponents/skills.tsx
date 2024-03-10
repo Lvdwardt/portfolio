@@ -21,7 +21,7 @@ export default async function Skills() {
   return (
     <div>
       <h1 className="text-center text-2xl font-semibold">Skills</h1>
-      <div className=" flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <Gradient />
         <div className="flex w-full flex-col items-center justify-center font-medium">
           <div className="flex w-full flex-col items-center justify-center py-8">

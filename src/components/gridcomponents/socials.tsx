@@ -29,7 +29,7 @@ const Social: React.FC<SocialProps> = ({
     rel="noreferrer"
     title={title}
     className={cn(
-      "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2rem]",
+      "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl",
       color === "primary" ? "bg-primary" : "bg-secondary",
       className
     )}

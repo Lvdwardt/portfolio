@@ -6,8 +6,8 @@ export default function Navbar({ children }: { children?: React.ReactNode }) {
     <>
       <Gradient />
       <div className="grid pb-4 pt-8 font-medium xl:grid-cols-3">
-        <div className="flex w-full justify-center xl:block xl:pl-8 ">
-          <Link href="/" className="block h-auto w-auto" title="back to home">
+        <div className="flex w-full justify-center pb-4 xl:block xl:pb-0 xl:pl-8">
+          <Link href="/" className="block h-auto w-min" title="back to home">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={112}
@@ -19,7 +19,7 @@ export default function Navbar({ children }: { children?: React.ReactNode }) {
           </Link>
         </div>
         <div className="flex w-full justify-center">
-          <div className=" flex w-full max-w-[300px] items-center justify-center text-sm text-text sm:max-w-full">
+          <div className="flex w-full max-w-[300px] items-center justify-center text-sm text-text sm:max-w-full">
             {children && children}
           </div>
         </div>

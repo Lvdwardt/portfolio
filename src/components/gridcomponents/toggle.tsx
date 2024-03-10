@@ -1,7 +1,7 @@
 "use client";
 import type React from "react";
 import { useTheme } from "next-themes";
-import ToggleTheme from "../../hooks/toggleTheme";
+import toggleTheme from "../../hooks/toggleTheme";
 import { AnimatePresence, motion } from "framer-motion";
 import FiMoon from "public/icons/fi/FiMoon.svg";
 import FiSun from "public/icons/fi/FiSun.svg";
@@ -32,7 +32,7 @@ export default function Toggle() {
           aria-label={ariaLabel}
           onClick={() => {
             play();
-            ToggleTheme({ setTheme, resolvedTheme });
+            toggleTheme({ setTheme, resolvedTheme });
           }}
           className="curser-pointer z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background text-text shadow-lg transition-colors duration-100 ease-in-out"
         >

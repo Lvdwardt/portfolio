@@ -78,9 +78,9 @@ export default async function RootLayout({
     >
       <body>
         <Providers>{children}</Providers>
+        <SpeedInsights />
       </body>
       <Analytics />
-      <SpeedInsights />
     </html>
   );
 }

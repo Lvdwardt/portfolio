@@ -10,6 +10,26 @@ module.exports = {
       silka: ["var(--font-silka)"],
     },
     extend: {
+      maxWidth: {
+        320: "320px",
+        640: "640px",
+        1200: "1200px",
+      },
+      gridAutoColumns: {
+        256: "256px",
+      },
+      gridAutoRows: {
+        256: "256px",
+      },
+      gridTemplateRows: {
+        265: "265px 265px 265px 265px",
+      },
+      gridTemplateColumns: {
+        265: "265px 265px 265px 265px",
+      },
+      borderRadius: {
+        "4xl": "2rem",
+      },
       colors: {
         //varable colors
         primary: "var(--primary)",
@@ -165,9 +185,5 @@ module.exports = {
   safelist: [
     "w-[90px] hover:w-[90px] group-hover:[w-[90px] translate-y-[10px] sm:translate-y-0 w-[162px] hover:w-[162px] group-hover:w-[162px] translate-y-[10px] sm:translate-y-[-96px]",
   ],
-  plugins: [
-    require("tailwindcss-animated"),
-    require("tailwindcss-animate")
-
-  ]
+  plugins: [require("tailwindcss-animated"), require("tailwindcss-animate")],
 };

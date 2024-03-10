@@ -7,6 +7,7 @@ import About from "./schemas/about";
 import Pages from "./schemas/pages";
 import Skills from "./schemas/skills";
 import TravelData from "./schemas/travelData";
+import Uses from "./schemas/uses";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -17,5 +18,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     About,
     Pages,
     Skills,
+    Uses,
   ],
 };
