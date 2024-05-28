@@ -5,12 +5,14 @@ import Image from "next/image";
 import { urlForImage } from "s/lib/image";
 import { cn } from "@/utils/utils";
 import { Image as ImageType } from "sanity";
+import GifOverlay from "./gifOverlay";
 
 export const SanityImg = ({
   image,
   round,
   size,
   className,
+  imageClassName,
   alt,
   loading,
 }: {
@@ -19,6 +21,7 @@ export const SanityImg = ({
   round?: number;
   size?: "small" | "medium" | "large";
   className?: string;
+  imageClassName?: string;
   alt?: string;
   loading?: "lazy" | "eager";
 }): ReactElement => {
@@ -32,16 +35,24 @@ export const SanityImg = ({
     dimensions.width = 140;
     dimensions.height = 140;
   }
+
+  const url = urlForImage(image).url();
+
+  const isGif = url?.includes(".gif");
+
   return (
     <div
-      className={cn("overflow-hidden", className)}
+      className={cn("relative overflow-hidden", className)}
       style={{
         borderRadius: round ?? 0,
       }}
     >
+      {isGif && <GifOverlay />}
+
       {image?.asset && (
         <Image
-          src={urlForImage(image).url()}
+          className={imageClassName}
+          src={url}
           alt={altText as string}
           width={dimensions.width}
           height={dimensions.height}
