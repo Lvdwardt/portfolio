@@ -40,6 +40,10 @@ export type Project = {
     };
     url: string;
   }[];
+  media?: {
+    media?: Image;
+    caption?: string;
+  }[];
   githubUrl?: string;
 };
 

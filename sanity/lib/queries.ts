@@ -56,6 +56,7 @@ export const projectQuery = groq`*[_type == "projects" && slug.current == $slug]
     workedOn,
     newSkills,
     icons,
+    media,
     githubUrl
 }`;
 

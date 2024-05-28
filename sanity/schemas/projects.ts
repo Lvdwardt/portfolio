@@ -174,6 +174,28 @@ export default defineType({
       ],
     },
     {
+      name: "media",
+      type: "array",
+      title: "Media",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "media",
+              type: "image",
+              title: "Media",
+            },
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "githubUrl",
       type: "url",
       title: "Github URL (optional)",
