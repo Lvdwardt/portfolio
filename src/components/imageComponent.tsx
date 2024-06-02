@@ -5,7 +5,7 @@ import Image from "next/image";
 import { urlForImage } from "s/lib/image";
 import { cn } from "@/utils/utils";
 import { Image as ImageType } from "sanity";
-import GifOverlay from "./gifOverlay";
+import { GifImage } from "./gif/gifComponent";
 
 export const SanityImg = ({
   image,
@@ -47,24 +47,32 @@ export const SanityImg = ({
         borderRadius: round ?? 0,
       }}
     >
-      {isGif && <GifOverlay />}
-
-      {image?.asset && (
-        <Image
-          className={imageClassName}
-          src={url}
-          alt={altText as string}
-          width={dimensions.width}
-          height={dimensions.height}
-          placeholder="blur"
-          loading={loading ?? "lazy"}
-          blurDataURL={urlForImage(image).width(24).height(24).blur(10).url()}
-          sizes="
+      {image?.asset &&
+        (isGif ? (
+          <GifImage
+            imageClassName={imageClassName}
+            altText={altText as string}
+            dimensions={dimensions}
+            url={url}
+            image={image}
+            loading={loading}
+          />
+        ) : (
+          <Image
+            className={imageClassName}
+            src={url}
+            alt={altText as string}
+            width={dimensions.width}
+            height={dimensions.height}
+            placeholder="blur"
+            loading={loading ?? "lazy"}
+            blurDataURL={urlForImage(image).width(24).height(24).blur(10).url()}
+            sizes="
               (max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               40vw"
-        />
-      )}
+          />
+        ))}
     </div>
   );
 };
