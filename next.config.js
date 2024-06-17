@@ -8,7 +8,7 @@ const million = require("million/compiler");
 // !process.env.SKIP_ENV_VALIDATION && (await import("./src/env/server.mjs"));
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { withContentlayer } = require("next-contentlayer");
+const { withContentlayer } = require("next-contentlayer2");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });

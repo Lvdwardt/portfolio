@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer2/hooks";
 
 import { cn } from "@/utils/utils";
 
