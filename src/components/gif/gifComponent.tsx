@@ -35,9 +35,7 @@ export const GifImage = ({
         alt={altText as string}
         width={dimensions.width}
         height={dimensions.height}
-        placeholder="blur"
         loading={loading ?? "lazy"}
-        blurDataURL={urlForImage(image).width(24).height(24).blur(10).url()}
         sizes="
         (max-width: 768px) 100vw,
         (max-width: 1200px) 50vw,
@@ -45,6 +43,7 @@ export const GifImage = ({
         onLoad={() => {
           setIsLoading(false);
         }}
+        unoptimized={true}
       />
     </>
   );
