@@ -34,14 +34,21 @@ export default function Counter({
   }, [motionValue, isInView, value, direction, delay]);
 
   useEffect(() => {
-    return springValue.on("change", (latest) => {
+    return springValue.on("change", (latest: number) => {
       if (ref.current) {
         ref.current.textContent = Intl.NumberFormat("en-US").format(
-          latest.toFixed(0)
+          Number(latest.toFixed(0))
         );
       }
     });
   }, [springValue]);
 
-  return <span ref={ref} />;
+  return (
+    <>
+      <span className="hidden md:inline" ref={ref} />
+      <span className="md:hidden">
+        {Intl.NumberFormat("en-US").format(value)}
+      </span>
+    </>
+  );
 }
