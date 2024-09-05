@@ -7,8 +7,8 @@ import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
 import FaCity from "public/icons/fa/FaCity.svg";
 import FaHome from "public/icons/fa/FaHome.svg";
-import MdLocalAirport from "public/icons/md/MdLocalAirport.svg";
-import MdTrain from "public/icons/md/MdTrain.svg";
+import { MdDirectionsBoat, MdLocalAirport } from "public/icons/md";
+import { MdTrain } from "react-icons/md";
 
 type Coords = {
   latitude: number;
@@ -84,12 +84,25 @@ interface AMarker extends MarkerProps {
 
 const airportIcon = (props: IconBaseProps) => <MdLocalAirport {...props} />;
 const trainstationIcon = (props: IconBaseProps) => <MdTrain {...props} />;
+const cruisePortIcon = (props: IconBaseProps) => (
+  <MdDirectionsBoat {...props} />
+);
 
 export const StationMarker = ({ exactZoom, station }: AMarker) => {
   const lat = station.coordinates[1];
   const lon = station.coordinates[0];
 
-  const Icon = station.type === "airport" ? airportIcon : trainstationIcon;
+  const iconMap = {
+    airport: airportIcon,
+    trainstation: trainstationIcon,
+    cruisePort: cruisePortIcon,
+    cruise: cruisePortIcon,
+  } as const;
+
+  type StationType = keyof typeof iconMap;
+
+  const Icon = iconMap[station.type as StationType] ?? airportIcon;
+
   return (
     <Marker draggable={false} latitude={lat} longitude={lon}>
       <Icon

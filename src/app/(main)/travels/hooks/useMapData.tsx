@@ -44,6 +44,23 @@ export default async function useMapData() {
     capitals.push(capitalObject);
   }
 
+  const cruisePorts = [] as Station[];
+  for (let i = 0; i < travelData.visitedCruisePorts.length; i++) {
+    const cruisePort = travelData.visitedCruisePorts[i];
+    const cruisePortName = cruisePort.port;
+    const coordinates = cruisePort.coordinates
+      .split(",")
+      .map(parseFloat)
+      .reverse();
+    const type = "cruisePort";
+    const cruisePortObject = {
+      code: cruisePortName,
+      coordinates: coordinates,
+      type: type,
+    };
+    cruisePorts.push(cruisePortObject);
+  }
+
   // const host = headers().get("host");
   // const secret = process.env.MY_SECRET_TOKEN;
   // const { cities }: { cities: City[] } = await fetch(
@@ -70,6 +87,7 @@ export default async function useMapData() {
     countries: countries,
     airports: airports,
     capitals: capitals,
+    cruisePorts: cruisePorts,
     showTrip: false,
     travelStats: travelStats,
   };

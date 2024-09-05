@@ -33,6 +33,7 @@ export default function MapboxContent({
 }) {
   const countries = data?.countries;
   const airports = data?.airports;
+  const cruisePorts = data?.cruisePorts;
   const capitals = data?.capitals;
   const showTrip = data?.showTrip;
 
@@ -98,6 +99,15 @@ export default function MapboxContent({
                   key={airport.code}
                   exactZoom={exactZoom}
                   station={airport}
+                />
+              ))}
+            {/* show all cruise port I've visited */}
+            {cruisePorts &&
+              cruisePorts.map((cruisePort) => (
+                <StationMarker
+                  key={`${cruisePort.code}-port`}
+                  exactZoom={exactZoom}
+                  station={cruisePort}
                 />
               ))}
             {/* show all capitals I've visited */}

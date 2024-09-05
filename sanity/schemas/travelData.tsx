@@ -3,7 +3,7 @@ import airportList from "@/components/map/airports.json";
 import capitalList from "@/components/map/capitals.json";
 import { countryList } from "@/components/map/countrylist";
 import { defineType } from "sanity";
-import { MdLocalAirport } from "react-icons/md";
+import { MdDirectionsBoat, MdLocalAirport } from "react-icons/md";
 
 export default defineType({
   name: "travelData",
@@ -133,6 +133,40 @@ export default defineType({
               return {
                 title: name.split(",")[0],
                 media: <span>{getFlagEmoji(countryCode)}</span>,
+              };
+            },
+          },
+        },
+      ],
+    },
+    {
+      name: "visitedCruisePorts",
+      type: "array",
+      title: "Visited Cruise Ports",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "port",
+              type: "string",
+              title: "Port",
+            },
+            {
+              name: "coordinates",
+              type: "string",
+              title: "Coordinates",
+            },
+          ],
+          preview: {
+            select: {
+              port: "port",
+            },
+            prepare(selection) {
+              const { port } = selection;
+              return {
+                title: port,
+                media: MdDirectionsBoat,
               };
             },
           },

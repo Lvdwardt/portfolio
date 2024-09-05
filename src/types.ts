@@ -6,6 +6,7 @@ import type {
   LineString,
   GeoJsonProperties,
 } from "geojson";
+import React from "react";
 import type { Image, TypedObject } from "sanity";
 
 export type Project = {
@@ -67,6 +68,12 @@ export type Capital = {
   coordinates: number[];
 };
 
+export type CruisePort = {
+  name: string;
+  coordinates: number[];
+  type: string;
+};
+
 export type CityFeature = {
   type: "Feature";
   properties: {
@@ -103,12 +110,13 @@ export type TripType = {
     };
     type: string;
   }[];
+  route?: Position[];
   duration: number;
   date: string;
   story: string;
-  facts: string | string[];
+  fact?: React.ReactNode;
   prices?: {
-    flights?: number;
+    travel?: number;
     total?: number;
   };
 };
@@ -123,6 +131,7 @@ export type MapData = {
   airports: Station[];
   countries: string[];
   capitals: Capital[];
+  cruisePorts: Station[];
   showTrip: boolean;
   travelStats: TravelStats;
 };
@@ -189,6 +198,10 @@ export type TravelData = {
   }[];
   visitedCapitals: {
     capital: string;
+  }[];
+  visitedCruisePorts: {
+    port: string;
+    coordinates: string;
   }[];
   // visitedCities: {
   //   city: string;

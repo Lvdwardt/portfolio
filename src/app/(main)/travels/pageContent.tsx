@@ -102,24 +102,28 @@ export default function PageContent({
           </div>
         </div>
         <div className="mx-auto grid w-full max-w-320 grid-cols-1 gap-5 px-4 pb-6 pt-2 [grid-auto-columns:265px] [grid-auto-rows:265px] sm:max-w-640 sm:grid-cols-2 xl:min-h-[calc(100vh_-_130px)]  xl:max-w-1200 xl:grid-cols-4 xl:grid-rows-[265px,265px] xl:px-0">
-          <div className="order-4 row-span-3 rounded-4xl bg-card p-8 sm:col-span-2 sm:row-span-2">
+          <div className="order-4 row-span-3 overflow-y-auto rounded-4xl bg-card p-8 sm:col-span-2 sm:row-span-2">
             {/* toggle for trip */}
-            <button
-              className="flex= items-center justify-center"
-              onClick={() =>
-                startTransition(
-                  () => (setShowTrip(false), setCurrentTrip(null))
-                )
-              }
-            >
-              show all visited countries
-            </button>
+            {currentTrip ? (
+              <button
+                className="flex= items-center justify-center"
+                onClick={() =>
+                  startTransition(
+                    () => (setShowTrip(false), setCurrentTrip(null))
+                  )
+                }
+              >
+                Show all visited countries
+              </button>
+            ) : (
+              <span className="text-primary">Some of my noteworthy trips:</span>
+            )}
             {/* map over the trips */}
-            <div className="mt-4 flex flex-col gap-4">
+            <div className="my-4 flex h-auto flex-col gap-4">
               {!showTrip ? (
                 trips.map((trip) => (
                   <button
-                    className="flex flex-col gap-2"
+                    className="flex flex-col gap-2 last:pb-4"
                     key={trip.id}
                     onClick={() =>
                       startTransition(() => {
@@ -136,7 +140,7 @@ export default function PageContent({
                   </button>
                 ))
               ) : (
-                <div>
+                <div className="flex h-full flex-col">
                   <div className="flex w-full items-center justify-between gap-2 text-left">
                     <span className="text-xl font-bold text-primary">
                       {currentTrip?.title}
@@ -145,6 +149,11 @@ export default function PageContent({
                       {currentTrip?.date}
                     </span>
                   </div>
+                  <div className="pt-4">
+                    {currentTrip?.fact && currentTrip.fact}
+                  </div>
+                  {/* @TODO: add trip stats */}
+                  {/* <div className="mb-8 mt-auto">hey</div> */}
                 </div>
               )}
             </div>

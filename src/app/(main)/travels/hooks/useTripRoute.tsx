@@ -58,19 +58,19 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
         trip.legs[i].to.coordinates = to.coordinates;
       }
     }
-    if (trip.legs[i].type === "train") {
+    if (trip.legs[i].type === "train" || trip.legs[i].type === "cruise") {
       from = trip.legs[i].from;
       to = trip.legs[i].to;
       // add to the stations set
       stationsSet.add({
         code: from.code,
         coordinates: from.coordinates,
-        type: "train",
+        type: trip.legs[i].type,
       });
       stationsSet.add({
         code: to.code,
         coordinates: to.coordinates,
-        type: "train",
+        type: trip.legs[i].type,
       });
     }
 
@@ -79,27 +79,33 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
       route = trip.legs[i].route?.coordinates ?? [];
     }
 
-    // add the coordinates of the from and to stations to the trip
-    if (from) {
-      trip.legs[i].from.coordinates = from.coordinates;
-    }
-    if (to) {
-      trip.legs[i].to.coordinates = to.coordinates;
+    if (trip.legs[i].type === "cruise" && route === undefined) {
+      route = trip.route ?? [];
     }
 
-    if (from && to) {
-      lines.push({
-        type: "Feature",
-        geometry: {
-          type: "LineString",
-          coordinates: [from.coordinates, to.coordinates],
-        },
-        properties: {
-          id: trip.id,
-          title: trip.title,
-          type: trip.legs[i].type,
-        },
-      });
+    // add the coordinates of the from and to stations to the trip
+    if (trip.legs[i].type !== "cruise") {
+      if (from) {
+        trip.legs[i].from.coordinates = from.coordinates;
+      }
+      if (to) {
+        trip.legs[i].to.coordinates = to.coordinates;
+      }
+
+      if (from && to) {
+        lines.push({
+          type: "Feature",
+          geometry: {
+            type: "LineString",
+            coordinates: [from.coordinates, to.coordinates],
+          },
+          properties: {
+            id: trip.id,
+            title: trip.title,
+            type: trip.legs[i].type,
+          },
+        });
+      }
     }
     if (route) {
       lines.push({
@@ -118,13 +124,19 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
   }
 
   // make one line for the whole trip. connect all gaps
-  const tripLine = lineString(
-    lines.reduce((acc, line) => {
-      return [...acc, ...line.geometry.coordinates];
-    }, [] as number[][])
-  );
+  const tripLine =
+    lines.length > 1
+      ? lineString(
+          lines.reduce((acc, line) => {
+            return [...acc, ...line.geometry.coordinates];
+          }, [] as number[][])
+        )
+      : undefined;
 
-  const stations = Array.from(stationsSet);
+  // some duplicate codes in the stations set
+  const stations = Array.from(stationsSet).filter(
+    (v, i, a) => a.findIndex((t) => t.code === v.code) === i
+  );
 
   return { trip, stations, tripLine };
 }

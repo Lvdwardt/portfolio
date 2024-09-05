@@ -105,4 +105,5 @@ export const travelDataQuery = groq`*[_type == "travelData"][0]{
     visitedCountries,
     visitedAirports,
     visitedCapitals,
+    visitedCruisePorts
 }`;
