@@ -944,7 +944,7 @@ export const trips = [
   },
   {
     id: "3",
-    title: "Fly holiday to: Catania, Dubai, Naples, Bari",
+    title: "Solo fly trip to: Catania, Dubai, Naples, Bari",
     legs: [
       {
         from: {
@@ -1339,7 +1339,7 @@ export const trips = [
   },
   {
     id: "8",
-    title: "Cruise from Southampton to Greenland and Iceland",
+    title: "Cruise from UK to Greenland and Iceland",
     route: [
       [-1.400072, 50.89111],
       [-1.40007, 50.89111],
