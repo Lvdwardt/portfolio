@@ -1,7 +1,7 @@
 "use client";
 import clsx from "clsx";
 import { RefObject, useEffect, useState } from "react";
-import SiSpotify from "public/icons/si/SiSpotify.svg";
+import { SiSpotify } from "react-icons/si";
 
 type PlayMusicProps = { previewUrl?: string; nowPlaying?: boolean };
 
@@ -13,14 +13,14 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
 
   useEffect(() => {
     if (!previewUrl) return;
-    setAudio(new Audio(`${previewUrl}.mp3`));
+    const newAudio = new Audio(`${previewUrl}.mp3`);
+    newAudio.loop = true;
+    setAudio(newAudio);
   }, []);
   useEffect(() => {
     if (!audio || audioRef) return;
     setAudioRef({ current: audio });
   }, [audio, audioRef]);
-
-  audio && (audio.loop = true);
 
   const [clicked, setClicked] = useState(false);
 
@@ -36,8 +36,9 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
         } else {
           audioRef?.current?.pause();
         }
-        if (clicked) return;
-        setClicked(true);
+        if (!clicked) {
+          setClicked(true);
+        }
       }}
       onMouseLeave={() => {
         if (!clicked) return;

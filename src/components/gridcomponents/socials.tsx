@@ -1,9 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import FaEnvelope from "public/icons/fa/FaEnvelope.svg";
-import FaGithub from "public/icons/fa/FaGithub.svg";
-import FaLinkedin from "public/icons/fa/FaLinkedin.svg";
-import FaWhatsapp from "public/icons/fa/FaWhatsapp.svg";
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { cn } from "@/utils/utils";
 
 interface SocialProps {

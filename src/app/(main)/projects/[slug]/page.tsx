@@ -8,23 +8,19 @@ import { sanityFetch } from "s/lib/client";
 import { projectQuery } from "s/lib/queries";
 import { SanityImg } from "@/components/imageComponent";
 import Link from "next/link";
-import ImArrowUpRight2 from "public/icons/im/ImArrowUpRight2.svg";
-
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+import { ImArrowUpRight2 } from "react-icons/im";
+import type { PageProps } from ".next/types/app/(main)/projects/[slug]/page";
 
 export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
+  const _params = await params;
   const project = await sanityFetch<SanityDocument>(
     projectQuery,
     ["projects"],
-    params
+    _params
   );
   if (!project) {
     return {
@@ -39,11 +35,12 @@ export async function generateMetadata({
 }
 
 export default async function Project({ params }: PageProps) {
+  const _params = await params;
   //find the project with the same title as the url
   const project = await sanityFetch<SanityDocument<ProjectType>>(
     projectQuery,
     ["projects"],
-    params
+    _params
   );
 
   if (!project) {

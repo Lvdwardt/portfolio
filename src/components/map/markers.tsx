@@ -5,9 +5,8 @@ import { useState } from "react";
 import type { IconBaseProps } from "react-icons";
 import { Marker } from "react-map-gl";
 import { Station, Capital } from "@/types";
-import FaCity from "public/icons/fa/FaCity.svg";
-import FaHome from "public/icons/fa/FaHome.svg";
-import { MdDirectionsBoat, MdLocalAirport } from "public/icons/md";
+import { FaCity, FaHome } from "react-icons/fa";
+import { MdDirectionsBoat, MdLocalAirport } from "react-icons/md";
 import { MdTrain } from "react-icons/md";
 
 type Coords = {

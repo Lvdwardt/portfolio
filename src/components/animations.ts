@@ -18,28 +18,24 @@ export type TransitionProps = {
 export const useInitialDelay = (delay: number) => {
   const [initialDelay, setInitialDelay] = useState(delay);
 
-  useEffect(
-    () => {
-      if (delay === 0) {
-        return;
+  useEffect(() => {
+    if (delay === 0) {
+      return;
+    }
+    //each second 10 times, decrease the initialDelay by 0.1
+    let i = delay * 10;
+    const timeout = setInterval(() => {
+      i--;
+      setInitialDelay(i / 10);
+      if (i < 0) {
+        clearInterval(timeout);
       }
-      //each second 10 times, decrease the initialDelay by 0.1
-      let i = delay * 10;
-      const timeout = setInterval(() => {
-        i--;
-        setInitialDelay(i / 10);
-        if (i < 0) {
-          clearInterval(timeout);
-        }
-      }, 100);
+    }, 100);
 
-      return () => {
-        clearTimeout(timeout);
-      };
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
   return initialDelay;
 };
 
@@ -64,7 +60,6 @@ export function useShowWhenInView(delay: number = 0) {
     if (isInView) {
       controls.start("visible");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   const initialDelay = useInitialDelay(delay);

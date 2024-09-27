@@ -7,7 +7,7 @@ import useTripRoute from "./hooks/useTripRoute";
 import { TripType } from "@/types";
 import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
-import AiFillCaretDown from "public/icons/ai/AiFillCaretDown.svg";
+import { AiFillCaretDown } from "react-icons/ai";
 import Counter from "@/components/global/counter";
 import DynamicBigMapbox from "@/components/map/dynamicBigMap";
 
@@ -23,7 +23,7 @@ export default function PageContent({
 
   const { trip, stations, tripLine } = useTripRoute(currentTrip, mapData);
 
-  mapData.showTrip = showTrip;
+  const mapDataWithShowTrip = { ...mapData, showTrip };
 
   const big = useCenter();
 
@@ -93,7 +93,7 @@ export default function PageContent({
             <Suspense fallback={<></>}>
               <DynamicBigMapbox
                 big={big}
-                data={mapData}
+                data={mapDataWithShowTrip}
                 trip={trip}
                 tripLine={tripLine}
                 stations={stations}

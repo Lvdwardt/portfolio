@@ -2,19 +2,20 @@ import { allDocs } from "contentlayer/generated";
 
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/blog/mdx";
-import IoClose from "public/icons/io5/IoClose.svg";
+import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+import { PageProps } from ".next/types/app/(main)/projects/[slug]/page";
 
 export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
 
 export async function generateMetadata({ params }: PageProps) {
-  const doc = await getDocFromParams(params.slug);
+  if (!params) return null;
+  const _params = await params;
+  if (!("slug" in _params) || typeof _params.slug !== "string") {
+    return null;
+  }
+
+  const doc = await getDocFromParams(_params.slug);
 
   return {
     title: doc.title + " - Posts",
@@ -33,7 +34,12 @@ async function getDocFromParams(slug: string) {
 }
 
 const page = async ({ params }: PageProps) => {
-  const doc = await getDocFromParams(params.slug);
+  if (!params) return null;
+  const _params = await params;
+  if (!("slug" in _params) || typeof _params.slug !== "string") {
+    return null;
+  }
+  const doc = await getDocFromParams(_params.slug);
 
   return (
     <main className="flex flex-col items-center gap-12 px-4 sm:px-8 xl:mt-[-4rem]">

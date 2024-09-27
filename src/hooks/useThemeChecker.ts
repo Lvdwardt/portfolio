@@ -6,6 +6,7 @@ export default function useThemeChecker() {
   if (typeof document === "undefined" || typeof window === "undefined") return;
   const root = document.documentElement;
   const dataTheme = root.getAttribute("data-theme");
+  // check cookie
 
   if (!resolvedTheme || !setTheme) return;
   if (dataTheme !== null && resolvedTheme !== dataTheme) {

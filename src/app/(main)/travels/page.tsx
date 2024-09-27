@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Travels() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const mapData = await useMapData();
 
   const about = <About />;

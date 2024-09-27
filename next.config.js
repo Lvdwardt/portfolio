@@ -1,5 +1,3 @@
-const million = require("million/compiler");
-/* eslint-disable no-undef */
 // @ts-check
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
@@ -43,8 +41,9 @@ const config = {
       },
     ],
   },
+  experimental: {
+    reactCompiler: true,
+  },
 };
 
-module.exports = million.next(withBundleAnalyzer(withContentlayer(config)), {
-  auto: { rsc: true },
-});
+module.exports = withBundleAnalyzer(withContentlayer(config));

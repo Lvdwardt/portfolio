@@ -3,7 +3,7 @@ import Gradient from "../../assets/lineargradient";
 
 export default function Navbar({ children }: { children?: React.ReactNode }) {
   return (
-    <>
+    <div className="relative">
       <Gradient />
       <div className="grid pb-4 pt-8 font-medium xl:grid-cols-3">
         <div className="flex w-full justify-center pb-4 xl:block xl:pb-0 xl:pl-8">
@@ -32,6 +32,6 @@ export default function Navbar({ children }: { children?: React.ReactNode }) {
           mail
         </a>
       </div>
-    </>
+    </div>
   );
 }
