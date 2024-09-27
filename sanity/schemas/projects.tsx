@@ -1,5 +1,6 @@
 import { AiFillFolderOpen } from "react-icons/ai";
 import { defineType } from "sanity";
+import * as CustomIcons from "@/assets/icons";
 
 import { preview } from "sanity-plugin-icon-picker";
 
@@ -147,7 +148,21 @@ export default defineType({
               title: "Icon",
               options: {
                 storeSvg: true,
-                providers: ["si"],
+                providers: ["si", "ci"],
+                configurations: [
+                  {
+                    title: "CutomIcons",
+                    provider: "ci",
+                    icons: () =>
+                      Object.entries(CustomIcons).map(([name, Component]) => ({
+                        name,
+                        component: () => (
+                          <Component width="1.5em" height="1em" />
+                        ),
+                        tags: [name],
+                      })),
+                  },
+                ],
               },
             },
             {

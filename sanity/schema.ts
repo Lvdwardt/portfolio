@@ -1,7 +1,7 @@
 import { type SchemaTypeDefinition } from "sanity";
 
 import Experiences from "./schemas/experiences";
-import ProjectsSchema from "./schemas/projects";
+import ProjectsSchema from "./schemas/projects.tsx";
 import Location from "./schemas/location";
 import About from "./schemas/about";
 import Pages from "./schemas/pages";
