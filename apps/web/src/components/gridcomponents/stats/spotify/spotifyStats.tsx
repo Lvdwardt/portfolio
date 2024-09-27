@@ -32,7 +32,7 @@ export default function SpotifyStats({
   const longSongName =
     props.song && props.song?.indexOf("(") > 0
       ? props.song?.substring(0, props.song?.indexOf("("))
-      : props.song ?? "";
+      : (props.song ?? "");
 
   const songName =
     longSongName?.length > 28
