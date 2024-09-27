@@ -1,7 +1,7 @@
 import { FaRoute } from "react-icons/fa";
-import airportList from "@/components/map/airports.json";
-import capitalList from "@/components/map/capitals.json";
-import { countryList } from "@/components/map/countrylist";
+import airportList from "../data/airports.json";
+import capitalList from "../data/capitals.json";
+import countryList from "../data/countrylist.json";
 import { defineType } from "sanity";
 import { MdDirectionsBoat, MdLocalAirport } from "react-icons/md";
 

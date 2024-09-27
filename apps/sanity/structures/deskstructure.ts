@@ -1,6 +1,4 @@
-import { FaCode, FaGlobeEurope } from "react-icons/fa";
-import { MdLocationPin } from "react-icons/md";
-import { singletonTypes, singletons } from "s/singletons";
+import { singletonTypes, singletons } from "../schemas/singletons";
 import type { StructureBuilder } from "sanity/desk";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);

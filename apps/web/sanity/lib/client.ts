@@ -14,7 +14,7 @@ export const token = process.env.SANITY_READ_TOKEN;
 export async function sanityFetch<QueryResponse>(
   query: string,
   tags: string[],
-  params?: QueryParams
+  params: QueryParams = {}
 ): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, params, {
     cache: "force-cache",

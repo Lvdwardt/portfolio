@@ -1,0 +1,35 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "pnpm sanity dev",
+    "start": "pnpm sanity start",
+    "build": "pnpm sanity build",
+    "deploy": "pnpm sanity deploy",
+    "deploy-graphql": "pnpm sanity graphql deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/google-maps-input": "^4.0.1",
+    "@sanity/vision": "^3.58.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0",
+    "sanity": "^3.58.0",
+    "sanity-plugin-icon-picker": "^3.3.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^4.0.0",
+    "@types/react": "^18.0.25",
+    "eslint": "^8.6.0",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6",
+    "vite": "^5.4.8"
+  }
+}

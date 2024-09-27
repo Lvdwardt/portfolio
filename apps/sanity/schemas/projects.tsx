@@ -1,6 +1,6 @@
 import { AiFillFolderOpen } from "react-icons/ai";
 import { defineType } from "sanity";
-import * as CustomIcons from "@/assets/icons";
+import * as CustomIcons from "../data/icons";
 
 import { preview } from "sanity-plugin-icon-picker";
 
