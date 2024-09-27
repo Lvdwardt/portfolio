@@ -9,9 +9,10 @@ import { projectQuery } from "s/lib/queries";
 import { SanityImg } from "@/components/imageComponent";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
-import type { PageProps } from ".next/types/app/(main)/projects/[slug]/page";
 
-export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
 export async function generateMetadata({
   params,

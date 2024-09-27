@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { Mdx } from "@/components/blog/mdx";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-import { PageProps } from ".next/types/app/(main)/projects/[slug]/page";
 
-export const runtime = process.env.HOST === "cloudflare" ? "edge" : "nodejs";
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
 export async function generateMetadata({ params }: PageProps) {
   if (!params) return null;
