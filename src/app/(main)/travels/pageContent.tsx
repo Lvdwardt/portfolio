@@ -2,7 +2,6 @@
 import AnimatedLayout from "@/layouts/animatedLayout";
 import { Suspense, startTransition, useState } from "react";
 import "./travel.css";
-import MapboxContent from "@/components/map/map";
 import { MapData } from "@/types";
 import useTripRoute from "./hooks/useTripRoute";
 import { TripType } from "@/types";
@@ -10,6 +9,7 @@ import { trips } from "./trips";
 import useCenter from "./hooks/useCenter";
 import AiFillCaretDown from "public/icons/ai/AiFillCaretDown.svg";
 import Counter from "@/components/global/counter";
+import DynamicBigMapbox from "@/components/map/dynamicBigMap";
 
 export default function PageContent({
   mapData,
@@ -91,7 +91,7 @@ export default function PageContent({
           </div>
           <div className="map-element flex items-center justify-center overflow-hidden rounded-4xl bg-card text-center sm:order-3 sm:col-span-2 sm:row-span-2 xl:order-2 xl:col-span-3 xl:ml-auto">
             <Suspense fallback={<></>}>
-              <MapboxContent
+              <DynamicBigMapbox
                 big={big}
                 data={mapData}
                 trip={trip}

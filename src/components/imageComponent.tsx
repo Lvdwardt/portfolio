@@ -24,8 +24,9 @@ export const SanityImg = ({
   imageClassName?: string;
   alt?: string;
   loading?: "lazy" | "eager";
-}): ReactElement => {
+}): ReactElement | null => {
   const altText = alt ?? image?.alt ?? "";
+  if (!image) return null;
   const dimensions = getImageDimensions(image as SanityImageSource);
   if (size === "small") {
     dimensions.width = 50;

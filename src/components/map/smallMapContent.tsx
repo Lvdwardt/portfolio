@@ -7,7 +7,7 @@ import useMap from "./useMap";
 import { useState } from "react";
 import "@/styles/mapbox-gl.css";
 
-export default function MapboxContent({
+export default function MapboxBigContent({
   coords,
 }: {
   coords: { latitude: number; longitude: number };

@@ -1,9 +1,9 @@
-import MapboxContent from "@/components/map/smallMap";
 import { sanityFetch } from "s/lib/client";
 import type { SanityDocument } from "next-sanity";
 import { locationQuery } from "s/lib/queries";
 import type { CurrentLocation } from "@/types";
 import "@/styles/mapbox-gl.css";
+import DynamicSmallMapbox from "@/components/map/dynamciSmallMap";
 
 async function getData() {
   const { currentLocation } = await sanityFetch<
@@ -23,5 +23,5 @@ async function getData() {
 export default async function Mapbox() {
   const coords = await getData();
 
-  return <MapboxContent coords={coords} />;
+  return <DynamicSmallMapbox coords={coords} />;
 }
