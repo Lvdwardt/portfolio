@@ -16,7 +16,7 @@ export default function PageContent({
   about,
 }: {
   mapData: MapData;
-  about: JSX.Element;
+  about: React.ReactNode;
 }) {
   const [showTrip, setShowTrip] = useState(false);
   const [currentTrip, setCurrentTrip] = useState<TripType | null>(null);
