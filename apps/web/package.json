@@ -2,9 +2,8 @@
   "name": "portfolio-web",
   "version": "2.1.0",
   "private": true,
-  "packageManager": "pnpm@9.10.0",
   "scripts": {
-    "build": "pnpm contentlayer2 build && next build",
+    "build": "contentlayer2 build && next build",
     "dev": "next dev",
     "bun-dev": "bun dev",
     "lint": "next lint",
@@ -51,7 +50,7 @@
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animated": "^1.0.1",
     "use-sound": "^4.0.1",
-    "xml-js": "^1.6.11",
+
     "zod": "^3.22.4"
   },
   "devDependencies": {

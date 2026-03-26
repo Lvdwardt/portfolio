@@ -171,4 +171,108 @@ export const cityNames = [
     name: "Reykjavik",
     country: "is",
   },
+  {
+    name: "Akureyri",
+    country: "is",
+  },
+  {
+    name: "Seydisfjordur",
+    country: "is",
+  },
+  {
+    name: "Harstad",
+    country: "no",
+  },
+  {
+    name: "Southampton",
+    country: "gb",
+  },
+  {
+    name: "Falmouth",
+    country: "gb",
+  },
+  {
+    name: "Cobh",
+    country: "ie",
+  },
+  {
+    name: "Ponta Delgada",
+    country: "pt",
+  },
+  {
+    name: "Malaga",
+    country: "es",
+  },
+  {
+    name: "Cadiz",
+    country: "es",
+  },
+  {
+    name: "Casablanca",
+    country: "ma",
+  },
+  {
+    name: "Agadir",
+    country: "ma",
+  },
+  {
+    name: "Mindelo",
+    country: "cv",
+  },
+  {
+    name: "Miami",
+    country: "us",
+  },
+  {
+    name: "New York",
+    country: "us",
+  },
+  {
+    name: "Tampa",
+    country: "us",
+  },
+  {
+    name: "Nassau",
+    country: "bs",
+  },
+  {
+    name: "Philipsburg",
+    country: "sx",
+  },
+  {
+    name: "Basseterre",
+    country: "kn",
+  },
+  {
+    name: "Tortola",
+    country: "vg",
+  },
+  {
+    name: "La Romana",
+    country: "do",
+  },
+  {
+    name: "Qaqortoq",
+    country: "gl",
+  },
+  {
+    name: "Nanortalik",
+    country: "gl",
+  },
+  {
+    name: "Nuuk",
+    country: "gl",
+  },
+  {
+    name: "Paamiut",
+    country: "gl",
+  },
+  {
+    name: "Halifax",
+    country: "ca",
+  },
+  {
+    name: "Sydney",
+    country: "ca",
+  },
 ];

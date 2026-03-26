@@ -1,9 +1,9 @@
 import { singletonTypes, singletons } from "../schemas/singletons";
-import type { StructureBuilder } from "sanity/desk";
+import type { StructureBuilder } from "sanity/structure";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 
-export const deskStructure = (S: StructureBuilder) =>
+export const structure = (S: StructureBuilder) =>
   S.list()
     .title("Base")
     .items([

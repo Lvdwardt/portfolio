@@ -1,10 +1,12 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
   "private": true,
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@9.11.0",
   "devDependencies": {
     "turbo": "^2.1.2"
   }
 }
-

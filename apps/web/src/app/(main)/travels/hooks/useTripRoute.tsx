@@ -44,6 +44,7 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
 
   // create a dashed line for each leg of the trip
   const lines = [] as Feature<LineString>[];
+  let cruiseRouteAdded = false;
   for (let i = 0; i < trip.legs.length; i++) {
     let from;
     let to;
@@ -79,8 +80,9 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
       route = trip.legs[i].route?.coordinates ?? [];
     }
 
-    if (trip.legs[i].type === "cruise" && route === undefined) {
+    if (trip.legs[i].type === "cruise" && !cruiseRouteAdded) {
       route = trip.route ?? [];
+      cruiseRouteAdded = true;
     }
 
     // add the coordinates of the from and to stations to the trip
@@ -125,7 +127,7 @@ export default function useTripRoute(trip: TripType | null, mapData: MapData) {
 
   // make one line for the whole trip. connect all gaps
   const tripLine =
-    lines.length > 1
+    lines.length >= 1
       ? lineString(
           lines.reduce((acc, line) => {
             return [...acc, ...line.geometry.coordinates];

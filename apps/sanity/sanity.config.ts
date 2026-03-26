@@ -1,11 +1,11 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
+import { structureTool } from "sanity/structure";
 import { iconPicker } from "sanity-plugin-icon-picker";
 import { googleMapsInput } from "@sanity/google-maps-input";
-import { apiVersion, dataset, projectId } from "../web/sanity/env";
+import { apiVersion, dataset, projectId } from "./env";
 import { schema } from "./schema";
-import { deskStructure } from "./structures/deskstructure";
+import { structure } from "./structures/deskstructure";
 import { singletonTypes } from "./schemas/singletons";
 
 const GOOGLE_MAPS_KEY = process.env.SANITY_STUDIO_GOOGLE_MAPS_API_KEY;
@@ -28,8 +28,8 @@ export default defineConfig({
       templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
   },
   plugins: [
-    deskTool({
-      structure: deskStructure,
+    structureTool({
+      structure,
     }),
 
     // Vision is a tool that lets you query your content with GROQ in the studio
