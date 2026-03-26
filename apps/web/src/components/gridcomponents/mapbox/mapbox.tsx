@@ -11,7 +11,7 @@ async function getData() {
   >(locationQuery, ["location"]);
 
   if (!currentLocation.lat || !currentLocation.lng) {
-    (currentLocation.lat = 51.92735), (currentLocation.lng = 5.5735);
+    ((currentLocation.lat = 51.92735), (currentLocation.lng = 5.5735));
   }
   const coords = {
     latitude: currentLocation.lat,

@@ -1,8 +1,8 @@
-import { AnimationControls, useAnimation, useInView } from "framer-motion";
+import { useAnimation, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 export type TransitionProps = {
-  animate?: AnimationControls | "visible" | "hidden";
+  animate?: ReturnType<typeof useAnimation> | "visible" | "hidden";
   duration?: number;
   delay?: number;
 };
@@ -120,7 +120,7 @@ export function generateAnimationConfig(
         transition: {
           duration,
           delay,
-          ease: "easeInOut",
+          ease: "easeInOut" as const,
         },
       },
     },

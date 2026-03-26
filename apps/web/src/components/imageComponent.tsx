@@ -1,4 +1,3 @@
-import type { ReactElement } from "react";
 import { SanityImageSource, getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 
@@ -24,7 +23,7 @@ export const SanityImg = ({
   imageClassName?: string;
   alt?: string;
   loading?: "lazy" | "eager";
-}): ReactElement | null => {
+}) => {
   const altText = alt ?? image?.alt ?? "";
   if (!image) return null;
   const dimensions = getImageDimensions(image as SanityImageSource);

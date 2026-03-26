@@ -8,7 +8,7 @@ type TripProps = {
   exactZoom: number;
   trip: TripType;
   resolvedTheme: string | undefined;
-  mapRef: RefObject<MapRef>;
+  mapRef: RefObject<MapRef | null>;
   stations: Station[];
   tripLine: TripLine;
 };

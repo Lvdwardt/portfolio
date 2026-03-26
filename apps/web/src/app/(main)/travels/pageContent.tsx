@@ -127,7 +127,7 @@ export default function PageContent({
                     key={trip.id}
                     onClick={() =>
                       startTransition(() => {
-                        setShowTrip(true), setCurrentTrip(trip);
+                        (setShowTrip(true), setCurrentTrip(trip));
                       })
                     }
                   >

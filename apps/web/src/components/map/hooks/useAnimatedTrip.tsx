@@ -6,7 +6,7 @@ import { TripLine } from "@/types";
 import { bbox, lineDistance } from "@turf/turf";
 
 export default function useAnimatedTrip(
-  mapRef: RefObject<MapRef>,
+  mapRef: RefObject<MapRef | null>,
   line: TripLine
 ) {
   const [animationPhase, setAnimationPhase] = useState(0);
