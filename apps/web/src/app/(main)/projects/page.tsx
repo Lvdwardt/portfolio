@@ -29,10 +29,15 @@ export default async function Projects() {
             <div className="col-span-1 rounded-4xl bg-card p-4 pl-6 pt-[18px]">
               <About />
             </div>
-            {projects.slice(0, 4).map((project, index) => {
+            {projects.slice(0, 7).map((project, index) => {
               // Repeat the original layout pattern: wide, tall, wide, normal
               const layoutPatterns = [
+                // Row 1-2: wide, tall (right), wide, normal
                 "sm:col-span-2",
+                "sm:row-span-2",
+                "sm:col-span-2",
+                "",
+                // Row 3-4: tall (left), wide, normal
                 "sm:row-span-2",
                 "sm:col-span-2",
                 "",

@@ -67,10 +67,7 @@ export const SanityImg = ({
             placeholder="blur"
             loading={loading ?? "lazy"}
             blurDataURL={urlForImage(image).width(24).height(24).blur(10).url()}
-            sizes="
-              (max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              40vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
           />
         ))}
     </div>
