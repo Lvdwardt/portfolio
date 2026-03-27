@@ -104,7 +104,7 @@ export default async function Project({ params }: PageProps) {
                   role="listitem"
                 >
                   <svg
-                    dangerouslySetInnerHTML={{ __html: icon.icon?.svg ?? '' }}
+                    dangerouslySetInnerHTML={{ __html: icon.icon?.svg ?? "" }}
                     className="h-4 w-4 scale-125"
                   />
                 </Link>
