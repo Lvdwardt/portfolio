@@ -58,13 +58,17 @@ export default async function Home() {
           </div>
           <LinkedIn className="sm:order-6 xl:order-8" />
           <Whatsapp className="sm:order-9" />
-          <div className="row-span-2 overflow-hidden rounded-4xl sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
-            <CoverImage project={projects[0]} loading="eager" />
-          </div>
+          {projects?.[0] && (
+            <div className="row-span-2 overflow-hidden rounded-4xl sm:order-7 xl:order-3 xl:col-start-4 xl:row-start-1">
+              <CoverImage project={projects[0]} loading="eager" />
+            </div>
+          )}
           <Github className="sm:order-10" />
-          <div className="overflow-hidden rounded-4xl bg-card sm:order-4 sm:col-span-2 xl:order-10">
-            <CoverImage project={projects[1]} />
-          </div>
+          {projects?.[1] && (
+            <div className="overflow-hidden rounded-4xl bg-card sm:order-4 sm:col-span-2 xl:order-10">
+              <CoverImage project={projects[1]} />
+            </div>
+          )}
           <div className="overflow-hidden rounded-4xl bg-card sm:order-5  xl:order-12">
             <WakatimeStats />
           </div>
