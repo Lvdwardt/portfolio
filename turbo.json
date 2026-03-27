@@ -3,7 +3,30 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_MAPBOX_TOKEN",
+        "MY_SECRET_TOKEN",
+        "MAPBOX_KEY",
+        "DO_KEY",
+        "WAKATIME_KEY",
+        "HOMES",
+        "SPOTIFY_REDIRECT_URI",
+        "SPOTIFY_CLIENT_ID",
+        "SPOTIFY_CLIENT_SECRET",
+        "SPOTIFY_REFRESH_TOKEN",
+        "EDGE_CONFIG",
+        "POSTGRES_URL",
+        "POSTGRES_URL_NON_POOLING",
+        "POSTGRES_PRISMA_URL",
+        "POSTGRES_USER",
+        "POSTGRES_HOST",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_DATABASE",
+        "SANITY_READ_TOKEN",
+        "NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "NEXT_PUBLIC_SANITY_DATASET"
+      ]
     },
     "lint": {
       "outputs": []
