@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { cn } from "@/utils/utils";
 
 interface SocialProps {
@@ -26,12 +26,11 @@ const Social: React.FC<SocialProps> = ({
     rel="noreferrer"
     title={title}
     className={cn(
-      "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl",
-      color === "primary" ? "bg-primary" : "bg-secondary",
+      "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-4xl bg-primary",
       className
     )}
   >
-    <Icon className="text-[100px] text-white transition-transform duration-300 group-hover:scale-110 group-hover:rounded-[2.5-rem]" />
+    <Icon className="text-[60px] text-white transition-transform duration-300 group-hover:scale-110 group-hover:rounded-[2.5-rem] sm:text-[100px]" />
   </Link>
 );
 
@@ -40,16 +39,6 @@ const SocialLink: React.FC<SocialProps & { className?: string }> = ({
   className,
   ...props
 }) => <Social title={title} {...props} className={className} />;
-
-export const Whatsapp: React.FC<SocialLinkProps> = ({ className }) => (
-  <SocialLink
-    title="Whatsapp"
-    href="https://wa.me/31630702130"
-    icon={FaWhatsapp}
-    color="primary"
-    className={className}
-  />
-);
 
 export const LinkedIn: React.FC<SocialLinkProps> = ({ className }) => (
   <SocialLink

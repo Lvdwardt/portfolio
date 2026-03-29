@@ -3,12 +3,17 @@ import localfont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import AccentManager from "@/components/accentManager";
+
 import "@/styles/globals.css";
 import Providers from "@/utils/providers";
 
 export const metadata: Metadata = {
   title: "Leonvdw.nl",
   description: "Leon's personal portfolio site",
+  icons: {
+    icon: "/lw.svg",
+  },
 };
 
 const gotham = localfont({
@@ -77,7 +82,15 @@ export default async function RootLayout({
       className={`${gotham.variable} ${silka.variable} font-silka text-text`}
     >
       <body>
-        <Providers>{children}</Providers>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var h=localStorage.getItem("portfolio-accent-hue");if(h&&h!=="rainbow")document.documentElement.style.setProperty("--hue",h)}catch(e){}})()`,
+          }}
+        />
+        <Providers>
+          <AccentManager />
+          {children}
+        </Providers>
         <SpeedInsights />
       </body>
       <Analytics />

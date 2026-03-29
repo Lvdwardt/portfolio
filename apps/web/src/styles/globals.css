@@ -13,72 +13,51 @@
 
 :root {
   scroll-behavior: smooth;
-  --primary: #ce81c7;
-  --secondary: #8d5be9;
-  --card: #2f3763;
-  --background: #1f295b;
-  --track: #8d5be9;
-  --thumb: #1f295b;
-  --logo: #ce81c7;
-  --text: #ffffff;
-  --trans: hsla(305, 44%, 66%, 0.3);
-  --lessTrans: hsla(305, 44%, 66%, 0.5);
-  --map: #272626;
+  --hue: 340;
+  --primary: hsl(var(--hue), 60%, 68%);
+  --secondary: hsl(var(--hue), 45%, 48%);
+  --card: hsl(var(--hue), 15%, 16%);
+  --background: hsl(var(--hue), 20%, 8%);
+  --track: hsl(var(--hue), 45%, 48%);
+  --thumb: hsl(var(--hue), 20%, 8%);
+  --logo: hsl(var(--hue), 60%, 68%);
+  --text: hsl(0, 0%, 100%);
+  --trans: hsla(var(--hue), 60%, 68%, 0.3);
+  --lessTrans: hsla(var(--hue), 60%, 68%, 0.5);
+  --map: hsl(var(--hue), 8%, 10%);
 }
 
 [data-theme="dark"] {
-  --primary: #ce81c7;
-  --secondary: #8d5be9;
-  --card: #2f3763;
-  --background: #1f295b;
-  --track: #8d5be9;
-  --thumb: #1f295b;
-  --logo: #ce81c7;
-  --text: #ffffff;
-  --trans: hsla(305, 44%, 66%, 0.3);
-  --lessTrans: hsla(305, 44%, 66%, 0.5);
-  --map: #272626;
+  --hue: 340;
+  --primary: hsl(var(--hue), 60%, 68%);
+  --secondary: hsl(var(--hue), 45%, 48%);
+  --card: hsl(var(--hue), 15%, 16%);
+  --background: hsl(var(--hue), 20%, 8%);
+  --track: hsl(var(--hue), 45%, 48%);
+  --thumb: hsl(var(--hue), 20%, 8%);
+  --logo: hsl(var(--hue), 60%, 68%);
+  --text: hsl(0, 0%, 100%);
+  --trans: hsla(var(--hue), 60%, 68%, 0.3);
+  --lessTrans: hsla(var(--hue), 60%, 68%, 0.5);
+  --map: hsl(var(--hue), 8%, 10%);
 }
 
 [data-theme="light"] {
-  --primary: #7bdff2;
-  --secondary: #b2f7ef;
-  --card: #ffffff;
-  --background: #eff7f6;
-  --track: #7bdff2;
-  --thumb: #ffffff;
-  --logo: #7bdff2;
-  --text: #111111;
-  --trans: hsla(190, 82%, 72%, 0.5);
-  --lessTrans: hsla(190, 82%, 72%, 0.8);
-  --map: #f6f6f4;
+  --hue: 15;
+  --primary: hsl(var(--hue), 100%, 72%);
+  --secondary: hsl(var(--hue), 90%, 85%);
+  --card: hsl(0, 0%, 100%);
+  --background: hsl(var(--hue), 50%, 97%);
+  --track: hsl(var(--hue), 100%, 72%);
+  --thumb: hsl(0, 0%, 100%);
+  --logo: hsl(var(--hue), 100%, 72%);
+  --text: hsl(var(--hue), 25%, 18%);
+  --trans: hsla(var(--hue), 100%, 72%, 0.18);
+  --lessTrans: hsla(var(--hue), 100%, 72%, 0.35);
+  --map: hsl(var(--hue), 25%, 97%);
 }
 
-/* [data-theme="light"] {
-  --primary: #ffb465;
-  --secondary: #ffbb91;
-  --card: #ffe1ca;
-  --background: #fffeee;
-  --track: #ffb465;
-  --thumb: #ffffff;
-  --logo: #ffb465;
-  --text: #111111;
-  --trans: hsla(190, 82%, 72%, 0.8);
-} */
-/* [data-theme="light"] {
-  --primary: #ffc7c8;
-  --secondary: #ffd9c9;
-  --card: #ffffff;
-  --background: #fff2e4;
-  --track: #ffc7c8;
-  --thumb: #ffffff;
-  --logo: #ffc7c8;
-  --text: #111111;
-  --trans: hsla(359, 100%, 89%, 0.8);
-} */
-
 hr {
-  /* make al hr tags thicker */
   border: 2px solid var(--primary);
   border-radius: 5px;
   margin: 6px 0 10px 0;
@@ -127,9 +106,9 @@ body {
   color: var(--primary);
   position: absolute;
   left: -20px;
-  opacity: 0; /* Hide the "#" symbol initially */
+  opacity: 0;
 }
 
 .subheading-anchor:hover::before {
-  opacity: 1; /* Show the "#" symbol on hover */
+  opacity: 1;
 }

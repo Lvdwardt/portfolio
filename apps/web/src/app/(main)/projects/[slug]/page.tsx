@@ -150,8 +150,26 @@ export default async function Project({ params }: PageProps) {
             )}
           </div>
           <div className="order-4 flex h-full w-full items-center justify-center rounded-4xl bg-card p-8 sm:p-24 xl:order-1">
-            {project.logo && (
-              <SanityImg image={project.logo} round={project.hasBg ? 18 : 0} />
+            {project.logo && _params.slug === "portfolio" ? (
+              <div
+                style={{
+                  backgroundColor: "var(--logo)",
+                  maskImage: "url(/lw.svg)",
+                  WebkitMaskImage: "url(/lw.svg)",
+                  maskSize: "contain",
+                  WebkitMaskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskPosition: "center",
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            ) : (
+              project.logo && (
+                <SanityImg image={project.logo} round={project.hasBg ? 18 : 0} />
+              )
             )}
           </div>
         </div>

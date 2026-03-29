@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { type FillLayer, Layer, Source } from "react-map-gl";
+import { getCssVar } from "./utils";
 
 export default function VisitedCountries({
   countries,
@@ -8,6 +9,8 @@ export default function VisitedCountries({
   countries: string[] | undefined;
   resolvedTheme: string | undefined;
 }) {
+  const primary = getCssVar("--primary");
+
   const highlightLayer: FillLayer = {
     id: "countries-highlighted",
     type: "fill",
@@ -15,7 +18,7 @@ export default function VisitedCountries({
     "source-layer": "country_boundaries",
 
     paint: {
-      "fill-color": resolvedTheme === "light" ? "#7bdff2" : "#ce81c7",
+      "fill-color": primary || "#ce81c7",
       "fill-opacity": 0.7,
     },
   };
@@ -27,7 +30,7 @@ export default function VisitedCountries({
     "source-layer": "country_boundaries",
 
     paint: {
-      "fill-color": resolvedTheme === "light" ? "#7bdff2" : "#ce81c7",
+      "fill-color": primary || "#ce81c7",
       "fill-opacity": 0.9,
     },
     filter: ["in", "iso_3166_1", "NL"],

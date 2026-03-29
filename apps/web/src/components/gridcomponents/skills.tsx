@@ -20,29 +20,31 @@ export default async function Skills() {
 
   return (
     <div>
-      <h1 className="text-center text-2xl font-semibold">Skills</h1>
+      <h1 className="text-center text-lg font-semibold sm:text-2xl">Skills</h1>
       <div className="flex flex-col items-center justify-center">
         <Gradient />
-        <div className="flex w-full flex-col items-center justify-center font-medium">
+        <div className="flex w-full flex-col items-center justify-center font-medium max-sm:gap-0.5">
           <div className="flex w-full flex-col items-center justify-center py-8">
             {skills?.icons?.map((skill, index) => {
               const innerHtml = skill.icon.svg; //add fill-[url(#logo)] to the svg
               const newHtml = innerHtml.replace(
                 "<svg",
-                '<svg class="fill-[url(#logo)] text-4xl my-0.5"'
+                '<svg class="fill-[url(#logo)] text-base sm:text-4xl my-0"'
               );
               return (
                 <div
                   key={skill.title}
                   className={clsx(
-                    "my-[-10px] flex w-full",
+                    "my-[-2px] flex w-full sm:my-[-10px]",
                     index % 2 === 0 ? "justify-start" : "justify-end"
                   )}
                 >
-                  <div className="flex w-[120px] flex-col items-center gap-2 px-4">
+                  <div className="flex w-[70px] flex-col items-center gap-0 px-1 sm:w-[120px] sm:gap-2 sm:px-4">
                     <Gradient />
                     <div dangerouslySetInnerHTML={{ __html: newHtml }} />
-                    <p>{skill.title}</p>
+                    <p className="text-[10px] leading-tight sm:text-base">
+                      {skill.title}
+                    </p>
                   </div>
                 </div>
               );

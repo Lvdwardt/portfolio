@@ -1,6 +1,7 @@
 import { City } from "@/types";
 import type { Geometry } from "geojson";
 import { FillLayer, Layer, Source, SymbolLayer } from "react-map-gl";
+import { getCssVar } from "./utils";
 
 export default function VisitedCities({
   cities,
@@ -9,12 +10,14 @@ export default function VisitedCities({
   cities?: City[];
   resolvedTheme: string | undefined;
 }) {
+  const secondary = getCssVar("--secondary");
+
   const layerStyle: FillLayer = {
     id: "my-data",
     type: "fill",
     source: "my-data",
     paint: {
-      "fill-color": resolvedTheme === "light" ? "#b2f7ef" : "#8d5be9",
+      "fill-color": secondary || "#8d5be9",
       "fill-opacity": 1,
     },
   };
