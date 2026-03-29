@@ -64,7 +64,8 @@ export default function AccentManager() {
     };
 
     window.addEventListener("accent-change", handleAccentChange);
-    return () => window.removeEventListener("accent-change", handleAccentChange);
+    return () =>
+      window.removeEventListener("accent-change", handleAccentChange);
   }, []);
 
   // Rainbow animation — runs continuously when mode is "rainbow"
@@ -77,8 +78,7 @@ export default function AccentManager() {
       if (modeRef.current === RAINBOW_KEY) {
         if (lastTime !== null) {
           const delta = time - lastTime;
-          rainbowHueRef.current =
-            (rainbowHueRef.current + delta * 0.006) % 360;
+          rainbowHueRef.current = (rainbowHueRef.current + delta * 0.006) % 360;
           const roundedHue = Math.round(rainbowHueRef.current);
           applyHue(roundedHue);
 

@@ -47,7 +47,7 @@ export default async function Projects() {
               return (
                 <div
                   key={project.slug?.current ?? index}
-                  className={`group relative overflow-hidden rounded-4xl bg-card col-span-2 row-span-2 sm:col-span-1 sm:row-span-1 ${pattern}`}
+                  className={`group relative col-span-2 row-span-2 overflow-hidden rounded-4xl bg-card sm:col-span-1 sm:row-span-1 ${pattern}`}
                 >
                   <CoverImage project={project} />
                 </div>

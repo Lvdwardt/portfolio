@@ -168,7 +168,10 @@ export default async function Project({ params }: PageProps) {
               />
             ) : (
               project.logo && (
-                <SanityImg image={project.logo} round={project.hasBg ? 18 : 0} />
+                <SanityImg
+                  image={project.logo}
+                  round={project.hasBg ? 18 : 0}
+                />
               )
             )}
           </div>
