@@ -13,10 +13,13 @@ export default function PlayMusic({ nowPlaying, previewUrl }: PlayMusicProps) {
 
   useEffect(() => {
     if (!previewUrl) return;
-    const newAudio = new Audio(`${previewUrl}.mp3`);
+    const src = previewUrl.startsWith("http")
+      ? previewUrl
+      : `${previewUrl}.mp3`;
+    const newAudio = new Audio(src);
     newAudio.loop = true;
     setAudio(newAudio);
-  }, []);
+  }, [previewUrl]);
   useEffect(() => {
     if (!audio || audioRef) return;
     setAudioRef({ current: audio });

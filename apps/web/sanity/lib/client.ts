@@ -16,10 +16,16 @@ export async function sanityFetch<QueryResponse>(
   tags: string[],
   params: QueryParams = {}
 ): Promise<QueryResponse> {
+  const isDev = process.env.NODE_ENV === "development";
+
   return client.fetch<QueryResponse>(query, params, {
-    cache: "force-cache",
-    next: {
-      tags,
-    },
+    // Dev: always hit Sanity so Studio edits show up without manual cache clears.
+    // Prod: force-cache + tags for on-demand revalidation.
+    ...(isDev
+      ? { cache: "no-store" as const }
+      : {
+          cache: "force-cache" as const,
+          next: { tags },
+        }),
   });
 }
