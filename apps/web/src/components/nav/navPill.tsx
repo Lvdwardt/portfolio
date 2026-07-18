@@ -3,40 +3,49 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const routes = [
+  { name: "Home", href: "/", place: 1, width: 17.5, left: 2, prefetch: true },
+  {
+    name: "About",
+    href: "/about",
+    place: 2,
+    width: 18.5,
+    left: 25.1,
+    prefetch: true,
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+    place: 3,
+    width: 22,
+    left: 49.5,
+    prefetch: true,
+  },
+  {
+    name: "Travels",
+    href: "/travels",
+    place: 4,
+    width: 20,
+    left: 78,
+    prefetch: false,
+  },
+] as const;
+
+function getActiveRoute(pathname: string) {
+  if (!pathname || pathname === "/") {
+    return routes[0];
+  }
+
+  return (
+    routes.find(
+      (route) => route.href !== "/" && pathname.startsWith(route.href),
+    ) ?? routes[0]
+  );
+}
+
 export default function NavPill() {
   const path = usePathname();
-  let currentRoute = path.split("/")[1];
-  if (currentRoute === "") currentRoute = "/";
-
-  const routes = [
-    { name: "Home", href: "/", place: 1, width: 17.5, left: 2, prefetch: true },
-    {
-      name: "About",
-      href: "/about",
-      place: 2,
-      width: 18.5,
-      left: 25.1,
-      prefetch: true,
-    },
-    {
-      name: "Projects",
-      href: "/projects",
-      place: 3,
-      width: 22,
-      left: 49.5,
-      prefetch: true,
-    },
-    {
-      name: "Travels",
-      href: "/travels",
-      place: 4,
-      width: 20,
-      left: 78,
-      prefetch: false,
-    },
-  ];
-  const currentPlace = routes.find((route) => route.href.includes(currentRoute))
-    ?.place as number;
+  const activeRoute = getActiveRoute(path);
 
   //calculate difference between current place and the place of the clicked route
   //remove negative sign
@@ -60,13 +69,10 @@ export default function NavPill() {
       </ul>
 
       <motion.div
-        initial={{
-          width: `${routes[currentPlace - 1]?.width || 96}%`,
-          left: `${routes[currentPlace - 1]?.left || 2}%`,
-        }}
+        initial={false}
         animate={{
-          width: `${routes[currentPlace - 1]?.width || 96}%`,
-          left: `${routes[currentPlace - 1]?.left || 2}%`,
+          width: `${activeRoute.width}%`,
+          left: `${activeRoute.left}%`,
           transition: {
             duration: 0.3,
             ease: "backInOut",

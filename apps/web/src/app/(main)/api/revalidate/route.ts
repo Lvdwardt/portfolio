@@ -2,26 +2,35 @@ import { type NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { parseBody } from "next-sanity/webhook";
 
-export const runtime = "edge";
+// Node runtime: edge revalidate can mark cache STALE without a successful regen.
+export const runtime = "nodejs";
+
+function purge(tagOrPath: { tag?: string | null; route?: string | null }) {
+  if (tagOrPath.tag) {
+    revalidateTag(tagOrPath.tag);
+  }
+  if (tagOrPath.route) {
+    revalidatePath(tagOrPath.route, "layout");
+    revalidatePath(tagOrPath.route, "page");
+  }
+}
 
 export async function GET(request: NextRequest) {
-  // get the secret from the query
   const secret = request.nextUrl.searchParams.get("secret");
   const route = request.nextUrl.searchParams.get("route") ?? "/";
   const tag = request.nextUrl.searchParams.get("tag");
-  // check if the secret is valid
+
   if (secret !== process.env.MY_SECRET_TOKEN) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
   if (tag) {
-    revalidateTag(tag);
-    return NextResponse.json({ revalidated: true, now: Date.now() });
+    purge({ tag, route: route === "/" ? "/" : null });
+    return NextResponse.json({ revalidated: true, tag, now: Date.now() });
   }
 
-  revalidatePath(route);
-
-  return NextResponse.json({ revalidated: true, now: Date.now() });
+  purge({ route });
+  return NextResponse.json({ revalidated: true, route, now: Date.now() });
 }
 
 export async function POST(req: NextRequest) {
@@ -36,8 +45,7 @@ export async function POST(req: NextRequest) {
       slug?: string | undefined;
     }>(req, process.env.MY_SECRET_TOKEN);
     if (!isValidSignature) {
-      const message = "Invalid signature";
-      return new Response(message, { status: 401 });
+      return new Response("Invalid signature", { status: 401 });
     }
 
     if (!body?._type) {
@@ -48,6 +56,18 @@ export async function POST(req: NextRequest) {
     if (body.slug) {
       revalidateTag(`${body._type}:${body.slug}`);
     }
+
+    // Homepage pulls about / projects / skills / location — purge the route too.
+    if (
+      body._type === "about" ||
+      body._type === "projects" ||
+      body._type === "skills" ||
+      body._type === "location"
+    ) {
+      revalidatePath("/", "layout");
+      revalidatePath("/", "page");
+    }
+
     return NextResponse.json({
       status: 200,
       revalidated: true,
