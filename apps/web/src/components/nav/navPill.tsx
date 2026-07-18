@@ -38,7 +38,7 @@ function getActiveRoute(pathname: string) {
 
   return (
     routes.find(
-      (route) => route.href !== "/" && pathname.startsWith(route.href),
+      (route) => route.href !== "/" && pathname.startsWith(route.href)
     ) ?? routes[0]
   );
 }
