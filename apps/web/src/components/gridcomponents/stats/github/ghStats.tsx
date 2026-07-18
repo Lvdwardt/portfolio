@@ -31,6 +31,11 @@ export default async function GithubStats() {
       }
     );
 
+    const contentType = res.headers.get("content-type") || "";
+    if (!res.ok || !contentType.includes("application/json")) {
+      throw new Error(`GitHub streak stats unavailable (${res.status})`);
+    }
+
     const data: StreakStats = await res.json();
     commits = data.totalContributions;
   } catch (error) {

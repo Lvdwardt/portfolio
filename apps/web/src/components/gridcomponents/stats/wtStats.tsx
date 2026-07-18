@@ -1,82 +1,112 @@
 import Link from "next/link";
 import { SiWakatime } from "react-icons/si";
 
-export default async function WakatimeStats() {
+type WakatimeView = {
+  workingOn: string;
+  minutesDifference: number;
+  hours: number;
+  dailyAverage: string;
+  todayText: string;
+  todaySeconds: number;
+};
+
+const emptyView: WakatimeView = {
+  workingOn: "Unknown",
+  minutesDifference: 0,
+  hours: 0,
+  dailyAverage: "",
+  todayText: "0 secs",
+  todaySeconds: 0,
+};
+
+async function getWakatimeView(): Promise<WakatimeView> {
   const wakatimeKey = process.env.WAKATIME_KEY;
+  if (!wakatimeKey) {
+    return emptyView;
+  }
 
-  // format: YYYY-MM-DD
+  const [heartbeatsRes, weekRes, todayRes] = await Promise.all([
+    fetch(
+      `https://wakatime.com/api/v1/users/current/heartbeats?date=Today&api_key=${wakatimeKey}`,
+      { next: { revalidate: 600 } }
+    ),
+    fetch(
+      `https://wakatime.com/api/v1/users/current/summaries?range=last_7_days_from_yesterday&api_key=${wakatimeKey}`,
+      { next: { revalidate: 600 } }
+    ),
+    fetch(
+      `https://wakatime.com/api/v1/users/current/summaries?range=Today&api_key=${wakatimeKey}`,
+      { next: { revalidate: 86400 } }
+    ),
+  ]);
 
-  const { workingOn, minutesDifference } = await fetch(
-    `https://wakatime.com/api/v1/users/current/heartbeats?date=Today&api_key=${wakatimeKey}`,
-    {
-      next: {
-        revalidate: 600,
-      },
+  for (const res of [heartbeatsRes, weekRes, todayRes]) {
+    if (!res.ok) {
+      throw new Error(`Wakatime responded with ${res.status}`);
     }
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.data.length === 0) {
-        return { workingOn: "Unknown", minutesDifference: 0 };
+    const contentType = res.headers.get("content-type") || "";
+    if (!contentType.includes("application/json")) {
+      throw new Error("Wakatime returned a non-JSON response");
+    }
+  }
+
+  const [heartbeats, week, today] = await Promise.all([
+    heartbeatsRes.json(),
+    weekRes.json(),
+    todayRes.json(),
+  ]);
+
+  let workingOn = "Unknown";
+  let minutesDifference = 0;
+  if (Array.isArray(heartbeats?.data) && heartbeats.data.length > 0) {
+    const lastItem = heartbeats.data.slice(-1)[0];
+    workingOn = lastItem.project ? lastItem.project : "Unknown";
+    minutesDifference = Math.floor(
+      (new Date().getTime() - new Date(lastItem.time * 1000).getTime()) / 60000
+    );
+  }
+
+  const hours = Math.floor((week?.cumulative_total?.seconds || 0) / 3600);
+  let dailyAverage = (week?.daily_average?.text || "")
+    .split(" ")
+    .map((item: string, index: number) => {
+      if (index === 1) {
+        return item + ", ";
       }
-      // get the last item in data array
-      const lastItem = data.data.slice(-1)[0];
-      // get the project name
-      const workingOn = lastItem.project ? lastItem.project : "Unknown";
-      // get the last update
-      const minutesDifference = Math.floor(
-        (new Date().getTime() - new Date(lastItem.time * 1000).getTime()) /
-          60000
-      );
+      return item;
+    })
+    .join(" ");
 
-      return { workingOn, minutesDifference };
-    });
+  if (dailyAverage.length < 10) {
+    dailyAverage = dailyAverage.slice(0, -2);
+  }
 
-  const { hours, dailyAverage } = await fetch(
-    `https://wakatime.com/api/v1/users/current/summaries?range=last_7_days_from_yesterday&api_key=${wakatimeKey}`,
-    {
-      next: {
-        revalidate: 600,
-      },
-    }
-  )
-    .then((res) => res.json())
-    // set hours to the total hours coded in the past week
-    .then((data) => {
-      const hours = Math.floor(data.cumulative_total.seconds / 3600);
-      let dailyAverage = data.daily_average.text
-        .split(" ")
-        .map((item: string, index: number) => {
-          if (index === 1) {
-            return item + ", ";
-          } else {
-            return item;
-          }
-        })
-        .join(" ");
+  return {
+    workingOn,
+    minutesDifference,
+    hours,
+    dailyAverage,
+    todayText: today?.cumulative_total?.text || "0 secs",
+    todaySeconds: today?.cumulative_total?.seconds || 0,
+  };
+}
 
-      if (dailyAverage.length < 10) {
-        // remove comma
-        dailyAverage = dailyAverage.slice(0, -2);
-      }
+export default async function WakatimeStats() {
+  let view = emptyView;
+  try {
+    view = await getWakatimeView();
+  } catch (error) {
+    console.error("Failed to fetch Wakatime stats:", error);
+  }
 
-      return { hours, dailyAverage };
-    });
-
-  const { todayText, todaySeconds } = await fetch(
-    `https://wakatime.com/api/v1/users/current/summaries?range=Today&api_key=${wakatimeKey}`,
-    {
-      next: {
-        revalidate: 86400,
-      },
-    }
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      const todayText = data.cumulative_total.text;
-      const todaySeconds = data.cumulative_total.seconds;
-      return { todayText, todaySeconds };
-    });
+  const {
+    workingOn,
+    minutesDifference,
+    hours,
+    dailyAverage,
+    todayText,
+    todaySeconds,
+  } = view;
 
   const Hours = () => {
     return (
